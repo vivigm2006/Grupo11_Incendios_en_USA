@@ -32,8 +32,8 @@ Grupo 11 Computacion II
 - Carlos Herrera
 - Valeria Rusa
 
-<a href="https://github.com/cehs1/Incendios_TFCompu/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=cehs1/Incendios_TFCompu" />
+<a href="https://github.com/vivigm2006/Grupo11_Incendios_en_USA/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vivigm2006/Grupo11_Incendios_en_USA" />
 </a>
 
 </div>
