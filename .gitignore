@@ -1,0 +1,15 @@
+# Extensiones a ignorar
+*.sqlite
+*.sqlite3
+*.duckdb
+*.db
+
+# Carpeta a ignorar
+Data/*.sqlite
+Data/*.duckdb
+
+# Archivos del sistema
+.venv/
+venv/
+__pycache__/
+.DS_Store
