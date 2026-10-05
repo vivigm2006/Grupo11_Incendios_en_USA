@@ -2,7 +2,7 @@ from pathlib import Path
 import duckdb
 
 # Definir la raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Rutas de los archivos SQLite y DuckDB
 RUTA_SQLITE = BASE_DIR / "Data" / "FPA_FOD_20170508.sqlite"

@@ -4,7 +4,7 @@ from pathlib import Path
 # Definir rutas y crear carpetas
 def obtener_ruta_db():
     ruta_codigo = Path(__file__).resolve()
-    raiz_proyecto = ruta_codigo.parent.parent
+    raiz_proyecto = ruta_codigo.parent.parent.parent
     carpeta_destino = raiz_proyecto / "Data" / "Datos_Normalizados"
     carpeta_destino.mkdir(parents=True, exist_ok=True)
     return carpeta_destino / "incendios_normalizados.duckdb"
