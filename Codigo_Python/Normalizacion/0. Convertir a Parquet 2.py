@@ -2,7 +2,7 @@ from pathlib import Path
 import duckdb
 
 # 1. Rutas predeterminadas relativas a la raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DUCKDB = BASE_DIR / "Data" / "Incendios_TFCompu.duckdb"
 DEFAULT_PARQUET_DIR = BASE_DIR / "Data" / "Originales Parquet"
 
