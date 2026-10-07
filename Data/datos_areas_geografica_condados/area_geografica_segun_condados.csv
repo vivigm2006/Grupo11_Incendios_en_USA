@@ -1,0 +1,3223 @@
+Full FIPS Code,County,State,FIPS_CODE,State Abbr,State Code,CODIGO_ZONA,Nombre Zona
+01001,Autauga,Alabama,001,AL,01,SA,Southern Area
+01003,Baldwin,Alabama,003,AL,01,SA,Southern Area
+01005,Barbour,Alabama,005,AL,01,SA,Southern Area
+01007,Bibb,Alabama,007,AL,01,SA,Southern Area
+01009,Blount,Alabama,009,AL,01,SA,Southern Area
+01011,Bullock,Alabama,011,AL,01,SA,Southern Area
+01013,Butler,Alabama,013,AL,01,SA,Southern Area
+01015,Calhoun,Alabama,015,AL,01,SA,Southern Area
+01017,Chambers,Alabama,017,AL,01,SA,Southern Area
+01019,Cherokee,Alabama,019,AL,01,SA,Southern Area
+01021,Chilton,Alabama,021,AL,01,SA,Southern Area
+01023,Choctaw,Alabama,023,AL,01,SA,Southern Area
+01025,Clarke,Alabama,025,AL,01,SA,Southern Area
+01027,Clay,Alabama,027,AL,01,SA,Southern Area
+01029,Cleburne,Alabama,029,AL,01,SA,Southern Area
+01031,Coffee,Alabama,031,AL,01,SA,Southern Area
+01033,Colbert,Alabama,033,AL,01,SA,Southern Area
+01035,Conecuh,Alabama,035,AL,01,SA,Southern Area
+01037,Coosa,Alabama,037,AL,01,SA,Southern Area
+01039,Covington,Alabama,039,AL,01,SA,Southern Area
+01041,Crenshaw,Alabama,041,AL,01,SA,Southern Area
+01043,Cullman,Alabama,043,AL,01,SA,Southern Area
+01045,Dale,Alabama,045,AL,01,SA,Southern Area
+01047,Dallas,Alabama,047,AL,01,SA,Southern Area
+01049,DeKalb,Alabama,049,AL,01,SA,Southern Area
+01051,Elmore,Alabama,051,AL,01,SA,Southern Area
+01053,Escambia,Alabama,053,AL,01,SA,Southern Area
+01055,Etowah,Alabama,055,AL,01,SA,Southern Area
+01057,Fayette,Alabama,057,AL,01,SA,Southern Area
+01059,Franklin,Alabama,059,AL,01,SA,Southern Area
+01061,Geneva,Alabama,061,AL,01,SA,Southern Area
+01063,Greene,Alabama,063,AL,01,SA,Southern Area
+01065,Hale,Alabama,065,AL,01,SA,Southern Area
+01067,Henry,Alabama,067,AL,01,SA,Southern Area
+01069,Houston,Alabama,069,AL,01,SA,Southern Area
+01071,Jackson,Alabama,071,AL,01,SA,Southern Area
+01073,Jefferson,Alabama,073,AL,01,SA,Southern Area
+01075,Lamar,Alabama,075,AL,01,SA,Southern Area
+01077,Lauderdale,Alabama,077,AL,01,SA,Southern Area
+01079,Lawrence,Alabama,079,AL,01,SA,Southern Area
+01081,Lee,Alabama,081,AL,01,SA,Southern Area
+01083,Limestone,Alabama,083,AL,01,SA,Southern Area
+01085,Lowndes,Alabama,085,AL,01,SA,Southern Area
+01087,Macon,Alabama,087,AL,01,SA,Southern Area
+01089,Madison,Alabama,089,AL,01,SA,Southern Area
+01091,Marengo,Alabama,091,AL,01,SA,Southern Area
+01093,Marion,Alabama,093,AL,01,SA,Southern Area
+01095,Marshall,Alabama,095,AL,01,SA,Southern Area
+01097,Mobile,Alabama,097,AL,01,SA,Southern Area
+01099,Monroe,Alabama,099,AL,01,SA,Southern Area
+01101,Montgomery,Alabama,101,AL,01,SA,Southern Area
+01103,Morgan,Alabama,103,AL,01,SA,Southern Area
+01105,Perry,Alabama,105,AL,01,SA,Southern Area
+01107,Pickens,Alabama,107,AL,01,SA,Southern Area
+01109,Pike,Alabama,109,AL,01,SA,Southern Area
+01111,Randolph,Alabama,111,AL,01,SA,Southern Area
+01113,Russell,Alabama,113,AL,01,SA,Southern Area
+01115,St. Clair,Alabama,115,AL,01,SA,Southern Area
+01117,Shelby,Alabama,117,AL,01,SA,Southern Area
+01119,Sumter,Alabama,119,AL,01,SA,Southern Area
+01121,Talladega,Alabama,121,AL,01,SA,Southern Area
+01123,Tallapoosa,Alabama,123,AL,01,SA,Southern Area
+01125,Tuscaloosa,Alabama,125,AL,01,SA,Southern Area
+01127,Walker,Alabama,127,AL,01,SA,Southern Area
+01129,Washington,Alabama,129,AL,01,SA,Southern Area
+01131,Wilcox,Alabama,131,AL,01,SA,Southern Area
+01133,Winston,Alabama,133,AL,01,SA,Southern Area
+02013,Aleutians East,Alaska,013,AK,02,AC,Alaska Area
+02016,Aleutians West,Alaska,016,AK,02,AC,Alaska Area
+02020,Anchorage,Alaska,020,AK,02,AC,Alaska Area
+02050,Bethel,Alaska,050,AK,02,AC,Alaska Area
+02060,Bristol Bay,Alaska,060,AK,02,AC,Alaska Area
+02063,Chugach,Alaska,063,AK,02,AC,Alaska Area
+02066,Copper River,Alaska,066,AK,02,AC,Alaska Area
+02068,Denali,Alaska,068,AK,02,AC,Alaska Area
+02070,Dillingham,Alaska,070,AK,02,AC,Alaska Area
+02090,Fairbanks North Star,Alaska,090,AK,02,AC,Alaska Area
+02100,Haines,Alaska,100,AK,02,AC,Alaska Area
+02105,Hoonah-Angoon,Alaska,105,AK,02,AC,Alaska Area
+02110,Juneau,Alaska,110,AK,02,AC,Alaska Area
+02122,Kenai Peninsula,Alaska,122,AK,02,AC,Alaska Area
+02130,Ketchikan Gateway,Alaska,130,AK,02,AC,Alaska Area
+02150,Kodiak Island,Alaska,150,AK,02,AC,Alaska Area
+02158,Kusilvak,Alaska,158,AK,02,AC,Alaska Area
+02164,Lake and Peninsula,Alaska,164,AK,02,AC,Alaska Area
+02170,Matanuska-Susitna,Alaska,170,AK,02,AC,Alaska Area
+02180,Nome,Alaska,180,AK,02,AC,Alaska Area
+02185,North Slope,Alaska,185,AK,02,AC,Alaska Area
+02188,Northwest Arctic,Alaska,188,AK,02,AC,Alaska Area
+02195,Petersburg,Alaska,195,AK,02,AC,Alaska Area
+02198,Prince of Wales-Hyder,Alaska,198,AK,02,AC,Alaska Area
+02220,Sitka,Alaska,220,AK,02,AC,Alaska Area
+02230,Skagway,Alaska,230,AK,02,AC,Alaska Area
+02240,Southeast Fairbanks,Alaska,240,AK,02,AC,Alaska Area
+02275,Wrangell,Alaska,275,AK,02,AC,Alaska Area
+02282,Yakutat,Alaska,282,AK,02,AC,Alaska Area
+02290,Yukon-Koyukuk,Alaska,290,AK,02,AC,Alaska Area
+04001,Apache,Arizona,001,AZ,04,SW,Southwest Area
+04003,Cochise,Arizona,003,AZ,04,SW,Southwest Area
+04005,Coconino,Arizona,005,AZ,04,SW,Southwest Area
+04007,Gila,Arizona,007,AZ,04,SW,Southwest Area
+04009,Graham,Arizona,009,AZ,04,SW,Southwest Area
+04011,Greenlee,Arizona,011,AZ,04,SW,Southwest Area
+04012,La Paz,Arizona,012,AZ,04,SW,Southwest Area
+04013,Maricopa,Arizona,013,AZ,04,SW,Southwest Area
+04015,Mohave,Arizona,015,AZ,04,SW,Southwest Area
+04017,Navajo,Arizona,017,AZ,04,SW,Southwest Area
+04019,Pima,Arizona,019,AZ,04,SW,Southwest Area
+04021,Pinal,Arizona,021,AZ,04,SW,Southwest Area
+04023,Santa Cruz,Arizona,023,AZ,04,SW,Southwest Area
+04025,Yavapai,Arizona,025,AZ,04,SW,Southwest Area
+04027,Yuma,Arizona,027,AZ,04,SW,Southwest Area
+05001,Arkansas,Arkansas,001,AR,05,SA,Southern Area
+05003,Ashley,Arkansas,003,AR,05,SA,Southern Area
+05005,Baxter,Arkansas,005,AR,05,SA,Southern Area
+05007,Benton,Arkansas,007,AR,05,SA,Southern Area
+05009,Boone,Arkansas,009,AR,05,SA,Southern Area
+05011,Bradley,Arkansas,011,AR,05,SA,Southern Area
+05013,Calhoun,Arkansas,013,AR,05,SA,Southern Area
+05015,Carroll,Arkansas,015,AR,05,SA,Southern Area
+05017,Chicot,Arkansas,017,AR,05,SA,Southern Area
+05019,Clark,Arkansas,019,AR,05,SA,Southern Area
+05021,Clay,Arkansas,021,AR,05,SA,Southern Area
+05023,Cleburne,Arkansas,023,AR,05,SA,Southern Area
+05025,Cleveland,Arkansas,025,AR,05,SA,Southern Area
+05027,Columbia,Arkansas,027,AR,05,SA,Southern Area
+05029,Conway,Arkansas,029,AR,05,SA,Southern Area
+05031,Craighead,Arkansas,031,AR,05,SA,Southern Area
+05033,Crawford,Arkansas,033,AR,05,SA,Southern Area
+05035,Crittenden,Arkansas,035,AR,05,SA,Southern Area
+05037,Cross,Arkansas,037,AR,05,SA,Southern Area
+05039,Dallas,Arkansas,039,AR,05,SA,Southern Area
+05041,Desha,Arkansas,041,AR,05,SA,Southern Area
+05043,Drew,Arkansas,043,AR,05,SA,Southern Area
+05045,Faulkner,Arkansas,045,AR,05,SA,Southern Area
+05047,Franklin,Arkansas,047,AR,05,SA,Southern Area
+05049,Fulton,Arkansas,049,AR,05,SA,Southern Area
+05051,Garland,Arkansas,051,AR,05,SA,Southern Area
+05053,Grant,Arkansas,053,AR,05,SA,Southern Area
+05055,Greene,Arkansas,055,AR,05,SA,Southern Area
+05057,Hempstead,Arkansas,057,AR,05,SA,Southern Area
+05059,Hot Spring,Arkansas,059,AR,05,SA,Southern Area
+05061,Howard,Arkansas,061,AR,05,SA,Southern Area
+05063,Independence,Arkansas,063,AR,05,SA,Southern Area
+05065,Izard,Arkansas,065,AR,05,SA,Southern Area
+05067,Jackson,Arkansas,067,AR,05,SA,Southern Area
+05069,Jefferson,Arkansas,069,AR,05,SA,Southern Area
+05071,Johnson,Arkansas,071,AR,05,SA,Southern Area
+05073,Lafayette,Arkansas,073,AR,05,SA,Southern Area
+05075,Lawrence,Arkansas,075,AR,05,SA,Southern Area
+05077,Lee,Arkansas,077,AR,05,SA,Southern Area
+05079,Lincoln,Arkansas,079,AR,05,SA,Southern Area
+05081,Little River,Arkansas,081,AR,05,SA,Southern Area
+05083,Logan,Arkansas,083,AR,05,SA,Southern Area
+05085,Lonoke,Arkansas,085,AR,05,SA,Southern Area
+05087,Madison,Arkansas,087,AR,05,SA,Southern Area
+05089,Marion,Arkansas,089,AR,05,SA,Southern Area
+05091,Miller,Arkansas,091,AR,05,SA,Southern Area
+05093,Mississippi,Arkansas,093,AR,05,SA,Southern Area
+05095,Monroe,Arkansas,095,AR,05,SA,Southern Area
+05097,Montgomery,Arkansas,097,AR,05,SA,Southern Area
+05099,Nevada,Arkansas,099,AR,05,SA,Southern Area
+05101,Newton,Arkansas,101,AR,05,SA,Southern Area
+05103,Ouachita,Arkansas,103,AR,05,SA,Southern Area
+05105,Perry,Arkansas,105,AR,05,SA,Southern Area
+05107,Phillips,Arkansas,107,AR,05,SA,Southern Area
+05109,Pike,Arkansas,109,AR,05,SA,Southern Area
+05111,Poinsett,Arkansas,111,AR,05,SA,Southern Area
+05113,Polk,Arkansas,113,AR,05,SA,Southern Area
+05115,Pope,Arkansas,115,AR,05,SA,Southern Area
+05117,Prairie,Arkansas,117,AR,05,SA,Southern Area
+05119,Pulaski,Arkansas,119,AR,05,SA,Southern Area
+05121,Randolph,Arkansas,121,AR,05,SA,Southern Area
+05123,St. Francis,Arkansas,123,AR,05,SA,Southern Area
+05125,Saline,Arkansas,125,AR,05,SA,Southern Area
+05127,Scott,Arkansas,127,AR,05,SA,Southern Area
+05129,Searcy,Arkansas,129,AR,05,SA,Southern Area
+05131,Sebastian,Arkansas,131,AR,05,SA,Southern Area
+05133,Sevier,Arkansas,133,AR,05,SA,Southern Area
+05135,Sharp,Arkansas,135,AR,05,SA,Southern Area
+05137,Stone,Arkansas,137,AR,05,SA,Southern Area
+05139,Union,Arkansas,139,AR,05,SA,Southern Area
+05141,Van Buren,Arkansas,141,AR,05,SA,Southern Area
+05143,Washington,Arkansas,143,AR,05,SA,Southern Area
+05145,White,Arkansas,145,AR,05,SA,Southern Area
+05147,Woodruff,Arkansas,147,AR,05,SA,Southern Area
+05149,Yell,Arkansas,149,AR,05,SA,Southern Area
+06001,Alameda,California,001,CA,06,ON,Northern California
+06003,Alpine,California,003,CA,06,ON,Northern California
+06005,Amador,California,005,CA,06,ON,Northern California
+06007,Butte,California,007,CA,06,ON,Northern California
+06009,Calaveras,California,009,CA,06,ON,Northern California
+06011,Colusa,California,011,CA,06,ON,Northern California
+06013,Contra Costa,California,013,CA,06,ON,Northern California
+06015,Del Norte,California,015,CA,06,ON,Northern California
+06017,El Dorado,California,017,CA,06,ON,Northern California
+06019,Fresno,California,019,CA,06,OS,Southern California
+06021,Glenn,California,021,CA,06,ON,Northern California
+06023,Humboldt,California,023,CA,06,ON,Northern California
+06025,Imperial,California,025,CA,06,OS,Southern California
+06027,Inyo,California,027,CA,06,OS,Southern California
+06029,Kern,California,029,CA,06,OS,Southern California
+06031,Kings,California,031,CA,06,OS,Southern California
+06033,Lake,California,033,CA,06,ON,Northern California
+06035,Lassen,California,035,CA,06,ON,Northern California
+06037,Los Angeles,California,037,CA,06,OS,Southern California
+06039,Madera,California,039,CA,06,OS,Southern California
+06041,Marin,California,041,CA,06,ON,Northern California
+06043,Mariposa,California,043,CA,06,ON,Northern California
+06045,Mendocino,California,045,CA,06,ON,Northern California
+06047,Merced,California,047,CA,06,OS,Southern California
+06049,Modoc,California,049,CA,06,ON,Northern California
+06051,Mono,California,051,CA,06,OS,Southern California
+06053,Monterey,California,053,CA,06,OS,Southern California
+06055,Napa,California,055,CA,06,ON,Northern California
+06057,Nevada,California,057,CA,06,ON,Northern California
+06059,Orange,California,059,CA,06,OS,Southern California
+06061,Placer,California,061,CA,06,ON,Northern California
+06063,Plumas,California,063,CA,06,ON,Northern California
+06065,Riverside,California,065,CA,06,OS,Southern California
+06067,Sacramento,California,067,CA,06,ON,Northern California
+06069,San Benito,California,069,CA,06,OS,Southern California
+06071,San Bernardino,California,071,CA,06,OS,Southern California
+06073,San Diego,California,073,CA,06,OS,Southern California
+06075,San Francisco,California,075,CA,06,ON,Northern California
+06077,San Joaquin,California,077,CA,06,ON,Northern California
+06079,San Luis Obispo,California,079,CA,06,OS,Southern California
+06081,San Mateo,California,081,CA,06,ON,Northern California
+06083,Santa Barbara,California,083,CA,06,OS,Southern California
+06085,Santa Clara,California,085,CA,06,ON,Northern California
+06087,Santa Cruz,California,087,CA,06,OS,Southern California
+06089,Shasta,California,089,CA,06,ON,Northern California
+06091,Sierra,California,091,CA,06,ON,Northern California
+06093,Siskiyou,California,093,CA,06,ON,Northern California
+06095,Solano,California,095,CA,06,ON,Northern California
+06097,Sonoma,California,097,CA,06,ON,Northern California
+06099,Stanislaus,California,099,CA,06,ON,Northern California
+06101,Sutter,California,101,CA,06,ON,Northern California
+06103,Tehama,California,103,CA,06,ON,Northern California
+06105,Trinity,California,105,CA,06,ON,Northern California
+06107,Tulare,California,107,CA,06,OS,Southern California
+06109,Tuolumne,California,109,CA,06,ON,Northern California
+06111,Ventura,California,111,CA,06,OS,Southern California
+06113,Yolo,California,113,CA,06,ON,Northern California
+06115,Yuba,California,115,CA,06,ON,Northern California
+08001,Adams,Colorado,001,CO,08,RM,Rocky Mountain Area
+08003,Alamosa,Colorado,003,CO,08,RM,Rocky Mountain Area
+08005,Arapahoe,Colorado,005,CO,08,RM,Rocky Mountain Area
+08007,Archuleta,Colorado,007,CO,08,RM,Rocky Mountain Area
+08009,Baca,Colorado,009,CO,08,RM,Rocky Mountain Area
+08011,Bent,Colorado,011,CO,08,RM,Rocky Mountain Area
+08013,Boulder,Colorado,013,CO,08,RM,Rocky Mountain Area
+08014,Broomfield,Colorado,014,CO,08,RM,Rocky Mountain Area
+08015,Chaffee,Colorado,015,CO,08,RM,Rocky Mountain Area
+08017,Cheyenne,Colorado,017,CO,08,RM,Rocky Mountain Area
+08019,Clear Creek,Colorado,019,CO,08,RM,Rocky Mountain Area
+08021,Conejos,Colorado,021,CO,08,RM,Rocky Mountain Area
+08023,Costilla,Colorado,023,CO,08,RM,Rocky Mountain Area
+08025,Crowley,Colorado,025,CO,08,RM,Rocky Mountain Area
+08027,Custer,Colorado,027,CO,08,RM,Rocky Mountain Area
+08029,Delta,Colorado,029,CO,08,RM,Rocky Mountain Area
+08031,Denver,Colorado,031,CO,08,RM,Rocky Mountain Area
+08033,Dolores,Colorado,033,CO,08,RM,Rocky Mountain Area
+08035,Douglas,Colorado,035,CO,08,RM,Rocky Mountain Area
+08037,Eagle,Colorado,037,CO,08,RM,Rocky Mountain Area
+08039,Elbert,Colorado,039,CO,08,RM,Rocky Mountain Area
+08041,El Paso,Colorado,041,CO,08,RM,Rocky Mountain Area
+08043,Fremont,Colorado,043,CO,08,RM,Rocky Mountain Area
+08045,Garfield,Colorado,045,CO,08,RM,Rocky Mountain Area
+08047,Gilpin,Colorado,047,CO,08,RM,Rocky Mountain Area
+08049,Grand,Colorado,049,CO,08,RM,Rocky Mountain Area
+08051,Gunnison,Colorado,051,CO,08,RM,Rocky Mountain Area
+08053,Hinsdale,Colorado,053,CO,08,RM,Rocky Mountain Area
+08055,Huerfano,Colorado,055,CO,08,RM,Rocky Mountain Area
+08057,Jackson,Colorado,057,CO,08,RM,Rocky Mountain Area
+08059,Jefferson,Colorado,059,CO,08,RM,Rocky Mountain Area
+08061,Kiowa,Colorado,061,CO,08,RM,Rocky Mountain Area
+08063,Kit Carson,Colorado,063,CO,08,RM,Rocky Mountain Area
+08065,Lake,Colorado,065,CO,08,RM,Rocky Mountain Area
+08067,La Plata,Colorado,067,CO,08,RM,Rocky Mountain Area
+08069,Larimer,Colorado,069,CO,08,RM,Rocky Mountain Area
+08071,Las Animas,Colorado,071,CO,08,RM,Rocky Mountain Area
+08073,Lincoln,Colorado,073,CO,08,RM,Rocky Mountain Area
+08075,Logan,Colorado,075,CO,08,RM,Rocky Mountain Area
+08077,Mesa,Colorado,077,CO,08,RM,Rocky Mountain Area
+08079,Mineral,Colorado,079,CO,08,RM,Rocky Mountain Area
+08081,Moffat,Colorado,081,CO,08,RM,Rocky Mountain Area
+08083,Montezuma,Colorado,083,CO,08,RM,Rocky Mountain Area
+08085,Montrose,Colorado,085,CO,08,RM,Rocky Mountain Area
+08087,Morgan,Colorado,087,CO,08,RM,Rocky Mountain Area
+08089,Otero,Colorado,089,CO,08,RM,Rocky Mountain Area
+08091,Ouray,Colorado,091,CO,08,RM,Rocky Mountain Area
+08093,Park,Colorado,093,CO,08,RM,Rocky Mountain Area
+08095,Phillips,Colorado,095,CO,08,RM,Rocky Mountain Area
+08097,Pitkin,Colorado,097,CO,08,RM,Rocky Mountain Area
+08099,Prowers,Colorado,099,CO,08,RM,Rocky Mountain Area
+08101,Pueblo,Colorado,101,CO,08,RM,Rocky Mountain Area
+08103,Rio Blanco,Colorado,103,CO,08,RM,Rocky Mountain Area
+08105,Rio Grande,Colorado,105,CO,08,RM,Rocky Mountain Area
+08107,Routt,Colorado,107,CO,08,RM,Rocky Mountain Area
+08109,Saguache,Colorado,109,CO,08,RM,Rocky Mountain Area
+08111,San Juan,Colorado,111,CO,08,RM,Rocky Mountain Area
+08113,San Miguel,Colorado,113,CO,08,RM,Rocky Mountain Area
+08115,Sedgwick,Colorado,115,CO,08,RM,Rocky Mountain Area
+08117,Summit,Colorado,117,CO,08,RM,Rocky Mountain Area
+08119,Teller,Colorado,119,CO,08,RM,Rocky Mountain Area
+08121,Washington,Colorado,121,CO,08,RM,Rocky Mountain Area
+08123,Weld,Colorado,123,CO,08,RM,Rocky Mountain Area
+08125,Yuma,Colorado,125,CO,08,RM,Rocky Mountain Area
+09110,Capitol,Connecticut,110,CT,09,EA,Eastern Area
+09120,Greater Bridgeport,Connecticut,120,CT,09,EA,Eastern Area
+09130,Lower Connecticut River Valley,Connecticut,130,CT,09,EA,Eastern Area
+09140,Naugatuck Valley,Connecticut,140,CT,09,EA,Eastern Area
+09150,Northeastern Connecticut,Connecticut,150,CT,09,EA,Eastern Area
+09160,Northwest Hills,Connecticut,160,CT,09,EA,Eastern Area
+09170,South Central Connecticut,Connecticut,170,CT,09,EA,Eastern Area
+09180,Southeastern Connecticut,Connecticut,180,CT,09,EA,Eastern Area
+09190,Western Connecticut,Connecticut,190,CT,09,EA,Eastern Area
+10001,Kent,Delaware,001,DE,10,EA,Eastern Area
+10003,New Castle,Delaware,003,DE,10,EA,Eastern Area
+10005,Sussex,Delaware,005,DE,10,EA,Eastern Area
+11001,District of Columbia,District Of Columbia,001,DC,11,EA,Eastern Area
+12001,Alachua,Florida,001,FL,12,SA,Southern Area
+12003,Baker,Florida,003,FL,12,SA,Southern Area
+12005,Bay,Florida,005,FL,12,SA,Southern Area
+12007,Bradford,Florida,007,FL,12,SA,Southern Area
+12009,Brevard,Florida,009,FL,12,SA,Southern Area
+12011,Broward,Florida,011,FL,12,SA,Southern Area
+12013,Calhoun,Florida,013,FL,12,SA,Southern Area
+12015,Charlotte,Florida,015,FL,12,SA,Southern Area
+12017,Citrus,Florida,017,FL,12,SA,Southern Area
+12019,Clay,Florida,019,FL,12,SA,Southern Area
+12021,Collier,Florida,021,FL,12,SA,Southern Area
+12023,Columbia,Florida,023,FL,12,SA,Southern Area
+12027,DeSoto,Florida,027,FL,12,SA,Southern Area
+12029,Dixie,Florida,029,FL,12,SA,Southern Area
+12031,Duval,Florida,031,FL,12,SA,Southern Area
+12033,Escambia,Florida,033,FL,12,SA,Southern Area
+12035,Flagler,Florida,035,FL,12,SA,Southern Area
+12037,Franklin,Florida,037,FL,12,SA,Southern Area
+12039,Gadsden,Florida,039,FL,12,SA,Southern Area
+12041,Gilchrist,Florida,041,FL,12,SA,Southern Area
+12043,Glades,Florida,043,FL,12,SA,Southern Area
+12045,Gulf,Florida,045,FL,12,SA,Southern Area
+12047,Hamilton,Florida,047,FL,12,SA,Southern Area
+12049,Hardee,Florida,049,FL,12,SA,Southern Area
+12051,Hendry,Florida,051,FL,12,SA,Southern Area
+12053,Hernando,Florida,053,FL,12,SA,Southern Area
+12055,Highlands,Florida,055,FL,12,SA,Southern Area
+12057,Hillsborough,Florida,057,FL,12,SA,Southern Area
+12059,Holmes,Florida,059,FL,12,SA,Southern Area
+12061,Indian River,Florida,061,FL,12,SA,Southern Area
+12063,Jackson,Florida,063,FL,12,SA,Southern Area
+12065,Jefferson,Florida,065,FL,12,SA,Southern Area
+12067,Lafayette,Florida,067,FL,12,SA,Southern Area
+12069,Lake,Florida,069,FL,12,SA,Southern Area
+12071,Lee,Florida,071,FL,12,SA,Southern Area
+12073,Leon,Florida,073,FL,12,SA,Southern Area
+12075,Levy,Florida,075,FL,12,SA,Southern Area
+12077,Liberty,Florida,077,FL,12,SA,Southern Area
+12079,Madison,Florida,079,FL,12,SA,Southern Area
+12081,Manatee,Florida,081,FL,12,SA,Southern Area
+12083,Marion,Florida,083,FL,12,SA,Southern Area
+12085,Martin,Florida,085,FL,12,SA,Southern Area
+12086,Miami-Dade,Florida,086,FL,12,SA,Southern Area
+12087,Monroe,Florida,087,FL,12,SA,Southern Area
+12089,Nassau,Florida,089,FL,12,SA,Southern Area
+12091,Okaloosa,Florida,091,FL,12,SA,Southern Area
+12093,Okeechobee,Florida,093,FL,12,SA,Southern Area
+12095,Orange,Florida,095,FL,12,SA,Southern Area
+12097,Osceola,Florida,097,FL,12,SA,Southern Area
+12099,Palm Beach,Florida,099,FL,12,SA,Southern Area
+12101,Pasco,Florida,101,FL,12,SA,Southern Area
+12103,Pinellas,Florida,103,FL,12,SA,Southern Area
+12105,Polk,Florida,105,FL,12,SA,Southern Area
+12107,Putnam,Florida,107,FL,12,SA,Southern Area
+12109,St. Johns,Florida,109,FL,12,SA,Southern Area
+12111,St. Lucie,Florida,111,FL,12,SA,Southern Area
+12113,Santa Rosa,Florida,113,FL,12,SA,Southern Area
+12115,Sarasota,Florida,115,FL,12,SA,Southern Area
+12117,Seminole,Florida,117,FL,12,SA,Southern Area
+12119,Sumter,Florida,119,FL,12,SA,Southern Area
+12121,Suwannee,Florida,121,FL,12,SA,Southern Area
+12123,Taylor,Florida,123,FL,12,SA,Southern Area
+12125,Union,Florida,125,FL,12,SA,Southern Area
+12127,Volusia,Florida,127,FL,12,SA,Southern Area
+12129,Wakulla,Florida,129,FL,12,SA,Southern Area
+12131,Walton,Florida,131,FL,12,SA,Southern Area
+12133,Washington,Florida,133,FL,12,SA,Southern Area
+13001,Appling,Georgia,001,GA,13,SA,Southern Area
+13003,Atkinson,Georgia,003,GA,13,SA,Southern Area
+13005,Bacon,Georgia,005,GA,13,SA,Southern Area
+13007,Baker,Georgia,007,GA,13,SA,Southern Area
+13009,Baldwin,Georgia,009,GA,13,SA,Southern Area
+13011,Banks,Georgia,011,GA,13,SA,Southern Area
+13013,Barrow,Georgia,013,GA,13,SA,Southern Area
+13015,Bartow,Georgia,015,GA,13,SA,Southern Area
+13017,Ben Hill,Georgia,017,GA,13,SA,Southern Area
+13019,Berrien,Georgia,019,GA,13,SA,Southern Area
+13021,Bibb,Georgia,021,GA,13,SA,Southern Area
+13023,Bleckley,Georgia,023,GA,13,SA,Southern Area
+13025,Brantley,Georgia,025,GA,13,SA,Southern Area
+13027,Brooks,Georgia,027,GA,13,SA,Southern Area
+13029,Bryan,Georgia,029,GA,13,SA,Southern Area
+13031,Bulloch,Georgia,031,GA,13,SA,Southern Area
+13033,Burke,Georgia,033,GA,13,SA,Southern Area
+13035,Butts,Georgia,035,GA,13,SA,Southern Area
+13037,Calhoun,Georgia,037,GA,13,SA,Southern Area
+13039,Camden,Georgia,039,GA,13,SA,Southern Area
+13043,Candler,Georgia,043,GA,13,SA,Southern Area
+13045,Carroll,Georgia,045,GA,13,SA,Southern Area
+13047,Catoosa,Georgia,047,GA,13,SA,Southern Area
+13049,Charlton,Georgia,049,GA,13,SA,Southern Area
+13051,Chatham,Georgia,051,GA,13,SA,Southern Area
+13053,Chattahoochee,Georgia,053,GA,13,SA,Southern Area
+13055,Chattooga,Georgia,055,GA,13,SA,Southern Area
+13057,Cherokee,Georgia,057,GA,13,SA,Southern Area
+13059,Clarke,Georgia,059,GA,13,SA,Southern Area
+13061,Clay,Georgia,061,GA,13,SA,Southern Area
+13063,Clayton,Georgia,063,GA,13,SA,Southern Area
+13065,Clinch,Georgia,065,GA,13,SA,Southern Area
+13067,Cobb,Georgia,067,GA,13,SA,Southern Area
+13069,Coffee,Georgia,069,GA,13,SA,Southern Area
+13071,Colquitt,Georgia,071,GA,13,SA,Southern Area
+13073,Columbia,Georgia,073,GA,13,SA,Southern Area
+13075,Cook,Georgia,075,GA,13,SA,Southern Area
+13077,Coweta,Georgia,077,GA,13,SA,Southern Area
+13079,Crawford,Georgia,079,GA,13,SA,Southern Area
+13081,Crisp,Georgia,081,GA,13,SA,Southern Area
+13083,Dade,Georgia,083,GA,13,SA,Southern Area
+13085,Dawson,Georgia,085,GA,13,SA,Southern Area
+13087,Decatur,Georgia,087,GA,13,SA,Southern Area
+13089,DeKalb,Georgia,089,GA,13,SA,Southern Area
+13091,Dodge,Georgia,091,GA,13,SA,Southern Area
+13093,Dooly,Georgia,093,GA,13,SA,Southern Area
+13095,Dougherty,Georgia,095,GA,13,SA,Southern Area
+13097,Douglas,Georgia,097,GA,13,SA,Southern Area
+13099,Early,Georgia,099,GA,13,SA,Southern Area
+13101,Echols,Georgia,101,GA,13,SA,Southern Area
+13103,Effingham,Georgia,103,GA,13,SA,Southern Area
+13105,Elbert,Georgia,105,GA,13,SA,Southern Area
+13107,Emanuel,Georgia,107,GA,13,SA,Southern Area
+13109,Evans,Georgia,109,GA,13,SA,Southern Area
+13111,Fannin,Georgia,111,GA,13,SA,Southern Area
+13113,Fayette,Georgia,113,GA,13,SA,Southern Area
+13115,Floyd,Georgia,115,GA,13,SA,Southern Area
+13117,Forsyth,Georgia,117,GA,13,SA,Southern Area
+13119,Franklin,Georgia,119,GA,13,SA,Southern Area
+13121,Fulton,Georgia,121,GA,13,SA,Southern Area
+13123,Gilmer,Georgia,123,GA,13,SA,Southern Area
+13125,Glascock,Georgia,125,GA,13,SA,Southern Area
+13127,Glynn,Georgia,127,GA,13,SA,Southern Area
+13129,Gordon,Georgia,129,GA,13,SA,Southern Area
+13131,Grady,Georgia,131,GA,13,SA,Southern Area
+13133,Greene,Georgia,133,GA,13,SA,Southern Area
+13135,Gwinnett,Georgia,135,GA,13,SA,Southern Area
+13137,Habersham,Georgia,137,GA,13,SA,Southern Area
+13139,Hall,Georgia,139,GA,13,SA,Southern Area
+13141,Hancock,Georgia,141,GA,13,SA,Southern Area
+13143,Haralson,Georgia,143,GA,13,SA,Southern Area
+13145,Harris,Georgia,145,GA,13,SA,Southern Area
+13147,Hart,Georgia,147,GA,13,SA,Southern Area
+13149,Heard,Georgia,149,GA,13,SA,Southern Area
+13151,Henry,Georgia,151,GA,13,SA,Southern Area
+13153,Houston,Georgia,153,GA,13,SA,Southern Area
+13155,Irwin,Georgia,155,GA,13,SA,Southern Area
+13157,Jackson,Georgia,157,GA,13,SA,Southern Area
+13159,Jasper,Georgia,159,GA,13,SA,Southern Area
+13161,Jeff Davis,Georgia,161,GA,13,SA,Southern Area
+13163,Jefferson,Georgia,163,GA,13,SA,Southern Area
+13165,Jenkins,Georgia,165,GA,13,SA,Southern Area
+13167,Johnson,Georgia,167,GA,13,SA,Southern Area
+13169,Jones,Georgia,169,GA,13,SA,Southern Area
+13171,Lamar,Georgia,171,GA,13,SA,Southern Area
+13173,Lanier,Georgia,173,GA,13,SA,Southern Area
+13175,Laurens,Georgia,175,GA,13,SA,Southern Area
+13177,Lee,Georgia,177,GA,13,SA,Southern Area
+13179,Liberty,Georgia,179,GA,13,SA,Southern Area
+13181,Lincoln,Georgia,181,GA,13,SA,Southern Area
+13183,Long,Georgia,183,GA,13,SA,Southern Area
+13185,Lowndes,Georgia,185,GA,13,SA,Southern Area
+13187,Lumpkin,Georgia,187,GA,13,SA,Southern Area
+13189,McDuffie,Georgia,189,GA,13,SA,Southern Area
+13191,McIntosh,Georgia,191,GA,13,SA,Southern Area
+13193,Macon,Georgia,193,GA,13,SA,Southern Area
+13195,Madison,Georgia,195,GA,13,SA,Southern Area
+13197,Marion,Georgia,197,GA,13,SA,Southern Area
+13199,Meriwether,Georgia,199,GA,13,SA,Southern Area
+13201,Miller,Georgia,201,GA,13,SA,Southern Area
+13205,Mitchell,Georgia,205,GA,13,SA,Southern Area
+13207,Monroe,Georgia,207,GA,13,SA,Southern Area
+13209,Montgomery,Georgia,209,GA,13,SA,Southern Area
+13211,Morgan,Georgia,211,GA,13,SA,Southern Area
+13213,Murray,Georgia,213,GA,13,SA,Southern Area
+13215,Muscogee,Georgia,215,GA,13,SA,Southern Area
+13217,Newton,Georgia,217,GA,13,SA,Southern Area
+13219,Oconee,Georgia,219,GA,13,SA,Southern Area
+13221,Oglethorpe,Georgia,221,GA,13,SA,Southern Area
+13223,Paulding,Georgia,223,GA,13,SA,Southern Area
+13225,Peach,Georgia,225,GA,13,SA,Southern Area
+13227,Pickens,Georgia,227,GA,13,SA,Southern Area
+13229,Pierce,Georgia,229,GA,13,SA,Southern Area
+13231,Pike,Georgia,231,GA,13,SA,Southern Area
+13233,Polk,Georgia,233,GA,13,SA,Southern Area
+13235,Pulaski,Georgia,235,GA,13,SA,Southern Area
+13237,Putnam,Georgia,237,GA,13,SA,Southern Area
+13239,Quitman,Georgia,239,GA,13,SA,Southern Area
+13241,Rabun,Georgia,241,GA,13,SA,Southern Area
+13243,Randolph,Georgia,243,GA,13,SA,Southern Area
+13245,Richmond,Georgia,245,GA,13,SA,Southern Area
+13247,Rockdale,Georgia,247,GA,13,SA,Southern Area
+13249,Schley,Georgia,249,GA,13,SA,Southern Area
+13251,Screven,Georgia,251,GA,13,SA,Southern Area
+13253,Seminole,Georgia,253,GA,13,SA,Southern Area
+13255,Spalding,Georgia,255,GA,13,SA,Southern Area
+13257,Stephens,Georgia,257,GA,13,SA,Southern Area
+13259,Stewart,Georgia,259,GA,13,SA,Southern Area
+13261,Sumter,Georgia,261,GA,13,SA,Southern Area
+13263,Talbot,Georgia,263,GA,13,SA,Southern Area
+13265,Taliaferro,Georgia,265,GA,13,SA,Southern Area
+13267,Tattnall,Georgia,267,GA,13,SA,Southern Area
+13269,Taylor,Georgia,269,GA,13,SA,Southern Area
+13271,Telfair,Georgia,271,GA,13,SA,Southern Area
+13273,Terrell,Georgia,273,GA,13,SA,Southern Area
+13275,Thomas,Georgia,275,GA,13,SA,Southern Area
+13277,Tift,Georgia,277,GA,13,SA,Southern Area
+13279,Toombs,Georgia,279,GA,13,SA,Southern Area
+13281,Towns,Georgia,281,GA,13,SA,Southern Area
+13283,Treutlen,Georgia,283,GA,13,SA,Southern Area
+13285,Troup,Georgia,285,GA,13,SA,Southern Area
+13287,Turner,Georgia,287,GA,13,SA,Southern Area
+13289,Twiggs,Georgia,289,GA,13,SA,Southern Area
+13291,Union,Georgia,291,GA,13,SA,Southern Area
+13293,Upson,Georgia,293,GA,13,SA,Southern Area
+13295,Walker,Georgia,295,GA,13,SA,Southern Area
+13297,Walton,Georgia,297,GA,13,SA,Southern Area
+13299,Ware,Georgia,299,GA,13,SA,Southern Area
+13301,Warren,Georgia,301,GA,13,SA,Southern Area
+13303,Washington,Georgia,303,GA,13,SA,Southern Area
+13305,Wayne,Georgia,305,GA,13,SA,Southern Area
+13307,Webster,Georgia,307,GA,13,SA,Southern Area
+13309,Wheeler,Georgia,309,GA,13,SA,Southern Area
+13311,White,Georgia,311,GA,13,SA,Southern Area
+13313,Whitfield,Georgia,313,GA,13,SA,Southern Area
+13315,Wilcox,Georgia,315,GA,13,SA,Southern Area
+13317,Wilkes,Georgia,317,GA,13,SA,Southern Area
+13319,Wilkinson,Georgia,319,GA,13,SA,Southern Area
+13321,Worth,Georgia,321,GA,13,SA,Southern Area
+15001,Hawaii,Hawaii,001,HI,15,ON,Northern California
+15003,Honolulu,Hawaii,003,HI,15,ON,Northern California
+15005,Kalawao,Hawaii,005,HI,15,ON,Northern California
+15007,Kauai,Hawaii,007,HI,15,ON,Northern California
+15009,Maui,Hawaii,009,HI,15,ON,Northern California
+16001,Ada,Idaho,001,ID,16,GB,Great Basin Area
+16003,Adams,Idaho,003,ID,16,GB,Great Basin Area
+16005,Bannock,Idaho,005,ID,16,GB,Great Basin Area
+16007,Bear Lake,Idaho,007,ID,16,GB,Great Basin Area
+16009,Benewah,Idaho,009,ID,16,NR,Northern Rockies
+16011,Bingham,Idaho,011,ID,16,GB,Great Basin Area
+16013,Blaine,Idaho,013,ID,16,GB,Great Basin Area
+16015,Boise,Idaho,015,ID,16,GB,Great Basin Area
+16017,Bonner,Idaho,017,ID,16,NR,Northern Rockies
+16019,Bonneville,Idaho,019,ID,16,GB,Great Basin Area
+16021,Boundary,Idaho,021,ID,16,GB,Great Basin Area
+16023,Butte,Idaho,023,ID,16,GB,Great Basin Area
+16025,Camas,Idaho,025,ID,16,GB,Great Basin Area
+16027,Canyon,Idaho,027,ID,16,GB,Great Basin Area
+16029,Caribou,Idaho,029,ID,16,GB,Great Basin Area
+16031,Cassia,Idaho,031,ID,16,GB,Great Basin Area
+16033,Clark,Idaho,033,ID,16,GB,Great Basin Area
+16035,Clearwater,Idaho,035,ID,16,NR,Northern Rockies
+16037,Custer,Idaho,037,ID,16,GB,Great Basin Area
+16039,Elmore,Idaho,039,ID,16,GB,Great Basin Area
+16041,Franklin,Idaho,041,ID,16,GB,Great Basin Area
+16043,Fremont,Idaho,043,ID,16,GB,Great Basin Area
+16045,Gem,Idaho,045,ID,16,GB,Great Basin Area
+16047,Gooding,Idaho,047,ID,16,GB,Great Basin Area
+16049,Idaho,Idaho,049,ID,16,NR,Northern Rockies
+16051,Jefferson,Idaho,051,ID,16,GB,Great Basin Area
+16053,Jerome,Idaho,053,ID,16,GB,Great Basin Area
+16055,Kootenai,Idaho,055,ID,16,NR,Northern Rockies
+16057,Latah,Idaho,057,ID,16,NR,Northern Rockies
+16059,Lemhi,Idaho,059,ID,16,GB,Great Basin Area
+16061,Lewis,Idaho,061,ID,16,NR,Northern Rockies
+16063,Lincoln,Idaho,063,ID,16,GB,Great Basin Area
+16065,Madison,Idaho,065,ID,16,GB,Great Basin Area
+16067,Minidoka,Idaho,067,ID,16,GB,Great Basin Area
+16069,Nez Perce,Idaho,069,ID,16,NR,Northern Rockies
+16071,Oneida,Idaho,071,ID,16,GB,Great Basin Area
+16073,Owyhee,Idaho,073,ID,16,GB,Great Basin Area
+16075,Payette,Idaho,075,ID,16,GB,Great Basin Area
+16077,Power,Idaho,077,ID,16,GB,Great Basin Area
+16079,Shoshone,Idaho,079,ID,16,NR,Northern Rockies
+16081,Teton,Idaho,081,ID,16,GB,Great Basin Area
+16083,Twin Falls,Idaho,083,ID,16,GB,Great Basin Area
+16085,Valley,Idaho,085,ID,16,GB,Great Basin Area
+16087,Washington,Idaho,087,ID,16,GB,Great Basin Area
+17001,Adams,Illinois,001,IL,17,EA,Eastern Area
+17003,Alexander,Illinois,003,IL,17,EA,Eastern Area
+17005,Bond,Illinois,005,IL,17,EA,Eastern Area
+17007,Boone,Illinois,007,IL,17,EA,Eastern Area
+17009,Brown,Illinois,009,IL,17,EA,Eastern Area
+17011,Bureau,Illinois,011,IL,17,EA,Eastern Area
+17013,Calhoun,Illinois,013,IL,17,EA,Eastern Area
+17015,Carroll,Illinois,015,IL,17,EA,Eastern Area
+17017,Cass,Illinois,017,IL,17,EA,Eastern Area
+17019,Champaign,Illinois,019,IL,17,EA,Eastern Area
+17021,Christian,Illinois,021,IL,17,EA,Eastern Area
+17023,Clark,Illinois,023,IL,17,EA,Eastern Area
+17025,Clay,Illinois,025,IL,17,EA,Eastern Area
+17027,Clinton,Illinois,027,IL,17,EA,Eastern Area
+17029,Coles,Illinois,029,IL,17,EA,Eastern Area
+17031,Cook,Illinois,031,IL,17,EA,Eastern Area
+17033,Crawford,Illinois,033,IL,17,EA,Eastern Area
+17035,Cumberland,Illinois,035,IL,17,EA,Eastern Area
+17037,DeKalb,Illinois,037,IL,17,EA,Eastern Area
+17039,De Witt,Illinois,039,IL,17,EA,Eastern Area
+17041,Douglas,Illinois,041,IL,17,EA,Eastern Area
+17043,DuPage,Illinois,043,IL,17,EA,Eastern Area
+17045,Edgar,Illinois,045,IL,17,EA,Eastern Area
+17047,Edwards,Illinois,047,IL,17,EA,Eastern Area
+17049,Effingham,Illinois,049,IL,17,EA,Eastern Area
+17051,Fayette,Illinois,051,IL,17,EA,Eastern Area
+17053,Ford,Illinois,053,IL,17,EA,Eastern Area
+17055,Franklin,Illinois,055,IL,17,EA,Eastern Area
+17057,Fulton,Illinois,057,IL,17,EA,Eastern Area
+17059,Gallatin,Illinois,059,IL,17,EA,Eastern Area
+17061,Greene,Illinois,061,IL,17,EA,Eastern Area
+17063,Grundy,Illinois,063,IL,17,EA,Eastern Area
+17065,Hamilton,Illinois,065,IL,17,EA,Eastern Area
+17067,Hancock,Illinois,067,IL,17,EA,Eastern Area
+17069,Hardin,Illinois,069,IL,17,EA,Eastern Area
+17071,Henderson,Illinois,071,IL,17,EA,Eastern Area
+17073,Henry,Illinois,073,IL,17,EA,Eastern Area
+17075,Iroquois,Illinois,075,IL,17,EA,Eastern Area
+17077,Jackson,Illinois,077,IL,17,EA,Eastern Area
+17079,Jasper,Illinois,079,IL,17,EA,Eastern Area
+17081,Jefferson,Illinois,081,IL,17,EA,Eastern Area
+17083,Jersey,Illinois,083,IL,17,EA,Eastern Area
+17085,Jo Daviess,Illinois,085,IL,17,EA,Eastern Area
+17087,Johnson,Illinois,087,IL,17,EA,Eastern Area
+17089,Kane,Illinois,089,IL,17,EA,Eastern Area
+17091,Kankakee,Illinois,091,IL,17,EA,Eastern Area
+17093,Kendall,Illinois,093,IL,17,EA,Eastern Area
+17095,Knox,Illinois,095,IL,17,EA,Eastern Area
+17097,Lake,Illinois,097,IL,17,EA,Eastern Area
+17099,LaSalle,Illinois,099,IL,17,EA,Eastern Area
+17101,Lawrence,Illinois,101,IL,17,EA,Eastern Area
+17103,Lee,Illinois,103,IL,17,EA,Eastern Area
+17105,Livingston,Illinois,105,IL,17,EA,Eastern Area
+17107,Logan,Illinois,107,IL,17,EA,Eastern Area
+17109,McDonough,Illinois,109,IL,17,EA,Eastern Area
+17111,McHenry,Illinois,111,IL,17,EA,Eastern Area
+17113,McLean,Illinois,113,IL,17,EA,Eastern Area
+17115,Macon,Illinois,115,IL,17,EA,Eastern Area
+17117,Macoupin,Illinois,117,IL,17,EA,Eastern Area
+17119,Madison,Illinois,119,IL,17,EA,Eastern Area
+17121,Marion,Illinois,121,IL,17,EA,Eastern Area
+17123,Marshall,Illinois,123,IL,17,EA,Eastern Area
+17125,Mason,Illinois,125,IL,17,EA,Eastern Area
+17127,Massac,Illinois,127,IL,17,EA,Eastern Area
+17129,Menard,Illinois,129,IL,17,EA,Eastern Area
+17131,Mercer,Illinois,131,IL,17,EA,Eastern Area
+17133,Monroe,Illinois,133,IL,17,EA,Eastern Area
+17135,Montgomery,Illinois,135,IL,17,EA,Eastern Area
+17137,Morgan,Illinois,137,IL,17,EA,Eastern Area
+17139,Moultrie,Illinois,139,IL,17,EA,Eastern Area
+17141,Ogle,Illinois,141,IL,17,EA,Eastern Area
+17143,Peoria,Illinois,143,IL,17,EA,Eastern Area
+17145,Perry,Illinois,145,IL,17,EA,Eastern Area
+17147,Piatt,Illinois,147,IL,17,EA,Eastern Area
+17149,Pike,Illinois,149,IL,17,EA,Eastern Area
+17151,Pope,Illinois,151,IL,17,EA,Eastern Area
+17153,Pulaski,Illinois,153,IL,17,EA,Eastern Area
+17155,Putnam,Illinois,155,IL,17,EA,Eastern Area
+17157,Randolph,Illinois,157,IL,17,EA,Eastern Area
+17159,Richland,Illinois,159,IL,17,EA,Eastern Area
+17161,Rock Island,Illinois,161,IL,17,EA,Eastern Area
+17163,St. Clair,Illinois,163,IL,17,EA,Eastern Area
+17165,Saline,Illinois,165,IL,17,EA,Eastern Area
+17167,Sangamon,Illinois,167,IL,17,EA,Eastern Area
+17169,Schuyler,Illinois,169,IL,17,EA,Eastern Area
+17171,Scott,Illinois,171,IL,17,EA,Eastern Area
+17173,Shelby,Illinois,173,IL,17,EA,Eastern Area
+17175,Stark,Illinois,175,IL,17,EA,Eastern Area
+17177,Stephenson,Illinois,177,IL,17,EA,Eastern Area
+17179,Tazewell,Illinois,179,IL,17,EA,Eastern Area
+17181,Union,Illinois,181,IL,17,EA,Eastern Area
+17183,Vermilion,Illinois,183,IL,17,EA,Eastern Area
+17185,Wabash,Illinois,185,IL,17,EA,Eastern Area
+17187,Warren,Illinois,187,IL,17,EA,Eastern Area
+17189,Washington,Illinois,189,IL,17,EA,Eastern Area
+17191,Wayne,Illinois,191,IL,17,EA,Eastern Area
+17193,White,Illinois,193,IL,17,EA,Eastern Area
+17195,Whiteside,Illinois,195,IL,17,EA,Eastern Area
+17197,Will,Illinois,197,IL,17,EA,Eastern Area
+17199,Williamson,Illinois,199,IL,17,EA,Eastern Area
+17201,Winnebago,Illinois,201,IL,17,EA,Eastern Area
+17203,Woodford,Illinois,203,IL,17,EA,Eastern Area
+18001,Adams,Indiana,001,IN,18,EA,Eastern Area
+18003,Allen,Indiana,003,IN,18,EA,Eastern Area
+18005,Bartholomew,Indiana,005,IN,18,EA,Eastern Area
+18007,Benton,Indiana,007,IN,18,EA,Eastern Area
+18009,Blackford,Indiana,009,IN,18,EA,Eastern Area
+18011,Boone,Indiana,011,IN,18,EA,Eastern Area
+18013,Brown,Indiana,013,IN,18,EA,Eastern Area
+18015,Carroll,Indiana,015,IN,18,EA,Eastern Area
+18017,Cass,Indiana,017,IN,18,EA,Eastern Area
+18019,Clark,Indiana,019,IN,18,EA,Eastern Area
+18021,Clay,Indiana,021,IN,18,EA,Eastern Area
+18023,Clinton,Indiana,023,IN,18,EA,Eastern Area
+18025,Crawford,Indiana,025,IN,18,EA,Eastern Area
+18027,Daviess,Indiana,027,IN,18,EA,Eastern Area
+18029,Dearborn,Indiana,029,IN,18,EA,Eastern Area
+18031,Decatur,Indiana,031,IN,18,EA,Eastern Area
+18033,DeKalb,Indiana,033,IN,18,EA,Eastern Area
+18035,Delaware,Indiana,035,IN,18,EA,Eastern Area
+18037,Dubois,Indiana,037,IN,18,EA,Eastern Area
+18039,Elkhart,Indiana,039,IN,18,EA,Eastern Area
+18041,Fayette,Indiana,041,IN,18,EA,Eastern Area
+18043,Floyd,Indiana,043,IN,18,EA,Eastern Area
+18045,Fountain,Indiana,045,IN,18,EA,Eastern Area
+18047,Franklin,Indiana,047,IN,18,EA,Eastern Area
+18049,Fulton,Indiana,049,IN,18,EA,Eastern Area
+18051,Gibson,Indiana,051,IN,18,EA,Eastern Area
+18053,Grant,Indiana,053,IN,18,EA,Eastern Area
+18055,Greene,Indiana,055,IN,18,EA,Eastern Area
+18057,Hamilton,Indiana,057,IN,18,EA,Eastern Area
+18059,Hancock,Indiana,059,IN,18,EA,Eastern Area
+18061,Harrison,Indiana,061,IN,18,EA,Eastern Area
+18063,Hendricks,Indiana,063,IN,18,EA,Eastern Area
+18065,Henry,Indiana,065,IN,18,EA,Eastern Area
+18067,Howard,Indiana,067,IN,18,EA,Eastern Area
+18069,Huntington,Indiana,069,IN,18,EA,Eastern Area
+18071,Jackson,Indiana,071,IN,18,EA,Eastern Area
+18073,Jasper,Indiana,073,IN,18,EA,Eastern Area
+18075,Jay,Indiana,075,IN,18,EA,Eastern Area
+18077,Jefferson,Indiana,077,IN,18,EA,Eastern Area
+18079,Jennings,Indiana,079,IN,18,EA,Eastern Area
+18081,Johnson,Indiana,081,IN,18,EA,Eastern Area
+18083,Knox,Indiana,083,IN,18,EA,Eastern Area
+18085,Kosciusko,Indiana,085,IN,18,EA,Eastern Area
+18087,LaGrange,Indiana,087,IN,18,EA,Eastern Area
+18089,Lake,Indiana,089,IN,18,EA,Eastern Area
+18091,LaPorte,Indiana,091,IN,18,EA,Eastern Area
+18093,Lawrence,Indiana,093,IN,18,EA,Eastern Area
+18095,Madison,Indiana,095,IN,18,EA,Eastern Area
+18097,Marion,Indiana,097,IN,18,EA,Eastern Area
+18099,Marshall,Indiana,099,IN,18,EA,Eastern Area
+18101,Martin,Indiana,101,IN,18,EA,Eastern Area
+18103,Miami,Indiana,103,IN,18,EA,Eastern Area
+18105,Monroe,Indiana,105,IN,18,EA,Eastern Area
+18107,Montgomery,Indiana,107,IN,18,EA,Eastern Area
+18109,Morgan,Indiana,109,IN,18,EA,Eastern Area
+18111,Newton,Indiana,111,IN,18,EA,Eastern Area
+18113,Noble,Indiana,113,IN,18,EA,Eastern Area
+18115,Ohio,Indiana,115,IN,18,EA,Eastern Area
+18117,Orange,Indiana,117,IN,18,EA,Eastern Area
+18119,Owen,Indiana,119,IN,18,EA,Eastern Area
+18121,Parke,Indiana,121,IN,18,EA,Eastern Area
+18123,Perry,Indiana,123,IN,18,EA,Eastern Area
+18125,Pike,Indiana,125,IN,18,EA,Eastern Area
+18127,Porter,Indiana,127,IN,18,EA,Eastern Area
+18129,Posey,Indiana,129,IN,18,EA,Eastern Area
+18131,Pulaski,Indiana,131,IN,18,EA,Eastern Area
+18133,Putnam,Indiana,133,IN,18,EA,Eastern Area
+18135,Randolph,Indiana,135,IN,18,EA,Eastern Area
+18137,Ripley,Indiana,137,IN,18,EA,Eastern Area
+18139,Rush,Indiana,139,IN,18,EA,Eastern Area
+18141,St. Joseph,Indiana,141,IN,18,EA,Eastern Area
+18143,Scott,Indiana,143,IN,18,EA,Eastern Area
+18145,Shelby,Indiana,145,IN,18,EA,Eastern Area
+18147,Spencer,Indiana,147,IN,18,EA,Eastern Area
+18149,Starke,Indiana,149,IN,18,EA,Eastern Area
+18151,Steuben,Indiana,151,IN,18,EA,Eastern Area
+18153,Sullivan,Indiana,153,IN,18,EA,Eastern Area
+18155,Switzerland,Indiana,155,IN,18,EA,Eastern Area
+18157,Tippecanoe,Indiana,157,IN,18,EA,Eastern Area
+18159,Tipton,Indiana,159,IN,18,EA,Eastern Area
+18161,Union,Indiana,161,IN,18,EA,Eastern Area
+18163,Vanderburgh,Indiana,163,IN,18,EA,Eastern Area
+18165,Vermillion,Indiana,165,IN,18,EA,Eastern Area
+18167,Vigo,Indiana,167,IN,18,EA,Eastern Area
+18169,Wabash,Indiana,169,IN,18,EA,Eastern Area
+18171,Warren,Indiana,171,IN,18,EA,Eastern Area
+18173,Warrick,Indiana,173,IN,18,EA,Eastern Area
+18175,Washington,Indiana,175,IN,18,EA,Eastern Area
+18177,Wayne,Indiana,177,IN,18,EA,Eastern Area
+18179,Wells,Indiana,179,IN,18,EA,Eastern Area
+18181,White,Indiana,181,IN,18,EA,Eastern Area
+18183,Whitley,Indiana,183,IN,18,EA,Eastern Area
+19001,Adair,Iowa,001,IA,19,EA,Eastern Area
+19003,Adams,Iowa,003,IA,19,EA,Eastern Area
+19005,Allamakee,Iowa,005,IA,19,EA,Eastern Area
+19007,Appanoose,Iowa,007,IA,19,EA,Eastern Area
+19009,Audubon,Iowa,009,IA,19,EA,Eastern Area
+19011,Benton,Iowa,011,IA,19,EA,Eastern Area
+19013,Black Hawk,Iowa,013,IA,19,EA,Eastern Area
+19015,Boone,Iowa,015,IA,19,EA,Eastern Area
+19017,Bremer,Iowa,017,IA,19,EA,Eastern Area
+19019,Buchanan,Iowa,019,IA,19,EA,Eastern Area
+19021,Buena Vista,Iowa,021,IA,19,EA,Eastern Area
+19023,Butler,Iowa,023,IA,19,EA,Eastern Area
+19025,Calhoun,Iowa,025,IA,19,EA,Eastern Area
+19027,Carroll,Iowa,027,IA,19,EA,Eastern Area
+19029,Cass,Iowa,029,IA,19,EA,Eastern Area
+19031,Cedar,Iowa,031,IA,19,EA,Eastern Area
+19033,Cerro Gordo,Iowa,033,IA,19,EA,Eastern Area
+19035,Cherokee,Iowa,035,IA,19,EA,Eastern Area
+19037,Chickasaw,Iowa,037,IA,19,EA,Eastern Area
+19039,Clarke,Iowa,039,IA,19,EA,Eastern Area
+19041,Clay,Iowa,041,IA,19,EA,Eastern Area
+19043,Clayton,Iowa,043,IA,19,EA,Eastern Area
+19045,Clinton,Iowa,045,IA,19,EA,Eastern Area
+19047,Crawford,Iowa,047,IA,19,EA,Eastern Area
+19049,Dallas,Iowa,049,IA,19,EA,Eastern Area
+19051,Davis,Iowa,051,IA,19,EA,Eastern Area
+19053,Decatur,Iowa,053,IA,19,EA,Eastern Area
+19055,Delaware,Iowa,055,IA,19,EA,Eastern Area
+19057,Des Moines,Iowa,057,IA,19,EA,Eastern Area
+19059,Dickinson,Iowa,059,IA,19,EA,Eastern Area
+19061,Dubuque,Iowa,061,IA,19,EA,Eastern Area
+19063,Emmet,Iowa,063,IA,19,EA,Eastern Area
+19065,Fayette,Iowa,065,IA,19,EA,Eastern Area
+19067,Floyd,Iowa,067,IA,19,EA,Eastern Area
+19069,Franklin,Iowa,069,IA,19,EA,Eastern Area
+19071,Fremont,Iowa,071,IA,19,EA,Eastern Area
+19073,Greene,Iowa,073,IA,19,EA,Eastern Area
+19075,Grundy,Iowa,075,IA,19,EA,Eastern Area
+19077,Guthrie,Iowa,077,IA,19,EA,Eastern Area
+19079,Hamilton,Iowa,079,IA,19,EA,Eastern Area
+19081,Hancock,Iowa,081,IA,19,EA,Eastern Area
+19083,Hardin,Iowa,083,IA,19,EA,Eastern Area
+19085,Harrison,Iowa,085,IA,19,EA,Eastern Area
+19087,Henry,Iowa,087,IA,19,EA,Eastern Area
+19089,Howard,Iowa,089,IA,19,EA,Eastern Area
+19091,Humboldt,Iowa,091,IA,19,EA,Eastern Area
+19093,Ida,Iowa,093,IA,19,EA,Eastern Area
+19095,Iowa,Iowa,095,IA,19,EA,Eastern Area
+19097,Jackson,Iowa,097,IA,19,EA,Eastern Area
+19099,Jasper,Iowa,099,IA,19,EA,Eastern Area
+19101,Jefferson,Iowa,101,IA,19,EA,Eastern Area
+19103,Johnson,Iowa,103,IA,19,EA,Eastern Area
+19105,Jones,Iowa,105,IA,19,EA,Eastern Area
+19107,Keokuk,Iowa,107,IA,19,EA,Eastern Area
+19109,Kossuth,Iowa,109,IA,19,EA,Eastern Area
+19111,Lee,Iowa,111,IA,19,EA,Eastern Area
+19113,Linn,Iowa,113,IA,19,EA,Eastern Area
+19115,Louisa,Iowa,115,IA,19,EA,Eastern Area
+19117,Lucas,Iowa,117,IA,19,EA,Eastern Area
+19119,Lyon,Iowa,119,IA,19,EA,Eastern Area
+19121,Madison,Iowa,121,IA,19,EA,Eastern Area
+19123,Mahaska,Iowa,123,IA,19,EA,Eastern Area
+19125,Marion,Iowa,125,IA,19,EA,Eastern Area
+19127,Marshall,Iowa,127,IA,19,EA,Eastern Area
+19129,Mills,Iowa,129,IA,19,EA,Eastern Area
+19131,Mitchell,Iowa,131,IA,19,EA,Eastern Area
+19133,Monona,Iowa,133,IA,19,EA,Eastern Area
+19135,Monroe,Iowa,135,IA,19,EA,Eastern Area
+19137,Montgomery,Iowa,137,IA,19,EA,Eastern Area
+19139,Muscatine,Iowa,139,IA,19,EA,Eastern Area
+19141,O'Brien,Iowa,141,IA,19,EA,Eastern Area
+19143,Osceola,Iowa,143,IA,19,EA,Eastern Area
+19145,Page,Iowa,145,IA,19,EA,Eastern Area
+19147,Palo Alto,Iowa,147,IA,19,EA,Eastern Area
+19149,Plymouth,Iowa,149,IA,19,EA,Eastern Area
+19151,Pocahontas,Iowa,151,IA,19,EA,Eastern Area
+19153,Polk,Iowa,153,IA,19,EA,Eastern Area
+19155,Pottawattamie,Iowa,155,IA,19,EA,Eastern Area
+19157,Poweshiek,Iowa,157,IA,19,EA,Eastern Area
+19159,Ringgold,Iowa,159,IA,19,EA,Eastern Area
+19161,Sac,Iowa,161,IA,19,EA,Eastern Area
+19163,Scott,Iowa,163,IA,19,EA,Eastern Area
+19165,Shelby,Iowa,165,IA,19,EA,Eastern Area
+19167,Sioux,Iowa,167,IA,19,EA,Eastern Area
+19169,Story,Iowa,169,IA,19,EA,Eastern Area
+19171,Tama,Iowa,171,IA,19,EA,Eastern Area
+19173,Taylor,Iowa,173,IA,19,EA,Eastern Area
+19175,Union,Iowa,175,IA,19,EA,Eastern Area
+19177,Van Buren,Iowa,177,IA,19,EA,Eastern Area
+19179,Wapello,Iowa,179,IA,19,EA,Eastern Area
+19181,Warren,Iowa,181,IA,19,EA,Eastern Area
+19183,Washington,Iowa,183,IA,19,EA,Eastern Area
+19185,Wayne,Iowa,185,IA,19,EA,Eastern Area
+19187,Webster,Iowa,187,IA,19,EA,Eastern Area
+19189,Winnebago,Iowa,189,IA,19,EA,Eastern Area
+19191,Winneshiek,Iowa,191,IA,19,EA,Eastern Area
+19193,Woodbury,Iowa,193,IA,19,EA,Eastern Area
+19195,Worth,Iowa,195,IA,19,EA,Eastern Area
+19197,Wright,Iowa,197,IA,19,EA,Eastern Area
+20001,Allen,Kansas,001,KS,20,RM,Rocky Mountain Area
+20003,Anderson,Kansas,003,KS,20,RM,Rocky Mountain Area
+20005,Atchison,Kansas,005,KS,20,RM,Rocky Mountain Area
+20007,Barber,Kansas,007,KS,20,RM,Rocky Mountain Area
+20009,Barton,Kansas,009,KS,20,RM,Rocky Mountain Area
+20011,Bourbon,Kansas,011,KS,20,RM,Rocky Mountain Area
+20013,Brown,Kansas,013,KS,20,RM,Rocky Mountain Area
+20015,Butler,Kansas,015,KS,20,RM,Rocky Mountain Area
+20017,Chase,Kansas,017,KS,20,RM,Rocky Mountain Area
+20019,Chautauqua,Kansas,019,KS,20,RM,Rocky Mountain Area
+20021,Cherokee,Kansas,021,KS,20,RM,Rocky Mountain Area
+20023,Cheyenne,Kansas,023,KS,20,RM,Rocky Mountain Area
+20025,Clark,Kansas,025,KS,20,RM,Rocky Mountain Area
+20027,Clay,Kansas,027,KS,20,RM,Rocky Mountain Area
+20029,Cloud,Kansas,029,KS,20,RM,Rocky Mountain Area
+20031,Coffey,Kansas,031,KS,20,RM,Rocky Mountain Area
+20033,Comanche,Kansas,033,KS,20,RM,Rocky Mountain Area
+20035,Cowley,Kansas,035,KS,20,RM,Rocky Mountain Area
+20037,Crawford,Kansas,037,KS,20,RM,Rocky Mountain Area
+20039,Decatur,Kansas,039,KS,20,RM,Rocky Mountain Area
+20041,Dickinson,Kansas,041,KS,20,RM,Rocky Mountain Area
+20043,Doniphan,Kansas,043,KS,20,RM,Rocky Mountain Area
+20045,Douglas,Kansas,045,KS,20,RM,Rocky Mountain Area
+20047,Edwards,Kansas,047,KS,20,RM,Rocky Mountain Area
+20049,Elk,Kansas,049,KS,20,RM,Rocky Mountain Area
+20051,Ellis,Kansas,051,KS,20,RM,Rocky Mountain Area
+20053,Ellsworth,Kansas,053,KS,20,RM,Rocky Mountain Area
+20055,Finney,Kansas,055,KS,20,RM,Rocky Mountain Area
+20057,Ford,Kansas,057,KS,20,RM,Rocky Mountain Area
+20059,Franklin,Kansas,059,KS,20,RM,Rocky Mountain Area
+20061,Geary,Kansas,061,KS,20,RM,Rocky Mountain Area
+20063,Gove,Kansas,063,KS,20,RM,Rocky Mountain Area
+20065,Graham,Kansas,065,KS,20,RM,Rocky Mountain Area
+20067,Grant,Kansas,067,KS,20,RM,Rocky Mountain Area
+20069,Gray,Kansas,069,KS,20,RM,Rocky Mountain Area
+20071,Greeley,Kansas,071,KS,20,RM,Rocky Mountain Area
+20073,Greenwood,Kansas,073,KS,20,RM,Rocky Mountain Area
+20075,Hamilton,Kansas,075,KS,20,RM,Rocky Mountain Area
+20077,Harper,Kansas,077,KS,20,RM,Rocky Mountain Area
+20079,Harvey,Kansas,079,KS,20,RM,Rocky Mountain Area
+20081,Haskell,Kansas,081,KS,20,RM,Rocky Mountain Area
+20083,Hodgeman,Kansas,083,KS,20,RM,Rocky Mountain Area
+20085,Jackson,Kansas,085,KS,20,RM,Rocky Mountain Area
+20087,Jefferson,Kansas,087,KS,20,RM,Rocky Mountain Area
+20089,Jewell,Kansas,089,KS,20,RM,Rocky Mountain Area
+20091,Johnson,Kansas,091,KS,20,RM,Rocky Mountain Area
+20093,Kearny,Kansas,093,KS,20,RM,Rocky Mountain Area
+20095,Kingman,Kansas,095,KS,20,RM,Rocky Mountain Area
+20097,Kiowa,Kansas,097,KS,20,RM,Rocky Mountain Area
+20099,Labette,Kansas,099,KS,20,RM,Rocky Mountain Area
+20101,Lane,Kansas,101,KS,20,RM,Rocky Mountain Area
+20103,Leavenworth,Kansas,103,KS,20,RM,Rocky Mountain Area
+20105,Lincoln,Kansas,105,KS,20,RM,Rocky Mountain Area
+20107,Linn,Kansas,107,KS,20,RM,Rocky Mountain Area
+20109,Logan,Kansas,109,KS,20,RM,Rocky Mountain Area
+20111,Lyon,Kansas,111,KS,20,RM,Rocky Mountain Area
+20113,McPherson,Kansas,113,KS,20,RM,Rocky Mountain Area
+20115,Marion,Kansas,115,KS,20,RM,Rocky Mountain Area
+20117,Marshall,Kansas,117,KS,20,RM,Rocky Mountain Area
+20119,Meade,Kansas,119,KS,20,RM,Rocky Mountain Area
+20121,Miami,Kansas,121,KS,20,RM,Rocky Mountain Area
+20123,Mitchell,Kansas,123,KS,20,RM,Rocky Mountain Area
+20125,Montgomery,Kansas,125,KS,20,RM,Rocky Mountain Area
+20127,Morris,Kansas,127,KS,20,RM,Rocky Mountain Area
+20129,Morton,Kansas,129,KS,20,RM,Rocky Mountain Area
+20131,Nemaha,Kansas,131,KS,20,RM,Rocky Mountain Area
+20133,Neosho,Kansas,133,KS,20,RM,Rocky Mountain Area
+20135,Ness,Kansas,135,KS,20,RM,Rocky Mountain Area
+20137,Norton,Kansas,137,KS,20,RM,Rocky Mountain Area
+20139,Osage,Kansas,139,KS,20,RM,Rocky Mountain Area
+20141,Osborne,Kansas,141,KS,20,RM,Rocky Mountain Area
+20143,Ottawa,Kansas,143,KS,20,RM,Rocky Mountain Area
+20145,Pawnee,Kansas,145,KS,20,RM,Rocky Mountain Area
+20147,Phillips,Kansas,147,KS,20,RM,Rocky Mountain Area
+20149,Pottawatomie,Kansas,149,KS,20,RM,Rocky Mountain Area
+20151,Pratt,Kansas,151,KS,20,RM,Rocky Mountain Area
+20153,Rawlins,Kansas,153,KS,20,RM,Rocky Mountain Area
+20155,Reno,Kansas,155,KS,20,RM,Rocky Mountain Area
+20157,Republic,Kansas,157,KS,20,RM,Rocky Mountain Area
+20159,Rice,Kansas,159,KS,20,RM,Rocky Mountain Area
+20161,Riley,Kansas,161,KS,20,RM,Rocky Mountain Area
+20163,Rooks,Kansas,163,KS,20,RM,Rocky Mountain Area
+20165,Rush,Kansas,165,KS,20,RM,Rocky Mountain Area
+20167,Russell,Kansas,167,KS,20,RM,Rocky Mountain Area
+20169,Saline,Kansas,169,KS,20,RM,Rocky Mountain Area
+20171,Scott,Kansas,171,KS,20,RM,Rocky Mountain Area
+20173,Sedgwick,Kansas,173,KS,20,RM,Rocky Mountain Area
+20175,Seward,Kansas,175,KS,20,RM,Rocky Mountain Area
+20177,Shawnee,Kansas,177,KS,20,RM,Rocky Mountain Area
+20179,Sheridan,Kansas,179,KS,20,RM,Rocky Mountain Area
+20181,Sherman,Kansas,181,KS,20,RM,Rocky Mountain Area
+20183,Smith,Kansas,183,KS,20,RM,Rocky Mountain Area
+20185,Stafford,Kansas,185,KS,20,RM,Rocky Mountain Area
+20187,Stanton,Kansas,187,KS,20,RM,Rocky Mountain Area
+20189,Stevens,Kansas,189,KS,20,RM,Rocky Mountain Area
+20191,Sumner,Kansas,191,KS,20,RM,Rocky Mountain Area
+20193,Thomas,Kansas,193,KS,20,RM,Rocky Mountain Area
+20195,Trego,Kansas,195,KS,20,RM,Rocky Mountain Area
+20197,Wabaunsee,Kansas,197,KS,20,RM,Rocky Mountain Area
+20199,Wallace,Kansas,199,KS,20,RM,Rocky Mountain Area
+20201,Washington,Kansas,201,KS,20,RM,Rocky Mountain Area
+20203,Wichita,Kansas,203,KS,20,RM,Rocky Mountain Area
+20205,Wilson,Kansas,205,KS,20,RM,Rocky Mountain Area
+20207,Woodson,Kansas,207,KS,20,RM,Rocky Mountain Area
+20209,Wyandotte,Kansas,209,KS,20,RM,Rocky Mountain Area
+21001,Adair,Kentucky,001,KY,21,SA,Southern Area
+21003,Allen,Kentucky,003,KY,21,SA,Southern Area
+21005,Anderson,Kentucky,005,KY,21,SA,Southern Area
+21007,Ballard,Kentucky,007,KY,21,SA,Southern Area
+21009,Barren,Kentucky,009,KY,21,SA,Southern Area
+21011,Bath,Kentucky,011,KY,21,SA,Southern Area
+21013,Bell,Kentucky,013,KY,21,SA,Southern Area
+21015,Boone,Kentucky,015,KY,21,SA,Southern Area
+21017,Bourbon,Kentucky,017,KY,21,SA,Southern Area
+21019,Boyd,Kentucky,019,KY,21,SA,Southern Area
+21021,Boyle,Kentucky,021,KY,21,SA,Southern Area
+21023,Bracken,Kentucky,023,KY,21,SA,Southern Area
+21025,Breathitt,Kentucky,025,KY,21,SA,Southern Area
+21027,Breckinridge,Kentucky,027,KY,21,SA,Southern Area
+21029,Bullitt,Kentucky,029,KY,21,SA,Southern Area
+21031,Butler,Kentucky,031,KY,21,SA,Southern Area
+21033,Caldwell,Kentucky,033,KY,21,SA,Southern Area
+21035,Calloway,Kentucky,035,KY,21,SA,Southern Area
+21037,Campbell,Kentucky,037,KY,21,SA,Southern Area
+21039,Carlisle,Kentucky,039,KY,21,SA,Southern Area
+21041,Carroll,Kentucky,041,KY,21,SA,Southern Area
+21043,Carter,Kentucky,043,KY,21,SA,Southern Area
+21045,Casey,Kentucky,045,KY,21,SA,Southern Area
+21047,Christian,Kentucky,047,KY,21,SA,Southern Area
+21049,Clark,Kentucky,049,KY,21,SA,Southern Area
+21051,Clay,Kentucky,051,KY,21,SA,Southern Area
+21053,Clinton,Kentucky,053,KY,21,SA,Southern Area
+21055,Crittenden,Kentucky,055,KY,21,SA,Southern Area
+21057,Cumberland,Kentucky,057,KY,21,SA,Southern Area
+21059,Daviess,Kentucky,059,KY,21,SA,Southern Area
+21061,Edmonson,Kentucky,061,KY,21,SA,Southern Area
+21063,Elliott,Kentucky,063,KY,21,SA,Southern Area
+21065,Estill,Kentucky,065,KY,21,SA,Southern Area
+21067,Fayette,Kentucky,067,KY,21,SA,Southern Area
+21069,Fleming,Kentucky,069,KY,21,SA,Southern Area
+21071,Floyd,Kentucky,071,KY,21,SA,Southern Area
+21073,Franklin,Kentucky,073,KY,21,SA,Southern Area
+21075,Fulton,Kentucky,075,KY,21,SA,Southern Area
+21077,Gallatin,Kentucky,077,KY,21,SA,Southern Area
+21079,Garrard,Kentucky,079,KY,21,SA,Southern Area
+21081,Grant,Kentucky,081,KY,21,SA,Southern Area
+21083,Graves,Kentucky,083,KY,21,SA,Southern Area
+21085,Grayson,Kentucky,085,KY,21,SA,Southern Area
+21087,Green,Kentucky,087,KY,21,SA,Southern Area
+21089,Greenup,Kentucky,089,KY,21,SA,Southern Area
+21091,Hancock,Kentucky,091,KY,21,SA,Southern Area
+21093,Hardin,Kentucky,093,KY,21,SA,Southern Area
+21095,Harlan,Kentucky,095,KY,21,SA,Southern Area
+21097,Harrison,Kentucky,097,KY,21,SA,Southern Area
+21099,Hart,Kentucky,099,KY,21,SA,Southern Area
+21101,Henderson,Kentucky,101,KY,21,SA,Southern Area
+21103,Henry,Kentucky,103,KY,21,SA,Southern Area
+21105,Hickman,Kentucky,105,KY,21,SA,Southern Area
+21107,Hopkins,Kentucky,107,KY,21,SA,Southern Area
+21109,Jackson,Kentucky,109,KY,21,SA,Southern Area
+21111,Jefferson,Kentucky,111,KY,21,SA,Southern Area
+21113,Jessamine,Kentucky,113,KY,21,SA,Southern Area
+21115,Johnson,Kentucky,115,KY,21,SA,Southern Area
+21117,Kenton,Kentucky,117,KY,21,SA,Southern Area
+21119,Knott,Kentucky,119,KY,21,SA,Southern Area
+21121,Knox,Kentucky,121,KY,21,SA,Southern Area
+21123,Larue,Kentucky,123,KY,21,SA,Southern Area
+21125,Laurel,Kentucky,125,KY,21,SA,Southern Area
+21127,Lawrence,Kentucky,127,KY,21,SA,Southern Area
+21129,Lee,Kentucky,129,KY,21,SA,Southern Area
+21131,Leslie,Kentucky,131,KY,21,SA,Southern Area
+21133,Letcher,Kentucky,133,KY,21,SA,Southern Area
+21135,Lewis,Kentucky,135,KY,21,SA,Southern Area
+21137,Lincoln,Kentucky,137,KY,21,SA,Southern Area
+21139,Livingston,Kentucky,139,KY,21,SA,Southern Area
+21141,Logan,Kentucky,141,KY,21,SA,Southern Area
+21143,Lyon,Kentucky,143,KY,21,SA,Southern Area
+21145,McCracken,Kentucky,145,KY,21,SA,Southern Area
+21147,McCreary,Kentucky,147,KY,21,SA,Southern Area
+21149,McLean,Kentucky,149,KY,21,SA,Southern Area
+21151,Madison,Kentucky,151,KY,21,SA,Southern Area
+21153,Magoffin,Kentucky,153,KY,21,SA,Southern Area
+21155,Marion,Kentucky,155,KY,21,SA,Southern Area
+21157,Marshall,Kentucky,157,KY,21,SA,Southern Area
+21159,Martin,Kentucky,159,KY,21,SA,Southern Area
+21161,Mason,Kentucky,161,KY,21,SA,Southern Area
+21163,Meade,Kentucky,163,KY,21,SA,Southern Area
+21165,Menifee,Kentucky,165,KY,21,SA,Southern Area
+21167,Mercer,Kentucky,167,KY,21,SA,Southern Area
+21169,Metcalfe,Kentucky,169,KY,21,SA,Southern Area
+21171,Monroe,Kentucky,171,KY,21,SA,Southern Area
+21173,Montgomery,Kentucky,173,KY,21,SA,Southern Area
+21175,Morgan,Kentucky,175,KY,21,SA,Southern Area
+21177,Muhlenberg,Kentucky,177,KY,21,SA,Southern Area
+21179,Nelson,Kentucky,179,KY,21,SA,Southern Area
+21181,Nicholas,Kentucky,181,KY,21,SA,Southern Area
+21183,Ohio,Kentucky,183,KY,21,SA,Southern Area
+21185,Oldham,Kentucky,185,KY,21,SA,Southern Area
+21187,Owen,Kentucky,187,KY,21,SA,Southern Area
+21189,Owsley,Kentucky,189,KY,21,SA,Southern Area
+21191,Pendleton,Kentucky,191,KY,21,SA,Southern Area
+21193,Perry,Kentucky,193,KY,21,SA,Southern Area
+21195,Pike,Kentucky,195,KY,21,SA,Southern Area
+21197,Powell,Kentucky,197,KY,21,SA,Southern Area
+21199,Pulaski,Kentucky,199,KY,21,SA,Southern Area
+21201,Robertson,Kentucky,201,KY,21,SA,Southern Area
+21203,Rockcastle,Kentucky,203,KY,21,SA,Southern Area
+21205,Rowan,Kentucky,205,KY,21,SA,Southern Area
+21207,Russell,Kentucky,207,KY,21,SA,Southern Area
+21209,Scott,Kentucky,209,KY,21,SA,Southern Area
+21211,Shelby,Kentucky,211,KY,21,SA,Southern Area
+21213,Simpson,Kentucky,213,KY,21,SA,Southern Area
+21215,Spencer,Kentucky,215,KY,21,SA,Southern Area
+21217,Taylor,Kentucky,217,KY,21,SA,Southern Area
+21219,Todd,Kentucky,219,KY,21,SA,Southern Area
+21221,Trigg,Kentucky,221,KY,21,SA,Southern Area
+21223,Trimble,Kentucky,223,KY,21,SA,Southern Area
+21225,Union,Kentucky,225,KY,21,SA,Southern Area
+21227,Warren,Kentucky,227,KY,21,SA,Southern Area
+21229,Washington,Kentucky,229,KY,21,SA,Southern Area
+21231,Wayne,Kentucky,231,KY,21,SA,Southern Area
+21233,Webster,Kentucky,233,KY,21,SA,Southern Area
+21235,Whitley,Kentucky,235,KY,21,SA,Southern Area
+21237,Wolfe,Kentucky,237,KY,21,SA,Southern Area
+21239,Woodford,Kentucky,239,KY,21,SA,Southern Area
+22001,Acadia,Louisiana,001,LA,22,SA,Southern Area
+22003,Allen,Louisiana,003,LA,22,SA,Southern Area
+22005,Ascension,Louisiana,005,LA,22,SA,Southern Area
+22007,Assumption,Louisiana,007,LA,22,SA,Southern Area
+22009,Avoyelles,Louisiana,009,LA,22,SA,Southern Area
+22011,Beauregard,Louisiana,011,LA,22,SA,Southern Area
+22013,Bienville,Louisiana,013,LA,22,SA,Southern Area
+22015,Bossier,Louisiana,015,LA,22,SA,Southern Area
+22017,Caddo,Louisiana,017,LA,22,SA,Southern Area
+22019,Calcasieu,Louisiana,019,LA,22,SA,Southern Area
+22021,Caldwell,Louisiana,021,LA,22,SA,Southern Area
+22023,Cameron,Louisiana,023,LA,22,SA,Southern Area
+22025,Catahoula,Louisiana,025,LA,22,SA,Southern Area
+22027,Claiborne,Louisiana,027,LA,22,SA,Southern Area
+22029,Concordia,Louisiana,029,LA,22,SA,Southern Area
+22031,De Soto,Louisiana,031,LA,22,SA,Southern Area
+22033,East Baton Rouge,Louisiana,033,LA,22,SA,Southern Area
+22035,East Carroll,Louisiana,035,LA,22,SA,Southern Area
+22037,East Feliciana,Louisiana,037,LA,22,SA,Southern Area
+22039,Evangeline,Louisiana,039,LA,22,SA,Southern Area
+22041,Franklin,Louisiana,041,LA,22,SA,Southern Area
+22043,Grant,Louisiana,043,LA,22,SA,Southern Area
+22045,Iberia,Louisiana,045,LA,22,SA,Southern Area
+22047,Iberville,Louisiana,047,LA,22,SA,Southern Area
+22049,Jackson,Louisiana,049,LA,22,SA,Southern Area
+22051,Jefferson,Louisiana,051,LA,22,SA,Southern Area
+22053,Jefferson Davis,Louisiana,053,LA,22,SA,Southern Area
+22055,Lafayette,Louisiana,055,LA,22,SA,Southern Area
+22057,Lafourche,Louisiana,057,LA,22,SA,Southern Area
+22059,LaSalle,Louisiana,059,LA,22,SA,Southern Area
+22061,Lincoln,Louisiana,061,LA,22,SA,Southern Area
+22063,Livingston,Louisiana,063,LA,22,SA,Southern Area
+22065,Madison,Louisiana,065,LA,22,SA,Southern Area
+22067,Morehouse,Louisiana,067,LA,22,SA,Southern Area
+22069,Natchitoches,Louisiana,069,LA,22,SA,Southern Area
+22071,Orleans,Louisiana,071,LA,22,SA,Southern Area
+22073,Ouachita,Louisiana,073,LA,22,SA,Southern Area
+22075,Plaquemines,Louisiana,075,LA,22,SA,Southern Area
+22077,Pointe Coupee,Louisiana,077,LA,22,SA,Southern Area
+22079,Rapides,Louisiana,079,LA,22,SA,Southern Area
+22081,Red River,Louisiana,081,LA,22,SA,Southern Area
+22083,Richland,Louisiana,083,LA,22,SA,Southern Area
+22085,Sabine,Louisiana,085,LA,22,SA,Southern Area
+22087,St. Bernard,Louisiana,087,LA,22,SA,Southern Area
+22089,St. Charles,Louisiana,089,LA,22,SA,Southern Area
+22091,St. Helena,Louisiana,091,LA,22,SA,Southern Area
+22093,St. James,Louisiana,093,LA,22,SA,Southern Area
+22095,St. John the Baptist,Louisiana,095,LA,22,SA,Southern Area
+22097,St. Landry,Louisiana,097,LA,22,SA,Southern Area
+22099,St. Martin,Louisiana,099,LA,22,SA,Southern Area
+22101,St. Mary,Louisiana,101,LA,22,SA,Southern Area
+22103,St. Tammany,Louisiana,103,LA,22,SA,Southern Area
+22105,Tangipahoa,Louisiana,105,LA,22,SA,Southern Area
+22107,Tensas,Louisiana,107,LA,22,SA,Southern Area
+22109,Terrebonne,Louisiana,109,LA,22,SA,Southern Area
+22111,Union,Louisiana,111,LA,22,SA,Southern Area
+22113,Vermilion,Louisiana,113,LA,22,SA,Southern Area
+22115,Vernon,Louisiana,115,LA,22,SA,Southern Area
+22117,Washington,Louisiana,117,LA,22,SA,Southern Area
+22119,Webster,Louisiana,119,LA,22,SA,Southern Area
+22121,West Baton Rouge,Louisiana,121,LA,22,SA,Southern Area
+22123,West Carroll,Louisiana,123,LA,22,SA,Southern Area
+22125,West Feliciana,Louisiana,125,LA,22,SA,Southern Area
+22127,Winn,Louisiana,127,LA,22,SA,Southern Area
+23001,Androscoggin,Maine,001,ME,23,EA,Eastern Area
+23003,Aroostook,Maine,003,ME,23,EA,Eastern Area
+23005,Cumberland,Maine,005,ME,23,EA,Eastern Area
+23007,Franklin,Maine,007,ME,23,EA,Eastern Area
+23009,Hancock,Maine,009,ME,23,EA,Eastern Area
+23011,Kennebec,Maine,011,ME,23,EA,Eastern Area
+23013,Knox,Maine,013,ME,23,EA,Eastern Area
+23015,Lincoln,Maine,015,ME,23,EA,Eastern Area
+23017,Oxford,Maine,017,ME,23,EA,Eastern Area
+23019,Penobscot,Maine,019,ME,23,EA,Eastern Area
+23021,Piscataquis,Maine,021,ME,23,EA,Eastern Area
+23023,Sagadahoc,Maine,023,ME,23,EA,Eastern Area
+23025,Somerset,Maine,025,ME,23,EA,Eastern Area
+23027,Waldo,Maine,027,ME,23,EA,Eastern Area
+23029,Washington,Maine,029,ME,23,EA,Eastern Area
+23031,York,Maine,031,ME,23,EA,Eastern Area
+24001,Allegany,Maryland,001,MD,24,EA,Eastern Area
+24003,Anne Arundel,Maryland,003,MD,24,EA,Eastern Area
+24005,Baltimore,Maryland,005,MD,24,EA,Eastern Area
+24009,Calvert,Maryland,009,MD,24,EA,Eastern Area
+24011,Caroline,Maryland,011,MD,24,EA,Eastern Area
+24013,Carroll,Maryland,013,MD,24,EA,Eastern Area
+24015,Cecil,Maryland,015,MD,24,EA,Eastern Area
+24017,Charles,Maryland,017,MD,24,EA,Eastern Area
+24019,Dorchester,Maryland,019,MD,24,EA,Eastern Area
+24021,Frederick,Maryland,021,MD,24,EA,Eastern Area
+24023,Garrett,Maryland,023,MD,24,EA,Eastern Area
+24025,Harford,Maryland,025,MD,24,EA,Eastern Area
+24027,Howard,Maryland,027,MD,24,EA,Eastern Area
+24029,Kent,Maryland,029,MD,24,EA,Eastern Area
+24031,Montgomery,Maryland,031,MD,24,EA,Eastern Area
+24033,Prince George's,Maryland,033,MD,24,EA,Eastern Area
+24035,Queen Anne's,Maryland,035,MD,24,EA,Eastern Area
+24037,St. Mary's,Maryland,037,MD,24,EA,Eastern Area
+24039,Somerset,Maryland,039,MD,24,EA,Eastern Area
+24041,Talbot,Maryland,041,MD,24,EA,Eastern Area
+24043,Washington,Maryland,043,MD,24,EA,Eastern Area
+24045,Wicomico,Maryland,045,MD,24,EA,Eastern Area
+24047,Worcester,Maryland,047,MD,24,EA,Eastern Area
+24510,Baltimore,Maryland,510,MD,24,EA,Eastern Area
+25001,Barnstable,Massachusetts,001,MA,25,EA,Eastern Area
+25003,Berkshire,Massachusetts,003,MA,25,EA,Eastern Area
+25005,Bristol,Massachusetts,005,MA,25,EA,Eastern Area
+25007,Dukes,Massachusetts,007,MA,25,EA,Eastern Area
+25009,Essex,Massachusetts,009,MA,25,EA,Eastern Area
+25011,Franklin,Massachusetts,011,MA,25,EA,Eastern Area
+25013,Hampden,Massachusetts,013,MA,25,EA,Eastern Area
+25015,Hampshire,Massachusetts,015,MA,25,EA,Eastern Area
+25017,Middlesex,Massachusetts,017,MA,25,EA,Eastern Area
+25019,Nantucket,Massachusetts,019,MA,25,EA,Eastern Area
+25021,Norfolk,Massachusetts,021,MA,25,EA,Eastern Area
+25023,Plymouth,Massachusetts,023,MA,25,EA,Eastern Area
+25025,Suffolk,Massachusetts,025,MA,25,EA,Eastern Area
+25027,Worcester,Massachusetts,027,MA,25,EA,Eastern Area
+26001,Alcona,Michigan,001,MI,26,EA,Eastern Area
+26003,Alger,Michigan,003,MI,26,EA,Eastern Area
+26005,Allegan,Michigan,005,MI,26,EA,Eastern Area
+26007,Alpena,Michigan,007,MI,26,EA,Eastern Area
+26009,Antrim,Michigan,009,MI,26,EA,Eastern Area
+26011,Arenac,Michigan,011,MI,26,EA,Eastern Area
+26013,Baraga,Michigan,013,MI,26,EA,Eastern Area
+26015,Barry,Michigan,015,MI,26,EA,Eastern Area
+26017,Bay,Michigan,017,MI,26,EA,Eastern Area
+26019,Benzie,Michigan,019,MI,26,EA,Eastern Area
+26021,Berrien,Michigan,021,MI,26,EA,Eastern Area
+26023,Branch,Michigan,023,MI,26,EA,Eastern Area
+26025,Calhoun,Michigan,025,MI,26,EA,Eastern Area
+26027,Cass,Michigan,027,MI,26,EA,Eastern Area
+26029,Charlevoix,Michigan,029,MI,26,EA,Eastern Area
+26031,Cheboygan,Michigan,031,MI,26,EA,Eastern Area
+26033,Chippewa,Michigan,033,MI,26,EA,Eastern Area
+26035,Clare,Michigan,035,MI,26,EA,Eastern Area
+26037,Clinton,Michigan,037,MI,26,EA,Eastern Area
+26039,Crawford,Michigan,039,MI,26,EA,Eastern Area
+26041,Delta,Michigan,041,MI,26,EA,Eastern Area
+26043,Dickinson,Michigan,043,MI,26,EA,Eastern Area
+26045,Eaton,Michigan,045,MI,26,EA,Eastern Area
+26047,Emmet,Michigan,047,MI,26,EA,Eastern Area
+26049,Genesee,Michigan,049,MI,26,EA,Eastern Area
+26051,Gladwin,Michigan,051,MI,26,EA,Eastern Area
+26053,Gogebic,Michigan,053,MI,26,EA,Eastern Area
+26055,Grand Traverse,Michigan,055,MI,26,EA,Eastern Area
+26057,Gratiot,Michigan,057,MI,26,EA,Eastern Area
+26059,Hillsdale,Michigan,059,MI,26,EA,Eastern Area
+26061,Houghton,Michigan,061,MI,26,EA,Eastern Area
+26063,Huron,Michigan,063,MI,26,EA,Eastern Area
+26065,Ingham,Michigan,065,MI,26,EA,Eastern Area
+26067,Ionia,Michigan,067,MI,26,EA,Eastern Area
+26069,Iosco,Michigan,069,MI,26,EA,Eastern Area
+26071,Iron,Michigan,071,MI,26,EA,Eastern Area
+26073,Isabella,Michigan,073,MI,26,EA,Eastern Area
+26075,Jackson,Michigan,075,MI,26,EA,Eastern Area
+26077,Kalamazoo,Michigan,077,MI,26,EA,Eastern Area
+26079,Kalkaska,Michigan,079,MI,26,EA,Eastern Area
+26081,Kent,Michigan,081,MI,26,EA,Eastern Area
+26083,Keweenaw,Michigan,083,MI,26,EA,Eastern Area
+26085,Lake,Michigan,085,MI,26,EA,Eastern Area
+26087,Lapeer,Michigan,087,MI,26,EA,Eastern Area
+26089,Leelanau,Michigan,089,MI,26,EA,Eastern Area
+26091,Lenawee,Michigan,091,MI,26,EA,Eastern Area
+26093,Livingston,Michigan,093,MI,26,EA,Eastern Area
+26095,Luce,Michigan,095,MI,26,EA,Eastern Area
+26097,Mackinac,Michigan,097,MI,26,EA,Eastern Area
+26099,Macomb,Michigan,099,MI,26,EA,Eastern Area
+26101,Manistee,Michigan,101,MI,26,EA,Eastern Area
+26103,Marquette,Michigan,103,MI,26,EA,Eastern Area
+26105,Mason,Michigan,105,MI,26,EA,Eastern Area
+26107,Mecosta,Michigan,107,MI,26,EA,Eastern Area
+26109,Menominee,Michigan,109,MI,26,EA,Eastern Area
+26111,Midland,Michigan,111,MI,26,EA,Eastern Area
+26113,Missaukee,Michigan,113,MI,26,EA,Eastern Area
+26115,Monroe,Michigan,115,MI,26,EA,Eastern Area
+26117,Montcalm,Michigan,117,MI,26,EA,Eastern Area
+26119,Montmorency,Michigan,119,MI,26,EA,Eastern Area
+26121,Muskegon,Michigan,121,MI,26,EA,Eastern Area
+26123,Newaygo,Michigan,123,MI,26,EA,Eastern Area
+26125,Oakland,Michigan,125,MI,26,EA,Eastern Area
+26127,Oceana,Michigan,127,MI,26,EA,Eastern Area
+26129,Ogemaw,Michigan,129,MI,26,EA,Eastern Area
+26131,Ontonagon,Michigan,131,MI,26,EA,Eastern Area
+26133,Osceola,Michigan,133,MI,26,EA,Eastern Area
+26135,Oscoda,Michigan,135,MI,26,EA,Eastern Area
+26137,Otsego,Michigan,137,MI,26,EA,Eastern Area
+26139,Ottawa,Michigan,139,MI,26,EA,Eastern Area
+26141,Presque Isle,Michigan,141,MI,26,EA,Eastern Area
+26143,Roscommon,Michigan,143,MI,26,EA,Eastern Area
+26145,Saginaw,Michigan,145,MI,26,EA,Eastern Area
+26147,St. Clair,Michigan,147,MI,26,EA,Eastern Area
+26149,St. Joseph,Michigan,149,MI,26,EA,Eastern Area
+26151,Sanilac,Michigan,151,MI,26,EA,Eastern Area
+26153,Schoolcraft,Michigan,153,MI,26,EA,Eastern Area
+26155,Shiawassee,Michigan,155,MI,26,EA,Eastern Area
+26157,Tuscola,Michigan,157,MI,26,EA,Eastern Area
+26159,Van Buren,Michigan,159,MI,26,EA,Eastern Area
+26161,Washtenaw,Michigan,161,MI,26,EA,Eastern Area
+26163,Wayne,Michigan,163,MI,26,EA,Eastern Area
+26165,Wexford,Michigan,165,MI,26,EA,Eastern Area
+27001,Aitkin,Minnesota,001,MN,27,EA,Eastern Area
+27003,Anoka,Minnesota,003,MN,27,EA,Eastern Area
+27005,Becker,Minnesota,005,MN,27,EA,Eastern Area
+27007,Beltrami,Minnesota,007,MN,27,EA,Eastern Area
+27009,Benton,Minnesota,009,MN,27,EA,Eastern Area
+27011,Big Stone,Minnesota,011,MN,27,EA,Eastern Area
+27013,Blue Earth,Minnesota,013,MN,27,EA,Eastern Area
+27015,Brown,Minnesota,015,MN,27,EA,Eastern Area
+27017,Carlton,Minnesota,017,MN,27,EA,Eastern Area
+27019,Carver,Minnesota,019,MN,27,EA,Eastern Area
+27021,Cass,Minnesota,021,MN,27,EA,Eastern Area
+27023,Chippewa,Minnesota,023,MN,27,EA,Eastern Area
+27025,Chisago,Minnesota,025,MN,27,EA,Eastern Area
+27027,Clay,Minnesota,027,MN,27,EA,Eastern Area
+27029,Clearwater,Minnesota,029,MN,27,EA,Eastern Area
+27031,Cook,Minnesota,031,MN,27,EA,Eastern Area
+27033,Cottonwood,Minnesota,033,MN,27,EA,Eastern Area
+27035,Crow Wing,Minnesota,035,MN,27,EA,Eastern Area
+27037,Dakota,Minnesota,037,MN,27,EA,Eastern Area
+27039,Dodge,Minnesota,039,MN,27,EA,Eastern Area
+27041,Douglas,Minnesota,041,MN,27,EA,Eastern Area
+27043,Faribault,Minnesota,043,MN,27,EA,Eastern Area
+27045,Fillmore,Minnesota,045,MN,27,EA,Eastern Area
+27047,Freeborn,Minnesota,047,MN,27,EA,Eastern Area
+27049,Goodhue,Minnesota,049,MN,27,EA,Eastern Area
+27051,Grant,Minnesota,051,MN,27,EA,Eastern Area
+27053,Hennepin,Minnesota,053,MN,27,EA,Eastern Area
+27055,Houston,Minnesota,055,MN,27,EA,Eastern Area
+27057,Hubbard,Minnesota,057,MN,27,EA,Eastern Area
+27059,Isanti,Minnesota,059,MN,27,EA,Eastern Area
+27061,Itasca,Minnesota,061,MN,27,EA,Eastern Area
+27063,Jackson,Minnesota,063,MN,27,EA,Eastern Area
+27065,Kanabec,Minnesota,065,MN,27,EA,Eastern Area
+27067,Kandiyohi,Minnesota,067,MN,27,EA,Eastern Area
+27069,Kittson,Minnesota,069,MN,27,EA,Eastern Area
+27071,Koochiching,Minnesota,071,MN,27,EA,Eastern Area
+27073,Lac qui Parle,Minnesota,073,MN,27,EA,Eastern Area
+27075,Lake,Minnesota,075,MN,27,EA,Eastern Area
+27077,Lake of the Woods,Minnesota,077,MN,27,EA,Eastern Area
+27079,Le Sueur,Minnesota,079,MN,27,EA,Eastern Area
+27081,Lincoln,Minnesota,081,MN,27,EA,Eastern Area
+27083,Lyon,Minnesota,083,MN,27,EA,Eastern Area
+27085,McLeod,Minnesota,085,MN,27,EA,Eastern Area
+27087,Mahnomen,Minnesota,087,MN,27,EA,Eastern Area
+27089,Marshall,Minnesota,089,MN,27,EA,Eastern Area
+27091,Martin,Minnesota,091,MN,27,EA,Eastern Area
+27093,Meeker,Minnesota,093,MN,27,EA,Eastern Area
+27095,Mille Lacs,Minnesota,095,MN,27,EA,Eastern Area
+27097,Morrison,Minnesota,097,MN,27,EA,Eastern Area
+27099,Mower,Minnesota,099,MN,27,EA,Eastern Area
+27101,Murray,Minnesota,101,MN,27,EA,Eastern Area
+27103,Nicollet,Minnesota,103,MN,27,EA,Eastern Area
+27105,Nobles,Minnesota,105,MN,27,EA,Eastern Area
+27107,Norman,Minnesota,107,MN,27,EA,Eastern Area
+27109,Olmsted,Minnesota,109,MN,27,EA,Eastern Area
+27111,Otter Tail,Minnesota,111,MN,27,EA,Eastern Area
+27113,Pennington,Minnesota,113,MN,27,EA,Eastern Area
+27115,Pine,Minnesota,115,MN,27,EA,Eastern Area
+27117,Pipestone,Minnesota,117,MN,27,EA,Eastern Area
+27119,Polk,Minnesota,119,MN,27,EA,Eastern Area
+27121,Pope,Minnesota,121,MN,27,EA,Eastern Area
+27123,Ramsey,Minnesota,123,MN,27,EA,Eastern Area
+27125,Red Lake,Minnesota,125,MN,27,EA,Eastern Area
+27127,Redwood,Minnesota,127,MN,27,EA,Eastern Area
+27129,Renville,Minnesota,129,MN,27,EA,Eastern Area
+27131,Rice,Minnesota,131,MN,27,EA,Eastern Area
+27133,Rock,Minnesota,133,MN,27,EA,Eastern Area
+27135,Roseau,Minnesota,135,MN,27,EA,Eastern Area
+27137,St. Louis,Minnesota,137,MN,27,EA,Eastern Area
+27139,Scott,Minnesota,139,MN,27,EA,Eastern Area
+27141,Sherburne,Minnesota,141,MN,27,EA,Eastern Area
+27143,Sibley,Minnesota,143,MN,27,EA,Eastern Area
+27145,Stearns,Minnesota,145,MN,27,EA,Eastern Area
+27147,Steele,Minnesota,147,MN,27,EA,Eastern Area
+27149,Stevens,Minnesota,149,MN,27,EA,Eastern Area
+27151,Swift,Minnesota,151,MN,27,EA,Eastern Area
+27153,Todd,Minnesota,153,MN,27,EA,Eastern Area
+27155,Traverse,Minnesota,155,MN,27,EA,Eastern Area
+27157,Wabasha,Minnesota,157,MN,27,EA,Eastern Area
+27159,Wadena,Minnesota,159,MN,27,EA,Eastern Area
+27161,Waseca,Minnesota,161,MN,27,EA,Eastern Area
+27163,Washington,Minnesota,163,MN,27,EA,Eastern Area
+27165,Watonwan,Minnesota,165,MN,27,EA,Eastern Area
+27167,Wilkin,Minnesota,167,MN,27,EA,Eastern Area
+27169,Winona,Minnesota,169,MN,27,EA,Eastern Area
+27171,Wright,Minnesota,171,MN,27,EA,Eastern Area
+27173,Yellow Medicine,Minnesota,173,MN,27,EA,Eastern Area
+28001,Adams,Mississippi,001,MS,28,SA,Southern Area
+28003,Alcorn,Mississippi,003,MS,28,SA,Southern Area
+28005,Amite,Mississippi,005,MS,28,SA,Southern Area
+28007,Attala,Mississippi,007,MS,28,SA,Southern Area
+28009,Benton,Mississippi,009,MS,28,SA,Southern Area
+28011,Bolivar,Mississippi,011,MS,28,SA,Southern Area
+28013,Calhoun,Mississippi,013,MS,28,SA,Southern Area
+28015,Carroll,Mississippi,015,MS,28,SA,Southern Area
+28017,Chickasaw,Mississippi,017,MS,28,SA,Southern Area
+28019,Choctaw,Mississippi,019,MS,28,SA,Southern Area
+28021,Claiborne,Mississippi,021,MS,28,SA,Southern Area
+28023,Clarke,Mississippi,023,MS,28,SA,Southern Area
+28025,Clay,Mississippi,025,MS,28,SA,Southern Area
+28027,Coahoma,Mississippi,027,MS,28,SA,Southern Area
+28029,Copiah,Mississippi,029,MS,28,SA,Southern Area
+28031,Covington,Mississippi,031,MS,28,SA,Southern Area
+28033,DeSoto,Mississippi,033,MS,28,SA,Southern Area
+28035,Forrest,Mississippi,035,MS,28,SA,Southern Area
+28037,Franklin,Mississippi,037,MS,28,SA,Southern Area
+28039,George,Mississippi,039,MS,28,SA,Southern Area
+28041,Greene,Mississippi,041,MS,28,SA,Southern Area
+28043,Grenada,Mississippi,043,MS,28,SA,Southern Area
+28045,Hancock,Mississippi,045,MS,28,SA,Southern Area
+28047,Harrison,Mississippi,047,MS,28,SA,Southern Area
+28049,Hinds,Mississippi,049,MS,28,SA,Southern Area
+28051,Holmes,Mississippi,051,MS,28,SA,Southern Area
+28053,Humphreys,Mississippi,053,MS,28,SA,Southern Area
+28055,Issaquena,Mississippi,055,MS,28,SA,Southern Area
+28057,Itawamba,Mississippi,057,MS,28,SA,Southern Area
+28059,Jackson,Mississippi,059,MS,28,SA,Southern Area
+28061,Jasper,Mississippi,061,MS,28,SA,Southern Area
+28063,Jefferson,Mississippi,063,MS,28,SA,Southern Area
+28065,Jefferson Davis,Mississippi,065,MS,28,SA,Southern Area
+28067,Jones,Mississippi,067,MS,28,SA,Southern Area
+28069,Kemper,Mississippi,069,MS,28,SA,Southern Area
+28071,Lafayette,Mississippi,071,MS,28,SA,Southern Area
+28073,Lamar,Mississippi,073,MS,28,SA,Southern Area
+28075,Lauderdale,Mississippi,075,MS,28,SA,Southern Area
+28077,Lawrence,Mississippi,077,MS,28,SA,Southern Area
+28079,Leake,Mississippi,079,MS,28,SA,Southern Area
+28081,Lee,Mississippi,081,MS,28,SA,Southern Area
+28083,Leflore,Mississippi,083,MS,28,SA,Southern Area
+28085,Lincoln,Mississippi,085,MS,28,SA,Southern Area
+28087,Lowndes,Mississippi,087,MS,28,SA,Southern Area
+28089,Madison,Mississippi,089,MS,28,SA,Southern Area
+28091,Marion,Mississippi,091,MS,28,SA,Southern Area
+28093,Marshall,Mississippi,093,MS,28,SA,Southern Area
+28095,Monroe,Mississippi,095,MS,28,SA,Southern Area
+28097,Montgomery,Mississippi,097,MS,28,SA,Southern Area
+28099,Neshoba,Mississippi,099,MS,28,SA,Southern Area
+28101,Newton,Mississippi,101,MS,28,SA,Southern Area
+28103,Noxubee,Mississippi,103,MS,28,SA,Southern Area
+28105,Oktibbeha,Mississippi,105,MS,28,SA,Southern Area
+28107,Panola,Mississippi,107,MS,28,SA,Southern Area
+28109,Pearl River,Mississippi,109,MS,28,SA,Southern Area
+28111,Perry,Mississippi,111,MS,28,SA,Southern Area
+28113,Pike,Mississippi,113,MS,28,SA,Southern Area
+28115,Pontotoc,Mississippi,115,MS,28,SA,Southern Area
+28117,Prentiss,Mississippi,117,MS,28,SA,Southern Area
+28119,Quitman,Mississippi,119,MS,28,SA,Southern Area
+28121,Rankin,Mississippi,121,MS,28,SA,Southern Area
+28123,Scott,Mississippi,123,MS,28,SA,Southern Area
+28125,Sharkey,Mississippi,125,MS,28,SA,Southern Area
+28127,Simpson,Mississippi,127,MS,28,SA,Southern Area
+28129,Smith,Mississippi,129,MS,28,SA,Southern Area
+28131,Stone,Mississippi,131,MS,28,SA,Southern Area
+28133,Sunflower,Mississippi,133,MS,28,SA,Southern Area
+28135,Tallahatchie,Mississippi,135,MS,28,SA,Southern Area
+28137,Tate,Mississippi,137,MS,28,SA,Southern Area
+28139,Tippah,Mississippi,139,MS,28,SA,Southern Area
+28141,Tishomingo,Mississippi,141,MS,28,SA,Southern Area
+28143,Tunica,Mississippi,143,MS,28,SA,Southern Area
+28145,Union,Mississippi,145,MS,28,SA,Southern Area
+28147,Walthall,Mississippi,147,MS,28,SA,Southern Area
+28149,Warren,Mississippi,149,MS,28,SA,Southern Area
+28151,Washington,Mississippi,151,MS,28,SA,Southern Area
+28153,Wayne,Mississippi,153,MS,28,SA,Southern Area
+28155,Webster,Mississippi,155,MS,28,SA,Southern Area
+28157,Wilkinson,Mississippi,157,MS,28,SA,Southern Area
+28159,Winston,Mississippi,159,MS,28,SA,Southern Area
+28161,Yalobusha,Mississippi,161,MS,28,SA,Southern Area
+28163,Yazoo,Mississippi,163,MS,28,SA,Southern Area
+29001,Adair,Missouri,001,MO,29,EA,Eastern Area
+29003,Andrew,Missouri,003,MO,29,EA,Eastern Area
+29005,Atchison,Missouri,005,MO,29,EA,Eastern Area
+29007,Audrain,Missouri,007,MO,29,EA,Eastern Area
+29009,Barry,Missouri,009,MO,29,EA,Eastern Area
+29011,Barton,Missouri,011,MO,29,EA,Eastern Area
+29013,Bates,Missouri,013,MO,29,EA,Eastern Area
+29015,Benton,Missouri,015,MO,29,EA,Eastern Area
+29017,Bollinger,Missouri,017,MO,29,EA,Eastern Area
+29019,Boone,Missouri,019,MO,29,EA,Eastern Area
+29021,Buchanan,Missouri,021,MO,29,EA,Eastern Area
+29023,Butler,Missouri,023,MO,29,EA,Eastern Area
+29025,Caldwell,Missouri,025,MO,29,EA,Eastern Area
+29027,Callaway,Missouri,027,MO,29,EA,Eastern Area
+29029,Camden,Missouri,029,MO,29,EA,Eastern Area
+29031,Cape Girardeau,Missouri,031,MO,29,EA,Eastern Area
+29033,Carroll,Missouri,033,MO,29,EA,Eastern Area
+29035,Carter,Missouri,035,MO,29,EA,Eastern Area
+29037,Cass,Missouri,037,MO,29,EA,Eastern Area
+29039,Cedar,Missouri,039,MO,29,EA,Eastern Area
+29041,Chariton,Missouri,041,MO,29,EA,Eastern Area
+29043,Christian,Missouri,043,MO,29,EA,Eastern Area
+29045,Clark,Missouri,045,MO,29,EA,Eastern Area
+29047,Clay,Missouri,047,MO,29,EA,Eastern Area
+29049,Clinton,Missouri,049,MO,29,EA,Eastern Area
+29051,Cole,Missouri,051,MO,29,EA,Eastern Area
+29053,Cooper,Missouri,053,MO,29,EA,Eastern Area
+29055,Crawford,Missouri,055,MO,29,EA,Eastern Area
+29057,Dade,Missouri,057,MO,29,EA,Eastern Area
+29059,Dallas,Missouri,059,MO,29,EA,Eastern Area
+29061,Daviess,Missouri,061,MO,29,EA,Eastern Area
+29063,DeKalb,Missouri,063,MO,29,EA,Eastern Area
+29065,Dent,Missouri,065,MO,29,EA,Eastern Area
+29067,Douglas,Missouri,067,MO,29,EA,Eastern Area
+29069,Dunklin,Missouri,069,MO,29,EA,Eastern Area
+29071,Franklin,Missouri,071,MO,29,EA,Eastern Area
+29073,Gasconade,Missouri,073,MO,29,EA,Eastern Area
+29075,Gentry,Missouri,075,MO,29,EA,Eastern Area
+29077,Greene,Missouri,077,MO,29,EA,Eastern Area
+29079,Grundy,Missouri,079,MO,29,EA,Eastern Area
+29081,Harrison,Missouri,081,MO,29,EA,Eastern Area
+29083,Henry,Missouri,083,MO,29,EA,Eastern Area
+29085,Hickory,Missouri,085,MO,29,EA,Eastern Area
+29087,Holt,Missouri,087,MO,29,EA,Eastern Area
+29089,Howard,Missouri,089,MO,29,EA,Eastern Area
+29091,Howell,Missouri,091,MO,29,EA,Eastern Area
+29093,Iron,Missouri,093,MO,29,EA,Eastern Area
+29095,Jackson,Missouri,095,MO,29,EA,Eastern Area
+29097,Jasper,Missouri,097,MO,29,EA,Eastern Area
+29099,Jefferson,Missouri,099,MO,29,EA,Eastern Area
+29101,Johnson,Missouri,101,MO,29,EA,Eastern Area
+29103,Knox,Missouri,103,MO,29,EA,Eastern Area
+29105,Laclede,Missouri,105,MO,29,EA,Eastern Area
+29107,Lafayette,Missouri,107,MO,29,EA,Eastern Area
+29109,Lawrence,Missouri,109,MO,29,EA,Eastern Area
+29111,Lewis,Missouri,111,MO,29,EA,Eastern Area
+29113,Lincoln,Missouri,113,MO,29,EA,Eastern Area
+29115,Linn,Missouri,115,MO,29,EA,Eastern Area
+29117,Livingston,Missouri,117,MO,29,EA,Eastern Area
+29119,McDonald,Missouri,119,MO,29,EA,Eastern Area
+29121,Macon,Missouri,121,MO,29,EA,Eastern Area
+29123,Madison,Missouri,123,MO,29,EA,Eastern Area
+29125,Maries,Missouri,125,MO,29,EA,Eastern Area
+29127,Marion,Missouri,127,MO,29,EA,Eastern Area
+29129,Mercer,Missouri,129,MO,29,EA,Eastern Area
+29131,Miller,Missouri,131,MO,29,EA,Eastern Area
+29133,Mississippi,Missouri,133,MO,29,EA,Eastern Area
+29135,Moniteau,Missouri,135,MO,29,EA,Eastern Area
+29137,Monroe,Missouri,137,MO,29,EA,Eastern Area
+29139,Montgomery,Missouri,139,MO,29,EA,Eastern Area
+29141,Morgan,Missouri,141,MO,29,EA,Eastern Area
+29143,New Madrid,Missouri,143,MO,29,EA,Eastern Area
+29145,Newton,Missouri,145,MO,29,EA,Eastern Area
+29147,Nodaway,Missouri,147,MO,29,EA,Eastern Area
+29149,Oregon,Missouri,149,MO,29,EA,Eastern Area
+29151,Osage,Missouri,151,MO,29,EA,Eastern Area
+29153,Ozark,Missouri,153,MO,29,EA,Eastern Area
+29155,Pemiscot,Missouri,155,MO,29,EA,Eastern Area
+29157,Perry,Missouri,157,MO,29,EA,Eastern Area
+29159,Pettis,Missouri,159,MO,29,EA,Eastern Area
+29161,Phelps,Missouri,161,MO,29,EA,Eastern Area
+29163,Pike,Missouri,163,MO,29,EA,Eastern Area
+29165,Platte,Missouri,165,MO,29,EA,Eastern Area
+29167,Polk,Missouri,167,MO,29,EA,Eastern Area
+29169,Pulaski,Missouri,169,MO,29,EA,Eastern Area
+29171,Putnam,Missouri,171,MO,29,EA,Eastern Area
+29173,Ralls,Missouri,173,MO,29,EA,Eastern Area
+29175,Randolph,Missouri,175,MO,29,EA,Eastern Area
+29177,Ray,Missouri,177,MO,29,EA,Eastern Area
+29179,Reynolds,Missouri,179,MO,29,EA,Eastern Area
+29181,Ripley,Missouri,181,MO,29,EA,Eastern Area
+29183,St. Charles,Missouri,183,MO,29,EA,Eastern Area
+29185,St. Clair,Missouri,185,MO,29,EA,Eastern Area
+29186,Ste. Genevieve,Missouri,186,MO,29,EA,Eastern Area
+29187,St. Francois,Missouri,187,MO,29,EA,Eastern Area
+29189,St. Louis,Missouri,189,MO,29,EA,Eastern Area
+29195,Saline,Missouri,195,MO,29,EA,Eastern Area
+29197,Schuyler,Missouri,197,MO,29,EA,Eastern Area
+29199,Scotland,Missouri,199,MO,29,EA,Eastern Area
+29201,Scott,Missouri,201,MO,29,EA,Eastern Area
+29203,Shannon,Missouri,203,MO,29,EA,Eastern Area
+29205,Shelby,Missouri,205,MO,29,EA,Eastern Area
+29207,Stoddard,Missouri,207,MO,29,EA,Eastern Area
+29209,Stone,Missouri,209,MO,29,EA,Eastern Area
+29211,Sullivan,Missouri,211,MO,29,EA,Eastern Area
+29213,Taney,Missouri,213,MO,29,EA,Eastern Area
+29215,Texas,Missouri,215,MO,29,EA,Eastern Area
+29217,Vernon,Missouri,217,MO,29,EA,Eastern Area
+29219,Warren,Missouri,219,MO,29,EA,Eastern Area
+29221,Washington,Missouri,221,MO,29,EA,Eastern Area
+29223,Wayne,Missouri,223,MO,29,EA,Eastern Area
+29225,Webster,Missouri,225,MO,29,EA,Eastern Area
+29227,Worth,Missouri,227,MO,29,EA,Eastern Area
+29229,Wright,Missouri,229,MO,29,EA,Eastern Area
+29510,St. Louis,Missouri,510,MO,29,EA,Eastern Area
+30001,Beaverhead,Montana,001,MT,30,NR,Northern Rockies
+30003,Big Horn,Montana,003,MT,30,NR,Northern Rockies
+30005,Blaine,Montana,005,MT,30,NR,Northern Rockies
+30007,Broadwater,Montana,007,MT,30,NR,Northern Rockies
+30009,Carbon,Montana,009,MT,30,NR,Northern Rockies
+30011,Carter,Montana,011,MT,30,NR,Northern Rockies
+30013,Cascade,Montana,013,MT,30,NR,Northern Rockies
+30015,Chouteau,Montana,015,MT,30,NR,Northern Rockies
+30017,Custer,Montana,017,MT,30,NR,Northern Rockies
+30019,Daniels,Montana,019,MT,30,NR,Northern Rockies
+30021,Dawson,Montana,021,MT,30,NR,Northern Rockies
+30023,Deer Lodge,Montana,023,MT,30,NR,Northern Rockies
+30025,Fallon,Montana,025,MT,30,NR,Northern Rockies
+30027,Fergus,Montana,027,MT,30,NR,Northern Rockies
+30029,Flathead,Montana,029,MT,30,NR,Northern Rockies
+30031,Gallatin,Montana,031,MT,30,NR,Northern Rockies
+30033,Garfield,Montana,033,MT,30,NR,Northern Rockies
+30035,Glacier,Montana,035,MT,30,NR,Northern Rockies
+30037,Golden Valley,Montana,037,MT,30,NR,Northern Rockies
+30039,Granite,Montana,039,MT,30,NR,Northern Rockies
+30041,Hill,Montana,041,MT,30,NR,Northern Rockies
+30043,Jefferson,Montana,043,MT,30,NR,Northern Rockies
+30045,Judith Basin,Montana,045,MT,30,NR,Northern Rockies
+30047,Lake,Montana,047,MT,30,NR,Northern Rockies
+30049,Lewis and Clark,Montana,049,MT,30,NR,Northern Rockies
+30051,Liberty,Montana,051,MT,30,NR,Northern Rockies
+30053,Lincoln,Montana,053,MT,30,NR,Northern Rockies
+30055,McCone,Montana,055,MT,30,NR,Northern Rockies
+30057,Madison,Montana,057,MT,30,NR,Northern Rockies
+30059,Meagher,Montana,059,MT,30,NR,Northern Rockies
+30061,Mineral,Montana,061,MT,30,NR,Northern Rockies
+30063,Missoula,Montana,063,MT,30,NR,Northern Rockies
+30065,Musselshell,Montana,065,MT,30,NR,Northern Rockies
+30067,Park,Montana,067,MT,30,NR,Northern Rockies
+30069,Petroleum,Montana,069,MT,30,NR,Northern Rockies
+30071,Phillips,Montana,071,MT,30,NR,Northern Rockies
+30073,Pondera,Montana,073,MT,30,NR,Northern Rockies
+30075,Powder River,Montana,075,MT,30,NR,Northern Rockies
+30077,Powell,Montana,077,MT,30,NR,Northern Rockies
+30079,Prairie,Montana,079,MT,30,NR,Northern Rockies
+30081,Ravalli,Montana,081,MT,30,NR,Northern Rockies
+30083,Richland,Montana,083,MT,30,NR,Northern Rockies
+30085,Roosevelt,Montana,085,MT,30,NR,Northern Rockies
+30087,Rosebud,Montana,087,MT,30,NR,Northern Rockies
+30089,Sanders,Montana,089,MT,30,NR,Northern Rockies
+30091,Sheridan,Montana,091,MT,30,NR,Northern Rockies
+30093,Silver Bow,Montana,093,MT,30,NR,Northern Rockies
+30095,Stillwater,Montana,095,MT,30,NR,Northern Rockies
+30097,Sweet Grass,Montana,097,MT,30,NR,Northern Rockies
+30099,Teton,Montana,099,MT,30,NR,Northern Rockies
+30101,Toole,Montana,101,MT,30,NR,Northern Rockies
+30103,Treasure,Montana,103,MT,30,NR,Northern Rockies
+30105,Valley,Montana,105,MT,30,NR,Northern Rockies
+30107,Wheatland,Montana,107,MT,30,NR,Northern Rockies
+30109,Wibaux,Montana,109,MT,30,NR,Northern Rockies
+30111,Yellowstone,Montana,111,MT,30,NR,Northern Rockies
+31001,Adams,Nebraska,001,NE,31,RM,Rocky Mountain Area
+31003,Antelope,Nebraska,003,NE,31,RM,Rocky Mountain Area
+31005,Arthur,Nebraska,005,NE,31,RM,Rocky Mountain Area
+31007,Banner,Nebraska,007,NE,31,RM,Rocky Mountain Area
+31009,Blaine,Nebraska,009,NE,31,RM,Rocky Mountain Area
+31011,Boone,Nebraska,011,NE,31,RM,Rocky Mountain Area
+31013,Box Butte,Nebraska,013,NE,31,RM,Rocky Mountain Area
+31015,Boyd,Nebraska,015,NE,31,RM,Rocky Mountain Area
+31017,Brown,Nebraska,017,NE,31,RM,Rocky Mountain Area
+31019,Buffalo,Nebraska,019,NE,31,RM,Rocky Mountain Area
+31021,Burt,Nebraska,021,NE,31,RM,Rocky Mountain Area
+31023,Butler,Nebraska,023,NE,31,RM,Rocky Mountain Area
+31025,Cass,Nebraska,025,NE,31,RM,Rocky Mountain Area
+31027,Cedar,Nebraska,027,NE,31,RM,Rocky Mountain Area
+31029,Chase,Nebraska,029,NE,31,RM,Rocky Mountain Area
+31031,Cherry,Nebraska,031,NE,31,RM,Rocky Mountain Area
+31033,Cheyenne,Nebraska,033,NE,31,RM,Rocky Mountain Area
+31035,Clay,Nebraska,035,NE,31,RM,Rocky Mountain Area
+31037,Colfax,Nebraska,037,NE,31,RM,Rocky Mountain Area
+31039,Cuming,Nebraska,039,NE,31,RM,Rocky Mountain Area
+31041,Custer,Nebraska,041,NE,31,RM,Rocky Mountain Area
+31043,Dakota,Nebraska,043,NE,31,RM,Rocky Mountain Area
+31045,Dawes,Nebraska,045,NE,31,RM,Rocky Mountain Area
+31047,Dawson,Nebraska,047,NE,31,RM,Rocky Mountain Area
+31049,Deuel,Nebraska,049,NE,31,RM,Rocky Mountain Area
+31051,Dixon,Nebraska,051,NE,31,RM,Rocky Mountain Area
+31053,Dodge,Nebraska,053,NE,31,RM,Rocky Mountain Area
+31055,Douglas,Nebraska,055,NE,31,RM,Rocky Mountain Area
+31057,Dundy,Nebraska,057,NE,31,RM,Rocky Mountain Area
+31059,Fillmore,Nebraska,059,NE,31,RM,Rocky Mountain Area
+31061,Franklin,Nebraska,061,NE,31,RM,Rocky Mountain Area
+31063,Frontier,Nebraska,063,NE,31,RM,Rocky Mountain Area
+31065,Furnas,Nebraska,065,NE,31,RM,Rocky Mountain Area
+31067,Gage,Nebraska,067,NE,31,RM,Rocky Mountain Area
+31069,Garden,Nebraska,069,NE,31,RM,Rocky Mountain Area
+31071,Garfield,Nebraska,071,NE,31,RM,Rocky Mountain Area
+31073,Gosper,Nebraska,073,NE,31,RM,Rocky Mountain Area
+31075,Grant,Nebraska,075,NE,31,RM,Rocky Mountain Area
+31077,Greeley,Nebraska,077,NE,31,RM,Rocky Mountain Area
+31079,Hall,Nebraska,079,NE,31,RM,Rocky Mountain Area
+31081,Hamilton,Nebraska,081,NE,31,RM,Rocky Mountain Area
+31083,Harlan,Nebraska,083,NE,31,RM,Rocky Mountain Area
+31085,Hayes,Nebraska,085,NE,31,RM,Rocky Mountain Area
+31087,Hitchcock,Nebraska,087,NE,31,RM,Rocky Mountain Area
+31089,Holt,Nebraska,089,NE,31,RM,Rocky Mountain Area
+31091,Hooker,Nebraska,091,NE,31,RM,Rocky Mountain Area
+31093,Howard,Nebraska,093,NE,31,RM,Rocky Mountain Area
+31095,Jefferson,Nebraska,095,NE,31,RM,Rocky Mountain Area
+31097,Johnson,Nebraska,097,NE,31,RM,Rocky Mountain Area
+31099,Kearney,Nebraska,099,NE,31,RM,Rocky Mountain Area
+31101,Keith,Nebraska,101,NE,31,RM,Rocky Mountain Area
+31103,Keya Paha,Nebraska,103,NE,31,RM,Rocky Mountain Area
+31105,Kimball,Nebraska,105,NE,31,RM,Rocky Mountain Area
+31107,Knox,Nebraska,107,NE,31,RM,Rocky Mountain Area
+31109,Lancaster,Nebraska,109,NE,31,RM,Rocky Mountain Area
+31111,Lincoln,Nebraska,111,NE,31,RM,Rocky Mountain Area
+31113,Logan,Nebraska,113,NE,31,RM,Rocky Mountain Area
+31115,Loup,Nebraska,115,NE,31,RM,Rocky Mountain Area
+31117,McPherson,Nebraska,117,NE,31,RM,Rocky Mountain Area
+31119,Madison,Nebraska,119,NE,31,RM,Rocky Mountain Area
+31121,Merrick,Nebraska,121,NE,31,RM,Rocky Mountain Area
+31123,Morrill,Nebraska,123,NE,31,RM,Rocky Mountain Area
+31125,Nance,Nebraska,125,NE,31,RM,Rocky Mountain Area
+31127,Nemaha,Nebraska,127,NE,31,RM,Rocky Mountain Area
+31129,Nuckolls,Nebraska,129,NE,31,RM,Rocky Mountain Area
+31131,Otoe,Nebraska,131,NE,31,RM,Rocky Mountain Area
+31133,Pawnee,Nebraska,133,NE,31,RM,Rocky Mountain Area
+31135,Perkins,Nebraska,135,NE,31,RM,Rocky Mountain Area
+31137,Phelps,Nebraska,137,NE,31,RM,Rocky Mountain Area
+31139,Pierce,Nebraska,139,NE,31,RM,Rocky Mountain Area
+31141,Platte,Nebraska,141,NE,31,RM,Rocky Mountain Area
+31143,Polk,Nebraska,143,NE,31,RM,Rocky Mountain Area
+31145,Red Willow,Nebraska,145,NE,31,RM,Rocky Mountain Area
+31147,Richardson,Nebraska,147,NE,31,RM,Rocky Mountain Area
+31149,Rock,Nebraska,149,NE,31,RM,Rocky Mountain Area
+31151,Saline,Nebraska,151,NE,31,RM,Rocky Mountain Area
+31153,Sarpy,Nebraska,153,NE,31,RM,Rocky Mountain Area
+31155,Saunders,Nebraska,155,NE,31,RM,Rocky Mountain Area
+31157,Scotts Bluff,Nebraska,157,NE,31,RM,Rocky Mountain Area
+31159,Seward,Nebraska,159,NE,31,RM,Rocky Mountain Area
+31161,Sheridan,Nebraska,161,NE,31,RM,Rocky Mountain Area
+31163,Sherman,Nebraska,163,NE,31,RM,Rocky Mountain Area
+31165,Sioux,Nebraska,165,NE,31,RM,Rocky Mountain Area
+31167,Stanton,Nebraska,167,NE,31,RM,Rocky Mountain Area
+31169,Thayer,Nebraska,169,NE,31,RM,Rocky Mountain Area
+31171,Thomas,Nebraska,171,NE,31,RM,Rocky Mountain Area
+31173,Thurston,Nebraska,173,NE,31,RM,Rocky Mountain Area
+31175,Valley,Nebraska,175,NE,31,RM,Rocky Mountain Area
+31177,Washington,Nebraska,177,NE,31,RM,Rocky Mountain Area
+31179,Wayne,Nebraska,179,NE,31,RM,Rocky Mountain Area
+31181,Webster,Nebraska,181,NE,31,RM,Rocky Mountain Area
+31183,Wheeler,Nebraska,183,NE,31,RM,Rocky Mountain Area
+31185,York,Nebraska,185,NE,31,RM,Rocky Mountain Area
+32001,Churchill,Nevada,001,NV,32,GB,Great Basin Area
+32003,Clark,Nevada,003,NV,32,GB,Great Basin Area
+32005,Douglas,Nevada,005,NV,32,GB,Great Basin Area
+32007,Elko,Nevada,007,NV,32,GB,Great Basin Area
+32009,Esmeralda,Nevada,009,NV,32,GB,Great Basin Area
+32011,Eureka,Nevada,011,NV,32,GB,Great Basin Area
+32013,Humboldt,Nevada,013,NV,32,GB,Great Basin Area
+32015,Lander,Nevada,015,NV,32,GB,Great Basin Area
+32017,Lincoln,Nevada,017,NV,32,GB,Great Basin Area
+32019,Lyon,Nevada,019,NV,32,GB,Great Basin Area
+32021,Mineral,Nevada,021,NV,32,GB,Great Basin Area
+32023,Nye,Nevada,023,NV,32,GB,Great Basin Area
+32027,Pershing,Nevada,027,NV,32,GB,Great Basin Area
+32029,Storey,Nevada,029,NV,32,GB,Great Basin Area
+32031,Washoe,Nevada,031,NV,32,GB,Great Basin Area
+32033,White Pine,Nevada,033,NV,32,GB,Great Basin Area
+32510,Carson,Nevada,510,NV,32,GB,Great Basin Area
+33001,Belknap,New Hampshire,001,NH,33,EA,Eastern Area
+33003,Carroll,New Hampshire,003,NH,33,EA,Eastern Area
+33005,Cheshire,New Hampshire,005,NH,33,EA,Eastern Area
+33007,Coos,New Hampshire,007,NH,33,EA,Eastern Area
+33009,Grafton,New Hampshire,009,NH,33,EA,Eastern Area
+33011,Hillsborough,New Hampshire,011,NH,33,EA,Eastern Area
+33013,Merrimack,New Hampshire,013,NH,33,EA,Eastern Area
+33015,Rockingham,New Hampshire,015,NH,33,EA,Eastern Area
+33017,Strafford,New Hampshire,017,NH,33,EA,Eastern Area
+33019,Sullivan,New Hampshire,019,NH,33,EA,Eastern Area
+34001,Atlantic,New Jersey,001,NJ,34,EA,Eastern Area
+34003,Bergen,New Jersey,003,NJ,34,EA,Eastern Area
+34005,Burlington,New Jersey,005,NJ,34,EA,Eastern Area
+34007,Camden,New Jersey,007,NJ,34,EA,Eastern Area
+34009,Cape May,New Jersey,009,NJ,34,EA,Eastern Area
+34011,Cumberland,New Jersey,011,NJ,34,EA,Eastern Area
+34013,Essex,New Jersey,013,NJ,34,EA,Eastern Area
+34015,Gloucester,New Jersey,015,NJ,34,EA,Eastern Area
+34017,Hudson,New Jersey,017,NJ,34,EA,Eastern Area
+34019,Hunterdon,New Jersey,019,NJ,34,EA,Eastern Area
+34021,Mercer,New Jersey,021,NJ,34,EA,Eastern Area
+34023,Middlesex,New Jersey,023,NJ,34,EA,Eastern Area
+34025,Monmouth,New Jersey,025,NJ,34,EA,Eastern Area
+34027,Morris,New Jersey,027,NJ,34,EA,Eastern Area
+34029,Ocean,New Jersey,029,NJ,34,EA,Eastern Area
+34031,Passaic,New Jersey,031,NJ,34,EA,Eastern Area
+34033,Salem,New Jersey,033,NJ,34,EA,Eastern Area
+34035,Somerset,New Jersey,035,NJ,34,EA,Eastern Area
+34037,Sussex,New Jersey,037,NJ,34,EA,Eastern Area
+34039,Union,New Jersey,039,NJ,34,EA,Eastern Area
+34041,Warren,New Jersey,041,NJ,34,EA,Eastern Area
+35001,Bernalillo,New Mexico,001,NM,35,SW,Southwest Area
+35003,Catron,New Mexico,003,NM,35,SW,Southwest Area
+35005,Chaves,New Mexico,005,NM,35,SW,Southwest Area
+35006,Cibola,New Mexico,006,NM,35,SW,Southwest Area
+35007,Colfax,New Mexico,007,NM,35,SW,Southwest Area
+35009,Curry,New Mexico,009,NM,35,SW,Southwest Area
+35011,De Baca,New Mexico,011,NM,35,SW,Southwest Area
+35013,Doña Ana,New Mexico,013,NM,35,SW,Southwest Area
+35015,Eddy,New Mexico,015,NM,35,SW,Southwest Area
+35017,Grant,New Mexico,017,NM,35,SW,Southwest Area
+35019,Guadalupe,New Mexico,019,NM,35,SW,Southwest Area
+35021,Harding,New Mexico,021,NM,35,SW,Southwest Area
+35023,Hidalgo,New Mexico,023,NM,35,SW,Southwest Area
+35025,Lea,New Mexico,025,NM,35,SW,Southwest Area
+35027,Lincoln,New Mexico,027,NM,35,SW,Southwest Area
+35028,Los Alamos,New Mexico,028,NM,35,SW,Southwest Area
+35029,Luna,New Mexico,029,NM,35,SW,Southwest Area
+35031,McKinley,New Mexico,031,NM,35,SW,Southwest Area
+35033,Mora,New Mexico,033,NM,35,SW,Southwest Area
+35035,Otero,New Mexico,035,NM,35,SW,Southwest Area
+35037,Quay,New Mexico,037,NM,35,SW,Southwest Area
+35039,Rio Arriba,New Mexico,039,NM,35,SW,Southwest Area
+35041,Roosevelt,New Mexico,041,NM,35,SW,Southwest Area
+35043,Sandoval,New Mexico,043,NM,35,SW,Southwest Area
+35045,San Juan,New Mexico,045,NM,35,SW,Southwest Area
+35047,San Miguel,New Mexico,047,NM,35,SW,Southwest Area
+35049,Santa Fe,New Mexico,049,NM,35,SW,Southwest Area
+35051,Sierra,New Mexico,051,NM,35,SW,Southwest Area
+35053,Socorro,New Mexico,053,NM,35,SW,Southwest Area
+35055,Taos,New Mexico,055,NM,35,SW,Southwest Area
+35057,Torrance,New Mexico,057,NM,35,SW,Southwest Area
+35059,Union,New Mexico,059,NM,35,SW,Southwest Area
+35061,Valencia,New Mexico,061,NM,35,SW,Southwest Area
+36001,Albany,New York,001,NY,36,EA,Eastern Area
+36003,Allegany,New York,003,NY,36,EA,Eastern Area
+36005,Bronx,New York,005,NY,36,EA,Eastern Area
+36007,Broome,New York,007,NY,36,EA,Eastern Area
+36009,Cattaraugus,New York,009,NY,36,EA,Eastern Area
+36011,Cayuga,New York,011,NY,36,EA,Eastern Area
+36013,Chautauqua,New York,013,NY,36,EA,Eastern Area
+36015,Chemung,New York,015,NY,36,EA,Eastern Area
+36017,Chenango,New York,017,NY,36,EA,Eastern Area
+36019,Clinton,New York,019,NY,36,EA,Eastern Area
+36021,Columbia,New York,021,NY,36,EA,Eastern Area
+36023,Cortland,New York,023,NY,36,EA,Eastern Area
+36025,Delaware,New York,025,NY,36,EA,Eastern Area
+36027,Dutchess,New York,027,NY,36,EA,Eastern Area
+36029,Erie,New York,029,NY,36,EA,Eastern Area
+36031,Essex,New York,031,NY,36,EA,Eastern Area
+36033,Franklin,New York,033,NY,36,EA,Eastern Area
+36035,Fulton,New York,035,NY,36,EA,Eastern Area
+36037,Genesee,New York,037,NY,36,EA,Eastern Area
+36039,Greene,New York,039,NY,36,EA,Eastern Area
+36041,Hamilton,New York,041,NY,36,EA,Eastern Area
+36043,Herkimer,New York,043,NY,36,EA,Eastern Area
+36045,Jefferson,New York,045,NY,36,EA,Eastern Area
+36047,Kings,New York,047,NY,36,EA,Eastern Area
+36049,Lewis,New York,049,NY,36,EA,Eastern Area
+36051,Livingston,New York,051,NY,36,EA,Eastern Area
+36053,Madison,New York,053,NY,36,EA,Eastern Area
+36055,Monroe,New York,055,NY,36,EA,Eastern Area
+36057,Montgomery,New York,057,NY,36,EA,Eastern Area
+36059,Nassau,New York,059,NY,36,EA,Eastern Area
+36061,New York,New York,061,NY,36,EA,Eastern Area
+36063,Niagara,New York,063,NY,36,EA,Eastern Area
+36065,Oneida,New York,065,NY,36,EA,Eastern Area
+36067,Onondaga,New York,067,NY,36,EA,Eastern Area
+36069,Ontario,New York,069,NY,36,EA,Eastern Area
+36071,Orange,New York,071,NY,36,EA,Eastern Area
+36073,Orleans,New York,073,NY,36,EA,Eastern Area
+36075,Oswego,New York,075,NY,36,EA,Eastern Area
+36077,Otsego,New York,077,NY,36,EA,Eastern Area
+36079,Putnam,New York,079,NY,36,EA,Eastern Area
+36081,Queens,New York,081,NY,36,EA,Eastern Area
+36083,Rensselaer,New York,083,NY,36,EA,Eastern Area
+36085,Richmond,New York,085,NY,36,EA,Eastern Area
+36087,Rockland,New York,087,NY,36,EA,Eastern Area
+36089,St. Lawrence,New York,089,NY,36,EA,Eastern Area
+36091,Saratoga,New York,091,NY,36,EA,Eastern Area
+36093,Schenectady,New York,093,NY,36,EA,Eastern Area
+36095,Schoharie,New York,095,NY,36,EA,Eastern Area
+36097,Schuyler,New York,097,NY,36,EA,Eastern Area
+36099,Seneca,New York,099,NY,36,EA,Eastern Area
+36101,Steuben,New York,101,NY,36,EA,Eastern Area
+36103,Suffolk,New York,103,NY,36,EA,Eastern Area
+36105,Sullivan,New York,105,NY,36,EA,Eastern Area
+36107,Tioga,New York,107,NY,36,EA,Eastern Area
+36109,Tompkins,New York,109,NY,36,EA,Eastern Area
+36111,Ulster,New York,111,NY,36,EA,Eastern Area
+36113,Warren,New York,113,NY,36,EA,Eastern Area
+36115,Washington,New York,115,NY,36,EA,Eastern Area
+36117,Wayne,New York,117,NY,36,EA,Eastern Area
+36119,Westchester,New York,119,NY,36,EA,Eastern Area
+36121,Wyoming,New York,121,NY,36,EA,Eastern Area
+36123,Yates,New York,123,NY,36,EA,Eastern Area
+37001,Alamance,North Carolina,001,NC,37,SA,Southern Area
+37003,Alexander,North Carolina,003,NC,37,SA,Southern Area
+37005,Alleghany,North Carolina,005,NC,37,SA,Southern Area
+37007,Anson,North Carolina,007,NC,37,SA,Southern Area
+37009,Ashe,North Carolina,009,NC,37,SA,Southern Area
+37011,Avery,North Carolina,011,NC,37,SA,Southern Area
+37013,Beaufort,North Carolina,013,NC,37,SA,Southern Area
+37015,Bertie,North Carolina,015,NC,37,SA,Southern Area
+37017,Bladen,North Carolina,017,NC,37,SA,Southern Area
+37019,Brunswick,North Carolina,019,NC,37,SA,Southern Area
+37021,Buncombe,North Carolina,021,NC,37,SA,Southern Area
+37023,Burke,North Carolina,023,NC,37,SA,Southern Area
+37025,Cabarrus,North Carolina,025,NC,37,SA,Southern Area
+37027,Caldwell,North Carolina,027,NC,37,SA,Southern Area
+37029,Camden,North Carolina,029,NC,37,SA,Southern Area
+37031,Carteret,North Carolina,031,NC,37,SA,Southern Area
+37033,Caswell,North Carolina,033,NC,37,SA,Southern Area
+37035,Catawba,North Carolina,035,NC,37,SA,Southern Area
+37037,Chatham,North Carolina,037,NC,37,SA,Southern Area
+37039,Cherokee,North Carolina,039,NC,37,SA,Southern Area
+37041,Chowan,North Carolina,041,NC,37,SA,Southern Area
+37043,Clay,North Carolina,043,NC,37,SA,Southern Area
+37045,Cleveland,North Carolina,045,NC,37,SA,Southern Area
+37047,Columbus,North Carolina,047,NC,37,SA,Southern Area
+37049,Craven,North Carolina,049,NC,37,SA,Southern Area
+37051,Cumberland,North Carolina,051,NC,37,SA,Southern Area
+37053,Currituck,North Carolina,053,NC,37,SA,Southern Area
+37055,Dare,North Carolina,055,NC,37,SA,Southern Area
+37057,Davidson,North Carolina,057,NC,37,SA,Southern Area
+37059,Davie,North Carolina,059,NC,37,SA,Southern Area
+37061,Duplin,North Carolina,061,NC,37,SA,Southern Area
+37063,Durham,North Carolina,063,NC,37,SA,Southern Area
+37065,Edgecombe,North Carolina,065,NC,37,SA,Southern Area
+37067,Forsyth,North Carolina,067,NC,37,SA,Southern Area
+37069,Franklin,North Carolina,069,NC,37,SA,Southern Area
+37071,Gaston,North Carolina,071,NC,37,SA,Southern Area
+37073,Gates,North Carolina,073,NC,37,SA,Southern Area
+37075,Graham,North Carolina,075,NC,37,SA,Southern Area
+37077,Granville,North Carolina,077,NC,37,SA,Southern Area
+37079,Greene,North Carolina,079,NC,37,SA,Southern Area
+37081,Guilford,North Carolina,081,NC,37,SA,Southern Area
+37083,Halifax,North Carolina,083,NC,37,SA,Southern Area
+37085,Harnett,North Carolina,085,NC,37,SA,Southern Area
+37087,Haywood,North Carolina,087,NC,37,SA,Southern Area
+37089,Henderson,North Carolina,089,NC,37,SA,Southern Area
+37091,Hertford,North Carolina,091,NC,37,SA,Southern Area
+37093,Hoke,North Carolina,093,NC,37,SA,Southern Area
+37095,Hyde,North Carolina,095,NC,37,SA,Southern Area
+37097,Iredell,North Carolina,097,NC,37,SA,Southern Area
+37099,Jackson,North Carolina,099,NC,37,SA,Southern Area
+37101,Johnston,North Carolina,101,NC,37,SA,Southern Area
+37103,Jones,North Carolina,103,NC,37,SA,Southern Area
+37105,Lee,North Carolina,105,NC,37,SA,Southern Area
+37107,Lenoir,North Carolina,107,NC,37,SA,Southern Area
+37109,Lincoln,North Carolina,109,NC,37,SA,Southern Area
+37111,McDowell,North Carolina,111,NC,37,SA,Southern Area
+37113,Macon,North Carolina,113,NC,37,SA,Southern Area
+37115,Madison,North Carolina,115,NC,37,SA,Southern Area
+37117,Martin,North Carolina,117,NC,37,SA,Southern Area
+37119,Mecklenburg,North Carolina,119,NC,37,SA,Southern Area
+37121,Mitchell,North Carolina,121,NC,37,SA,Southern Area
+37123,Montgomery,North Carolina,123,NC,37,SA,Southern Area
+37125,Moore,North Carolina,125,NC,37,SA,Southern Area
+37127,Nash,North Carolina,127,NC,37,SA,Southern Area
+37129,New Hanover,North Carolina,129,NC,37,SA,Southern Area
+37131,Northampton,North Carolina,131,NC,37,SA,Southern Area
+37133,Onslow,North Carolina,133,NC,37,SA,Southern Area
+37135,Orange,North Carolina,135,NC,37,SA,Southern Area
+37137,Pamlico,North Carolina,137,NC,37,SA,Southern Area
+37139,Pasquotank,North Carolina,139,NC,37,SA,Southern Area
+37141,Pender,North Carolina,141,NC,37,SA,Southern Area
+37143,Perquimans,North Carolina,143,NC,37,SA,Southern Area
+37145,Person,North Carolina,145,NC,37,SA,Southern Area
+37147,Pitt,North Carolina,147,NC,37,SA,Southern Area
+37149,Polk,North Carolina,149,NC,37,SA,Southern Area
+37151,Randolph,North Carolina,151,NC,37,SA,Southern Area
+37153,Richmond,North Carolina,153,NC,37,SA,Southern Area
+37155,Robeson,North Carolina,155,NC,37,SA,Southern Area
+37157,Rockingham,North Carolina,157,NC,37,SA,Southern Area
+37159,Rowan,North Carolina,159,NC,37,SA,Southern Area
+37161,Rutherford,North Carolina,161,NC,37,SA,Southern Area
+37163,Sampson,North Carolina,163,NC,37,SA,Southern Area
+37165,Scotland,North Carolina,165,NC,37,SA,Southern Area
+37167,Stanly,North Carolina,167,NC,37,SA,Southern Area
+37169,Stokes,North Carolina,169,NC,37,SA,Southern Area
+37171,Surry,North Carolina,171,NC,37,SA,Southern Area
+37173,Swain,North Carolina,173,NC,37,SA,Southern Area
+37175,Transylvania,North Carolina,175,NC,37,SA,Southern Area
+37177,Tyrrell,North Carolina,177,NC,37,SA,Southern Area
+37179,Union,North Carolina,179,NC,37,SA,Southern Area
+37181,Vance,North Carolina,181,NC,37,SA,Southern Area
+37183,Wake,North Carolina,183,NC,37,SA,Southern Area
+37185,Warren,North Carolina,185,NC,37,SA,Southern Area
+37187,Washington,North Carolina,187,NC,37,SA,Southern Area
+37189,Watauga,North Carolina,189,NC,37,SA,Southern Area
+37191,Wayne,North Carolina,191,NC,37,SA,Southern Area
+37193,Wilkes,North Carolina,193,NC,37,SA,Southern Area
+37195,Wilson,North Carolina,195,NC,37,SA,Southern Area
+37197,Yadkin,North Carolina,197,NC,37,SA,Southern Area
+37199,Yancey,North Carolina,199,NC,37,SA,Southern Area
+38001,Adams,North Dakota,001,ND,38,NR,Northern Rockies
+38003,Barnes,North Dakota,003,ND,38,NR,Northern Rockies
+38005,Benson,North Dakota,005,ND,38,NR,Northern Rockies
+38007,Billings,North Dakota,007,ND,38,NR,Northern Rockies
+38009,Bottineau,North Dakota,009,ND,38,NR,Northern Rockies
+38011,Bowman,North Dakota,011,ND,38,NR,Northern Rockies
+38013,Burke,North Dakota,013,ND,38,NR,Northern Rockies
+38015,Burleigh,North Dakota,015,ND,38,NR,Northern Rockies
+38017,Cass,North Dakota,017,ND,38,NR,Northern Rockies
+38019,Cavalier,North Dakota,019,ND,38,NR,Northern Rockies
+38021,Dickey,North Dakota,021,ND,38,NR,Northern Rockies
+38023,Divide,North Dakota,023,ND,38,NR,Northern Rockies
+38025,Dunn,North Dakota,025,ND,38,NR,Northern Rockies
+38027,Eddy,North Dakota,027,ND,38,NR,Northern Rockies
+38029,Emmons,North Dakota,029,ND,38,NR,Northern Rockies
+38031,Foster,North Dakota,031,ND,38,NR,Northern Rockies
+38033,Golden Valley,North Dakota,033,ND,38,NR,Northern Rockies
+38035,Grand Forks,North Dakota,035,ND,38,NR,Northern Rockies
+38037,Grant,North Dakota,037,ND,38,NR,Northern Rockies
+38039,Griggs,North Dakota,039,ND,38,NR,Northern Rockies
+38041,Hettinger,North Dakota,041,ND,38,NR,Northern Rockies
+38043,Kidder,North Dakota,043,ND,38,NR,Northern Rockies
+38045,LaMoure,North Dakota,045,ND,38,NR,Northern Rockies
+38047,Logan,North Dakota,047,ND,38,NR,Northern Rockies
+38049,McHenry,North Dakota,049,ND,38,NR,Northern Rockies
+38051,McIntosh,North Dakota,051,ND,38,NR,Northern Rockies
+38053,McKenzie,North Dakota,053,ND,38,NR,Northern Rockies
+38055,McLean,North Dakota,055,ND,38,NR,Northern Rockies
+38057,Mercer,North Dakota,057,ND,38,NR,Northern Rockies
+38059,Morton,North Dakota,059,ND,38,NR,Northern Rockies
+38061,Mountrail,North Dakota,061,ND,38,NR,Northern Rockies
+38063,Nelson,North Dakota,063,ND,38,NR,Northern Rockies
+38065,Oliver,North Dakota,065,ND,38,NR,Northern Rockies
+38067,Pembina,North Dakota,067,ND,38,NR,Northern Rockies
+38069,Pierce,North Dakota,069,ND,38,NR,Northern Rockies
+38071,Ramsey,North Dakota,071,ND,38,NR,Northern Rockies
+38073,Ransom,North Dakota,073,ND,38,NR,Northern Rockies
+38075,Renville,North Dakota,075,ND,38,NR,Northern Rockies
+38077,Richland,North Dakota,077,ND,38,NR,Northern Rockies
+38079,Rolette,North Dakota,079,ND,38,NR,Northern Rockies
+38081,Sargent,North Dakota,081,ND,38,NR,Northern Rockies
+38083,Sheridan,North Dakota,083,ND,38,NR,Northern Rockies
+38085,Sioux,North Dakota,085,ND,38,NR,Northern Rockies
+38087,Slope,North Dakota,087,ND,38,NR,Northern Rockies
+38089,Stark,North Dakota,089,ND,38,NR,Northern Rockies
+38091,Steele,North Dakota,091,ND,38,NR,Northern Rockies
+38093,Stutsman,North Dakota,093,ND,38,NR,Northern Rockies
+38095,Towner,North Dakota,095,ND,38,NR,Northern Rockies
+38097,Traill,North Dakota,097,ND,38,NR,Northern Rockies
+38099,Walsh,North Dakota,099,ND,38,NR,Northern Rockies
+38101,Ward,North Dakota,101,ND,38,NR,Northern Rockies
+38103,Wells,North Dakota,103,ND,38,NR,Northern Rockies
+38105,Williams,North Dakota,105,ND,38,NR,Northern Rockies
+39001,Adams,Ohio,001,OH,39,EA,Eastern Area
+39003,Allen,Ohio,003,OH,39,EA,Eastern Area
+39005,Ashland,Ohio,005,OH,39,EA,Eastern Area
+39007,Ashtabula,Ohio,007,OH,39,EA,Eastern Area
+39009,Athens,Ohio,009,OH,39,EA,Eastern Area
+39011,Auglaize,Ohio,011,OH,39,EA,Eastern Area
+39013,Belmont,Ohio,013,OH,39,EA,Eastern Area
+39015,Brown,Ohio,015,OH,39,EA,Eastern Area
+39017,Butler,Ohio,017,OH,39,EA,Eastern Area
+39019,Carroll,Ohio,019,OH,39,EA,Eastern Area
+39021,Champaign,Ohio,021,OH,39,EA,Eastern Area
+39023,Clark,Ohio,023,OH,39,EA,Eastern Area
+39025,Clermont,Ohio,025,OH,39,EA,Eastern Area
+39027,Clinton,Ohio,027,OH,39,EA,Eastern Area
+39029,Columbiana,Ohio,029,OH,39,EA,Eastern Area
+39031,Coshocton,Ohio,031,OH,39,EA,Eastern Area
+39033,Crawford,Ohio,033,OH,39,EA,Eastern Area
+39035,Cuyahoga,Ohio,035,OH,39,EA,Eastern Area
+39037,Darke,Ohio,037,OH,39,EA,Eastern Area
+39039,Defiance,Ohio,039,OH,39,EA,Eastern Area
+39041,Delaware,Ohio,041,OH,39,EA,Eastern Area
+39043,Erie,Ohio,043,OH,39,EA,Eastern Area
+39045,Fairfield,Ohio,045,OH,39,EA,Eastern Area
+39047,Fayette,Ohio,047,OH,39,EA,Eastern Area
+39049,Franklin,Ohio,049,OH,39,EA,Eastern Area
+39051,Fulton,Ohio,051,OH,39,EA,Eastern Area
+39053,Gallia,Ohio,053,OH,39,EA,Eastern Area
+39055,Geauga,Ohio,055,OH,39,EA,Eastern Area
+39057,Greene,Ohio,057,OH,39,EA,Eastern Area
+39059,Guernsey,Ohio,059,OH,39,EA,Eastern Area
+39061,Hamilton,Ohio,061,OH,39,EA,Eastern Area
+39063,Hancock,Ohio,063,OH,39,EA,Eastern Area
+39065,Hardin,Ohio,065,OH,39,EA,Eastern Area
+39067,Harrison,Ohio,067,OH,39,EA,Eastern Area
+39069,Henry,Ohio,069,OH,39,EA,Eastern Area
+39071,Highland,Ohio,071,OH,39,EA,Eastern Area
+39073,Hocking,Ohio,073,OH,39,EA,Eastern Area
+39075,Holmes,Ohio,075,OH,39,EA,Eastern Area
+39077,Huron,Ohio,077,OH,39,EA,Eastern Area
+39079,Jackson,Ohio,079,OH,39,EA,Eastern Area
+39081,Jefferson,Ohio,081,OH,39,EA,Eastern Area
+39083,Knox,Ohio,083,OH,39,EA,Eastern Area
+39085,Lake,Ohio,085,OH,39,EA,Eastern Area
+39087,Lawrence,Ohio,087,OH,39,EA,Eastern Area
+39089,Licking,Ohio,089,OH,39,EA,Eastern Area
+39091,Logan,Ohio,091,OH,39,EA,Eastern Area
+39093,Lorain,Ohio,093,OH,39,EA,Eastern Area
+39095,Lucas,Ohio,095,OH,39,EA,Eastern Area
+39097,Madison,Ohio,097,OH,39,EA,Eastern Area
+39099,Mahoning,Ohio,099,OH,39,EA,Eastern Area
+39101,Marion,Ohio,101,OH,39,EA,Eastern Area
+39103,Medina,Ohio,103,OH,39,EA,Eastern Area
+39105,Meigs,Ohio,105,OH,39,EA,Eastern Area
+39107,Mercer,Ohio,107,OH,39,EA,Eastern Area
+39109,Miami,Ohio,109,OH,39,EA,Eastern Area
+39111,Monroe,Ohio,111,OH,39,EA,Eastern Area
+39113,Montgomery,Ohio,113,OH,39,EA,Eastern Area
+39115,Morgan,Ohio,115,OH,39,EA,Eastern Area
+39117,Morrow,Ohio,117,OH,39,EA,Eastern Area
+39119,Muskingum,Ohio,119,OH,39,EA,Eastern Area
+39121,Noble,Ohio,121,OH,39,EA,Eastern Area
+39123,Ottawa,Ohio,123,OH,39,EA,Eastern Area
+39125,Paulding,Ohio,125,OH,39,EA,Eastern Area
+39127,Perry,Ohio,127,OH,39,EA,Eastern Area
+39129,Pickaway,Ohio,129,OH,39,EA,Eastern Area
+39131,Pike,Ohio,131,OH,39,EA,Eastern Area
+39133,Portage,Ohio,133,OH,39,EA,Eastern Area
+39135,Preble,Ohio,135,OH,39,EA,Eastern Area
+39137,Putnam,Ohio,137,OH,39,EA,Eastern Area
+39139,Richland,Ohio,139,OH,39,EA,Eastern Area
+39141,Ross,Ohio,141,OH,39,EA,Eastern Area
+39143,Sandusky,Ohio,143,OH,39,EA,Eastern Area
+39145,Scioto,Ohio,145,OH,39,EA,Eastern Area
+39147,Seneca,Ohio,147,OH,39,EA,Eastern Area
+39149,Shelby,Ohio,149,OH,39,EA,Eastern Area
+39151,Stark,Ohio,151,OH,39,EA,Eastern Area
+39153,Summit,Ohio,153,OH,39,EA,Eastern Area
+39155,Trumbull,Ohio,155,OH,39,EA,Eastern Area
+39157,Tuscarawas,Ohio,157,OH,39,EA,Eastern Area
+39159,Union,Ohio,159,OH,39,EA,Eastern Area
+39161,Van Wert,Ohio,161,OH,39,EA,Eastern Area
+39163,Vinton,Ohio,163,OH,39,EA,Eastern Area
+39165,Warren,Ohio,165,OH,39,EA,Eastern Area
+39167,Washington,Ohio,167,OH,39,EA,Eastern Area
+39169,Wayne,Ohio,169,OH,39,EA,Eastern Area
+39171,Williams,Ohio,171,OH,39,EA,Eastern Area
+39173,Wood,Ohio,173,OH,39,EA,Eastern Area
+39175,Wyandot,Ohio,175,OH,39,EA,Eastern Area
+40001,Adair,Oklahoma,001,OK,40,SA,Southern Area
+40003,Alfalfa,Oklahoma,003,OK,40,SA,Southern Area
+40005,Atoka,Oklahoma,005,OK,40,SA,Southern Area
+40007,Beaver,Oklahoma,007,OK,40,SA,Southern Area
+40009,Beckham,Oklahoma,009,OK,40,SA,Southern Area
+40011,Blaine,Oklahoma,011,OK,40,SA,Southern Area
+40013,Bryan,Oklahoma,013,OK,40,SA,Southern Area
+40015,Caddo,Oklahoma,015,OK,40,SA,Southern Area
+40017,Canadian,Oklahoma,017,OK,40,SA,Southern Area
+40019,Carter,Oklahoma,019,OK,40,SA,Southern Area
+40021,Cherokee,Oklahoma,021,OK,40,SA,Southern Area
+40023,Choctaw,Oklahoma,023,OK,40,SA,Southern Area
+40025,Cimarron,Oklahoma,025,OK,40,SA,Southern Area
+40027,Cleveland,Oklahoma,027,OK,40,SA,Southern Area
+40029,Coal,Oklahoma,029,OK,40,SA,Southern Area
+40031,Comanche,Oklahoma,031,OK,40,SA,Southern Area
+40033,Cotton,Oklahoma,033,OK,40,SA,Southern Area
+40035,Craig,Oklahoma,035,OK,40,SA,Southern Area
+40037,Creek,Oklahoma,037,OK,40,SA,Southern Area
+40039,Custer,Oklahoma,039,OK,40,SA,Southern Area
+40041,Delaware,Oklahoma,041,OK,40,SA,Southern Area
+40043,Dewey,Oklahoma,043,OK,40,SA,Southern Area
+40045,Ellis,Oklahoma,045,OK,40,SA,Southern Area
+40047,Garfield,Oklahoma,047,OK,40,SA,Southern Area
+40049,Garvin,Oklahoma,049,OK,40,SA,Southern Area
+40051,Grady,Oklahoma,051,OK,40,SA,Southern Area
+40053,Grant,Oklahoma,053,OK,40,SA,Southern Area
+40055,Greer,Oklahoma,055,OK,40,SA,Southern Area
+40057,Harmon,Oklahoma,057,OK,40,SA,Southern Area
+40059,Harper,Oklahoma,059,OK,40,SA,Southern Area
+40061,Haskell,Oklahoma,061,OK,40,SA,Southern Area
+40063,Hughes,Oklahoma,063,OK,40,SA,Southern Area
+40065,Jackson,Oklahoma,065,OK,40,SA,Southern Area
+40067,Jefferson,Oklahoma,067,OK,40,SA,Southern Area
+40069,Johnston,Oklahoma,069,OK,40,SA,Southern Area
+40071,Kay,Oklahoma,071,OK,40,SA,Southern Area
+40073,Kingfisher,Oklahoma,073,OK,40,SA,Southern Area
+40075,Kiowa,Oklahoma,075,OK,40,SA,Southern Area
+40077,Latimer,Oklahoma,077,OK,40,SA,Southern Area
+40079,Le Flore,Oklahoma,079,OK,40,SA,Southern Area
+40081,Lincoln,Oklahoma,081,OK,40,SA,Southern Area
+40083,Logan,Oklahoma,083,OK,40,SA,Southern Area
+40085,Love,Oklahoma,085,OK,40,SA,Southern Area
+40087,McClain,Oklahoma,087,OK,40,SA,Southern Area
+40089,McCurtain,Oklahoma,089,OK,40,SA,Southern Area
+40091,McIntosh,Oklahoma,091,OK,40,SA,Southern Area
+40093,Major,Oklahoma,093,OK,40,SA,Southern Area
+40095,Marshall,Oklahoma,095,OK,40,SA,Southern Area
+40097,Mayes,Oklahoma,097,OK,40,SA,Southern Area
+40099,Murray,Oklahoma,099,OK,40,SA,Southern Area
+40101,Muskogee,Oklahoma,101,OK,40,SA,Southern Area
+40103,Noble,Oklahoma,103,OK,40,SA,Southern Area
+40105,Nowata,Oklahoma,105,OK,40,SA,Southern Area
+40107,Okfuskee,Oklahoma,107,OK,40,SA,Southern Area
+40109,Oklahoma,Oklahoma,109,OK,40,SA,Southern Area
+40111,Okmulgee,Oklahoma,111,OK,40,SA,Southern Area
+40113,Osage,Oklahoma,113,OK,40,SA,Southern Area
+40115,Ottawa,Oklahoma,115,OK,40,SA,Southern Area
+40117,Pawnee,Oklahoma,117,OK,40,SA,Southern Area
+40119,Payne,Oklahoma,119,OK,40,SA,Southern Area
+40121,Pittsburg,Oklahoma,121,OK,40,SA,Southern Area
+40123,Pontotoc,Oklahoma,123,OK,40,SA,Southern Area
+40125,Pottawatomie,Oklahoma,125,OK,40,SA,Southern Area
+40127,Pushmataha,Oklahoma,127,OK,40,SA,Southern Area
+40129,Roger Mills,Oklahoma,129,OK,40,SA,Southern Area
+40131,Rogers,Oklahoma,131,OK,40,SA,Southern Area
+40133,Seminole,Oklahoma,133,OK,40,SA,Southern Area
+40135,Sequoyah,Oklahoma,135,OK,40,SA,Southern Area
+40137,Stephens,Oklahoma,137,OK,40,SA,Southern Area
+40139,Texas,Oklahoma,139,OK,40,SA,Southern Area
+40141,Tillman,Oklahoma,141,OK,40,SA,Southern Area
+40143,Tulsa,Oklahoma,143,OK,40,SA,Southern Area
+40145,Wagoner,Oklahoma,145,OK,40,SA,Southern Area
+40147,Washington,Oklahoma,147,OK,40,SA,Southern Area
+40149,Washita,Oklahoma,149,OK,40,SA,Southern Area
+40151,Woods,Oklahoma,151,OK,40,SA,Southern Area
+40153,Woodward,Oklahoma,153,OK,40,SA,Southern Area
+41001,Baker,Oregon,001,OR,41,NW,Northwest Area
+41003,Benton,Oregon,003,OR,41,NW,Northwest Area
+41005,Clackamas,Oregon,005,OR,41,NW,Northwest Area
+41007,Clatsop,Oregon,007,OR,41,NW,Northwest Area
+41009,Columbia,Oregon,009,OR,41,NW,Northwest Area
+41011,Coos,Oregon,011,OR,41,NW,Northwest Area
+41013,Crook,Oregon,013,OR,41,NW,Northwest Area
+41015,Curry,Oregon,015,OR,41,NW,Northwest Area
+41017,Deschutes,Oregon,017,OR,41,NW,Northwest Area
+41019,Douglas,Oregon,019,OR,41,NW,Northwest Area
+41021,Gilliam,Oregon,021,OR,41,NW,Northwest Area
+41023,Grant,Oregon,023,OR,41,NW,Northwest Area
+41025,Harney,Oregon,025,OR,41,NW,Northwest Area
+41027,Hood River,Oregon,027,OR,41,NW,Northwest Area
+41029,Jackson,Oregon,029,OR,41,NW,Northwest Area
+41031,Jefferson,Oregon,031,OR,41,NW,Northwest Area
+41033,Josephine,Oregon,033,OR,41,NW,Northwest Area
+41035,Klamath,Oregon,035,OR,41,NW,Northwest Area
+41037,Lake,Oregon,037,OR,41,NW,Northwest Area
+41039,Lane,Oregon,039,OR,41,NW,Northwest Area
+41041,Lincoln,Oregon,041,OR,41,NW,Northwest Area
+41043,Linn,Oregon,043,OR,41,NW,Northwest Area
+41045,Malheur,Oregon,045,OR,41,NW,Northwest Area
+41047,Marion,Oregon,047,OR,41,NW,Northwest Area
+41049,Morrow,Oregon,049,OR,41,NW,Northwest Area
+41051,Multnomah,Oregon,051,OR,41,NW,Northwest Area
+41053,Polk,Oregon,053,OR,41,NW,Northwest Area
+41055,Sherman,Oregon,055,OR,41,NW,Northwest Area
+41057,Tillamook,Oregon,057,OR,41,NW,Northwest Area
+41059,Umatilla,Oregon,059,OR,41,NW,Northwest Area
+41061,Union,Oregon,061,OR,41,NW,Northwest Area
+41063,Wallowa,Oregon,063,OR,41,NW,Northwest Area
+41065,Wasco,Oregon,065,OR,41,NW,Northwest Area
+41067,Washington,Oregon,067,OR,41,NW,Northwest Area
+41069,Wheeler,Oregon,069,OR,41,NW,Northwest Area
+41071,Yamhill,Oregon,071,OR,41,NW,Northwest Area
+42001,Adams,Pennsylvania,001,PA,42,EA,Eastern Area
+42003,Allegheny,Pennsylvania,003,PA,42,EA,Eastern Area
+42005,Armstrong,Pennsylvania,005,PA,42,EA,Eastern Area
+42007,Beaver,Pennsylvania,007,PA,42,EA,Eastern Area
+42009,Bedford,Pennsylvania,009,PA,42,EA,Eastern Area
+42011,Berks,Pennsylvania,011,PA,42,EA,Eastern Area
+42013,Blair,Pennsylvania,013,PA,42,EA,Eastern Area
+42015,Bradford,Pennsylvania,015,PA,42,EA,Eastern Area
+42017,Bucks,Pennsylvania,017,PA,42,EA,Eastern Area
+42019,Butler,Pennsylvania,019,PA,42,EA,Eastern Area
+42021,Cambria,Pennsylvania,021,PA,42,EA,Eastern Area
+42023,Cameron,Pennsylvania,023,PA,42,EA,Eastern Area
+42025,Carbon,Pennsylvania,025,PA,42,EA,Eastern Area
+42027,Centre,Pennsylvania,027,PA,42,EA,Eastern Area
+42029,Chester,Pennsylvania,029,PA,42,EA,Eastern Area
+42031,Clarion,Pennsylvania,031,PA,42,EA,Eastern Area
+42033,Clearfield,Pennsylvania,033,PA,42,EA,Eastern Area
+42035,Clinton,Pennsylvania,035,PA,42,EA,Eastern Area
+42037,Columbia,Pennsylvania,037,PA,42,EA,Eastern Area
+42039,Crawford,Pennsylvania,039,PA,42,EA,Eastern Area
+42041,Cumberland,Pennsylvania,041,PA,42,EA,Eastern Area
+42043,Dauphin,Pennsylvania,043,PA,42,EA,Eastern Area
+42045,Delaware,Pennsylvania,045,PA,42,EA,Eastern Area
+42047,Elk,Pennsylvania,047,PA,42,EA,Eastern Area
+42049,Erie,Pennsylvania,049,PA,42,EA,Eastern Area
+42051,Fayette,Pennsylvania,051,PA,42,EA,Eastern Area
+42053,Forest,Pennsylvania,053,PA,42,EA,Eastern Area
+42055,Franklin,Pennsylvania,055,PA,42,EA,Eastern Area
+42057,Fulton,Pennsylvania,057,PA,42,EA,Eastern Area
+42059,Greene,Pennsylvania,059,PA,42,EA,Eastern Area
+42061,Huntingdon,Pennsylvania,061,PA,42,EA,Eastern Area
+42063,Indiana,Pennsylvania,063,PA,42,EA,Eastern Area
+42065,Jefferson,Pennsylvania,065,PA,42,EA,Eastern Area
+42067,Juniata,Pennsylvania,067,PA,42,EA,Eastern Area
+42069,Lackawanna,Pennsylvania,069,PA,42,EA,Eastern Area
+42071,Lancaster,Pennsylvania,071,PA,42,EA,Eastern Area
+42073,Lawrence,Pennsylvania,073,PA,42,EA,Eastern Area
+42075,Lebanon,Pennsylvania,075,PA,42,EA,Eastern Area
+42077,Lehigh,Pennsylvania,077,PA,42,EA,Eastern Area
+42079,Luzerne,Pennsylvania,079,PA,42,EA,Eastern Area
+42081,Lycoming,Pennsylvania,081,PA,42,EA,Eastern Area
+42083,McKean,Pennsylvania,083,PA,42,EA,Eastern Area
+42085,Mercer,Pennsylvania,085,PA,42,EA,Eastern Area
+42087,Mifflin,Pennsylvania,087,PA,42,EA,Eastern Area
+42089,Monroe,Pennsylvania,089,PA,42,EA,Eastern Area
+42091,Montgomery,Pennsylvania,091,PA,42,EA,Eastern Area
+42093,Montour,Pennsylvania,093,PA,42,EA,Eastern Area
+42095,Northampton,Pennsylvania,095,PA,42,EA,Eastern Area
+42097,Northumberland,Pennsylvania,097,PA,42,EA,Eastern Area
+42099,Perry,Pennsylvania,099,PA,42,EA,Eastern Area
+42101,Philadelphia,Pennsylvania,101,PA,42,EA,Eastern Area
+42103,Pike,Pennsylvania,103,PA,42,EA,Eastern Area
+42105,Potter,Pennsylvania,105,PA,42,EA,Eastern Area
+42107,Schuylkill,Pennsylvania,107,PA,42,EA,Eastern Area
+42109,Snyder,Pennsylvania,109,PA,42,EA,Eastern Area
+42111,Somerset,Pennsylvania,111,PA,42,EA,Eastern Area
+42113,Sullivan,Pennsylvania,113,PA,42,EA,Eastern Area
+42115,Susquehanna,Pennsylvania,115,PA,42,EA,Eastern Area
+42117,Tioga,Pennsylvania,117,PA,42,EA,Eastern Area
+42119,Union,Pennsylvania,119,PA,42,EA,Eastern Area
+42121,Venango,Pennsylvania,121,PA,42,EA,Eastern Area
+42123,Warren,Pennsylvania,123,PA,42,EA,Eastern Area
+42125,Washington,Pennsylvania,125,PA,42,EA,Eastern Area
+42127,Wayne,Pennsylvania,127,PA,42,EA,Eastern Area
+42129,Westmoreland,Pennsylvania,129,PA,42,EA,Eastern Area
+42131,Wyoming,Pennsylvania,131,PA,42,EA,Eastern Area
+42133,York,Pennsylvania,133,PA,42,EA,Eastern Area
+44001,Bristol,Rhode Island,001,RI,44,EA,Eastern Area
+44003,Kent,Rhode Island,003,RI,44,EA,Eastern Area
+44005,Newport,Rhode Island,005,RI,44,EA,Eastern Area
+44007,Providence,Rhode Island,007,RI,44,EA,Eastern Area
+44009,Washington,Rhode Island,009,RI,44,EA,Eastern Area
+45001,Abbeville,South Carolina,001,SC,45,SA,Southern Area
+45003,Aiken,South Carolina,003,SC,45,SA,Southern Area
+45005,Allendale,South Carolina,005,SC,45,SA,Southern Area
+45007,Anderson,South Carolina,007,SC,45,SA,Southern Area
+45009,Bamberg,South Carolina,009,SC,45,SA,Southern Area
+45011,Barnwell,South Carolina,011,SC,45,SA,Southern Area
+45013,Beaufort,South Carolina,013,SC,45,SA,Southern Area
+45015,Berkeley,South Carolina,015,SC,45,SA,Southern Area
+45017,Calhoun,South Carolina,017,SC,45,SA,Southern Area
+45019,Charleston,South Carolina,019,SC,45,SA,Southern Area
+45021,Cherokee,South Carolina,021,SC,45,SA,Southern Area
+45023,Chester,South Carolina,023,SC,45,SA,Southern Area
+45025,Chesterfield,South Carolina,025,SC,45,SA,Southern Area
+45027,Clarendon,South Carolina,027,SC,45,SA,Southern Area
+45029,Colleton,South Carolina,029,SC,45,SA,Southern Area
+45031,Darlington,South Carolina,031,SC,45,SA,Southern Area
+45033,Dillon,South Carolina,033,SC,45,SA,Southern Area
+45035,Dorchester,South Carolina,035,SC,45,SA,Southern Area
+45037,Edgefield,South Carolina,037,SC,45,SA,Southern Area
+45039,Fairfield,South Carolina,039,SC,45,SA,Southern Area
+45041,Florence,South Carolina,041,SC,45,SA,Southern Area
+45043,Georgetown,South Carolina,043,SC,45,SA,Southern Area
+45045,Greenville,South Carolina,045,SC,45,SA,Southern Area
+45047,Greenwood,South Carolina,047,SC,45,SA,Southern Area
+45049,Hampton,South Carolina,049,SC,45,SA,Southern Area
+45051,Horry,South Carolina,051,SC,45,SA,Southern Area
+45053,Jasper,South Carolina,053,SC,45,SA,Southern Area
+45055,Kershaw,South Carolina,055,SC,45,SA,Southern Area
+45057,Lancaster,South Carolina,057,SC,45,SA,Southern Area
+45059,Laurens,South Carolina,059,SC,45,SA,Southern Area
+45061,Lee,South Carolina,061,SC,45,SA,Southern Area
+45063,Lexington,South Carolina,063,SC,45,SA,Southern Area
+45065,McCormick,South Carolina,065,SC,45,SA,Southern Area
+45067,Marion,South Carolina,067,SC,45,SA,Southern Area
+45069,Marlboro,South Carolina,069,SC,45,SA,Southern Area
+45071,Newberry,South Carolina,071,SC,45,SA,Southern Area
+45073,Oconee,South Carolina,073,SC,45,SA,Southern Area
+45075,Orangeburg,South Carolina,075,SC,45,SA,Southern Area
+45077,Pickens,South Carolina,077,SC,45,SA,Southern Area
+45079,Richland,South Carolina,079,SC,45,SA,Southern Area
+45081,Saluda,South Carolina,081,SC,45,SA,Southern Area
+45083,Spartanburg,South Carolina,083,SC,45,SA,Southern Area
+45085,Sumter,South Carolina,085,SC,45,SA,Southern Area
+45087,Union,South Carolina,087,SC,45,SA,Southern Area
+45089,Williamsburg,South Carolina,089,SC,45,SA,Southern Area
+45091,York,South Carolina,091,SC,45,SA,Southern Area
+46003,Aurora,South Dakota,003,SD,46,RM,Rocky Mountain Area
+46005,Beadle,South Dakota,005,SD,46,RM,Rocky Mountain Area
+46007,Bennett,South Dakota,007,SD,46,RM,Rocky Mountain Area
+46009,Bon Homme,South Dakota,009,SD,46,RM,Rocky Mountain Area
+46011,Brookings,South Dakota,011,SD,46,RM,Rocky Mountain Area
+46013,Brown,South Dakota,013,SD,46,RM,Rocky Mountain Area
+46015,Brule,South Dakota,015,SD,46,RM,Rocky Mountain Area
+46017,Buffalo,South Dakota,017,SD,46,RM,Rocky Mountain Area
+46019,Butte,South Dakota,019,SD,46,RM,Rocky Mountain Area
+46021,Campbell,South Dakota,021,SD,46,RM,Rocky Mountain Area
+46023,Charles Mix,South Dakota,023,SD,46,RM,Rocky Mountain Area
+46025,Clark,South Dakota,025,SD,46,RM,Rocky Mountain Area
+46027,Clay,South Dakota,027,SD,46,RM,Rocky Mountain Area
+46029,Codington,South Dakota,029,SD,46,RM,Rocky Mountain Area
+46031,Corson,South Dakota,031,SD,46,RM,Rocky Mountain Area
+46033,Custer,South Dakota,033,SD,46,RM,Rocky Mountain Area
+46035,Davison,South Dakota,035,SD,46,RM,Rocky Mountain Area
+46037,Day,South Dakota,037,SD,46,RM,Rocky Mountain Area
+46039,Deuel,South Dakota,039,SD,46,RM,Rocky Mountain Area
+46041,Dewey,South Dakota,041,SD,46,RM,Rocky Mountain Area
+46043,Douglas,South Dakota,043,SD,46,RM,Rocky Mountain Area
+46045,Edmunds,South Dakota,045,SD,46,RM,Rocky Mountain Area
+46047,Fall River,South Dakota,047,SD,46,RM,Rocky Mountain Area
+46049,Faulk,South Dakota,049,SD,46,RM,Rocky Mountain Area
+46051,Grant,South Dakota,051,SD,46,RM,Rocky Mountain Area
+46053,Gregory,South Dakota,053,SD,46,RM,Rocky Mountain Area
+46055,Haakon,South Dakota,055,SD,46,RM,Rocky Mountain Area
+46057,Hamlin,South Dakota,057,SD,46,RM,Rocky Mountain Area
+46059,Hand,South Dakota,059,SD,46,RM,Rocky Mountain Area
+46061,Hanson,South Dakota,061,SD,46,RM,Rocky Mountain Area
+46063,Harding,South Dakota,063,SD,46,RM,Rocky Mountain Area
+46065,Hughes,South Dakota,065,SD,46,RM,Rocky Mountain Area
+46067,Hutchinson,South Dakota,067,SD,46,RM,Rocky Mountain Area
+46069,Hyde,South Dakota,069,SD,46,RM,Rocky Mountain Area
+46071,Jackson,South Dakota,071,SD,46,RM,Rocky Mountain Area
+46073,Jerauld,South Dakota,073,SD,46,RM,Rocky Mountain Area
+46075,Jones,South Dakota,075,SD,46,RM,Rocky Mountain Area
+46077,Kingsbury,South Dakota,077,SD,46,RM,Rocky Mountain Area
+46079,Lake,South Dakota,079,SD,46,RM,Rocky Mountain Area
+46081,Lawrence,South Dakota,081,SD,46,RM,Rocky Mountain Area
+46083,Lincoln,South Dakota,083,SD,46,RM,Rocky Mountain Area
+46085,Lyman,South Dakota,085,SD,46,RM,Rocky Mountain Area
+46087,McCook,South Dakota,087,SD,46,RM,Rocky Mountain Area
+46089,McPherson,South Dakota,089,SD,46,RM,Rocky Mountain Area
+46091,Marshall,South Dakota,091,SD,46,RM,Rocky Mountain Area
+46093,Meade,South Dakota,093,SD,46,RM,Rocky Mountain Area
+46095,Mellette,South Dakota,095,SD,46,RM,Rocky Mountain Area
+46097,Miner,South Dakota,097,SD,46,RM,Rocky Mountain Area
+46099,Minnehaha,South Dakota,099,SD,46,RM,Rocky Mountain Area
+46101,Moody,South Dakota,101,SD,46,RM,Rocky Mountain Area
+46102,Oglala Lakota,South Dakota,102,SD,46,RM,Rocky Mountain Area
+46103,Pennington,South Dakota,103,SD,46,RM,Rocky Mountain Area
+46105,Perkins,South Dakota,105,SD,46,RM,Rocky Mountain Area
+46107,Potter,South Dakota,107,SD,46,RM,Rocky Mountain Area
+46109,Roberts,South Dakota,109,SD,46,RM,Rocky Mountain Area
+46111,Sanborn,South Dakota,111,SD,46,RM,Rocky Mountain Area
+46115,Spink,South Dakota,115,SD,46,RM,Rocky Mountain Area
+46117,Stanley,South Dakota,117,SD,46,RM,Rocky Mountain Area
+46119,Sully,South Dakota,119,SD,46,RM,Rocky Mountain Area
+46121,Todd,South Dakota,121,SD,46,RM,Rocky Mountain Area
+46123,Tripp,South Dakota,123,SD,46,RM,Rocky Mountain Area
+46125,Turner,South Dakota,125,SD,46,RM,Rocky Mountain Area
+46127,Union,South Dakota,127,SD,46,RM,Rocky Mountain Area
+46129,Walworth,South Dakota,129,SD,46,RM,Rocky Mountain Area
+46135,Yankton,South Dakota,135,SD,46,RM,Rocky Mountain Area
+46137,Ziebach,South Dakota,137,SD,46,RM,Rocky Mountain Area
+47001,Anderson,Tennessee,001,TN,47,SA,Southern Area
+47003,Bedford,Tennessee,003,TN,47,SA,Southern Area
+47005,Benton,Tennessee,005,TN,47,SA,Southern Area
+47007,Bledsoe,Tennessee,007,TN,47,SA,Southern Area
+47009,Blount,Tennessee,009,TN,47,SA,Southern Area
+47011,Bradley,Tennessee,011,TN,47,SA,Southern Area
+47013,Campbell,Tennessee,013,TN,47,SA,Southern Area
+47015,Cannon,Tennessee,015,TN,47,SA,Southern Area
+47017,Carroll,Tennessee,017,TN,47,SA,Southern Area
+47019,Carter,Tennessee,019,TN,47,SA,Southern Area
+47021,Cheatham,Tennessee,021,TN,47,SA,Southern Area
+47023,Chester,Tennessee,023,TN,47,SA,Southern Area
+47025,Claiborne,Tennessee,025,TN,47,SA,Southern Area
+47027,Clay,Tennessee,027,TN,47,SA,Southern Area
+47029,Cocke,Tennessee,029,TN,47,SA,Southern Area
+47031,Coffee,Tennessee,031,TN,47,SA,Southern Area
+47033,Crockett,Tennessee,033,TN,47,SA,Southern Area
+47035,Cumberland,Tennessee,035,TN,47,SA,Southern Area
+47037,Davidson,Tennessee,037,TN,47,SA,Southern Area
+47039,Decatur,Tennessee,039,TN,47,SA,Southern Area
+47041,DeKalb,Tennessee,041,TN,47,SA,Southern Area
+47043,Dickson,Tennessee,043,TN,47,SA,Southern Area
+47045,Dyer,Tennessee,045,TN,47,SA,Southern Area
+47047,Fayette,Tennessee,047,TN,47,SA,Southern Area
+47049,Fentress,Tennessee,049,TN,47,SA,Southern Area
+47051,Franklin,Tennessee,051,TN,47,SA,Southern Area
+47053,Gibson,Tennessee,053,TN,47,SA,Southern Area
+47055,Giles,Tennessee,055,TN,47,SA,Southern Area
+47057,Grainger,Tennessee,057,TN,47,SA,Southern Area
+47059,Greene,Tennessee,059,TN,47,SA,Southern Area
+47061,Grundy,Tennessee,061,TN,47,SA,Southern Area
+47063,Hamblen,Tennessee,063,TN,47,SA,Southern Area
+47065,Hamilton,Tennessee,065,TN,47,SA,Southern Area
+47067,Hancock,Tennessee,067,TN,47,SA,Southern Area
+47069,Hardeman,Tennessee,069,TN,47,SA,Southern Area
+47071,Hardin,Tennessee,071,TN,47,SA,Southern Area
+47073,Hawkins,Tennessee,073,TN,47,SA,Southern Area
+47075,Haywood,Tennessee,075,TN,47,SA,Southern Area
+47077,Henderson,Tennessee,077,TN,47,SA,Southern Area
+47079,Henry,Tennessee,079,TN,47,SA,Southern Area
+47081,Hickman,Tennessee,081,TN,47,SA,Southern Area
+47083,Houston,Tennessee,083,TN,47,SA,Southern Area
+47085,Humphreys,Tennessee,085,TN,47,SA,Southern Area
+47087,Jackson,Tennessee,087,TN,47,SA,Southern Area
+47089,Jefferson,Tennessee,089,TN,47,SA,Southern Area
+47091,Johnson,Tennessee,091,TN,47,SA,Southern Area
+47093,Knox,Tennessee,093,TN,47,SA,Southern Area
+47095,Lake,Tennessee,095,TN,47,SA,Southern Area
+47097,Lauderdale,Tennessee,097,TN,47,SA,Southern Area
+47099,Lawrence,Tennessee,099,TN,47,SA,Southern Area
+47101,Lewis,Tennessee,101,TN,47,SA,Southern Area
+47103,Lincoln,Tennessee,103,TN,47,SA,Southern Area
+47105,Loudon,Tennessee,105,TN,47,SA,Southern Area
+47107,McMinn,Tennessee,107,TN,47,SA,Southern Area
+47109,McNairy,Tennessee,109,TN,47,SA,Southern Area
+47111,Macon,Tennessee,111,TN,47,SA,Southern Area
+47113,Madison,Tennessee,113,TN,47,SA,Southern Area
+47115,Marion,Tennessee,115,TN,47,SA,Southern Area
+47117,Marshall,Tennessee,117,TN,47,SA,Southern Area
+47119,Maury,Tennessee,119,TN,47,SA,Southern Area
+47121,Meigs,Tennessee,121,TN,47,SA,Southern Area
+47123,Monroe,Tennessee,123,TN,47,SA,Southern Area
+47125,Montgomery,Tennessee,125,TN,47,SA,Southern Area
+47127,Moore,Tennessee,127,TN,47,SA,Southern Area
+47129,Morgan,Tennessee,129,TN,47,SA,Southern Area
+47131,Obion,Tennessee,131,TN,47,SA,Southern Area
+47133,Overton,Tennessee,133,TN,47,SA,Southern Area
+47135,Perry,Tennessee,135,TN,47,SA,Southern Area
+47137,Pickett,Tennessee,137,TN,47,SA,Southern Area
+47139,Polk,Tennessee,139,TN,47,SA,Southern Area
+47141,Putnam,Tennessee,141,TN,47,SA,Southern Area
+47143,Rhea,Tennessee,143,TN,47,SA,Southern Area
+47145,Roane,Tennessee,145,TN,47,SA,Southern Area
+47147,Robertson,Tennessee,147,TN,47,SA,Southern Area
+47149,Rutherford,Tennessee,149,TN,47,SA,Southern Area
+47151,Scott,Tennessee,151,TN,47,SA,Southern Area
+47153,Sequatchie,Tennessee,153,TN,47,SA,Southern Area
+47155,Sevier,Tennessee,155,TN,47,SA,Southern Area
+47157,Shelby,Tennessee,157,TN,47,SA,Southern Area
+47159,Smith,Tennessee,159,TN,47,SA,Southern Area
+47161,Stewart,Tennessee,161,TN,47,SA,Southern Area
+47163,Sullivan,Tennessee,163,TN,47,SA,Southern Area
+47165,Sumner,Tennessee,165,TN,47,SA,Southern Area
+47167,Tipton,Tennessee,167,TN,47,SA,Southern Area
+47169,Trousdale,Tennessee,169,TN,47,SA,Southern Area
+47171,Unicoi,Tennessee,171,TN,47,SA,Southern Area
+47173,Union,Tennessee,173,TN,47,SA,Southern Area
+47175,Van Buren,Tennessee,175,TN,47,SA,Southern Area
+47177,Warren,Tennessee,177,TN,47,SA,Southern Area
+47179,Washington,Tennessee,179,TN,47,SA,Southern Area
+47181,Wayne,Tennessee,181,TN,47,SA,Southern Area
+47183,Weakley,Tennessee,183,TN,47,SA,Southern Area
+47185,White,Tennessee,185,TN,47,SA,Southern Area
+47187,Williamson,Tennessee,187,TN,47,SA,Southern Area
+47189,Wilson,Tennessee,189,TN,47,SA,Southern Area
+48001,Anderson,Texas,001,TX,48,SA,Southern Area
+48003,Andrews,Texas,003,TX,48,SA,Southern Area
+48005,Angelina,Texas,005,TX,48,SA,Southern Area
+48007,Aransas,Texas,007,TX,48,SA,Southern Area
+48009,Archer,Texas,009,TX,48,SA,Southern Area
+48011,Armstrong,Texas,011,TX,48,SA,Southern Area
+48013,Atascosa,Texas,013,TX,48,SA,Southern Area
+48015,Austin,Texas,015,TX,48,SA,Southern Area
+48017,Bailey,Texas,017,TX,48,SA,Southern Area
+48019,Bandera,Texas,019,TX,48,SA,Southern Area
+48021,Bastrop,Texas,021,TX,48,SA,Southern Area
+48023,Baylor,Texas,023,TX,48,SA,Southern Area
+48025,Bee,Texas,025,TX,48,SA,Southern Area
+48027,Bell,Texas,027,TX,48,SA,Southern Area
+48029,Bexar,Texas,029,TX,48,SA,Southern Area
+48031,Blanco,Texas,031,TX,48,SA,Southern Area
+48033,Borden,Texas,033,TX,48,SA,Southern Area
+48035,Bosque,Texas,035,TX,48,SA,Southern Area
+48037,Bowie,Texas,037,TX,48,SA,Southern Area
+48039,Brazoria,Texas,039,TX,48,SA,Southern Area
+48041,Brazos,Texas,041,TX,48,SA,Southern Area
+48043,Brewster,Texas,043,TX,48,SW,Southwest Area
+48045,Briscoe,Texas,045,TX,48,SA,Southern Area
+48047,Brooks,Texas,047,TX,48,SA,Southern Area
+48049,Brown,Texas,049,TX,48,SA,Southern Area
+48051,Burleson,Texas,051,TX,48,SA,Southern Area
+48053,Burnet,Texas,053,TX,48,SA,Southern Area
+48055,Caldwell,Texas,055,TX,48,SA,Southern Area
+48057,Calhoun,Texas,057,TX,48,SA,Southern Area
+48059,Callahan,Texas,059,TX,48,SA,Southern Area
+48061,Cameron,Texas,061,TX,48,SA,Southern Area
+48063,Camp,Texas,063,TX,48,SA,Southern Area
+48065,Carson,Texas,065,TX,48,SA,Southern Area
+48067,Cass,Texas,067,TX,48,SA,Southern Area
+48069,Castro,Texas,069,TX,48,SA,Southern Area
+48071,Chambers,Texas,071,TX,48,SA,Southern Area
+48073,Cherokee,Texas,073,TX,48,SA,Southern Area
+48075,Childress,Texas,075,TX,48,SA,Southern Area
+48077,Clay,Texas,077,TX,48,SA,Southern Area
+48079,Cochran,Texas,079,TX,48,SA,Southern Area
+48081,Coke,Texas,081,TX,48,SA,Southern Area
+48083,Coleman,Texas,083,TX,48,SA,Southern Area
+48085,Collin,Texas,085,TX,48,SA,Southern Area
+48087,Collingsworth,Texas,087,TX,48,SA,Southern Area
+48089,Colorado,Texas,089,TX,48,SA,Southern Area
+48091,Comal,Texas,091,TX,48,SA,Southern Area
+48093,Comanche,Texas,093,TX,48,SA,Southern Area
+48095,Concho,Texas,095,TX,48,SA,Southern Area
+48097,Cooke,Texas,097,TX,48,SA,Southern Area
+48099,Coryell,Texas,099,TX,48,SA,Southern Area
+48101,Cottle,Texas,101,TX,48,SA,Southern Area
+48103,Crane,Texas,103,TX,48,SA,Southern Area
+48105,Crockett,Texas,105,TX,48,SA,Southern Area
+48107,Crosby,Texas,107,TX,48,SA,Southern Area
+48109,Culberson,Texas,109,TX,48,SW,Southwest Area
+48111,Dallam,Texas,111,TX,48,SA,Southern Area
+48113,Dallas,Texas,113,TX,48,SA,Southern Area
+48115,Dawson,Texas,115,TX,48,SA,Southern Area
+48117,Deaf Smith,Texas,117,TX,48,SA,Southern Area
+48119,Delta,Texas,119,TX,48,SA,Southern Area
+48121,Denton,Texas,121,TX,48,SA,Southern Area
+48123,DeWitt,Texas,123,TX,48,SA,Southern Area
+48125,Dickens,Texas,125,TX,48,SA,Southern Area
+48127,Dimmit,Texas,127,TX,48,SA,Southern Area
+48129,Donley,Texas,129,TX,48,SA,Southern Area
+48131,Duval,Texas,131,TX,48,SA,Southern Area
+48133,Eastland,Texas,133,TX,48,SA,Southern Area
+48135,Ector,Texas,135,TX,48,SA,Southern Area
+48137,Edwards,Texas,137,TX,48,SA,Southern Area
+48139,Ellis,Texas,139,TX,48,SA,Southern Area
+48141,El Paso,Texas,141,TX,48,SW,Southwest Area
+48143,Erath,Texas,143,TX,48,SA,Southern Area
+48145,Falls,Texas,145,TX,48,SA,Southern Area
+48147,Fannin,Texas,147,TX,48,SA,Southern Area
+48149,Fayette,Texas,149,TX,48,SA,Southern Area
+48151,Fisher,Texas,151,TX,48,SA,Southern Area
+48153,Floyd,Texas,153,TX,48,SA,Southern Area
+48155,Foard,Texas,155,TX,48,SA,Southern Area
+48157,Fort Bend,Texas,157,TX,48,SA,Southern Area
+48159,Franklin,Texas,159,TX,48,SA,Southern Area
+48161,Freestone,Texas,161,TX,48,SA,Southern Area
+48163,Frio,Texas,163,TX,48,SA,Southern Area
+48165,Gaines,Texas,165,TX,48,SA,Southern Area
+48167,Galveston,Texas,167,TX,48,SA,Southern Area
+48169,Garza,Texas,169,TX,48,SA,Southern Area
+48171,Gillespie,Texas,171,TX,48,SA,Southern Area
+48173,Glasscock,Texas,173,TX,48,SA,Southern Area
+48175,Goliad,Texas,175,TX,48,SA,Southern Area
+48177,Gonzales,Texas,177,TX,48,SA,Southern Area
+48179,Gray,Texas,179,TX,48,SA,Southern Area
+48181,Grayson,Texas,181,TX,48,SA,Southern Area
+48183,Gregg,Texas,183,TX,48,SA,Southern Area
+48185,Grimes,Texas,185,TX,48,SA,Southern Area
+48187,Guadalupe,Texas,187,TX,48,SA,Southern Area
+48189,Hale,Texas,189,TX,48,SA,Southern Area
+48191,Hall,Texas,191,TX,48,SA,Southern Area
+48193,Hamilton,Texas,193,TX,48,SA,Southern Area
+48195,Hansford,Texas,195,TX,48,SA,Southern Area
+48197,Hardeman,Texas,197,TX,48,SA,Southern Area
+48199,Hardin,Texas,199,TX,48,SA,Southern Area
+48201,Harris,Texas,201,TX,48,SA,Southern Area
+48203,Harrison,Texas,203,TX,48,SA,Southern Area
+48205,Hartley,Texas,205,TX,48,SA,Southern Area
+48207,Haskell,Texas,207,TX,48,SA,Southern Area
+48209,Hays,Texas,209,TX,48,SA,Southern Area
+48211,Hemphill,Texas,211,TX,48,SA,Southern Area
+48213,Henderson,Texas,213,TX,48,SA,Southern Area
+48215,Hidalgo,Texas,215,TX,48,SA,Southern Area
+48217,Hill,Texas,217,TX,48,SA,Southern Area
+48219,Hockley,Texas,219,TX,48,SA,Southern Area
+48221,Hood,Texas,221,TX,48,SA,Southern Area
+48223,Hopkins,Texas,223,TX,48,SA,Southern Area
+48225,Houston,Texas,225,TX,48,SA,Southern Area
+48227,Howard,Texas,227,TX,48,SA,Southern Area
+48229,Hudspeth,Texas,229,TX,48,SW,Southwest Area
+48231,Hunt,Texas,231,TX,48,SA,Southern Area
+48233,Hutchinson,Texas,233,TX,48,SA,Southern Area
+48235,Irion,Texas,235,TX,48,SA,Southern Area
+48237,Jack,Texas,237,TX,48,SA,Southern Area
+48239,Jackson,Texas,239,TX,48,SA,Southern Area
+48241,Jasper,Texas,241,TX,48,SA,Southern Area
+48243,Jeff Davis,Texas,243,TX,48,SW,Southwest Area
+48245,Jefferson,Texas,245,TX,48,SA,Southern Area
+48247,Jim Hogg,Texas,247,TX,48,SA,Southern Area
+48249,Jim Wells,Texas,249,TX,48,SA,Southern Area
+48251,Johnson,Texas,251,TX,48,SA,Southern Area
+48253,Jones,Texas,253,TX,48,SA,Southern Area
+48255,Karnes,Texas,255,TX,48,SA,Southern Area
+48257,Kaufman,Texas,257,TX,48,SA,Southern Area
+48259,Kendall,Texas,259,TX,48,SA,Southern Area
+48261,Kenedy,Texas,261,TX,48,SA,Southern Area
+48263,Kent,Texas,263,TX,48,SA,Southern Area
+48265,Kerr,Texas,265,TX,48,SA,Southern Area
+48267,Kimble,Texas,267,TX,48,SA,Southern Area
+48269,King,Texas,269,TX,48,SA,Southern Area
+48271,Kinney,Texas,271,TX,48,SA,Southern Area
+48273,Kleberg,Texas,273,TX,48,SA,Southern Area
+48275,Knox,Texas,275,TX,48,SA,Southern Area
+48277,Lamar,Texas,277,TX,48,SA,Southern Area
+48279,Lamb,Texas,279,TX,48,SA,Southern Area
+48281,Lampasas,Texas,281,TX,48,SA,Southern Area
+48283,La Salle,Texas,283,TX,48,SA,Southern Area
+48285,Lavaca,Texas,285,TX,48,SA,Southern Area
+48287,Lee,Texas,287,TX,48,SA,Southern Area
+48289,Leon,Texas,289,TX,48,SA,Southern Area
+48291,Liberty,Texas,291,TX,48,SA,Southern Area
+48293,Limestone,Texas,293,TX,48,SA,Southern Area
+48295,Lipscomb,Texas,295,TX,48,SA,Southern Area
+48297,Live Oak,Texas,297,TX,48,SA,Southern Area
+48299,Llano,Texas,299,TX,48,SA,Southern Area
+48301,Loving,Texas,301,TX,48,SW,Southwest Area
+48303,Lubbock,Texas,303,TX,48,SA,Southern Area
+48305,Lynn,Texas,305,TX,48,SA,Southern Area
+48307,McCulloch,Texas,307,TX,48,SA,Southern Area
+48309,McLennan,Texas,309,TX,48,SA,Southern Area
+48311,McMullen,Texas,311,TX,48,SA,Southern Area
+48313,Madison,Texas,313,TX,48,SA,Southern Area
+48315,Marion,Texas,315,TX,48,SA,Southern Area
+48317,Martin,Texas,317,TX,48,SA,Southern Area
+48319,Mason,Texas,319,TX,48,SA,Southern Area
+48321,Matagorda,Texas,321,TX,48,SA,Southern Area
+48323,Maverick,Texas,323,TX,48,SA,Southern Area
+48325,Medina,Texas,325,TX,48,SA,Southern Area
+48327,Menard,Texas,327,TX,48,SA,Southern Area
+48329,Midland,Texas,329,TX,48,SA,Southern Area
+48331,Milam,Texas,331,TX,48,SA,Southern Area
+48333,Mills,Texas,333,TX,48,SA,Southern Area
+48335,Mitchell,Texas,335,TX,48,SA,Southern Area
+48337,Montague,Texas,337,TX,48,SA,Southern Area
+48339,Montgomery,Texas,339,TX,48,SA,Southern Area
+48341,Moore,Texas,341,TX,48,SA,Southern Area
+48343,Morris,Texas,343,TX,48,SA,Southern Area
+48345,Motley,Texas,345,TX,48,SA,Southern Area
+48347,Nacogdoches,Texas,347,TX,48,SA,Southern Area
+48349,Navarro,Texas,349,TX,48,SA,Southern Area
+48351,Newton,Texas,351,TX,48,SA,Southern Area
+48353,Nolan,Texas,353,TX,48,SA,Southern Area
+48355,Nueces,Texas,355,TX,48,SA,Southern Area
+48357,Ochiltree,Texas,357,TX,48,SA,Southern Area
+48359,Oldham,Texas,359,TX,48,SA,Southern Area
+48361,Orange,Texas,361,TX,48,SA,Southern Area
+48363,Palo Pinto,Texas,363,TX,48,SA,Southern Area
+48365,Panola,Texas,365,TX,48,SA,Southern Area
+48367,Parker,Texas,367,TX,48,SA,Southern Area
+48369,Parmer,Texas,369,TX,48,SA,Southern Area
+48371,Pecos,Texas,371,TX,48,SW,Southwest Area
+48373,Polk,Texas,373,TX,48,SA,Southern Area
+48375,Potter,Texas,375,TX,48,SA,Southern Area
+48377,Presidio,Texas,377,TX,48,SW,Southwest Area
+48379,Rains,Texas,379,TX,48,SA,Southern Area
+48381,Randall,Texas,381,TX,48,SA,Southern Area
+48383,Reagan,Texas,383,TX,48,SA,Southern Area
+48385,Real,Texas,385,TX,48,SA,Southern Area
+48387,Red River,Texas,387,TX,48,SA,Southern Area
+48389,Reeves,Texas,389,TX,48,SW,Southwest Area
+48391,Refugio,Texas,391,TX,48,SA,Southern Area
+48393,Roberts,Texas,393,TX,48,SA,Southern Area
+48395,Robertson,Texas,395,TX,48,SA,Southern Area
+48397,Rockwall,Texas,397,TX,48,SA,Southern Area
+48399,Runnels,Texas,399,TX,48,SA,Southern Area
+48401,Rusk,Texas,401,TX,48,SA,Southern Area
+48403,Sabine,Texas,403,TX,48,SA,Southern Area
+48405,San Augustine,Texas,405,TX,48,SA,Southern Area
+48407,San Jacinto,Texas,407,TX,48,SA,Southern Area
+48409,San Patricio,Texas,409,TX,48,SA,Southern Area
+48411,San Saba,Texas,411,TX,48,SA,Southern Area
+48413,Schleicher,Texas,413,TX,48,SA,Southern Area
+48415,Scurry,Texas,415,TX,48,SA,Southern Area
+48417,Shackelford,Texas,417,TX,48,SA,Southern Area
+48419,Shelby,Texas,419,TX,48,SA,Southern Area
+48421,Sherman,Texas,421,TX,48,SA,Southern Area
+48423,Smith,Texas,423,TX,48,SA,Southern Area
+48425,Somervell,Texas,425,TX,48,SA,Southern Area
+48427,Starr,Texas,427,TX,48,SA,Southern Area
+48429,Stephens,Texas,429,TX,48,SA,Southern Area
+48431,Sterling,Texas,431,TX,48,SA,Southern Area
+48433,Stonewall,Texas,433,TX,48,SA,Southern Area
+48435,Sutton,Texas,435,TX,48,SA,Southern Area
+48437,Swisher,Texas,437,TX,48,SA,Southern Area
+48439,Tarrant,Texas,439,TX,48,SA,Southern Area
+48441,Taylor,Texas,441,TX,48,SA,Southern Area
+48443,Terrell,Texas,443,TX,48,SW,Southwest Area
+48445,Terry,Texas,445,TX,48,SA,Southern Area
+48447,Throckmorton,Texas,447,TX,48,SA,Southern Area
+48449,Titus,Texas,449,TX,48,SA,Southern Area
+48451,Tom Green,Texas,451,TX,48,SA,Southern Area
+48453,Travis,Texas,453,TX,48,SA,Southern Area
+48455,Trinity,Texas,455,TX,48,SA,Southern Area
+48457,Tyler,Texas,457,TX,48,SA,Southern Area
+48459,Upshur,Texas,459,TX,48,SA,Southern Area
+48461,Upton,Texas,461,TX,48,SA,Southern Area
+48463,Uvalde,Texas,463,TX,48,SA,Southern Area
+48465,Val Verde,Texas,465,TX,48,SA,Southern Area
+48467,Van Zandt,Texas,467,TX,48,SA,Southern Area
+48469,Victoria,Texas,469,TX,48,SA,Southern Area
+48471,Walker,Texas,471,TX,48,SA,Southern Area
+48473,Waller,Texas,473,TX,48,SA,Southern Area
+48475,Ward,Texas,475,TX,48,SW,Southwest Area
+48477,Washington,Texas,477,TX,48,SA,Southern Area
+48479,Webb,Texas,479,TX,48,SA,Southern Area
+48481,Wharton,Texas,481,TX,48,SA,Southern Area
+48483,Wheeler,Texas,483,TX,48,SA,Southern Area
+48485,Wichita,Texas,485,TX,48,SA,Southern Area
+48487,Wilbarger,Texas,487,TX,48,SA,Southern Area
+48489,Willacy,Texas,489,TX,48,SA,Southern Area
+48491,Williamson,Texas,491,TX,48,SA,Southern Area
+48493,Wilson,Texas,493,TX,48,SA,Southern Area
+48495,Winkler,Texas,495,TX,48,SA,Southern Area
+48497,Wise,Texas,497,TX,48,SA,Southern Area
+48499,Wood,Texas,499,TX,48,SA,Southern Area
+48501,Yoakum,Texas,501,TX,48,SA,Southern Area
+48503,Young,Texas,503,TX,48,SA,Southern Area
+48505,Zapata,Texas,505,TX,48,SA,Southern Area
+48507,Zavala,Texas,507,TX,48,SA,Southern Area
+49001,Beaver,Utah,001,UT,49,GB,Great Basin Area
+49003,Box Elder,Utah,003,UT,49,GB,Great Basin Area
+49005,Cache,Utah,005,UT,49,GB,Great Basin Area
+49007,Carbon,Utah,007,UT,49,GB,Great Basin Area
+49009,Daggett,Utah,009,UT,49,GB,Great Basin Area
+49011,Davis,Utah,011,UT,49,GB,Great Basin Area
+49013,Duchesne,Utah,013,UT,49,GB,Great Basin Area
+49015,Emery,Utah,015,UT,49,GB,Great Basin Area
+49017,Garfield,Utah,017,UT,49,GB,Great Basin Area
+49019,Grand,Utah,019,UT,49,GB,Great Basin Area
+49021,Iron,Utah,021,UT,49,GB,Great Basin Area
+49023,Juab,Utah,023,UT,49,GB,Great Basin Area
+49025,Kane,Utah,025,UT,49,GB,Great Basin Area
+49027,Millard,Utah,027,UT,49,GB,Great Basin Area
+49029,Morgan,Utah,029,UT,49,GB,Great Basin Area
+49031,Piute,Utah,031,UT,49,GB,Great Basin Area
+49033,Rich,Utah,033,UT,49,GB,Great Basin Area
+49035,Salt Lake,Utah,035,UT,49,GB,Great Basin Area
+49037,San Juan,Utah,037,UT,49,GB,Great Basin Area
+49039,Sanpete,Utah,039,UT,49,GB,Great Basin Area
+49041,Sevier,Utah,041,UT,49,GB,Great Basin Area
+49043,Summit,Utah,043,UT,49,GB,Great Basin Area
+49045,Tooele,Utah,045,UT,49,GB,Great Basin Area
+49047,Uintah,Utah,047,UT,49,GB,Great Basin Area
+49049,Utah,Utah,049,UT,49,GB,Great Basin Area
+49051,Wasatch,Utah,051,UT,49,GB,Great Basin Area
+49053,Washington,Utah,053,UT,49,GB,Great Basin Area
+49055,Wayne,Utah,055,UT,49,GB,Great Basin Area
+49057,Weber,Utah,057,UT,49,GB,Great Basin Area
+50001,Addison,Vermont,001,VT,50,EA,Eastern Area
+50003,Bennington,Vermont,003,VT,50,EA,Eastern Area
+50005,Caledonia,Vermont,005,VT,50,EA,Eastern Area
+50007,Chittenden,Vermont,007,VT,50,EA,Eastern Area
+50009,Essex,Vermont,009,VT,50,EA,Eastern Area
+50011,Franklin,Vermont,011,VT,50,EA,Eastern Area
+50013,Grand Isle,Vermont,013,VT,50,EA,Eastern Area
+50015,Lamoille,Vermont,015,VT,50,EA,Eastern Area
+50017,Orange,Vermont,017,VT,50,EA,Eastern Area
+50019,Orleans,Vermont,019,VT,50,EA,Eastern Area
+50021,Rutland,Vermont,021,VT,50,EA,Eastern Area
+50023,Washington,Vermont,023,VT,50,EA,Eastern Area
+50025,Windham,Vermont,025,VT,50,EA,Eastern Area
+50027,Windsor,Vermont,027,VT,50,EA,Eastern Area
+51001,Accomack,Virginia,001,VA,51,SA,Southern Area
+51003,Albemarle,Virginia,003,VA,51,SA,Southern Area
+51005,Alleghany,Virginia,005,VA,51,SA,Southern Area
+51007,Amelia,Virginia,007,VA,51,SA,Southern Area
+51009,Amherst,Virginia,009,VA,51,SA,Southern Area
+51011,Appomattox,Virginia,011,VA,51,SA,Southern Area
+51013,Arlington,Virginia,013,VA,51,SA,Southern Area
+51015,Augusta,Virginia,015,VA,51,SA,Southern Area
+51017,Bath,Virginia,017,VA,51,SA,Southern Area
+51019,Bedford,Virginia,019,VA,51,SA,Southern Area
+51021,Bland,Virginia,021,VA,51,SA,Southern Area
+51023,Botetourt,Virginia,023,VA,51,SA,Southern Area
+51025,Brunswick,Virginia,025,VA,51,SA,Southern Area
+51027,Buchanan,Virginia,027,VA,51,SA,Southern Area
+51029,Buckingham,Virginia,029,VA,51,SA,Southern Area
+51031,Campbell,Virginia,031,VA,51,SA,Southern Area
+51033,Caroline,Virginia,033,VA,51,SA,Southern Area
+51035,Carroll,Virginia,035,VA,51,SA,Southern Area
+51036,Charles City,Virginia,036,VA,51,SA,Southern Area
+51037,Charlotte,Virginia,037,VA,51,SA,Southern Area
+51041,Chesterfield,Virginia,041,VA,51,SA,Southern Area
+51043,Clarke,Virginia,043,VA,51,SA,Southern Area
+51045,Craig,Virginia,045,VA,51,SA,Southern Area
+51047,Culpeper,Virginia,047,VA,51,SA,Southern Area
+51049,Cumberland,Virginia,049,VA,51,SA,Southern Area
+51051,Dickenson,Virginia,051,VA,51,SA,Southern Area
+51053,Dinwiddie,Virginia,053,VA,51,SA,Southern Area
+51057,Essex,Virginia,057,VA,51,SA,Southern Area
+51059,Fairfax,Virginia,059,VA,51,SA,Southern Area
+51061,Fauquier,Virginia,061,VA,51,SA,Southern Area
+51063,Floyd,Virginia,063,VA,51,SA,Southern Area
+51065,Fluvanna,Virginia,065,VA,51,SA,Southern Area
+51067,Franklin,Virginia,067,VA,51,SA,Southern Area
+51069,Frederick,Virginia,069,VA,51,SA,Southern Area
+51071,Giles,Virginia,071,VA,51,SA,Southern Area
+51073,Gloucester,Virginia,073,VA,51,SA,Southern Area
+51075,Goochland,Virginia,075,VA,51,SA,Southern Area
+51077,Grayson,Virginia,077,VA,51,SA,Southern Area
+51079,Greene,Virginia,079,VA,51,SA,Southern Area
+51081,Greensville,Virginia,081,VA,51,SA,Southern Area
+51083,Halifax,Virginia,083,VA,51,SA,Southern Area
+51085,Hanover,Virginia,085,VA,51,SA,Southern Area
+51087,Henrico,Virginia,087,VA,51,SA,Southern Area
+51089,Henry,Virginia,089,VA,51,SA,Southern Area
+51091,Highland,Virginia,091,VA,51,SA,Southern Area
+51093,Isle of Wight,Virginia,093,VA,51,SA,Southern Area
+51095,James City,Virginia,095,VA,51,SA,Southern Area
+51097,King and Queen,Virginia,097,VA,51,SA,Southern Area
+51099,King George,Virginia,099,VA,51,SA,Southern Area
+51101,King William,Virginia,101,VA,51,SA,Southern Area
+51103,Lancaster,Virginia,103,VA,51,SA,Southern Area
+51105,Lee,Virginia,105,VA,51,SA,Southern Area
+51107,Loudoun,Virginia,107,VA,51,SA,Southern Area
+51109,Louisa,Virginia,109,VA,51,SA,Southern Area
+51111,Lunenburg,Virginia,111,VA,51,SA,Southern Area
+51113,Madison,Virginia,113,VA,51,SA,Southern Area
+51115,Mathews,Virginia,115,VA,51,SA,Southern Area
+51117,Mecklenburg,Virginia,117,VA,51,SA,Southern Area
+51119,Middlesex,Virginia,119,VA,51,SA,Southern Area
+51121,Montgomery,Virginia,121,VA,51,SA,Southern Area
+51125,Nelson,Virginia,125,VA,51,SA,Southern Area
+51127,New Kent,Virginia,127,VA,51,SA,Southern Area
+51131,Northampton,Virginia,131,VA,51,SA,Southern Area
+51133,Northumberland,Virginia,133,VA,51,SA,Southern Area
+51135,Nottoway,Virginia,135,VA,51,SA,Southern Area
+51137,Orange,Virginia,137,VA,51,SA,Southern Area
+51139,Page,Virginia,139,VA,51,SA,Southern Area
+51141,Patrick,Virginia,141,VA,51,SA,Southern Area
+51143,Pittsylvania,Virginia,143,VA,51,SA,Southern Area
+51145,Powhatan,Virginia,145,VA,51,SA,Southern Area
+51147,Prince Edward,Virginia,147,VA,51,SA,Southern Area
+51149,Prince George,Virginia,149,VA,51,SA,Southern Area
+51153,Prince William,Virginia,153,VA,51,SA,Southern Area
+51155,Pulaski,Virginia,155,VA,51,SA,Southern Area
+51157,Rappahannock,Virginia,157,VA,51,SA,Southern Area
+51159,Richmond,Virginia,159,VA,51,SA,Southern Area
+51161,Roanoke,Virginia,161,VA,51,SA,Southern Area
+51163,Rockbridge,Virginia,163,VA,51,SA,Southern Area
+51165,Rockingham,Virginia,165,VA,51,SA,Southern Area
+51167,Russell,Virginia,167,VA,51,SA,Southern Area
+51169,Scott,Virginia,169,VA,51,SA,Southern Area
+51171,Shenandoah,Virginia,171,VA,51,SA,Southern Area
+51173,Smyth,Virginia,173,VA,51,SA,Southern Area
+51175,Southampton,Virginia,175,VA,51,SA,Southern Area
+51177,Spotsylvania,Virginia,177,VA,51,SA,Southern Area
+51179,Stafford,Virginia,179,VA,51,SA,Southern Area
+51181,Surry,Virginia,181,VA,51,SA,Southern Area
+51183,Sussex,Virginia,183,VA,51,SA,Southern Area
+51185,Tazewell,Virginia,185,VA,51,SA,Southern Area
+51187,Warren,Virginia,187,VA,51,SA,Southern Area
+51191,Washington,Virginia,191,VA,51,SA,Southern Area
+51193,Westmoreland,Virginia,193,VA,51,SA,Southern Area
+51195,Wise,Virginia,195,VA,51,SA,Southern Area
+51197,Wythe,Virginia,197,VA,51,SA,Southern Area
+51199,York,Virginia,199,VA,51,SA,Southern Area
+51510,Alexandria,Virginia,510,VA,51,SA,Southern Area
+51520,Bristol,Virginia,520,VA,51,SA,Southern Area
+51530,Buena Vista,Virginia,530,VA,51,SA,Southern Area
+51540,Charlottesville,Virginia,540,VA,51,SA,Southern Area
+51550,Chesapeake,Virginia,550,VA,51,SA,Southern Area
+51570,Colonial Heights,Virginia,570,VA,51,SA,Southern Area
+51580,Covington,Virginia,580,VA,51,SA,Southern Area
+51590,Danville,Virginia,590,VA,51,SA,Southern Area
+51595,Emporia,Virginia,595,VA,51,SA,Southern Area
+51600,Fairfax,Virginia,600,VA,51,SA,Southern Area
+51610,Falls Church,Virginia,610,VA,51,SA,Southern Area
+51620,Franklin,Virginia,620,VA,51,SA,Southern Area
+51630,Fredericksburg,Virginia,630,VA,51,SA,Southern Area
+51640,Galax,Virginia,640,VA,51,SA,Southern Area
+51650,Hampton,Virginia,650,VA,51,SA,Southern Area
+51660,Harrisonburg,Virginia,660,VA,51,SA,Southern Area
+51670,Hopewell,Virginia,670,VA,51,SA,Southern Area
+51678,Lexington,Virginia,678,VA,51,SA,Southern Area
+51680,Lynchburg,Virginia,680,VA,51,SA,Southern Area
+51683,Manassas,Virginia,683,VA,51,SA,Southern Area
+51685,Manassas Park,Virginia,685,VA,51,SA,Southern Area
+51690,Martinsville,Virginia,690,VA,51,SA,Southern Area
+51700,Newport News,Virginia,700,VA,51,SA,Southern Area
+51710,Norfolk,Virginia,710,VA,51,SA,Southern Area
+51720,Norton,Virginia,720,VA,51,SA,Southern Area
+51730,Petersburg,Virginia,730,VA,51,SA,Southern Area
+51735,Poquoson,Virginia,735,VA,51,SA,Southern Area
+51740,Portsmouth,Virginia,740,VA,51,SA,Southern Area
+51750,Radford,Virginia,750,VA,51,SA,Southern Area
+51760,Richmond,Virginia,760,VA,51,SA,Southern Area
+51770,Roanoke,Virginia,770,VA,51,SA,Southern Area
+51775,Salem,Virginia,775,VA,51,SA,Southern Area
+51790,Staunton,Virginia,790,VA,51,SA,Southern Area
+51800,Suffolk,Virginia,800,VA,51,SA,Southern Area
+51810,Virginia Beach,Virginia,810,VA,51,SA,Southern Area
+51820,Waynesboro,Virginia,820,VA,51,SA,Southern Area
+51830,Williamsburg,Virginia,830,VA,51,SA,Southern Area
+51840,Winchester,Virginia,840,VA,51,SA,Southern Area
+53001,Adams,Washington,001,WA,53,NW,Northwest Area
+53003,Asotin,Washington,003,WA,53,NW,Northwest Area
+53005,Benton,Washington,005,WA,53,NW,Northwest Area
+53007,Chelan,Washington,007,WA,53,NW,Northwest Area
+53009,Clallam,Washington,009,WA,53,NW,Northwest Area
+53011,Clark,Washington,011,WA,53,NW,Northwest Area
+53013,Columbia,Washington,013,WA,53,NW,Northwest Area
+53015,Cowlitz,Washington,015,WA,53,NW,Northwest Area
+53017,Douglas,Washington,017,WA,53,NW,Northwest Area
+53019,Ferry,Washington,019,WA,53,NW,Northwest Area
+53021,Franklin,Washington,021,WA,53,NW,Northwest Area
+53023,Garfield,Washington,023,WA,53,NW,Northwest Area
+53025,Grant,Washington,025,WA,53,NW,Northwest Area
+53027,Grays Harbor,Washington,027,WA,53,NW,Northwest Area
+53029,Island,Washington,029,WA,53,NW,Northwest Area
+53031,Jefferson,Washington,031,WA,53,NW,Northwest Area
+53033,King,Washington,033,WA,53,NW,Northwest Area
+53035,Kitsap,Washington,035,WA,53,NW,Northwest Area
+53037,Kittitas,Washington,037,WA,53,NW,Northwest Area
+53039,Klickitat,Washington,039,WA,53,NW,Northwest Area
+53041,Lewis,Washington,041,WA,53,NW,Northwest Area
+53043,Lincoln,Washington,043,WA,53,NW,Northwest Area
+53045,Mason,Washington,045,WA,53,NW,Northwest Area
+53047,Okanogan,Washington,047,WA,53,NW,Northwest Area
+53049,Pacific,Washington,049,WA,53,NW,Northwest Area
+53051,Pend Oreille,Washington,051,WA,53,NW,Northwest Area
+53053,Pierce,Washington,053,WA,53,NW,Northwest Area
+53055,San Juan,Washington,055,WA,53,NW,Northwest Area
+53057,Skagit,Washington,057,WA,53,NW,Northwest Area
+53059,Skamania,Washington,059,WA,53,NW,Northwest Area
+53061,Snohomish,Washington,061,WA,53,NW,Northwest Area
+53063,Spokane,Washington,063,WA,53,NW,Northwest Area
+53065,Stevens,Washington,065,WA,53,NW,Northwest Area
+53067,Thurston,Washington,067,WA,53,NW,Northwest Area
+53069,Wahkiakum,Washington,069,WA,53,NW,Northwest Area
+53071,Walla Walla,Washington,071,WA,53,NW,Northwest Area
+53073,Whatcom,Washington,073,WA,53,NW,Northwest Area
+53075,Whitman,Washington,075,WA,53,NW,Northwest Area
+53077,Yakima,Washington,077,WA,53,NW,Northwest Area
+54001,Barbour,West Virginia,001,WV,54,EA,Eastern Area
+54003,Berkeley,West Virginia,003,WV,54,EA,Eastern Area
+54005,Boone,West Virginia,005,WV,54,EA,Eastern Area
+54007,Braxton,West Virginia,007,WV,54,EA,Eastern Area
+54009,Brooke,West Virginia,009,WV,54,EA,Eastern Area
+54011,Cabell,West Virginia,011,WV,54,EA,Eastern Area
+54013,Calhoun,West Virginia,013,WV,54,EA,Eastern Area
+54015,Clay,West Virginia,015,WV,54,EA,Eastern Area
+54017,Doddridge,West Virginia,017,WV,54,EA,Eastern Area
+54019,Fayette,West Virginia,019,WV,54,EA,Eastern Area
+54021,Gilmer,West Virginia,021,WV,54,EA,Eastern Area
+54023,Grant,West Virginia,023,WV,54,EA,Eastern Area
+54025,Greenbrier,West Virginia,025,WV,54,EA,Eastern Area
+54027,Hampshire,West Virginia,027,WV,54,EA,Eastern Area
+54029,Hancock,West Virginia,029,WV,54,EA,Eastern Area
+54031,Hardy,West Virginia,031,WV,54,EA,Eastern Area
+54033,Harrison,West Virginia,033,WV,54,EA,Eastern Area
+54035,Jackson,West Virginia,035,WV,54,EA,Eastern Area
+54037,Jefferson,West Virginia,037,WV,54,EA,Eastern Area
+54039,Kanawha,West Virginia,039,WV,54,EA,Eastern Area
+54041,Lewis,West Virginia,041,WV,54,EA,Eastern Area
+54043,Lincoln,West Virginia,043,WV,54,EA,Eastern Area
+54045,Logan,West Virginia,045,WV,54,EA,Eastern Area
+54047,McDowell,West Virginia,047,WV,54,EA,Eastern Area
+54049,Marion,West Virginia,049,WV,54,EA,Eastern Area
+54051,Marshall,West Virginia,051,WV,54,EA,Eastern Area
+54053,Mason,West Virginia,053,WV,54,EA,Eastern Area
+54055,Mercer,West Virginia,055,WV,54,EA,Eastern Area
+54057,Mineral,West Virginia,057,WV,54,EA,Eastern Area
+54059,Mingo,West Virginia,059,WV,54,EA,Eastern Area
+54061,Monongalia,West Virginia,061,WV,54,EA,Eastern Area
+54063,Monroe,West Virginia,063,WV,54,EA,Eastern Area
+54065,Morgan,West Virginia,065,WV,54,EA,Eastern Area
+54067,Nicholas,West Virginia,067,WV,54,EA,Eastern Area
+54069,Ohio,West Virginia,069,WV,54,EA,Eastern Area
+54071,Pendleton,West Virginia,071,WV,54,EA,Eastern Area
+54073,Pleasants,West Virginia,073,WV,54,EA,Eastern Area
+54075,Pocahontas,West Virginia,075,WV,54,EA,Eastern Area
+54077,Preston,West Virginia,077,WV,54,EA,Eastern Area
+54079,Putnam,West Virginia,079,WV,54,EA,Eastern Area
+54081,Raleigh,West Virginia,081,WV,54,EA,Eastern Area
+54083,Randolph,West Virginia,083,WV,54,EA,Eastern Area
+54085,Ritchie,West Virginia,085,WV,54,EA,Eastern Area
+54087,Roane,West Virginia,087,WV,54,EA,Eastern Area
+54089,Summers,West Virginia,089,WV,54,EA,Eastern Area
+54091,Taylor,West Virginia,091,WV,54,EA,Eastern Area
+54093,Tucker,West Virginia,093,WV,54,EA,Eastern Area
+54095,Tyler,West Virginia,095,WV,54,EA,Eastern Area
+54097,Upshur,West Virginia,097,WV,54,EA,Eastern Area
+54099,Wayne,West Virginia,099,WV,54,EA,Eastern Area
+54101,Webster,West Virginia,101,WV,54,EA,Eastern Area
+54103,Wetzel,West Virginia,103,WV,54,EA,Eastern Area
+54105,Wirt,West Virginia,105,WV,54,EA,Eastern Area
+54107,Wood,West Virginia,107,WV,54,EA,Eastern Area
+54109,Wyoming,West Virginia,109,WV,54,EA,Eastern Area
+55001,Adams,Wisconsin,001,WI,55,EA,Eastern Area
+55003,Ashland,Wisconsin,003,WI,55,EA,Eastern Area
+55005,Barron,Wisconsin,005,WI,55,EA,Eastern Area
+55007,Bayfield,Wisconsin,007,WI,55,EA,Eastern Area
+55009,Brown,Wisconsin,009,WI,55,EA,Eastern Area
+55011,Buffalo,Wisconsin,011,WI,55,EA,Eastern Area
+55013,Burnett,Wisconsin,013,WI,55,EA,Eastern Area
+55015,Calumet,Wisconsin,015,WI,55,EA,Eastern Area
+55017,Chippewa,Wisconsin,017,WI,55,EA,Eastern Area
+55019,Clark,Wisconsin,019,WI,55,EA,Eastern Area
+55021,Columbia,Wisconsin,021,WI,55,EA,Eastern Area
+55023,Crawford,Wisconsin,023,WI,55,EA,Eastern Area
+55025,Dane,Wisconsin,025,WI,55,EA,Eastern Area
+55027,Dodge,Wisconsin,027,WI,55,EA,Eastern Area
+55029,Door,Wisconsin,029,WI,55,EA,Eastern Area
+55031,Douglas,Wisconsin,031,WI,55,EA,Eastern Area
+55033,Dunn,Wisconsin,033,WI,55,EA,Eastern Area
+55035,Eau Claire,Wisconsin,035,WI,55,EA,Eastern Area
+55037,Florence,Wisconsin,037,WI,55,EA,Eastern Area
+55039,Fond du Lac,Wisconsin,039,WI,55,EA,Eastern Area
+55041,Forest,Wisconsin,041,WI,55,EA,Eastern Area
+55043,Grant,Wisconsin,043,WI,55,EA,Eastern Area
+55045,Green,Wisconsin,045,WI,55,EA,Eastern Area
+55047,Green Lake,Wisconsin,047,WI,55,EA,Eastern Area
+55049,Iowa,Wisconsin,049,WI,55,EA,Eastern Area
+55051,Iron,Wisconsin,051,WI,55,EA,Eastern Area
+55053,Jackson,Wisconsin,053,WI,55,EA,Eastern Area
+55055,Jefferson,Wisconsin,055,WI,55,EA,Eastern Area
+55057,Juneau,Wisconsin,057,WI,55,EA,Eastern Area
+55059,Kenosha,Wisconsin,059,WI,55,EA,Eastern Area
+55061,Kewaunee,Wisconsin,061,WI,55,EA,Eastern Area
+55063,La Crosse,Wisconsin,063,WI,55,EA,Eastern Area
+55065,Lafayette,Wisconsin,065,WI,55,EA,Eastern Area
+55067,Langlade,Wisconsin,067,WI,55,EA,Eastern Area
+55069,Lincoln,Wisconsin,069,WI,55,EA,Eastern Area
+55071,Manitowoc,Wisconsin,071,WI,55,EA,Eastern Area
+55073,Marathon,Wisconsin,073,WI,55,EA,Eastern Area
+55075,Marinette,Wisconsin,075,WI,55,EA,Eastern Area
+55077,Marquette,Wisconsin,077,WI,55,EA,Eastern Area
+55078,Menominee,Wisconsin,078,WI,55,EA,Eastern Area
+55079,Milwaukee,Wisconsin,079,WI,55,EA,Eastern Area
+55081,Monroe,Wisconsin,081,WI,55,EA,Eastern Area
+55083,Oconto,Wisconsin,083,WI,55,EA,Eastern Area
+55085,Oneida,Wisconsin,085,WI,55,EA,Eastern Area
+55087,Outagamie,Wisconsin,087,WI,55,EA,Eastern Area
+55089,Ozaukee,Wisconsin,089,WI,55,EA,Eastern Area
+55091,Pepin,Wisconsin,091,WI,55,EA,Eastern Area
+55093,Pierce,Wisconsin,093,WI,55,EA,Eastern Area
+55095,Polk,Wisconsin,095,WI,55,EA,Eastern Area
+55097,Portage,Wisconsin,097,WI,55,EA,Eastern Area
+55099,Price,Wisconsin,099,WI,55,EA,Eastern Area
+55101,Racine,Wisconsin,101,WI,55,EA,Eastern Area
+55103,Richland,Wisconsin,103,WI,55,EA,Eastern Area
+55105,Rock,Wisconsin,105,WI,55,EA,Eastern Area
+55107,Rusk,Wisconsin,107,WI,55,EA,Eastern Area
+55109,St. Croix,Wisconsin,109,WI,55,EA,Eastern Area
+55111,Sauk,Wisconsin,111,WI,55,EA,Eastern Area
+55113,Sawyer,Wisconsin,113,WI,55,EA,Eastern Area
+55115,Shawano,Wisconsin,115,WI,55,EA,Eastern Area
+55117,Sheboygan,Wisconsin,117,WI,55,EA,Eastern Area
+55119,Taylor,Wisconsin,119,WI,55,EA,Eastern Area
+55121,Trempealeau,Wisconsin,121,WI,55,EA,Eastern Area
+55123,Vernon,Wisconsin,123,WI,55,EA,Eastern Area
+55125,Vilas,Wisconsin,125,WI,55,EA,Eastern Area
+55127,Walworth,Wisconsin,127,WI,55,EA,Eastern Area
+55129,Washburn,Wisconsin,129,WI,55,EA,Eastern Area
+55131,Washington,Wisconsin,131,WI,55,EA,Eastern Area
+55133,Waukesha,Wisconsin,133,WI,55,EA,Eastern Area
+55135,Waupaca,Wisconsin,135,WI,55,EA,Eastern Area
+55137,Waushara,Wisconsin,137,WI,55,EA,Eastern Area
+55139,Winnebago,Wisconsin,139,WI,55,EA,Eastern Area
+55141,Wood,Wisconsin,141,WI,55,EA,Eastern Area
+56001,Albany,Wyoming,001,WY,56,RM,Rocky Mountain Area
+56003,Big Horn,Wyoming,003,WY,56,RM,Rocky Mountain Area
+56005,Campbell,Wyoming,005,WY,56,RM,Rocky Mountain Area
+56007,Carbon,Wyoming,007,WY,56,RM,Rocky Mountain Area
+56009,Converse,Wyoming,009,WY,56,RM,Rocky Mountain Area
+56011,Crook,Wyoming,011,WY,56,RM,Rocky Mountain Area
+56013,Fremont,Wyoming,013,WY,56,RM,Rocky Mountain Area
+56015,Goshen,Wyoming,015,WY,56,RM,Rocky Mountain Area
+56017,Hot Springs,Wyoming,017,WY,56,RM,Rocky Mountain Area
+56019,Johnson,Wyoming,019,WY,56,RM,Rocky Mountain Area
+56021,Laramie,Wyoming,021,WY,56,RM,Rocky Mountain Area
+56023,Lincoln,Wyoming,023,WY,56,GB,Great Basin Area
+56025,Natrona,Wyoming,025,WY,56,RM,Rocky Mountain Area
+56027,Niobrara,Wyoming,027,WY,56,RM,Rocky Mountain Area
+56029,Park,Wyoming,029,WY,56,RM,Rocky Mountain Area
+56031,Platte,Wyoming,031,WY,56,RM,Rocky Mountain Area
+56033,Sheridan,Wyoming,033,WY,56,RM,Rocky Mountain Area
+56035,Sublette,Wyoming,035,WY,56,GB,Great Basin Area
+56037,Sweetwater,Wyoming,037,WY,56,RM,Rocky Mountain Area
+56039,Teton,Wyoming,039,WY,56,GB,Great Basin Area
+56041,Uinta,Wyoming,041,WY,56,GB,Great Basin Area
+56043,Washakie,Wyoming,043,WY,56,RM,Rocky Mountain Area
+56045,Weston,Wyoming,045,WY,56,RM,Rocky Mountain Area
+72001,Adjuntas,Puerto Rico,001,PR,72,SA,Southern Area
+72003,Aguada,Puerto Rico,003,PR,72,SA,Southern Area
+72005,Aguadilla,Puerto Rico,005,PR,72,SA,Southern Area
+72007,Aguas Buenas,Puerto Rico,007,PR,72,SA,Southern Area
+72009,Aibonito,Puerto Rico,009,PR,72,SA,Southern Area
+72011,Añasco,Puerto Rico,011,PR,72,SA,Southern Area
+72013,Arecibo,Puerto Rico,013,PR,72,SA,Southern Area
+72015,Arroyo,Puerto Rico,015,PR,72,SA,Southern Area
+72017,Barceloneta,Puerto Rico,017,PR,72,SA,Southern Area
+72019,Barranquitas,Puerto Rico,019,PR,72,SA,Southern Area
+72021,Bayamón,Puerto Rico,021,PR,72,SA,Southern Area
+72023,Cabo Rojo,Puerto Rico,023,PR,72,SA,Southern Area
+72025,Caguas,Puerto Rico,025,PR,72,SA,Southern Area
+72027,Camuy,Puerto Rico,027,PR,72,SA,Southern Area
+72029,Canóvanas,Puerto Rico,029,PR,72,SA,Southern Area
+72031,Carolina,Puerto Rico,031,PR,72,SA,Southern Area
+72033,Cataño,Puerto Rico,033,PR,72,SA,Southern Area
+72035,Cayey,Puerto Rico,035,PR,72,SA,Southern Area
+72037,Ceiba,Puerto Rico,037,PR,72,SA,Southern Area
+72039,Ciales,Puerto Rico,039,PR,72,SA,Southern Area
+72041,Cidra,Puerto Rico,041,PR,72,SA,Southern Area
+72043,Coamo,Puerto Rico,043,PR,72,SA,Southern Area
+72045,Comerío,Puerto Rico,045,PR,72,SA,Southern Area
+72047,Corozal,Puerto Rico,047,PR,72,SA,Southern Area
+72049,Culebra,Puerto Rico,049,PR,72,SA,Southern Area
+72051,Dorado,Puerto Rico,051,PR,72,SA,Southern Area
+72053,Fajardo,Puerto Rico,053,PR,72,SA,Southern Area
+72054,Florida,Puerto Rico,054,PR,72,SA,Southern Area
+72055,Guánica,Puerto Rico,055,PR,72,SA,Southern Area
+72057,Guayama,Puerto Rico,057,PR,72,SA,Southern Area
+72059,Guayanilla,Puerto Rico,059,PR,72,SA,Southern Area
+72061,Guaynabo,Puerto Rico,061,PR,72,SA,Southern Area
+72063,Gurabo,Puerto Rico,063,PR,72,SA,Southern Area
+72065,Hatillo,Puerto Rico,065,PR,72,SA,Southern Area
+72067,Hormigueros,Puerto Rico,067,PR,72,SA,Southern Area
+72069,Humacao,Puerto Rico,069,PR,72,SA,Southern Area
+72071,Isabela,Puerto Rico,071,PR,72,SA,Southern Area
+72073,Jayuya,Puerto Rico,073,PR,72,SA,Southern Area
+72075,Juana Díaz,Puerto Rico,075,PR,72,SA,Southern Area
+72077,Juncos,Puerto Rico,077,PR,72,SA,Southern Area
+72079,Lajas,Puerto Rico,079,PR,72,SA,Southern Area
+72081,Lares,Puerto Rico,081,PR,72,SA,Southern Area
+72083,Las Marías,Puerto Rico,083,PR,72,SA,Southern Area
+72085,Las Piedras,Puerto Rico,085,PR,72,SA,Southern Area
+72087,Loíza,Puerto Rico,087,PR,72,SA,Southern Area
+72089,Luquillo,Puerto Rico,089,PR,72,SA,Southern Area
+72091,Manatí,Puerto Rico,091,PR,72,SA,Southern Area
+72093,Maricao,Puerto Rico,093,PR,72,SA,Southern Area
+72095,Maunabo,Puerto Rico,095,PR,72,SA,Southern Area
+72097,Mayagüez,Puerto Rico,097,PR,72,SA,Southern Area
+72099,Moca,Puerto Rico,099,PR,72,SA,Southern Area
+72101,Morovis,Puerto Rico,101,PR,72,SA,Southern Area
+72103,Naguabo,Puerto Rico,103,PR,72,SA,Southern Area
+72105,Naranjito,Puerto Rico,105,PR,72,SA,Southern Area
+72107,Orocovis,Puerto Rico,107,PR,72,SA,Southern Area
+72109,Patillas,Puerto Rico,109,PR,72,SA,Southern Area
+72111,Peñuelas,Puerto Rico,111,PR,72,SA,Southern Area
+72113,Ponce,Puerto Rico,113,PR,72,SA,Southern Area
+72115,Quebradillas,Puerto Rico,115,PR,72,SA,Southern Area
+72117,Rincón,Puerto Rico,117,PR,72,SA,Southern Area
+72119,Río Grande,Puerto Rico,119,PR,72,SA,Southern Area
+72121,Sabana Grande,Puerto Rico,121,PR,72,SA,Southern Area
+72123,Salinas,Puerto Rico,123,PR,72,SA,Southern Area
+72125,San Germán,Puerto Rico,125,PR,72,SA,Southern Area
+72127,San Juan,Puerto Rico,127,PR,72,SA,Southern Area
+72129,San Lorenzo,Puerto Rico,129,PR,72,SA,Southern Area
+72131,San Sebastián,Puerto Rico,131,PR,72,SA,Southern Area
+72133,Santa Isabel,Puerto Rico,133,PR,72,SA,Southern Area
+72135,Toa Alta,Puerto Rico,135,PR,72,SA,Southern Area
+72137,Toa Baja,Puerto Rico,137,PR,72,SA,Southern Area
+72139,Trujillo Alto,Puerto Rico,139,PR,72,SA,Southern Area
+72141,Utuado,Puerto Rico,141,PR,72,SA,Southern Area
+72143,Vega Alta,Puerto Rico,143,PR,72,SA,Southern Area
+72145,Vega Baja,Puerto Rico,145,PR,72,SA,Southern Area
+72147,Vieques,Puerto Rico,147,PR,72,SA,Southern Area
+72149,Villalba,Puerto Rico,149,PR,72,SA,Southern Area
+72151,Yabucoa,Puerto Rico,151,PR,72,SA,Southern Area
+72153,Yauco,Puerto Rico,153,PR,72,SA,Southern Area

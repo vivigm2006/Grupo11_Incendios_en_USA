@@ -30,13 +30,21 @@ def ejecutar_etl():
         # Adjuntar base de datos usando la ruta dinámica
         con.execute(f"ATTACH '{RUTA_SQLITE}' AS sqlite_db (TYPE SQLITE);")
 
-        # Crear tabla omitiendo la geometría pesada
-        con.execute(
-            "CREATE OR REPLACE TABLE Fires AS SELECT * EXCLUDE (Shape) FROM sqlite_db.Fires;"
-        )
+        # Crear la tabla nueva tabla omitiendo la geometría pesada y agregando el área geográfica
+        query = """
+        CREATE OR REPLACE TABLE Fires AS 
+        SELECT 
+            f.* EXCLUDE (Shape),
+            u.GeographicArea
+        FROM sqlite_db.Fires f
+        LEFT JOIN sqlite_db.NWCG_UnitIDActive_20170109 u
+            ON f.NWCG_REPORTING_UNIT_ID = u.UnitId;
+        """
+        
+        con.execute(query)
 
         print(
-            f"✅ Conversión completada exitosamente.\nBase de datos guardada en: {RUTA_DUCKDB}"
+            f"Conversión completada exitosamente.\nBase de datos guardada en: {RUTA_DUCKDB}"
         )
 
     finally:
