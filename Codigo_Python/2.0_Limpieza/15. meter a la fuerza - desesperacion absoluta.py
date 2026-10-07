@@ -62,6 +62,29 @@ def corregir_inconsistencias_fuerza_bruta():
             WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 40;
         """)
 
+        # Nevada (NV): Homogeneizar 'Carson City' a 'Carson' (FIPS 510)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                STATE = 'NV',
+                STATE_CODE = '32',
+                FIPS_CODE = '510',
+                FIPS_NAME = 'Carson',
+                STATE_NAME = 'Nevada',
+                GEO_AREA_NAME = 'Great Basin Area'
+            WHERE STATE = 'NV' 
+              AND (CAST(FIPS_CODE AS INT) = 510 OR FIPS_NAME ILIKE 'Carson%');
+        """)
+
+        # Teton County (Idaho, FIPS 081): Forzar GeographicArea a 'GB' y GEO_AREA_NAME a 'Great Basin Area'
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                GeographicArea = 'GB',
+                GEO_AREA_NAME = 'Great Basin Area'
+            WHERE FIPS_NAME = 'Teton' AND CAST(FIPS_CODE AS INT) = 81;
+        """)
+
         # CAUSA 1: CRUCES DE ESTADOS LIMÍTROFES (FUERZA BRUTA)
         mapeos_limitrofes = [
             # Arizona (AZ) -> Condados reales

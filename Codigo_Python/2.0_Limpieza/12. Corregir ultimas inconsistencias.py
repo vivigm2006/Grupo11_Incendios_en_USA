@@ -20,7 +20,7 @@ def corregir_tres_casos_especificos():
                 STATE = 'NV',
                 STATE_CODE = '32',
                 GeographicArea = 'GB',
-                FIPS_NAME = 'Carson City'
+                FIPS_NAME = 'Carson'
             WHERE (CAST(STATE_CODE AS INT) = 6 OR STATE = 'CA')
               AND CAST(FIPS_CODE AS INT) = 510;
         """
