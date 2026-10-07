@@ -1,25 +1,27 @@
-import duckdb
 from pathlib import Path
+import duckdb
+
 
 # Definir rutas y crear carpetas
 def obtener_ruta_db():
-    ruta_codigo = Path(__file__).resolve()
-    raiz_proyecto = ruta_codigo.parent.parent.parent
-    carpeta_destino = raiz_proyecto / "Data" / "Datos_Normalizados"
-    carpeta_destino.mkdir(parents=True, exist_ok=True)
-    return carpeta_destino / "incendios_normalizados.duckdb"
+  ruta_codigo = Path(__file__).resolve()
+  raiz_proyecto = ruta_codigo.parent.parent.parent
+  carpeta_destino = raiz_proyecto / "Data" / "Datos_Normalizados"
+  carpeta_destino.mkdir(parents=True, exist_ok=True)
+  return carpeta_destino / "incendios_normalizados.duckdb"
 
 
 def crear_esquema():
-    db_path = obtener_ruta_db()
-    print(f"Conectando a la base de datos en: {db_path}")
+  db_path = obtener_ruta_db()
+  print(f"Conectando a la base de datos en: {db_path}")
 
-    con = duckdb.connect(str(db_path))
+  con = duckdb.connect(str(db_path))
 
-    ddl_script = """
+  ddl_script = """
     CREATE TABLE IF NOT EXISTS tabla_estado (
       state_code VARCHAR(2) PRIMARY KEY,
-      state_name VARCHAR NOT NULL
+      state_name VARCHAR NOT NULL,
+      state_abbr VARCHAR(2)
     );
 
     CREATE TABLE IF NOT EXISTS tabla_condado (
@@ -86,6 +88,11 @@ def crear_esquema():
       ics_209_name VARCHAR
     );
 
+    CREATE TABLE IF NOT EXISTS tabla_geographic_area (
+      geographic_area_code VARCHAR(2) PRIMARY KEY,
+      geographic_area_name VARCHAR
+    );
+
     CREATE TABLE IF NOT EXISTS tabla_incendios (
       fod_id INTEGER PRIMARY KEY,
       objectid INTEGER UNIQUE NOT NULL,
@@ -111,6 +118,7 @@ def crear_esquema():
       unidad_origen_id INTEGER NOT NULL,
       state_code VARCHAR(2) NOT NULL,
       fips_code VARCHAR(3),
+      geographic_area_code VARCHAR(2) NOT NULL,
       FOREIGN KEY (ics_209_incident_number) REFERENCES tabla_ics_209 (ics_209_incident_number),
       FOREIGN KEY (mtbs_id) REFERENCES tabla_mtbs (mtbs_id),
       FOREIGN KEY (fire_size_class) REFERENCES tabla_clase_tamano (fire_size_class),
@@ -118,19 +126,18 @@ def crear_esquema():
       FOREIGN KEY (owner_code) REFERENCES tabla_propietario (owner_code),
       FOREIGN KEY (nwcg_unit_id) REFERENCES tabla_unidades_nwcg (unit_id),
       FOREIGN KEY (unidad_origen_id) REFERENCES tabla_unidad_origen (unidad_origen_id),
+      FOREIGN KEY (geographic_area_code) REFERENCES tabla_geographic_area (geographic_area_code),
       FOREIGN KEY (state_code) REFERENCES tabla_estado (state_code),
       FOREIGN KEY (state_code, fips_code) REFERENCES tabla_condado (state_code, fips_code)
     );
     """
-# Probar si el esquema se crea correctamente
-    try:
-        con.execute(ddl_script)
-        print(" Base de datos y tablas creadas exitosamente.")
-    except Exception as e:
-        print(f" Error al crear la base de datos: {e}")
-    finally:
-        con.close()
+  try:
+    con.execute(ddl_script)
+    print(" Base de datos y tablas creadas exitosamente.")
+
+  finally:
+    con.close()
 
 
 if __name__ == "__main__":
-    crear_esquema()
+  crear_esquema()
