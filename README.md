@@ -1,5 +1,12 @@
 # GRUPO 11 
-# Análisis y Visualización Interactiva de Incendios Forestales
+
+<p align="center">
+  <img src="assets/imagen.png" alt="Análisis de Incendios Forestales en EE. UU." width="100%">
+</p>
+
+## Análisis y Visualización Interactiva de Incendios Forestales
+
+# Incendios forestales y segmentació territorial(2000-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
 
 <div align="justify">
 El presente es un proyecto de procesamiento de datos masivos para el desarrollo de tableros interactivos y su documentacion teorica respectiva, a partir de la base de datos de incendios forestales de EE. UU. (<i>FPA FOD</i>).
