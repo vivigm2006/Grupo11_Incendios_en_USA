@@ -58,6 +58,15 @@ Debido a restricciones de tamaño de archivos en GitHub (el archivo SQLite origi
 </div>
 <br>
 <div align="justify">
+Adicionalmente, para la limpieza de los datos y de registros nulos, se uso el archivo shapefile de los condados de EEUU para el año 2025. El mismo fue obtenido a traves de la pagina del Censo de EEUU.
+</div>
+<br>
+<ul>
+  <li><b>Archivo Shapefile de los Condados: </b> <a href= "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.2025.html"> Cartographic Boundary Files</a></li>
+</ul>
+</div>
+<br>
+<div align="justify">
 Para facilitar la ejecución rápida del proyecto, se incluyo en el repositorio la versión en formato .parquet de la tabla Fire, (dentro de la carpeta data/), la cual fue generada mediante DuckDB omitiendo la geometría pesada (Shape). Dicha tabla representa la base para el desarrollo del resto del trabajo.
 </div>
 
