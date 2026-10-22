@@ -24,20 +24,24 @@ def agregar_nombres_estado_y_zona():
                 LPAD(CAST("State Code" AS VARCHAR), 2, '0') AS STATE_CODE_PADDED,
                 LPAD(CAST(FIPS_CODE AS VARCHAR), 3, '0') AS FIPS_CODE_PADDED,
                 CAST(State AS VARCHAR) AS STATE_NAME,
-                CAST("Nombre Zona" AS VARCHAR) AS GEO_AREA_NAME
+                CAST("Nombre Zona" AS VARCHAR) AS GEO_AREA_NAME,
+                CAST(land_sq_mi AS VARCHAR) AS LAND_SQ_MI
             FROM read_csv_auto('{csv_path_str}', header=True);
         """)
 
         # Agregar columnas si no existen
         con.execute(f"ALTER TABLE {TABLE_NAME} ADD COLUMN IF NOT EXISTS STATE_NAME VARCHAR;")
         con.execute(f"ALTER TABLE {TABLE_NAME} ADD COLUMN IF NOT EXISTS GEO_AREA_NAME VARCHAR;")
+        con.execute(f"ALTER TABLE {TABLE_NAME} ADD COLUMN IF NOT EXISTS LAND_SQ_MI VARCHAR;")
+
 
         # Actualizar las columnas STATE_NAME y GEO_AREA_NAME en la tabla principal usando los datos del CSV
         query_update = f"""
         UPDATE {TABLE_NAME} AS db
             SET 
                 STATE_NAME = COALESCE(csv.STATE_NAME, db.STATE),
-                GEO_AREA_NAME = COALESCE(csv.GEO_AREA_NAME, db.GeographicArea)
+                GEO_AREA_NAME = COALESCE(csv.GEO_AREA_NAME, db.GeographicArea),
+                LAND_SQ_MI = COALESCE(csv.LAND_SQ_MI, db.land_sq_mi)
             FROM csv_nombres AS csv
             WHERE LPAD(CAST(db.STATE_CODE AS VARCHAR), 2, '0') = csv.STATE_CODE_PADDED
                 AND LPAD(CAST(db.FIPS_CODE AS VARCHAR), 3, '0') = csv.FIPS_CODE_PADDED;;
