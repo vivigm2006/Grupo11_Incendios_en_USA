@@ -20,7 +20,7 @@ def corregir_tres_casos_especificos():
                 STATE = 'NV',
                 STATE_CODE = '32',
                 GeographicArea = 'GB',
-                FIPS_NAME = 'Carson'
+                FIPS_NAME = 'Carson City'
             WHERE (CAST(STATE_CODE AS INT) = 6 OR STATE = 'CA')
               AND CAST(FIPS_CODE AS INT) = 510;
         """
@@ -33,7 +33,7 @@ def corregir_tres_casos_especificos():
                 STATE = 'CA',
                 STATE_CODE = '06',
                 GeographicArea = 'ON',
-                FIPS_NAME = 'Modoc'
+                FIPS_NAME = 'Modoc County'
             WHERE (CAST(STATE_CODE AS INT) = 32 OR STATE = 'NV')
               AND CAST(FIPS_CODE AS INT) = 49
               AND FIPS_NAME LIKE '%Modoc%';
@@ -47,7 +47,7 @@ def corregir_tres_casos_especificos():
                 STATE = 'CA',
                 STATE_CODE = '06',
                 GeographicArea = 'ON',
-                FIPS_NAME = 'Siskiyou'
+                FIPS_NAME = 'Siskiyou County'
             WHERE (CAST(STATE_CODE AS INT) = 41 OR STATE = 'OR')
               AND CAST(FIPS_CODE AS INT) = 93
               AND FIPS_NAME LIKE '%Siskiyou%';
