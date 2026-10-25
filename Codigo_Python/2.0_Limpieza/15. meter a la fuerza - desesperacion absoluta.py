@@ -13,7 +13,7 @@ def corregir_inconsistencias_fuerza_bruta():
     con = duckdb.connect(str(DB_PATH))
 
     try:
-        print("Iniciando reasignación forzada de Causa 1, Causa 2 y Causa 3...")
+        print("Iniciando reasignación forzada de Causa 1, Causa 2, Causa 3 y condados historicos...")
 
         # 1. PASO PREVIO: ASEGURAR ESTRUCTURA DE COLUMNAS
         con.execute(
@@ -22,6 +22,84 @@ def corregir_inconsistencias_fuerza_bruta():
         con.execute(
             f"ALTER TABLE {TABLE_NAME} ADD COLUMN IF NOT EXISTS GEO_AREA_NAME VARCHAR;"
         )
+
+    # ACTUALIZACIÓN DE CONDADOS HISTÓRICOS / ÁREAS NULAS (2025)
+
+    # A. Alaska (AK) - Áreas censales históricas reorganizadas o renombradas
+    # Prince of Wales-Outer Ketchikan (FIPS 201) -> Reorganizado en Prince of Wales-Hyder (FIPS 198) / Ketchikan Gateway
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '198',
+                FIPS_NAME = 'Prince of Wales-Hyder Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 201;
+        """)
+
+    # Skagway-Yakutat-Angoon (FIPS 231) -> Dividido históricamente (Hoonah-Angoon / Yakutat / Skagway)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '105',
+                FIPS_NAME = 'Hoonah-Angoon Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 231;
+        """)
+
+    # Valdez-Cordova (FIPS 261) -> Dividido en Chugach y Copper River (2019)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '066',
+                FIPS_NAME = 'Copper River Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 261;
+        """)
+
+    # Wade Hampton (FIPS 270) -> Renombrado oficialmente como Kusilvak Census Area (FIPS 158)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '158',
+                FIPS_NAME = 'Kusilvak Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 270;
+        """)
+
+    # Wrangell-Petersburg (FIPS 280) -> Dividido en Wrangell Borough y Petersburg Census Area
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '195',
+                FIPS_NAME = 'Petersburg Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 280;
+        """)
+
+    # B. Connecticut (CT) - Transición a Consejos de Gobierno Regionales (COGs) vigentes a 2025
+    # Mapeo de antiguos condados (FIPS 001 a 015) a regiones equivalentes actualizadas
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                STATE_NAME = 'Connecticut',
+                GEO_AREA_NAME = 'Eastern Area',
+                FIPS_CODE = LPAD(CAST(FIPS_CODE AS VARCHAR), 3, '0')
+            WHERE STATE = 'CT';
+        """)
+
+    # C. Oklahoma (OK) - Ellis County (FIPS 045) corrección de integridad / área nula
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                STATE = 'OK', STATE_CODE = '40', FIPS_CODE = '045',
+                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area'
+            WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 45;
+        """)
 
         # CAUSA 2: CORRECCIONES DE FORMATO Y FIPS OFICIALES
 
