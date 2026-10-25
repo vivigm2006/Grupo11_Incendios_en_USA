@@ -12,7 +12,7 @@ import pandas as pd
 
 # CONFIGURACION DE LA PAGINA
 st.set_page_config(
-    page_title="app",
+    page_title="Incendios forestales y segmentacion territorial (1992-20015)",
     page_icon="🔥",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -26,4 +26,5 @@ st.title("Incendios forestales y segmentacion territorial (1992-20015)")
 with st.sidebar:
     st.title("Ventana seleccionada")
     st.caption("seleccion de la parte de la investigacion a visualizar")
-    
+
+st.image("assets/imagen.jpg", caption="Incendios forestales en EE.UU. (1992-2015)")
