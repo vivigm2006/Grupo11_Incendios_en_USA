@@ -82,22 +82,68 @@ def corregir_inconsistencias_fuerza_bruta():
         """)
 
     # B. Connecticut (CT) - Transición a Consejos de Gobierno Regionales (COGs) vigentes a 2025
-    # Mapeo de antiguos condados (FIPS 001 a 015) a regiones equivalentes actualizadas
-        con.execute(f"""
-            UPDATE {TABLE_NAME}
-            SET 
-                STATE_NAME = 'Connecticut',
-                GEO_AREA_NAME = 'Eastern Area',
-                FIPS_CODE = LPAD(CAST(FIPS_CODE AS VARCHAR), 3, '0')
-            WHERE STATE = 'CT';
-        """)
+# (fips_antiguo, fips_nuevo, nombre_region, area_sq_mi)
+        mapeos_ct = [
+            (1, "190", "Western Connecticut Planning Region", 537.0),
+            (3, "110", "Capitol Planning Region", 1037.0),
+            (5, "160", "Northwest Hills Planning Region", 782.0),
+            (7, "130", "Lower Connecticut River Valley Planning Region", 412.0),
+            (9, "170", "South Central Connecticut Planning Region", 570.0),
+            (11, "180", "Southeastern Connecticut Planning Region", 665.0),
+            (13, "140", "Naugatuck Valley Planning Region", 409.0),
+            (15, "150", "Northeastern Connecticut Planning Region", 561.0),
+        ]
+
+        # 1. Reasignar registros en la tabla de incendios (fires)
+        for fips_orig, fips_dest, region_name, area_sq_mi in mapeos_ct:
+            con.execute(f"""
+                UPDATE {TABLE_NAME}
+                SET 
+                    STATE = 'CT',
+                    STATE_CODE = '09',
+                    FIPS_CODE = '{fips_dest}',
+                    FIPS_NAME = '{region_name}',
+                    STATE_NAME = 'Connecticut',
+                    GEO_AREA_NAME = 'Eastern Area'
+                WHERE (STATE = 'CT' OR state_code = '09' OR state_code = '9')
+                  AND CAST(FIPS_CODE AS INT) = {fips_orig};
+            """)
+
+        # 2. Actualizar / Insertar las superficies en la tabla para eliminar las áreas nulas
+        for fips_orig, fips_dest, region_name, area_sq_mi in mapeos_ct:
+            # Primero intentamos actualizar si el registro ya existe
+            con.execute(f"""
+                UPDATE {TABLE_NAME}
+                SET fips_name = '{region_name}',
+                    land_sq_mi = {area_sq_mi}
+                WHERE (state_code = '09' OR state_code = '9') 
+                  AND fips_code = '{fips_dest}';
+            """)
+
+            # Si no existía, lo insertamos
+            con.execute(f"""
+                INSERT INTO {TABLE_NAME} (state_code, fips_code, fips_name, land_sq_mi)
+                SELECT '09', '{fips_dest}', '{region_name}', {area_sq_mi}
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM {TABLE_NAME} 
+                    WHERE (state_code = '09' OR state_code = '9') 
+                      AND fips_code = '{fips_dest}'
+                );
+            """)
+
+            # Eliminar el FIPS antiguo si quedó registrado con área nula
+            con.execute(f"""
+                DELETE FROM {TABLE_NAME}
+                WHERE (state_code = '09' OR state_code = '9')
+                  AND CAST(fips_code AS INT) = {fips_orig};
+            """)
 
     # C. Oklahoma (OK) - Ellis County (FIPS 045) corrección de integridad / área nula
         con.execute(f"""
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'OK', STATE_CODE = '40', FIPS_CODE = '045',
-                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area'
+                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area', land_sq_mi = 1231.48
             WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 45;
         """)
 
@@ -136,7 +182,7 @@ def corregir_inconsistencias_fuerza_bruta():
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'OK', STATE_CODE = '40', FIPS_CODE = '045',
-                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area'
+                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area', land_sq_mi = 1231.48
             WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 40;
         """)
 
