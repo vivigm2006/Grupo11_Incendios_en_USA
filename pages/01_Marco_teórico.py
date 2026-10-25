@@ -11,7 +11,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Marco Teórico", page_icon="🚨", layout="wide")
 
-st.image("imagen.jpg", width="stretch")
+st.image("assets/imagen.jpg", width="stretch")
 st.title("Marco Teórico")
 st.caption("Incendios forestales y segmentacion territorial (1992-20015)")
 
