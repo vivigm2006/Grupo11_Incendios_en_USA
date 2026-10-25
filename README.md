@@ -1,7 +1,7 @@
 # GRUPO 11 
 
 <p align="center">
-  <img src="assets/imagen.png" alt="Análisis de Incendios Forestales en EE. UU." width="100%">
+  <img src="assets/imagen.jpg" alt="Análisis de Incendios Forestales en EE. UU." width="100%">
 </p>
 
 ## Análisis y Visualización Interactiva de Incendios Forestales
