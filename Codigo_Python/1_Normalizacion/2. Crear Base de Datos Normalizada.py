@@ -28,6 +28,7 @@ def crear_esquema():
       state_code VARCHAR(2) NOT NULL,
       fips_code VARCHAR(3) NOT NULL,
       fips_name VARCHAR NOT NULL,
+      land_sq_mi DOUBLE,
       PRIMARY KEY (state_code, fips_code),
       FOREIGN KEY (state_code) REFERENCES tabla_estado (state_code)
     );

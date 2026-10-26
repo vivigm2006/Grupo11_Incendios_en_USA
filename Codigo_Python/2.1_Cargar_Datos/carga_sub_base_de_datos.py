@@ -46,11 +46,12 @@ def poblar_sub_base_datos():
         # 2. Poblar tabla_condado
         print("Poblando 'tabla_condado'...")
         con.execute(f"""
-            INSERT OR IGNORE INTO tabla_condado (state_code, fips_code, fips_name)
+            INSERT OR IGNORE INTO tabla_condado (state_code, fips_code, fips_name, land_sq_mi)
             SELECT 
                 TRIM(CAST(STATE_CODE AS VARCHAR)) AS state_code,
                 TRIM(CAST(FIPS_CODE AS VARCHAR)) AS fips_code,
-                MAX(TRIM(FIPS_NAME)) AS fips_name
+                MAX(TRIM(FIPS_NAME)) AS fips_name,
+                AVG(CAST(LAND_SQ_MI AS DOUBLE)) AS land_sq_mi
             FROM db_origen.{tabla_origen_nombre}
             WHERE STATE_CODE IS NOT NULL 
             AND FIPS_CODE IS NOT NULL 
