@@ -179,7 +179,6 @@ with col2:
         al subconjunto de datos que dispone de dicha información de forma completa. No obstante, para
         los objetivos restantes se emplea la totalidad del registro histórico, garantizando la 
         representatividad general del estudio. <br><br>
-       
         </div>
         """, unsafe_allow_html=True)
 
