@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 4. Copiar todo el código a la caja
 COPY . .
 
-CMD ["streamlit", "run", "dash.py", "--server.port", "8080", "--server.address", "0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.port", "8080", "--server.address", "0.0.0.0"]
