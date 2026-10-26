@@ -6,10 +6,10 @@
 
 ## Análisis y Visualización Interactiva de Incendios Forestales
 
-### Aplicación: **[Incendios forestales y segmentació territorial(2000-2015).app](https://grupo11-incendios-en-usa.onrender.com/)**
+### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa.onrender.com/)**
 
 
-# Incendios forestales y segmentació territorial(2000-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
+# Incendios forestales y segmentació territorial(1992-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
 
 <div align="justify">
 El presente es un proyecto de procesamiento de datos masivos para el desarrollo de tableros interactivos y su documentacion teorica respectiva, a partir de la base de datos de incendios forestales de EE. UU. (<i>FPA FOD</i>).
@@ -27,7 +27,7 @@ El objetivo principal es construir un pipeline integral de datos que abarca desd
 
 ## Preguntas de investigación
 
-1. ¿Cómo variaron la frecuencia, la severidad (superficie quemada) y las causas de los incendios forestales en Estados Unidos durante el período 2000–2015 al comparar las 10 regiones?
+1. ¿Cómo variaron la frecuencia, la severidad (superficie quemada) y las causas de los incendios forestales en Estados Unidos durante el período 1992–2015 al comparar las 10 regiones?
 2. ¿Cómo varía la causa de origen de los incendios forestales según las regiones y cuáles son las principales fuentes de ignición que predominan en cada territorio?
 3. ¿De qué manera se distribuyen los incendios de mayor severidad en el territorio nacional y qué región concentra la mayor proporción de estos eventos? 
 4. ¿Existen diferencias significativas en el tiempo de contención y el tamaño final del incendio según la entidad administradora del terreno, Federal, Estatal o Privada dentro de cada región? 
