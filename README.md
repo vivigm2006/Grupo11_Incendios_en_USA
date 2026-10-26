@@ -97,6 +97,21 @@ Partiendo de la tabla masiva original organizamos la información en una base de
 
 ---
 
+### 3. Denormalización 
+
+Para que las consultas en el aplicativo y en las herramientas de visualización fueran mucho más rápidas y eficientes, transformamos el modelo relacional en un Modelo Dimensional en Estrella:
+
+* **Tabla de Hechos (`fact_incendio`):** Es la tabla central del modelo y contiene las métricas numéricas principales que vamos a analizar manteniendo además el código de la unidad que reportó el incendio (`nwcg_unit_id`) como un atributo directo.
+* **Uso de IDs numéricos:** Para no repetir textos largos dentro de la tabla de hechos y hacer que las consultas funcionen más rápido creamos códigos numéricos (claves subrogadas) para conectar con cada tabla de contexto.
+* **Manejo de fechas de contención vacías:** Notamos que muchos incendios no tenían registrada la fecha de contención y en lugar de borrar esos registros decidimos conservarlos e identificar los incendios que sí tenían fecha mediante una columna o bandera de control (`tiene_contencion` con valores 1 o 0), evitando perder datos importantes.
+* **Tablas de Dimensiones:** Creamos 6 tablas alrededor de la tabla de hechos para dar contexto a los datos y agrupamos la información según nuestras reglas de análisis:
+  * `dim_fecha`: Calcula la estación del año (Invierno, Primavera, Verano, Otoño) según el mes de inicio del incendio.
+  * `dim_region`: Contiene las 10 regiones operativas de atención a incendios.
+  * `dim_causa`: Agrupa los motivos del incendio en "Natural" y "Humana".
+  * `dim_administracion`: Clasifica los dueños de los terrenos en tres categorías: Federal, Estatal/Local y Privada.
+  * `dim_ubicacion`: Guarda el estado y el condado del incendio.
+  * `dim_tamano`: Define los rangos oficiales del tamaño del incendio (de la A a la G) e incluye un campo que marca con un "1" si el evento corresponde a un mega-incendio (Clase G).
+
 ## 🛠️ Tecnologías Utilizadas
 
 - Lenguaje: Python 3.14+
