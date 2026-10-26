@@ -1,14 +1,32 @@
-# 1. Usar una imagen de Python ligera
+# Usa una imagen oficial ligera de Python
 FROM python:3.10-slim
 
-# 2. Crear una carpeta para la app
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# 3. Copiar el archivo de requisitos e instalar librerías
+# Instala dependencias del sistema esenciales
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    software-properties-common \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copia e instala las dependencias de Python primero (aprovecha el caché de Docker)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. Copiar todo el código a la caja
+# Copia el resto del código de la aplicación al contenedor
 COPY . .
 
-CMD ["streamlit", "run", "app.py", "--server.port", "8080", "--server.address", "0.0.0.0"]
+# Expone el puerto por defecto que usa Streamlit
+EXPOSE 8501
+
+# Configura variables de entorno para que Streamlit corra correctamente en contenedores
+ENV STREAMLIT_SERVER_PORT=8501
+ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
+ENV STREAMLIT_SERVER_HEADLESS=true
+ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+
+# Comando para ejecutar la aplicación
+CMD ["streamlit", "run", "app.py"]
