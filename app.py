@@ -8,6 +8,7 @@ Analsis estadistico de la superficie, fuentes y tiempos de incendios en EE.UU.
 
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 
 # CONFIGURACION DE LA PAGINA
