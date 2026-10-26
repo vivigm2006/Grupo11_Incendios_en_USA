@@ -73,6 +73,29 @@ Adicionalmente, para la limpieza de los datos y de registros nulos, se uso el ar
 Para facilitar la ejecución rápida del proyecto, se incluyo en el repositorio la versión en formato .parquet de la tabla Fire, (dentro de la carpeta data/), la cual fue generada mediante DuckDB omitiendo la geometría pesada (Shape). Dicha tabla representa la base para el desarrollo del resto del trabajo.
 </div>
 
+## Limpieza, Normalización y Denormalización de Datos
+
+Para poder analizar la base de datos de incendios forestales en nuestro aplicativo y en los tableros de control, organizamos el procesamiento de la información en tres pasos principales:
+
+---
+
+### 1. Limpieza de Datos
+
+La base de datos original traía algunos campos con información faltante y formatos que necesitaban ajustarse antes de trabajar:
+
+* **Completar datos geográficos faltantes:** Aproximadamente un 36% de los registros no tenían el condado ni el estado asignado. Para solucionarlo usamos las coordenadas de latitud y longitud de cada incendio y las cruzamos con el mapa oficial para rastrear incendios forestales en Estados Unidos y de esta forma pudimos identificar de manera automática a qué estado y condado pertenecía cada evento.
+* **Formato de fechas:** Las fechas de la base original venían en formato Juliano por lo que las convertimos todas al formato estándar de fecha (`DATE`).
+
+---
+
+### 2. Normalización
+
+Partiendo de la tabla masiva original organizamos la información en una base de datos relacional aplicando las reglas de la Tercera Forma Normal:
+
+* **Eliminación de datos repetidos:** Separamos la información en tablas independientes de catálogos para evitar redundancias en datos categóricos como causas, propietarios y ubicaciones.
+* **Selección de tablas relevantes:** Simplificamos el sistema conservando únicamente las tablas y campos que realmente eran útiles para nuestra investigación. El modelo normalizado quedó estructurado por la tabla principal `tabla_incendios` conectada a las tablas de `tabla_geographic_area`, `tabla_propietario`, `tabla_causa_incendio`, `tabla_clase_tamano`, `tabla_condado` y `tabla_estado`.
+
+---
 
 ## 🛠️ Tecnologías Utilizadas
 
