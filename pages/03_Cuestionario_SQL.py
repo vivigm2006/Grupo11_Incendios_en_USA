@@ -7,6 +7,7 @@ Analsis estadistico de la superficie, fuentes y tiempos de incendios en EE.UU.
 """
 
 import streamlit as st
+import plotly.express as px
 
 
 st.set_page_config(page_title="Cuestionario SQL", page_icon="🪓", layout="wide")
