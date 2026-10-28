@@ -1,0 +1,79 @@
+// 1. tabla de hechos 
+
+table fact_incendio {
+  fod_id              integer     [pk, note: 'id unico del incendio']
+  fecha_key           integer     [not null, note: 'fk a dim_fecha (aaaammdd)']
+  region_key          integer     [not null, note: 'fk a dim_region (region nifc)']
+  causa_key           integer     [not null, note: 'fk a dim_causa']
+  administracion_key  integer     [not null, note: 'fk a dim_administracion']
+  clase               varchar(1)  [not null, note: 'fk a dim_tamano (a-g)']
+  ubicacion_key       integer     [not null, note: 'fk a dim_ubicacion']
+  nwcg_unit_id        varchar     [not null, note: 'atributo degenerado: codigo de la unidad reportante']
+
+  // metricas
+  incendios           integer     [not null, default: 1, note: 'metrica: siempre 1 para hacer sum()']
+  acres               double      [not null, note: 'metrica: superficie quemada (fire_size)']
+  tiene_contencion    integer     [not null, note: 'bandera: 1 si cont_date no es nulo, 0 si es nulo']
+  dias_contencion     integer     [note: 'metrica: diferencia de dias (null si no tiene contencion)']
+}
+
+// 2. Dimensiones 
+
+// responde al objetivo 5: estacionalidad
+table dim_fecha {
+  fecha_key    integer  [pk, note: 'formato aaaammdd generado desde discovery_date']
+  fecha        date     [not null, unique]
+  anio         integer  [not null]
+  trimestre    integer  [not null]
+  mes          integer  [not null]
+  nombre_mes   varchar  [not null]
+  estacion     varchar  [not null, note: 'invierno, primavera, verano, otono']
+}
+
+// responde al objetivo general y a todos los especificos: comparacion territorial
+table dim_region {
+  region_key   integer     [pk, note: 'surrogate key generada (dense_rank)']
+  region_code  varchar(2)  [not null, unique, note: 'codigo nifc (ej: gb para great basin)']
+  region_name  varchar     [not null, unique, note: 'nombre del area (ej: great basin area)']
+}
+
+// responde al objetivo 2: causas de origen
+table dim_causa {
+  causa_key         integer  [pk, note: 'codigo original (stat_cause_code)']
+  causa_especifica  varchar  [not null, unique, note: 'descripcion (ej: lightning, arson)']
+  origen_causa      varchar  [not null, note: 'agrupacion: humana o natural']
+}
+
+// responde al objetivo 4: administracion del terreno
+table dim_administracion {
+  administracion_key   integer  [pk, note: 'codigo original + 1']
+  propietario          varchar  [not null, unique, note: 'nombre original (owner_descr)']
+  tipo_administracion  varchar  [not null, note: 'agrupacion: federal, estatal/local, privada']
+}
+
+// responde al objetivo 3: mega-incendios
+table dim_tamano {
+  clase            varchar(1)  [pk, note: 'a, b, c, d, e, f, g']
+  rango            varchar     [not null, note: 'texto del rango (ej: >= 5000 acres)']
+  orden            integer     [not null, unique, note: '1 a 7 para ordenar graficos']
+  es_megaincendio  integer     [not null, note: '1 si es clase g, 0 para el resto']
+}
+
+// responde al objetivo 1: distribucion y severidad geografica
+table dim_ubicacion {
+  ubicacion_key  integer     [pk, note: 'surrogate key generada (dense_rank)']
+  state_code     varchar(2)  [not null, note: 'codigo del estado (ej: ca)']
+  state_name     varchar     [not null, note: 'nombre del estado (ej: california)']
+  fips_5         varchar(5)  [note: 'state_code + fips_code']
+  county_name    varchar     [not null, note: 'nombre del condado (fips_name)']
+  land_sq_mi     double      [note: 'area de tierra en millas cuadradas (sin lagos ni rios)']
+}
+
+// 3. Relaciones 
+
+ref: fact_incendio.fecha_key          > dim_fecha.fecha_key
+ref: fact_incendio.region_key         > dim_region.region_key
+ref: fact_incendio.causa_key          > dim_causa.causa_key
+ref: fact_incendio.administracion_key > dim_administracion.administracion_key
+ref: fact_incendio.clase              > dim_tamano.clase
+ref: fact_incendio.ubicacion_key      > dim_ubicacion.ubicacion_key
