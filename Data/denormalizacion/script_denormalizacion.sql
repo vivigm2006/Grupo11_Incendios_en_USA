@@ -1,4 +1,4 @@
--- 1. CREAR LAS TABLAS DE DIMENSIÓN (Primero, porque no dependen de nadie)
+-- CREACION DE LAS TABLAS DE DIMENSIÓN 
 CREATE OR REPLACE TABLE dim_tamano AS
 SELECT * FROM (VALUES 
     ('A', '<= 0.25 acres', 1, 0), ('B', '0.26 - 9.9 acres', 2, 0),
@@ -50,3 +50,22 @@ FROM fires
 WHERE state_code IS NOT NULL AND EXTRACT(YEAR FROM discovery_date) BETWEEN 2000 AND 2015
 GROUP BY state_code, fips_code;
 
+-- CREACION DE LA TABLA DE HECHOS
+CREATE OR REPLACE TABLE fact_incendio AS
+SELECT 
+    f.fod_id,
+    CAST(STRFTIME(f.discovery_date, '%Y%m%d') AS INTEGER) AS fecha_key,
+    dr.region_key,
+    f.stat_cause_code AS causa_key,
+    f.owner_code + 1 AS administracion_key,
+    f.fire_size_class AS clase,
+    du.ubicacion_key,
+    f.nwcg_reporting_unit_id AS nwcg_unit_id,
+    1 AS incendios,
+    f.fire_size AS acres,
+    CASE WHEN f.cont_date IS NOT NULL THEN 1 ELSE 0 END AS tiene_contencion,
+    CAST(DATE_DIFF('day', f.discovery_date, f.cont_date) AS INTEGER) AS dias_contencion
+FROM fires f
+LEFT JOIN dim_region dr ON f.geo_area_name = dr.region_name
+LEFT JOIN dim_ubicacion du ON f.state_code = du.state_code AND CAST(f.fips_code AS VARCHAR) = RIGHT(du.fips_5, 3)
+WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
