@@ -7,6 +7,7 @@
 # Carpeta a ignorar
 Data/*.sqlite
 Data/*.duckdb
+*.wal
 
 # Archivos del sistema
 .venv/
