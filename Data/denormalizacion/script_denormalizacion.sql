@@ -69,3 +69,28 @@ FROM fires f
 LEFT JOIN dim_region dr ON f.geo_area_name = dr.region_name
 LEFT JOIN dim_ubicacion du ON f.state_code = du.state_code AND CAST(f.fips_code AS VARCHAR) = RIGHT(du.fips_5, 3)
 WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
+
+-- CREACION DE LAS VISTAS POR OBJETIVO ESPECÍFICO
+CREATE OR REPLACE VIEW vista_obj1_distribucion_regional AS
+SELECT r.region_name, COUNT(f.fod_id) AS total_incendios, SUM(f.acres) AS total_acres_quemados, AVG(f.acres) AS promedio_acres_por_incendio
+FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key GROUP BY r.region_name;
+
+CREATE OR REPLACE VIEW vista_obj2_causas_region AS
+SELECT r.region_name, c.origen_causa, COUNT(f.fod_id) AS frecuencia
+FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_causa c ON f.causa_key = c.causa_key
+GROUP BY r.region_name, c.origen_causa;
+
+CREATE OR REPLACE VIEW vista_obj3_megaincendios AS
+SELECT r.region_name, COUNT(f.fod_id) AS total_megaincendios, SUM(f.acres) AS acres_totales_mega
+FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_tamano t ON f.clase = t.clase
+WHERE t.es_megaincendio = 1 GROUP BY r.region_name;
+
+CREATE OR REPLACE VIEW vista_obj4_administracion_terreno AS
+SELECT r.region_name, a.tipo_administracion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_afectados, COUNT(f.fod_id) AS conteo_incendios
+FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_administracion a ON f.administracion_key = a.administracion_key
+WHERE f.tiene_contencion = 1 GROUP BY r.region_name, a.tipo_administracion;
+
+CREATE OR REPLACE VIEW vista_obj5_estacionalidad AS
+SELECT r.region_name, d.estacion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_quemados, COUNT(f.fod_id) AS conteo_incendios
+FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_fecha d ON f.fecha_key = d.fecha_key
+WHERE f.tiene_contencion = 1 GROUP BY r.region_name, d.estacion;
