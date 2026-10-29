@@ -13,7 +13,7 @@ def corregir_inconsistencias_fuerza_bruta():
     con = duckdb.connect(str(DB_PATH))
 
     try:
-        print("Iniciando reasignación forzada de Causa 1, Causa 2 y Causa 3...")
+        print("Iniciando reasignación forzada de Causa 1, Causa 2, Causa 3 y condados historicos...")
 
         # 1. PASO PREVIO: ASEGURAR ESTRUCTURA DE COLUMNAS
         con.execute(
@@ -22,6 +22,130 @@ def corregir_inconsistencias_fuerza_bruta():
         con.execute(
             f"ALTER TABLE {TABLE_NAME} ADD COLUMN IF NOT EXISTS GEO_AREA_NAME VARCHAR;"
         )
+
+    # ACTUALIZACIÓN DE CONDADOS HISTÓRICOS / ÁREAS NULAS (2025)
+
+    # A. Alaska (AK) - Áreas censales históricas reorganizadas o renombradas
+    # Prince of Wales-Outer Ketchikan (FIPS 201) -> Reorganizado en Prince of Wales-Hyder (FIPS 198) / Ketchikan Gateway
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '198',
+                FIPS_NAME = 'Prince of Wales-Hyder Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 201;
+        """)
+
+    # Skagway-Yakutat-Angoon (FIPS 231) -> Dividido históricamente (Hoonah-Angoon / Yakutat / Skagway)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '105',
+                FIPS_NAME = 'Hoonah-Angoon Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 231;
+        """)
+
+    # Valdez-Cordova (FIPS 261) -> Dividido en Chugach y Copper River (2019)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '066',
+                FIPS_NAME = 'Copper River Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 261;
+        """)
+
+    # Wade Hampton (FIPS 270) -> Renombrado oficialmente como Kusilvak Census Area (FIPS 158)
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '158',
+                FIPS_NAME = 'Kusilvak Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 270;
+        """)
+
+    # Wrangell-Petersburg (FIPS 280) -> Dividido en Wrangell Borough y Petersburg Census Area
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                FIPS_CODE = '195',
+                FIPS_NAME = 'Petersburg Census Area',
+                STATE_NAME = 'Alaska',
+                GEO_AREA_NAME = 'Alaska Area'
+            WHERE STATE = 'AK' AND CAST(FIPS_CODE AS INT) = 280;
+        """)
+
+    # B. Connecticut (CT) - Transición a Consejos de Gobierno Regionales (COGs) vigentes a 2025
+# (fips_antiguo, fips_nuevo, nombre_region, area_sq_mi)
+        mapeos_ct = [
+            (1, "190", "Western Connecticut Planning Region", 537.0),
+            (3, "110", "Capitol Planning Region", 1037.0),
+            (5, "160", "Northwest Hills Planning Region", 782.0),
+            (7, "130", "Lower Connecticut River Valley Planning Region", 412.0),
+            (9, "170", "South Central Connecticut Planning Region", 570.0),
+            (11, "180", "Southeastern Connecticut Planning Region", 665.0),
+            (13, "140", "Naugatuck Valley Planning Region", 409.0),
+            (15, "150", "Northeastern Connecticut Planning Region", 561.0),
+        ]
+
+        # 1. Reasignar registros en la tabla de incendios (fires)
+        for fips_orig, fips_dest, region_name, area_sq_mi in mapeos_ct:
+            con.execute(f"""
+                UPDATE {TABLE_NAME}
+                SET 
+                    STATE = 'CT',
+                    STATE_CODE = '09',
+                    FIPS_CODE = '{fips_dest}',
+                    FIPS_NAME = '{region_name}',
+                    STATE_NAME = 'Connecticut',
+                    GEO_AREA_NAME = 'Eastern Area'
+                WHERE (STATE = 'CT' OR state_code = '09' OR state_code = '9')
+                  AND CAST(FIPS_CODE AS INT) = {fips_orig};
+            """)
+
+        # 2. Actualizar / Insertar las superficies en la tabla para eliminar las áreas nulas
+        for fips_orig, fips_dest, region_name, area_sq_mi in mapeos_ct:
+            # Primero intentamos actualizar si el registro ya existe
+            con.execute(f"""
+                UPDATE {TABLE_NAME}
+                SET fips_name = '{region_name}',
+                    land_sq_mi = {area_sq_mi}
+                WHERE (state_code = '09' OR state_code = '9') 
+                  AND fips_code = '{fips_dest}';
+            """)
+
+            # Si no existía, lo insertamos
+            con.execute(f"""
+                INSERT INTO {TABLE_NAME} (state_code, fips_code, fips_name, land_sq_mi)
+                SELECT '09', '{fips_dest}', '{region_name}', {area_sq_mi}
+                WHERE NOT EXISTS (
+                    SELECT 1 FROM {TABLE_NAME} 
+                    WHERE (state_code = '09' OR state_code = '9') 
+                      AND fips_code = '{fips_dest}'
+                );
+            """)
+
+            # Eliminar el FIPS antiguo si quedó registrado con área nula
+            con.execute(f"""
+                DELETE FROM {TABLE_NAME}
+                WHERE (state_code = '09' OR state_code = '9')
+                  AND CAST(fips_code AS INT) = {fips_orig};
+            """)
+
+    # C. Oklahoma (OK) - Ellis County (FIPS 045) corrección de integridad / área nula
+        con.execute(f"""
+            UPDATE {TABLE_NAME}
+            SET 
+                STATE = 'OK', STATE_CODE = '40', FIPS_CODE = '045',
+                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area', land_sq_mi = 1231.48
+            WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 45;
+        """)
 
         # CAUSA 2: CORRECCIONES DE FORMATO Y FIPS OFICIALES
 
@@ -40,7 +164,7 @@ def corregir_inconsistencias_fuerza_bruta():
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'FL', STATE_CODE = '12', FIPS_CODE = '086',
-                FIPS_NAME = 'Miami-Dade', STATE_NAME = 'Florida', GEO_AREA_NAME = 'Southern Area'
+                FIPS_NAME = 'Miami-Dade County', STATE_NAME = 'Florida', GEO_AREA_NAME = 'Southern Area'
             WHERE STATE = 'FL' AND CAST(FIPS_CODE AS INT) = 25;
         """)
 
@@ -49,7 +173,7 @@ def corregir_inconsistencias_fuerza_bruta():
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'GA', STATE_CODE = '13', FIPS_CODE = '029',
-                FIPS_NAME = 'Bryan', STATE_NAME = 'Georgia', GEO_AREA_NAME = 'Southern Area'
+                FIPS_NAME = 'Bryan County', STATE_NAME = 'Georgia', GEO_AREA_NAME = 'Southern Area'
             WHERE STATE = 'GA' AND CAST(FIPS_CODE AS INT) = 30;
         """)
 
@@ -58,7 +182,7 @@ def corregir_inconsistencias_fuerza_bruta():
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'OK', STATE_CODE = '40', FIPS_CODE = '045',
-                FIPS_NAME = 'Ellis', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area'
+                FIPS_NAME = 'Ellis County', STATE_NAME = 'Oklahoma', GEO_AREA_NAME = 'Southern Area', land_sq_mi = 1231.48
             WHERE STATE = 'OK' AND CAST(FIPS_CODE AS INT) = 40;
         """)
 
@@ -69,7 +193,7 @@ def corregir_inconsistencias_fuerza_bruta():
                 STATE = 'NV',
                 STATE_CODE = '32',
                 FIPS_CODE = '510',
-                FIPS_NAME = 'Carson',
+                FIPS_NAME = 'Carson County',
                 STATE_NAME = 'Nevada',
                 GEO_AREA_NAME = 'Great Basin Area'
             WHERE STATE = 'NV' 
@@ -88,73 +212,73 @@ def corregir_inconsistencias_fuerza_bruta():
         # CAUSA 1: CRUCES DE ESTADOS LIMÍTROFES (FUERZA BRUTA)
         mapeos_limitrofes = [
             # Arizona (AZ) -> Condados reales
-            ("AZ", 31, "NM", "35", "031", "McKinley", "New Mexico", "Southwest Area"),
-            ("AZ", 37, "NM", "35", "045", "San Juan", "New Mexico", "Southwest Area"),
-            ("AZ", 45, "NM", "35", "045", "San Juan", "New Mexico", "Southwest Area"),
-            ("AZ", 65, "CA", "06", "065", "Riverside", "California", "Southwest Area"),
-            ("AZ", 71, "CA", "06", "071", "San Bernardino", "California", "Southwest Area"),
-            ("AZ", 83, "CO", "08", "083", "Montezuma", "Colorado", "Rocky Mountain Area"),
+            ("AZ", 31, "NM", "35", "031", "McKinley County", "New Mexico", "Southwest Area"),
+            ("AZ", 37, "NM", "35", "045", "San Juan County", "New Mexico", "Southwest Area"),
+            ("AZ", 45, "NM", "35", "045", "San Juan County", "New Mexico", "Southwest Area"),
+            ("AZ", 65, "CA", "06", "065", "Riverside County", "California", "Southwest Area"),
+            ("AZ", 71, "CA", "06", "071", "San Bernardino County", "California", "Southwest Area"),
+            ("AZ", 83, "CO", "08", "083", "Montezuma County", "Colorado", "Rocky Mountain Area"),
            
             # California (CA)
-            ("CA", 12, "AZ", "04", "012", "La Paz", "Arizona", "Southwest Area"),
+            ("CA", 12, "AZ", "04", "012", "La Paz County", "Arizona", "Southwest Area"),
            
             # Delaware (DE)
-            ("DE", 45, "MD", "24", "045", "Wicomico", "Maryland", "Eastern Area"),
+            ("DE", 45, "MD", "24", "045", "Wicomico County", "Maryland", "Eastern Area"),
            
             # Indiana (IN)
-            ("IN", 223, "KY", "21", "223", "Trimble", "Kentucky", "Eastern Area"),
+            ("IN", 223, "KY", "21", "223", "Trimble County", "Kentucky", "Eastern Area"),
            
             # Louisiana (LA)
-            ("LA", 139, "AR", "05", "139", "Union", "Arkansas", "Southern Area"),
-            ("LA", 149, "MS", "28", "149", "Warren", "Mississippi", "Southern Area"),
+            ("LA", 139, "AR", "05", "139", "Union County", "Arkansas", "Southern Area"),
+            ("LA", 149, "MS", "28", "149", "Warren County", "Mississippi", "Southern Area"),
             
             # Nebraska (NE)
-            ("NE", 102, "SD", "46", "102", "Oglala Lakota", "South Dakota", "Rocky Mountain Area"),
-            ("NE", 193, "IA", "19", "193", "Woodbury", "Iowa", "Rocky Mountain Area"),
+            ("NE", 102, "SD", "46", "102", "Oglala Lakota County", "South Dakota", "Rocky Mountain Area"),
+            ("NE", 193, "IA", "19", "193", "Woodbury County", "Iowa", "Rocky Mountain Area"),
 
             # Nevada (NV)
-            ("NV", 35, "CA", "06", "035", "Lassen", "California", "Great Basin Area"),
-            ("NV", 45, "UT", "49", "045", "Tooele", "Utah", "Great Basin Area"),
-            ("NV", 51, "CA", "06", "051", "Mono", "California", "Great Basin Area"),
-            ("NV", 53, "UT", "49", "053", "Washington", "Utah", "Great Basin Area"),
-            ("NV", 73, "ID", "16", "073", "Owyhee", "Idaho", "Great Basin Area"),
-            ("NV", 91, "CA", "06", "091", "Sierra", "California", "Great Basin Area"),
+            ("NV", 35, "CA", "06", "035", "Lassen County", "California", "Great Basin Area"),
+            ("NV", 45, "UT", "49", "045", "Tooele County", "Utah", "Great Basin Area"),
+            ("NV", 51, "CA", "06", "051", "Mono County", "California", "Great Basin Area"),
+            ("NV", 53, "UT", "49", "053", "Washington County", "Utah", "Great Basin Area"),
+            ("NV", 73, "ID", "16", "073", "Owyhee County", "Idaho", "Great Basin Area"),
+            ("NV", 91, "CA", "06", "091", "Sierra County", "California", "Great Basin Area"),
 
             # New Jersey (NJ)
-            ("NJ", 89, "PA", "42", "089", "Monroe", "Pennsylvania", "Eastern Area"),
-            
+            ("NJ", 89, "PA", "42", "089", "Monroe County", "Pennsylvania", "Eastern Area"),
+
             # New Mexico (NM)
-            ("NM", 67, "CO", "08", "067", "La Plata", "Colorado", "Rocky Mountain Area"),
-            ("NM", 83, "CO", "08", "083", "Montezuma", "Colorado", "Southwest Area"),
-            ("NM", 109, "TX", "48", "109", "Culberson", "Texas", "Southwest Area"),
-            ("NM", 229, "TX", "48", "229", "Hudspeth", "Texas", "Southwest Area"),
-            ("NC", 241, "GA", "13", "241", "Rabun", "Georgia", "Southern Area"),
+            ("NM", 67, "CO", "08", "067", "La Plata County", "Colorado", "Rocky Mountain Area"),
+            ("NM", 83, "CO", "08", "083", "Montezuma County", "Colorado", "Southwest Area"),
+            ("NM", 109, "TX", "48", "109", "Culberson County", "Texas", "Southwest Area"),
+            ("NM", 229, "TX", "48", "229", "Hudspeth County", "Texas", "Southwest Area"),
+            ("NC", 241, "GA", "13", "241", "Rabun County", "Georgia", "Southern Area"),
             
             # Oklahoma (OK)
-            ("OK", 191, "KS", "20", "191", "Sumner", "Kansas", "Southern Area"),
-            ("OK",295,"TX","48","295","Lipscomb","Texas","Southern Area"),
-            ("OK", 485, "TX", "48", "485", "Wichita", "Texas", "Southern Area"),
+            ("OK", 191, "KS", "20", "191", "Sumner County", "Kansas", "Southern Area"),
+            ("OK",295,"TX","48","295","Lipscomb County","Texas","Southern Area"),
+            ("OK", 485, "TX", "48", "485", "Wichita County", "Texas", "Southern Area"),
 
             # South Dakota (SD)
-            ("SD", 1, "ND", "38", "001", "Adams", "North Dakota", "Rocky Mountain Area"),
-            ("SD", 149, "IA", "19", "149", "Plymouth", "Iowa", "Rocky Mountain Area"),
-            ("SD", 161, "NE", "31", "161", "Sheridan", "Nebraska", "Rocky Mountain Area"),
+            ("SD", 1, "ND", "38", "001", "Adams County", "North Dakota", "Rocky Mountain Area"),
+            ("SD", 149, "IA", "19", "149", "Plymouth County", "Iowa", "Rocky Mountain Area"),
+            ("SD", 161, "NE", "31", "161", "Sheridan County", "Nebraska", "Rocky Mountain Area"),
            
             # Tennessee (TN)
-            ("TN", 295, "GA", "13", "295", "Walker", "Georgia", "Southern Area"),
+            ("TN", 295, "GA", "13", "295", "Walker County", "Georgia", "Southern Area"),
             
             # Utah (UT)
-            ("UT", 77, "CO", "08", "077", "Mesa", "Colorado", "Great Basin Area"),
-            ("UT", 81, "CO", "08", "081", "Moffat", "Colorado", "Great Basin Area"),
-            ("UT",85,"CO","08","085","Montrose", "Colorado", "Great Basin Area"),
-            ("UT", 113, "CO", "08", "113", "San Miguel", "Colorado", "Great Basin Area"),
+            ("UT", 77, "CO", "08", "077", "Mesa County", "Colorado", "Great Basin Area"),
+            ("UT", 81, "CO", "08", "081", "Moffat County", "Colorado", "Great Basin Area"),
+            ("UT",85,"CO","08","085","Montrose County", "Colorado", "Great Basin Area"),
+            ("UT", 113, "CO", "08", "113", "San Miguel County", "Colorado", "Great Basin Area"),
             
             # Washington (WA)
-            ("WA", 89, "MT", "30", "089", "Sanders", "Montana", "Northern Rockies"),
+            ("WA", 89, "MT", "30", "089", "Sanders County", "Montana", "Northern Rockies"),
 
             # Wyoming (WY)
-            ("WY", 67, "MT", "30", "067", "Park", "Montana", "Northern Rockies"),
-            ("WY", 81, "ID", "16", "081", "Teton", "Idaho", "Great Basin Area"),
+            ("WY", 67, "MT", "30", "067", "Park County", "Montana", "Northern Rockies"),
+            ("WY", 81, "ID", "16", "081", "Teton County", "Idaho", "Great Basin Area"),
         ]
 
         for (
@@ -184,7 +308,7 @@ def corregir_inconsistencias_fuerza_bruta():
             UPDATE {TABLE_NAME}
             SET 
                 STATE = 'CO', STATE_CODE = '08', FIPS_CODE = '081',
-                FIPS_NAME = 'Moffat', STATE_NAME = 'Colorado', GEO_AREA_NAME = 'Rocky Mountain Area'
+                FIPS_NAME = 'Moffat County', STATE_NAME = 'Colorado', GEO_AREA_NAME = 'Rocky Mountain Area'
             WHERE STATE = 'WY' AND CAST(FIPS_CODE AS INT) = 81 AND FIPS_NAME LIKE '%Moffat%';
         """)
 
