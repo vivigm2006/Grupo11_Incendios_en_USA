@@ -76,6 +76,43 @@ WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
 
 -- CREACION DE LAS VISTAS POR OBJETIVO ESPECÍFICO
 
+-- vista general
+CREATE OR REPLACE VIEW vista_general_detallada AS
+SELECT 
+    f.fod_id,
+-- datos de tiempo
+    fe.fecha,
+    fe.anio,
+    fe.trimestre,
+    fe.mes,
+    fe.nombre_mes,
+    fe.estacion,
+-- datos geograficos
+    r.region_name AS region_nifc,
+    u.state_name AS estado,
+    u.county_name AS condado,
+    u.latitude AS latitud,
+    u.longitude AS longitud,
+-- datos de causa
+    c.causa_especifica,
+    c.origen_causa,
+-- datos de administracion
+    a.tipo_administracion,
+-- datos de tamaño 
+    f.clase,
+    t.es_megaincendio,
+-- metricas
+    f.acres AS superficie_acres,
+    f.dias_contencion,
+    f.tiene_contencion
+FROM fact_incendio f
+LEFT JOIN dim_fecha fe ON f.fecha_key = fe.fecha_key
+LEFT JOIN dim_region r ON f.region_key = r.region_key
+LEFT JOIN dim_ubicacion u ON f.ubicacion_key = u.ubicacion_key
+LEFT JOIN dim_causa c ON f.causa_key = c.causa_key
+LEFT JOIN dim_administracion a ON f.administracion_key = a.administracion_key
+LEFT JOIN dim_tamano t ON f.clase = t.clase; 
+
 -- vista 1: sirve para comparar que regiones tuvieron mas incendios y caules se quemaron mas
 CREATE OR REPLACE VIEW vista_obj1_distribucion_regional AS
 SELECT r.region_name, COUNT(f.fod_id) AS total_incendios, SUM(f.acres) AS total_acres_quemados, AVG(f.acres) AS promedio_acres_por_incendio
