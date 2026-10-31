@@ -20,7 +20,7 @@ SELECT DISTINCT
          WHEN EXTRACT(MONTH FROM discovery_date) IN (3,4,5) THEN 'Primavera'
          WHEN EXTRACT(MONTH FROM discovery_date) IN (6,7,8) THEN 'Verano'
          ELSE 'Otoño' END AS estacion
-FROM fires WHERE EXTRACT(YEAR FROM discovery_date) BETWEEN 2000 AND 2015;
+FROM fires WHERE EXTRACT(YEAR FROM discovery_date) BETWEEN 1992 AND 2015;
 
 CREATE OR REPLACE TABLE dim_region AS
 SELECT DISTINCT DENSE_RANK() OVER (ORDER BY geo_area_name) AS region_key,
@@ -33,8 +33,9 @@ SELECT DISTINCT stat_cause_code AS causa_key, stat_cause_descr AS causa_especifi
 FROM fires;
 
 CREATE OR REPLACE TABLE dim_administracion AS
-SELECT DISTINCT owner_code + 1 AS administracion_key, owner_descr AS propietario,
-       CASE WHEN LOWER(owner_descr) LIKE '%federal%' THEN 'Federal'
+SELECT DISTINCT COALESCE(owner_code, -1) + 1 AS administracion_key, COALESCE(owner_descr, 'Desconocido') AS propietario,
+       CASE WHEN owner_descr IS NULL THEN 'Desconocido'  
+            WHEN LOWER(owner_descr) LIKE '%federal%' THEN 'Federal'
             WHEN LOWER(owner_descr) LIKE '%state%' THEN 'Estatal/Local'
             ELSE 'Privada' END AS tipo_administracion
 FROM fires;
@@ -43,6 +44,7 @@ CREATE OR REPLACE TABLE dim_ubicacion AS
 SELECT 
     DENSE_RANK() OVER (ORDER BY state_code, fips_code) AS ubicacion_key,
     state_code,
+    fips_code,
     MAX(state_name) AS state_name,
     CAST(state_code AS VARCHAR) || LPAD(CAST(fips_code AS VARCHAR), 3, '0') AS fips_5,
     MAX(COALESCE(fips_name, 'Desconocido')) AS county_name,
@@ -50,7 +52,7 @@ SELECT
     MAX(latitude) AS latitude,    
     MAX(longitude) AS longitude   
 FROM fires 
-WHERE state_code IS NOT NULL AND EXTRACT(YEAR FROM discovery_date) BETWEEN 1992 AND 2015
+WHERE state_code IS NOT NULL
 GROUP BY state_code, fips_code;
 
 -- CREACION DE LA TABLA DE HECHOS
@@ -61,7 +63,7 @@ SELECT
     CAST(STRFTIME(f.discovery_date, '%Y%m%d') AS INTEGER) AS fecha_key,
     dr.region_key,
     f.stat_cause_code AS causa_key,
-    f.owner_code + 1 AS administracion_key,
+    COALESCE(f.owner_code, -1) + 1 AS administracion_key,
     f.fire_size_class AS clase,
     du.ubicacion_key,
     f.nwcg_reporting_unit_id AS nwcg_unit_id,
@@ -71,7 +73,7 @@ SELECT
     CAST(DATE_DIFF('day', f.discovery_date, f.cont_date) AS INTEGER) AS dias_contencion
 FROM fires f
 LEFT JOIN dim_region dr ON f.geo_area_name = dr.region_name
-LEFT JOIN dim_ubicacion du ON f.state_code = du.state_code AND CAST(f.fips_code AS VARCHAR) = RIGHT(du.fips_5, 3)
+LEFT JOIN dim_ubicacion du ON f.state_code = du.state_code AND CAST(f.fips_code AS VARCHAR) = CAST(du.fips_code AS VARCHAR) 
 WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
 
 -- CREACION DE LAS VISTAS POR OBJETIVO ESPECÍFICO
