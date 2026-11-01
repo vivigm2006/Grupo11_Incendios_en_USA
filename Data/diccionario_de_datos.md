@@ -3,7 +3,7 @@
 ## Normalización (Tercera Forma Normal - 3FN)
 El objetivo de esta capa es estructurar la información en un modelo relacional para eliminar la redundancia de datos, garantizar la integridad referencial y optimizar el almacenamiento de la información de incendios forestales en EE. UU.
 
-## 1. Tabla de Estados (`tabla_estado`)
+### 1. Tabla de Estados (`tabla_estado`)
 Almacena la información oficial de los estados de EE. UU.
 
 | Campo | Tipo | Descripción | 
@@ -12,7 +12,7 @@ Almacena la información oficial de los estados de EE. UU.
 | **`state_name`** | VARCHAR | Nombre completo oficial del estado. | 
 | **`state_abbr`** | VARCHAR(2) | Abreviatura o sigla estándar del estado. | 
 
-## 2. Tabla de Condados (`tabla_condado`)
+### 2. Tabla de Condados (`tabla_condado`)
 Contiene la segmentación territorial a nivel de condados y su relación con cada estado.
 
 | Campo | Tipo | Descripción | 
@@ -22,7 +22,7 @@ Contiene la segmentación territorial a nivel de condados y su relación con cad
 | **`fips_name`** | VARCHAR | Nombre oficial del condado. | 
 | **`land_sq_mi`** | DOUBLE | Superficie territorial del condado medida en millas cuadradas. | 
 
-## 3. Tabla de Causa de Incendio (`tabla_causa_incendio`)
+### 3. Tabla de Causa de Incendio (`tabla_causa_incendio`)
 Catálogo de los motivos o causas principales que originaron los incendios.
 
 | Campo | Tipo | Descripción | 
@@ -30,7 +30,7 @@ Catálogo de los motivos o causas principales que originaron los incendios.
 | **`cause_code`** | SMALLINT | **Llave Primaria**. Identificador numérico único de la causa. | 
 | **`cause_descr`** | VARCHAR | Descripción detallada del origen del fuego (ej. Rayos, Humano, etc.). | 
 
-## 4. Tabla de Propietario del Terreno (`tabla_propietario`)
+### 4. Tabla de Propietario del Terreno (`tabla_propietario`)
 Catálogo que clasifica la entidad o tipo de administración del terreno afectado.
 
 | Campo | Tipo | Descripción | 
@@ -38,7 +38,7 @@ Catálogo que clasifica la entidad o tipo de administración del terreno afectad
 | **`owner_code`** | SMALLINT | **Llave Primaria**. Identificador numérico del tipo de propietario. | 
 | **`owner_descr`** | VARCHAR | Descripción de la entidad administradora (ej. Federal, Estatal, Privada). | 
 
-## 5. Tabla de Clase de Tamaño (`tabla_clase_tamano`)
+### 5. Tabla de Clase de Tamaño (`tabla_clase_tamano`)
 Rangos oficiales de clasificación según la superficie quemada.
 
 | Campo | Tipo | Descripción | 
@@ -47,7 +47,7 @@ Rangos oficiales de clasificación según la superficie quemada.
 | **`min_acres`** | DOUBLE | Límite inferior de superficie afectada en acres. | 
 | **`max_acres`** | DOUBLE | Límite superior de superficie afectada en acres. | 
 
-## 6. Tabla de Área Geográfica (`tabla_geographic_area`)
+### 6. Tabla de Área Geográfica (`tabla_geographic_area`)
 Clasificación por áreas geográficas de gestión operativa de incendios en EE. UU.
 
 | Campo | Tipo | Descripción | 
@@ -55,7 +55,7 @@ Clasificación por áreas geográficas de gestión operativa de incendios en EE.
 | **`geographic_area_code`** | VARCHAR(2) | **Llave Primaria**. Código identificador del área geográfica operativa. | 
 | **`geographic_area_name`** | VARCHAR | Nombre oficial del área geográfica de respuesta. | 
 
-## 7. Tabla Principal de Incendios (`tabla_incendios`)
+### 7. Tabla Principal de Incendios (`tabla_incendios`)
 Registro central y transaccional de cada evento de incendio forestal detectado.
 
 | Campo | Tipo | Descripción | 
