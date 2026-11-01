@@ -1,5 +1,78 @@
 # Diccionario de Datos
 
+## Normalización (Tercera Forma Normal - 3FN)
+El objetivo de esta capa es estructurar la información en un modelo relacional para eliminar la redundancia de datos, garantizar la integridad referencial y optimizar el almacenamiento de la información de incendios forestales en EE. UU.
+
+### 1. Tabla de Estados (`tabla_estado`)
+Almacena la información oficial de los estados de EE. UU.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`state_code`** | VARCHAR(2) | **Llave Primaria**. Código único de dos caracteres del estado (ISO/ANSI). | 
+| **`state_name`** | VARCHAR | Nombre completo oficial del estado. | 
+| **`state_abbr`** | VARCHAR(2) | Abreviatura o sigla estándar del estado. | 
+
+### 2. Tabla de Condados (`tabla_condado`)
+Contiene la segmentación territorial a nivel de condados y su relación con cada estado.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`state_code`** | VARCHAR(2) | **Llave Foránea** (hacia `tabla_estado`). Código del estado al que pertenece el condado. | 
+| **`fips_code`** | VARCHAR(3) | **Llave Primaria compuesta** (junto a `state_code`). Código FIPS de 3 dígitos del condado. | 
+| **`fips_name`** | VARCHAR | Nombre oficial del condado. | 
+| **`land_sq_mi`** | DOUBLE | Superficie territorial del condado medida en millas cuadradas. | 
+
+### 3. Tabla de Causa de Incendio (`tabla_causa_incendio`)
+Catálogo de los motivos o causas principales que originaron los incendios.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`cause_code`** | SMALLINT | **Llave Primaria**. Identificador numérico único de la causa. | 
+| **`cause_descr`** | VARCHAR | Descripción detallada del origen del fuego (ej. Rayos, Humano, etc.). | 
+
+### 4. Tabla de Propietario del Terreno (`tabla_propietario`)
+Catálogo que clasifica la entidad o tipo de administración del terreno afectado.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`owner_code`** | SMALLINT | **Llave Primaria**. Identificador numérico del tipo de propietario. | 
+| **`owner_descr`** | VARCHAR | Descripción de la entidad administradora (ej. Federal, Estatal, Privada). | 
+
+### 5. Tabla de Clase de Tamaño (`tabla_clase_tamano`)
+Rangos oficiales de clasificación según la superficie quemada.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`fire_size_class`** | VARCHAR(1) | **Llave Primaria**. Letra distintiva de la clase de tamaño (rango de A a G). | 
+| **`min_acres`** | DOUBLE | Límite inferior de superficie afectada en acres. | 
+| **`max_acres`** | DOUBLE | Límite superior de superficie afectada en acres. | 
+
+### 6. Tabla de Área Geográfica (`tabla_geographic_area`)
+Clasificación por áreas geográficas de gestión operativa de incendios en EE. UU.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`geographic_area_code`** | VARCHAR(2) | **Llave Primaria**. Código identificador del área geográfica operativa. | 
+| **`geographic_area_name`** | VARCHAR | Nombre oficial del área geográfica de respuesta. | 
+
+### 7. Tabla Principal de Incendios (`tabla_incendios`)
+Registro central y transaccional de cada evento de incendio forestal detectado.
+
+| Campo | Tipo | Descripción | 
+| ----- | ----- | ----- | 
+| **`objectid`** | INTEGER | **Llave Primaria**. Identificador único y correlativo del evento de incendio. | 
+| **`discovery_date`** | DATE | Fecha en la que se descubrió o reportó el inicio del incendio. | 
+| **`cont_date`** | DATE | Fecha en la que el incendio fue contenido o controlado. | 
+| **`fire_size_class`** | VARCHAR(1) | **Llave Foránea** hacia `tabla_clase_tamano`. Rango de tamaño del incendio. | 
+| **`fire_size`** | DOUBLE | Superficie total quemada medida en acres. | 
+| **`latitude`** | DOUBLE | Coordenada geográfica de latitud del punto de origen. | 
+| **`longitude`** | DOUBLE | Coordenada geográfica de longitud del punto de origen. | 
+| **`cause_code`** | SMALLINT | **Llave Foránea** hacia `tabla_causa_incendio`. Motivo del origen del fuego. | 
+| **`owner_code`** | SMALLINT | **Llave Foránea** hacia `tabla_propietario`. Tipo de propiedad del suelo afectado. | 
+| **`state_code`** | VARCHAR(2) | **Llave Foránea** hacia `tabla_condado` (y `tabla_estado`). Estado donde ocurrió el incendio. | 
+| **`fips_code`** | VARCHAR(3) | **Llave Foránea** hacia `tabla_condado`. Condado específico de ocurrencia. | 
+| **`geographic_area_code`** | VARCHAR(2) | **Llave Foránea** hacia `tabla_geographic_area`. Área operativa asignada. | 
+
 ## Denormalización
 
 El objetivo de esta capa es optimizar el rendimiento para las herramientas de visualización, donde el modelo separa el evento (Tabla de Hechos) de su contexto (Tablas de Dimensión) permitiendo consultas analíticas rápidas y precisas para responder a los objetivos de la investigación
