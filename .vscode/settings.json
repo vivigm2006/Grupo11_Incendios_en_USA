@@ -1,0 +1,11 @@
+{
+    "duckdb.databases": [
+        {
+            "alias": "Incendios_TFCompu",
+            "type": "file",
+            "path": "c:\\Users\\User\\OneDrive\\Documentos\\GitHub\\Grupo11_Incendios_en_USA\\Data\\Incendios_TFCompu.duckdb",
+            "attached": true
+        }
+    ],
+    "duckdb.defaultDatabase": "Incendios_TFCompu"
+}
