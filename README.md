@@ -91,6 +91,8 @@ Partiendo de la tabla masiva original organizamos la información en una base de
 * **Eliminación de datos repetidos:** Separamos la información en tablas independientes de catálogos para evitar redundancias en datos categóricos como causas, propietarios y ubicaciones.
 * **Selección de tablas relevantes:** Simplificamos el sistema conservando únicamente las tablas y campos que realmente eran útiles para nuestra investigación. El modelo normalizado quedó estructurado por la tabla principal `tabla_incendios` conectada a las tablas de `tabla_geographic_area`, `tabla_propietario`, `tabla_causa_incendio`, `tabla_clase_tamano`, `tabla_condado` y `tabla_estado`.
 
+![Modelo Relacional Normalizado](assets/Diagrama_Norlizacion.png)
+
 ### 3. Denormalización 
 
 Para que las consultas en el aplicativo y en las herramientas de visualización fueran mucho más rápidas y eficientes, transformamos el modelo relacional en un Modelo Dimensional en Estrella:
@@ -105,6 +107,44 @@ Para que las consultas en el aplicativo y en las herramientas de visualización 
   * `dim_administracion`: Clasifica los dueños de los terrenos en tres categorías: Federal, Estatal/Local y Privada.
   * `dim_ubicacion`: Guarda el estado y el condado del incendio.
   * `dim_tamano`: Define los rangos oficiales del tamaño del incendio (de la A a la G) e incluye un campo que marca con un "1" si el evento corresponde a un mega-incendio (Clase G).
+  
+![Modelo Dimensional en Estrella](assets/Diagrama_Denormalizacion.png)
+
+## 📁 Estructura del Repositorio
+
+```text
+├── app.py                         Tablero principal de la investigación
+├── requirements.txt               Dependencias y librerías de Python 
+├── .streamlit/                    Configuración visual de Streamlit
+├── .vscode/                       Configuración del entorno de trabajo
+│
+├── Codigo_Python/
+│   ├── 1_Normalizacion/           Transformación y esquema de BD
+│   ├── 2_0_Limpieza/              Limpieza y corrección de datos
+│   ├── 2_1_Cargar_Datos/          Poblar la base de datos
+│   └── 3_Denormalizacion/         Modelado de estrella
+│
+├── Data/                          Archivos de datos originales y procesados
+│   ├── Originales Parquet/        Versión optimizada de la BD /Parquet
+│   ├── Datos_Normalizados/        Archivos .duckdb normalizados
+│   ├── Denormalizacion/           SQL esquema y vistas
+│   └── diccionario_de_datos       Documentación de las estructuras de datos
+│
+├── assets/                        Imágenes y recursos visuales del proyecto
+│
+├── pages/
+│   ├── 01_Marco_Teorico.py        Antecedentes y fundamentos teóricos
+│   ├── 02_Marco_Metodologico.py   Problema, objetivos y metodología
+│   ├── 03_Cuestionario_SQL.py     Consultas analíticas resueltas
+│   ├── 04_OpsQuery.py             Terminal interactiva y consultas SQL
+│   ├── 05_Conclusiones.py         Resultados y conclusiones
+│   └── 06_Bibliografia.py         Referencias bibliográficas
+│
+├── conectar_base.py               Conexión a la base de datos en motherduck
+├── CODE_OF_CONDUCT.md             Código de conducta del equipo
+├── Dockerfile                     Configuración de contenedor
+└── LICENSE                        Licencia del proyecto
+```
 
 ## 🛠️ Tecnologías Utilizadas
 
