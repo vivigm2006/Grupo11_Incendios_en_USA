@@ -91,7 +91,7 @@ Partiendo de la tabla masiva original organizamos la información en una base de
 * **Eliminación de datos repetidos:** Separamos la información en tablas independientes de catálogos para evitar redundancias en datos categóricos como causas, propietarios y ubicaciones.
 * **Selección de tablas relevantes:** Simplificamos el sistema conservando únicamente las tablas y campos que realmente eran útiles para nuestra investigación. El modelo normalizado quedó estructurado por la tabla principal `tabla_incendios` conectada a las tablas de `tabla_geographic_area`, `tabla_propietario`, `tabla_causa_incendio`, `tabla_clase_tamano`, `tabla_condado` y `tabla_estado`.
 
-![Modelo Relacional Normalizado](assets\Diagrama_Norlizacion.png)
+![Modelo Relacional Normalizado](assets/Diagrama_Norlizacion.png)
 
 ### 3. Denormalización 
 
@@ -108,7 +108,7 @@ Para que las consultas en el aplicativo y en las herramientas de visualización 
   * `dim_ubicacion`: Guarda el estado y el condado del incendio.
   * `dim_tamano`: Define los rangos oficiales del tamaño del incendio (de la A a la G) e incluye un campo que marca con un "1" si el evento corresponde a un mega-incendio (Clase G).
   
-![Modelo Dimensional en Estrella](assets\Diagrama_Denormalizacion.png)
+![Modelo Dimensional en Estrella](assets/Diagrama_Denormalizacion.png)
 
 ## 📁 Estructura del Repositorio
 
