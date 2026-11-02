@@ -20,17 +20,17 @@ SELECT DISTINCT
          WHEN EXTRACT(MONTH FROM discovery_date) IN (3,4,5) THEN 'Primavera'
          WHEN EXTRACT(MONTH FROM discovery_date) IN (6,7,8) THEN 'Verano'
          ELSE 'Otoño' END AS estacion
-FROM fires WHERE EXTRACT(YEAR FROM discovery_date) BETWEEN 1992 AND 2015;
+FROM tabla_incendios WHERE EXTRACT(YEAR FROM discovery_date) BETWEEN 1992 AND 2015;
 
 CREATE OR REPLACE TABLE dim_region AS
-SELECT DISTINCT DENSE_RANK() OVER (ORDER BY geo_area_name) AS region_key,
-       geo_area_name AS region_name, geo_area_name AS region_code
-FROM fires WHERE geo_area_name IS NOT NULL;
+SELECT DISTINCT DENSE_RANK() OVER (ORDER BY geographic_area_name) AS region_key,
+       geographic_area_name AS region_name, geographic_area_code AS region_code
+FROM tabla_geographic_area WHERE geographic_area_name IS NOT NULL;
 
 CREATE OR REPLACE TABLE dim_causa AS
-SELECT DISTINCT stat_cause_code AS causa_key, stat_cause_descr AS causa_especifica,
-       CASE WHEN LOWER(stat_cause_descr) = 'lightning' THEN 'Natural' ELSE 'Humana' END AS origen_causa
-FROM fires;
+SELECT DISTINCT cause_code AS causa_key, cause_descr AS causa_especifica,
+       CASE WHEN LOWER(cause_descr) = 'lightning' THEN 'Natural' ELSE 'Humana' END AS origen_causa
+FROM tabla_causa_incendio;
 
 CREATE OR REPLACE TABLE dim_administracion AS
 SELECT DISTINCT COALESCE(owner_code, -1) + 1 AS administracion_key, COALESCE(owner_descr, 'Desconocido') AS propietario,
@@ -38,41 +38,42 @@ SELECT DISTINCT COALESCE(owner_code, -1) + 1 AS administracion_key, COALESCE(own
             WHEN LOWER(owner_descr) LIKE '%federal%' THEN 'Federal'
             WHEN LOWER(owner_descr) LIKE '%state%' THEN 'Estatal/Local'
             ELSE 'Privada' END AS tipo_administracion
-FROM fires;
+FROM tabla_propietario;
 
 CREATE OR REPLACE TABLE dim_ubicacion AS
 SELECT 
-    DENSE_RANK() OVER (ORDER BY state_code, fips_code) AS ubicacion_key,
-    state_code,
-    fips_code,
-    MAX(state_name) AS state_name,
-    CAST(state_code AS VARCHAR) || LPAD(CAST(fips_code AS VARCHAR), 3, '0') AS fips_5,
-    MAX(COALESCE(fips_name, 'Desconocido')) AS county_name,
-    MAX(CAST(land_sq_mi AS DOUBLE)) AS land_sq_mi,
-    MAX(latitude) AS latitude,    
-    MAX(longitude) AS longitude   
-FROM fires 
-WHERE state_code IS NOT NULL
-GROUP BY state_code, fips_code;
+    DENSE_RANK() OVER (ORDER BY c.state_code, c.fips_code) AS ubicacion_key,
+    c.state_code,
+    c.fips_code,
+    MAX(s.state_name) AS state_name,
+    CAST(c.state_code AS VARCHAR) || LPAD(CAST(c.fips_code AS VARCHAR), 3, '0') AS fips_5,
+    MAX(COALESCE(c.fips_name, 'Desconocido')) AS county_name,
+    MAX(CAST(c.land_sq_mi AS DOUBLE)) AS land_sq_mi,
+    MAX(i.latitude) AS latitude,    
+    MAX(i.longitude) AS longitude   
+FROM tabla_condado c
+LEFT JOIN tabla_estado s ON c.state_code = s.state_code
+RIGHT JOIN tabla_incendios i ON c.state_code = i.state_code AND c.fips_code = i.fips_code
+WHERE c.state_code IS NOT NULL
+GROUP BY c.state_code, c.fips_code;
 
 -- CREACION DE LA TABLA DE HECHOS
 
 CREATE OR REPLACE TABLE fact_incendio AS
 SELECT 
-    f.fod_id,
+    f.objectid,
     CAST(STRFTIME(f.discovery_date, '%Y%m%d') AS INTEGER) AS fecha_key,
     dr.region_key,
-    f.stat_cause_code AS causa_key,
+    f.cause_code AS causa_key,
     COALESCE(f.owner_code, -1) + 1 AS administracion_key,
     f.fire_size_class AS clase,
     du.ubicacion_key,
-    f.nwcg_reporting_unit_id AS nwcg_unit_id,
     1 AS incendios,
     f.fire_size AS acres,
     CASE WHEN f.cont_date IS NOT NULL THEN 1 ELSE 0 END AS tiene_contencion,
     CAST(DATE_DIFF('day', f.discovery_date, f.cont_date) AS INTEGER) AS dias_contencion
-FROM fires f
-LEFT JOIN dim_region dr ON f.geo_area_name = dr.region_name
+FROM tabla_incendios f
+LEFT JOIN dim_region dr ON f.geographic_area_code = dr.region_code  -- <-- CORREGIDO AQUÍ
 LEFT JOIN dim_ubicacion du ON f.state_code = du.state_code AND CAST(f.fips_code AS VARCHAR) = CAST(du.fips_code AS VARCHAR) 
 WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
 
@@ -81,7 +82,7 @@ WHERE EXTRACT(YEAR FROM f.discovery_date) BETWEEN 1992 AND 2015;
 -- vista general
 CREATE OR REPLACE VIEW vista_general_detallada AS
 SELECT 
-    f.fod_id,
+    f.objectid,
 -- datos de tiempo
     fe.fecha,
     fe.anio,
@@ -117,12 +118,12 @@ LEFT JOIN dim_tamano t ON f.clase = t.clase;
 
 -- vista 1: sirve para comparar que regiones tuvieron mas incendios y caules se quemaron mas
 CREATE OR REPLACE VIEW vista_obj1_distribucion_regional AS
-SELECT r.region_name, COUNT(f.fod_id) AS total_incendios, SUM(f.acres) AS total_acres_quemados, AVG(f.acres) AS promedio_acres_por_incendio
+SELECT r.region_name, COUNT(f.objectid) AS total_incendios, SUM(f.acres) AS total_acres_quemados, AVG(f.acres) AS promedio_acres_por_incendio
 FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key GROUP BY r.region_name;
 
 -- vista 2: sirve para saber que porcentaje de los incendios en cada region fueron causados por humanos y caules por la naturaleza
 CREATE OR REPLACE VIEW vista_obj2_causas_region AS
-SELECT r.region_name, c.origen_causa, COUNT(f.fod_id) AS frecuencia
+SELECT r.region_name, c.origen_causa, COUNT(f.objectid) AS frecuencia
 FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_causa c ON f.causa_key = c.causa_key
 GROUP BY r.region_name, c.origen_causa;
 
@@ -130,7 +131,7 @@ GROUP BY r.region_name, c.origen_causa;
 -- un filtro clave: le dice a la base de datos "ignora todos los incendios pequeños, solo cuéntame los de clase G (mayores a 5,000 acres)"
 -- y luego suma sus acres y los agrupa por región.
 CREATE OR REPLACE VIEW vista_obj3_megaincendios AS
-SELECT r.region_name, COUNT(f.fod_id) AS total_megaincendios, SUM(f.acres) AS acres_totales_mega
+SELECT r.region_name, COUNT(f.objectid) AS total_megaincendios, SUM(f.acres) AS acres_totales_mega
 FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_tamano t ON f.clase = t.clase
 WHERE t.es_megaincendio = 1 GROUP BY r.region_name;
 
@@ -138,12 +139,12 @@ WHERE t.es_megaincendio = 1 GROUP BY r.region_name;
 -- la parte de f.tiene_contencion = 1 es porque como casi la mitad de los datos no tienen fecha de fin
 -- al poner = 1 solo promediamos los incendios que si sabemos cuánto tardaron en apagarse
 CREATE OR REPLACE VIEW vista_obj4_administracion_terreno AS
-SELECT r.region_name, a.tipo_administracion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_afectados, COUNT(f.fod_id) AS conteo_incendios
+SELECT r.region_name, a.tipo_administracion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_afectados, COUNT(f.objectid) AS conteo_incendios
 FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_administracion a ON f.administracion_key = a.administracion_key
 WHERE f.tiene_contencion = 1 GROUP BY r.region_name, a.tipo_administracion;
 
--- vista 5: sirev mo cambia la superficie quemada y los días de contención según la estación del año (invierno, primavera, verano, otoño)
+-- vista 5: sirve para saber cómo cambia la superficie quemada y los días de contención según la estación del año (invierno, primavera, verano, otoño)
 CREATE OR REPLACE VIEW vista_obj5_estacionalidad AS
-SELECT r.region_name, d.estacion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_quemados, COUNT(f.fod_id) AS conteo_incendios
+SELECT r.region_name, d.estacion, AVG(f.dias_contencion) AS promedio_dias_contencion, SUM(f.acres) AS total_acres_quemados, COUNT(f.objectid) AS conteo_incendios
 FROM fact_incendio f JOIN dim_region r ON f.region_key = r.region_key JOIN dim_fecha d ON f.fecha_key = d.fecha_key
 WHERE f.tiene_contencion = 1 GROUP BY r.region_name, d.estacion;
