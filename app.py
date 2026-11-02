@@ -28,6 +28,11 @@ with st.sidebar:
     st.title("Ventana seleccionada")
     st.caption("seleccion de la parte de la investigacion a visualizar")
 
+<<<<<<< Updated upstream
+st.image("assets/imagen.jpg", caption="Incendios forestales en EE.UU. (1992-2015)")
+=======
+    st.audio("assets/mixfuego.mp3", format="audio/mp3", start_time=0)
+
 st.markdown(
     """
 <style>
@@ -70,10 +75,8 @@ st.markdown(
 
 
 st.image("assets/imagen.jpg", width="stretch")
-st.title("Marco Teórico")
+st.title("Plantamiento del problema")
 st.caption("Incendios forestales y segmentacion territorial (1992-20015)")
-
-st.subheader("Plantamiento del problema")
 
 st.markdown("""
 <div class="text-justify">
@@ -241,3 +244,4 @@ operativa y la severidad.<br><br>
 """, unsafe_allow_html=True)
 
 st.subheader("")
+>>>>>>> Stashed changes
