@@ -28,9 +28,6 @@ with st.sidebar:
     st.title("Ventana seleccionada")
     st.caption("seleccion de la parte de la investigacion a visualizar")
 
-<<<<<<< Updated upstream
-st.image("assets/imagen.jpg", caption="Incendios forestales en EE.UU. (1992-2015)")
-=======
     st.audio("assets/mixfuego.mp3", format="audio/mp3", start_time=0)
 
 st.markdown(
@@ -244,4 +241,3 @@ operativa y la severidad.<br><br>
 """, unsafe_allow_html=True)
 
 st.subheader("")
->>>>>>> Stashed changes
