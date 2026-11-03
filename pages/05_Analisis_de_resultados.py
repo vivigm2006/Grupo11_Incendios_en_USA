@@ -13,50 +13,38 @@ import streamlit as st
 import geopandas as gpd
 import matplotlib.pyplot as plt
 
-MOTHERDUCK_TOKEN = os.environ.get(
-    "MOTHERDUCK_TOKEN",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc2hlcnJlcmFzZWdhcnJhQGdtYWlsLmNvbSIsIm1kUmVnaW9uIjoiYXdzLXVzLWVhc3QtMSIsInNlc3Npb24iOiJjYXJsb3NoZXJyZXJhc2VnYXJyYS5nbWFpbC5jb20iLCJwYXQiOiJCb2h2blVPeGY4TjU5MDY5bVJaSG9Hb0NnR2hTc3ViRXhqMWdhUXlsRjJ3IiwidXNlcklkIjoiZjBmZWZmM2EtYWUzMy00MGExLThmMTUtZDNjNTAzZmM3ODM0IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzkzMjg1MDA2fQ.ZrcMtxyCK0RiInbm7DEYytfLfqvtwBStPS0LUrmcK3M"
-)
-
-
-os.environ["motherduck_token"] = MOTHERDUCK_TOKEN
-
-pd.set_option("display.max_columns", 50)
-print("DuckDB versión:", duckdb.__version__)
-
-# Verificación: MotherDuck solo funciona con DuckDB 1.x por ahora
-if not duckdb.__version__.startswith("1."):
-    raise RuntimeError(
-        )
-con = duckdb.connect("md:")
-print("Conectado ✅")
-
-bases = con.sql("SHOW DATABASES").df()
-tablas = con.sql("""
-    SELECT database_name, schema_name, table_name, estimated_size AS filas_estimadas, column_count
-    FROM duckdb_tables()
-    WHERE database_name NOT IN ('system', 'temp')
-    ORDER BY database_name, schema_name, table_name
-""").df()
-if tablas.empty:
-    raise ValueError("No se encontraron tablas en tu cuenta de MotherDuck.")
-
-BASE = "incendios_usa"     
-ESQUEMA = "main"    
-TABLA = "vista_general_detallada"       
-
-REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
-print("Tabla seleccionada:", REF)
-
-
-query = f"SELECT * FROM {REF}"
-df = con.sql(query).df()
-
 st.set_page_config(
     page_title="Análisis de Resultados",
     page_icon="📊",
     layout="wide",
 )
+
+MOTHERDUCK_TOKEN = os.environ.get(
+    "MOTHERDUCK_TOKEN",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNhcmxvc2hlcnJlcmFzZWdhcnJhQGdtYWlsLmNvbSIsIm1kUmVnaW9uIjoiYXdzLXVzLWVhc3QtMSIsInNlc3Npb24iOiJjYXJsb3NoZXJyZXJhc2VnYXJyYS5nbWFpbC5jb20iLCJwYXQiOiJCb2h2blVPeGY4TjU5MDY5bVJaSG9Hb0NnR2hTc3ViRXhqMWdhUXlsRjJ3IiwidXNlcklkIjoiZjBmZWZmM2EtYWUzMy00MGExLThmMTUtZDNjNTAzZmM3ODM0IiwiaXNzIjoibWRfcGF0IiwicmVhZE9ubHkiOmZhbHNlLCJ0b2tlblR5cGUiOiJyZWFkX3dyaXRlIiwiaWF0IjoxNzkzMjg1MDA2fQ.ZrcMtxyCK0RiInbm7DEYytfLfqvtwBStPS0LUrmcK3M"
+)
+os.environ["motherduck_token"] = MOTHERDUCK_TOKEN
+pd.set_option("display.max_columns", 50)
+print("DuckDB versión:", duckdb.__version__)
+
+@st.cache_data
+def cargar_datos():
+    print("Conectando a MotherDuck y cargando datos...")
+    con = duckdb.connect("md:")
+    
+    BASE = "incendios_usa"     
+    ESQUEMA = "main"    
+    TABLA = "vista_general_detallada"       
+
+    REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
+    query = f"SELECT * FROM {REF}"
+    df = con.sql(query).df()
+    
+    con.close()
+    return df
+
+df = cargar_datos()
+print("Datos listos en memoria ✅")
 
 with st.sidebar:
     st.title("Filtro a aplicar")
