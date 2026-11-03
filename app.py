@@ -25,9 +25,6 @@ st.title("Incendios forestales y segmentacion territorial (1992-20015)")
 # BARRA LATERAL
 
 with st.sidebar:
-    st.title("Ventana seleccionada")
-    st.caption("seleccion de la parte de la investigacion a visualizar")
-
     st.audio("assets/mixfuego.mp3", format="audio/mp3", start_time=0)
 
 st.markdown(
