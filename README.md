@@ -35,7 +35,7 @@ El objetivo principal es construir un pipeline integral de datos que abarca desd
 
 ## Objetivo General
 
-Analizar la relación de la ubicación geográfica y las características  de los incendios forestales en Estados Unidos durante el período 2000–2015.
+Analizar la relación de la ubicación geográfica y las características  de los incendios forestales en Estados Unidos durante el período 1992–2015.
 
 ## Objetivos específicos
 
