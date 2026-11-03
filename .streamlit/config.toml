@@ -1,6 +1,6 @@
 [theme]
 base = "dark"
-primaryColor = "#16150c"             # alerta: acento principal
+primaryColor = "#9E1111"             # alerta: acento principal
 backgroundColor = "#010202"          # fondo
 secondaryBackgroundColor = "#b87031" # tarjetas y barra lateral
 textColor = "#ECEFF1"                # Texto
