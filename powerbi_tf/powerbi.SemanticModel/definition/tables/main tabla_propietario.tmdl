@@ -1,0 +1,33 @@
+table 'main tabla_propietario'
+	lineageTag: a05bf1c8-7866-4dee-a192-6f0f546eb8e9
+
+	column owner_code
+		dataType: int64
+		formatString: 0
+		lineageTag: a2634143-28ee-4c25-8a0d-9b290879adde
+		summarizeBy: none
+		sourceColumn: owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_descr
+		dataType: string
+		lineageTag: 63b7f976-0178-4215-9b9d-b20b7c12fa9f
+		summarizeBy: none
+		sourceColumn: owner_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main tabla_propietario' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_propietario = Origen{[Schema="main",Item="tabla_propietario"]}[Data]
+				in
+				    main_tabla_propietario
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

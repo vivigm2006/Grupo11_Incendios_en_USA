@@ -1,0 +1,113 @@
+table 'main fact_incendio'
+	lineageTag: ac2e303e-421a-464c-bb4b-8e838efd4b8f
+
+	column objectid
+		dataType: int64
+		formatString: 0
+		lineageTag: b5db451e-507f-45b6-90b5-732dfe8550e7
+		summarizeBy: sum
+		sourceColumn: objectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: eb57d534-fc71-4619-9656-8c32eb5cafa4
+		summarizeBy: sum
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1253ffbe-28a6-4640-8b39-521b99969788
+		summarizeBy: sum
+		sourceColumn: region_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column causa_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 51dbe47f-1a32-4961-b792-86bd3dab3f4a
+		summarizeBy: sum
+		sourceColumn: causa_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column administracion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d50bf41-708a-4005-90a9-723929a1621d
+		summarizeBy: sum
+		sourceColumn: administracion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column clase
+		dataType: string
+		lineageTag: 684dd98e-880f-454f-9d47-dc6035992fb7
+		summarizeBy: none
+		sourceColumn: clase
+
+		annotation SummarizationSetBy = Automatic
+
+	column ubicacion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f1c509d-a86d-4627-9a76-ca89adfba489
+		summarizeBy: sum
+		sourceColumn: ubicacion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column incendios
+		dataType: int64
+		formatString: 0
+		lineageTag: 06d0b7eb-a6d0-4e25-b3cd-445d7b01d03a
+		summarizeBy: sum
+		sourceColumn: incendios
+
+		annotation SummarizationSetBy = Automatic
+
+	column acres
+		dataType: double
+		lineageTag: ffb1f336-ac39-452e-beed-c876b457070c
+		summarizeBy: sum
+		sourceColumn: acres
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tiene_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: ee15b7c2-b61e-459b-a8e6-2526125ab7b3
+		summarizeBy: sum
+		sourceColumn: tiene_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	column dias_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: dbafe467-4986-454a-8e09-67813c94e8f4
+		summarizeBy: sum
+		sourceColumn: dias_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main fact_incendio' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_fact_incendio = Origen{[Schema="main",Item="fact_incendio"]}[Data]
+				in
+				    main_fact_incendio
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,193 @@
+table 'main vista_general_detallada'
+	lineageTag: f290c580-b6c9-473f-a900-39ee219e7198
+
+	column objectid
+		dataType: int64
+		formatString: 0
+		lineageTag: 05be6223-32fb-4dae-a9af-1ce9d6466eae
+		summarizeBy: sum
+		sourceColumn: objectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1d737356-14f2-4dc7-b5b4-9ee12dede582
+		summarizeBy: none
+		sourceColumn: fecha
+
+		variation Variation
+			isDefault
+			relationship: 08cb11fe-8857-4bb5-bbc2-6607c23fd9c7
+			defaultHierarchy: LocalDateTable_3c3ca27e-c224-44bb-9890-046b454f3278.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: c2e598d9-de1c-4db1-9944-5784eb62df2e
+		summarizeBy: sum
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d2b3183-d123-4fb3-858d-17c811ca192f
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 53bbb52b-fe53-43de-8688-8e8e5c52c89c
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_mes
+		dataType: string
+		lineageTag: d7a82edd-ee83-4a12-8db0-0abd6b8286ae
+		summarizeBy: none
+		sourceColumn: nombre_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column estacion
+		dataType: string
+		lineageTag: 76ee4c12-2c00-42ad-b80f-6ead799c2bb9
+		summarizeBy: none
+		sourceColumn: estacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_nifc
+		dataType: string
+		lineageTag: 0553086c-32be-43c6-99fc-0a2373a7c15b
+		summarizeBy: none
+		sourceColumn: region_nifc
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado
+		dataType: string
+		lineageTag: d098df2a-705c-4b7a-b7ae-e29e0672f515
+		summarizeBy: none
+		sourceColumn: estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column condado
+		dataType: string
+		lineageTag: 57c5af8e-d1ce-49b1-a163-af0a2b12866e
+		summarizeBy: none
+		sourceColumn: condado
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitud
+		dataType: double
+		lineageTag: 37c1a84b-8fb1-491c-8a59-320e8990027b
+		summarizeBy: sum
+		sourceColumn: latitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitud
+		dataType: double
+		lineageTag: deb6cfda-8b76-452c-b1bb-c3f052c99746
+		summarizeBy: sum
+		sourceColumn: longitud
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column causa_especifica
+		dataType: string
+		lineageTag: 66cae058-7460-4e88-ad2c-95f2de458480
+		summarizeBy: none
+		sourceColumn: causa_especifica
+
+		annotation SummarizationSetBy = Automatic
+
+	column origen_causa
+		dataType: string
+		lineageTag: d57769a7-23ba-48a7-ae31-a851a9edf1e1
+		summarizeBy: none
+		sourceColumn: origen_causa
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_administracion
+		dataType: string
+		lineageTag: b08e5255-8f5e-49ee-8de2-1e665b3a257a
+		summarizeBy: none
+		sourceColumn: tipo_administracion
+
+		annotation SummarizationSetBy = Automatic
+
+	column clase
+		dataType: string
+		lineageTag: dc7a56f1-b5dc-4b64-ab61-08c8a023907a
+		summarizeBy: none
+		sourceColumn: clase
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_megaincendio
+		dataType: int64
+		formatString: 0
+		lineageTag: a73e7cd2-80d9-4777-8e34-2225b587a8e5
+		summarizeBy: sum
+		sourceColumn: es_megaincendio
+
+		annotation SummarizationSetBy = Automatic
+
+	column superficie_acres
+		dataType: double
+		lineageTag: f5d6fd44-aa0e-4c8c-936f-828f080e1183
+		summarizeBy: sum
+		sourceColumn: superficie_acres
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dias_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: 01a88f7c-f376-4c3f-835c-b0f912ee0b03
+		summarizeBy: sum
+		sourceColumn: dias_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	column tiene_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: 8970d4a5-5126-4f37-b8c1-6d1b7f10c18c
+		summarizeBy: sum
+		sourceColumn: tiene_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main vista_general_detallada' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_vista_general_detallada = Origen{[Schema="main",Item="vista_general_detallada"]}[Data]
+				in
+				    main_vista_general_detallada
+

@@ -1,0 +1,93 @@
+table 'main dim_ubicacion'
+	lineageTag: 76fabc30-45e9-45d5-9a69-efdb5cf9b971
+
+	column ubicacion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c3581d4-3590-4384-bb91-767e6a79c820
+		summarizeBy: sum
+		sourceColumn: ubicacion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: b1006d76-6223-4d5e-b324-28d603697a74
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fips_code
+		dataType: string
+		lineageTag: e8d573ef-aa55-4f00-92d8-d8895b8c5310
+		summarizeBy: none
+		sourceColumn: fips_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		lineageTag: 153f1fc5-a472-4a8b-bacb-5f060440646d
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column fips_5
+		dataType: string
+		lineageTag: 16dfccf6-095a-461f-be2d-9c5c753a957b
+		summarizeBy: none
+		sourceColumn: fips_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column county_name
+		dataType: string
+		lineageTag: e99b952a-355d-44dc-9697-45a337dd5998
+		summarizeBy: none
+		sourceColumn: county_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column land_sq_mi
+		dataType: double
+		lineageTag: d2f8f7d6-c781-4c34-baa9-13d3eb115580
+		summarizeBy: sum
+		sourceColumn: land_sq_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		lineageTag: 061f3054-eb04-4f0d-b04d-a2362ce61485
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 07e93610-9ad7-4cfd-90ae-90fe061d6d72
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'main dim_ubicacion' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_dim_ubicacion = Origen{[Schema="main",Item="dim_ubicacion"]}[Data]
+				in
+				    main_dim_ubicacion
+
+	annotation PBI_ResultType = Table
+

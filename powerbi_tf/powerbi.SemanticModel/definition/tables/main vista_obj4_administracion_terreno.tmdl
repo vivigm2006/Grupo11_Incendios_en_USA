@@ -1,0 +1,59 @@
+table 'main vista_obj4_administracion_terreno'
+	lineageTag: c8c081af-4c5a-417a-9b09-a43194370f3b
+
+	column region_name
+		dataType: string
+		lineageTag: eb15813d-537a-4a26-b8c2-b73308fd20b4
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_administracion
+		dataType: string
+		lineageTag: 0c3645e7-0659-419c-9444-a084951e9fb2
+		summarizeBy: none
+		sourceColumn: tipo_administracion
+
+		annotation SummarizationSetBy = Automatic
+
+	column promedio_dias_contencion
+		dataType: double
+		lineageTag: bb1773f8-abf9-4a55-991b-5ee73cc52fe6
+		summarizeBy: sum
+		sourceColumn: promedio_dias_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_acres_afectados
+		dataType: double
+		lineageTag: 466de41e-febe-4268-99a0-ebe9871ed580
+		summarizeBy: sum
+		sourceColumn: total_acres_afectados
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column conteo_incendios
+		dataType: int64
+		formatString: 0
+		lineageTag: 9af78e0e-13ee-47ca-bee0-91a8f4b3b5b4
+		summarizeBy: sum
+		sourceColumn: conteo_incendios
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main vista_obj4_administracion_terreno' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_vista_obj4_administracion_terreno = Origen{[Schema="main",Item="vista_obj4_administracion_terreno"]}[Data]
+				in
+				    main_vista_obj4_administracion_terreno
+
+	annotation PBI_ResultType = Table
+

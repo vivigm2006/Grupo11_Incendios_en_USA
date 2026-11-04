@@ -1,0 +1,135 @@
+table 'main tabla_incendios'
+	lineageTag: 98e7f431-ab5d-446b-b03c-fb00f7348798
+
+	column objectid
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ce4b7f1-0396-474b-96ac-b7680b41967e
+		summarizeBy: sum
+		sourceColumn: objectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column discovery_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ac7f28bb-37dd-4fdb-8ded-20915ba17f8a
+		summarizeBy: none
+		sourceColumn: discovery_date
+
+		variation Variation
+			isDefault
+			relationship: 6e096629-e583-43c3-a4e4-bfa4b6c52fd8
+			defaultHierarchy: LocalDateTable_62c4d493-df57-4c38-8264-7f9375f8761d.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column cont_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3caebf38-d036-4c4e-a2af-7becfd3458c6
+		summarizeBy: none
+		sourceColumn: cont_date
+
+		variation Variation
+			isDefault
+			relationship: 043e8389-ab9f-4b5b-ad52-8678cfedd16a
+			defaultHierarchy: LocalDateTable_5fa5fc68-513d-4e59-983e-6db1ca322892.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fire_size_class
+		dataType: string
+		lineageTag: 1a05db7e-4504-4e8f-bf3e-0250c4a57592
+		summarizeBy: none
+		sourceColumn: fire_size_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column fire_size
+		dataType: double
+		lineageTag: 39728ff6-e5c4-41df-9b1b-871c2b0862f6
+		summarizeBy: sum
+		sourceColumn: fire_size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		lineageTag: 84eee33d-dbca-4399-b1ac-1e94e252af89
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 4dde040a-d370-41c1-b5ba-efadef7c23c5
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cause_code
+		dataType: int64
+		formatString: 0
+		lineageTag: a682c37c-568c-4af9-9aeb-c35a1aacfe18
+		summarizeBy: none
+		sourceColumn: cause_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column owner_code
+		dataType: int64
+		formatString: 0
+		lineageTag: 99279eb0-ce52-4273-bb9b-4d2c209df0c5
+		summarizeBy: none
+		sourceColumn: owner_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: b1865fa9-a5b6-4ad3-8902-ebe9bd908fcc
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fips_code
+		dataType: string
+		lineageTag: 2e0d4d1b-a3bd-42b6-b466-9d146d167448
+		summarizeBy: none
+		sourceColumn: fips_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column geographic_area_code
+		dataType: string
+		lineageTag: 5d15f6ee-dc48-42ae-8d69-70ade982250d
+		summarizeBy: none
+		sourceColumn: geographic_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main tabla_incendios' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_incendios = Origen{[Schema="main",Item="tabla_incendios"]}[Data]
+				in
+				    main_tabla_incendios
+
+	annotation PBI_ResultType = Table
+

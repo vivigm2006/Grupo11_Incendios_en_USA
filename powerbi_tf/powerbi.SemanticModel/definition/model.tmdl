@@ -1,0 +1,43 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["main vista_general_detallada","main vista_obj1_distribucion_regional","main vista_obj2_causas_region","main vista_obj3_megaincendios","main vista_obj4_administracion_terreno","main vista_obj5_estacionalidad","main dim_administracion","main dim_causa","main dim_fecha","main dim_region","main dim_tamano","main dim_ubicacion","main fact_incendio","main tabla_causa_incendio","main tabla_clase_tamano","main tabla_condado","main tabla_estado","main tabla_geographic_area","main tabla_incendios","main tabla_propietario"]
+
+ref table 'main vista_general_detallada'
+ref table DateTableTemplate_8d7f4838-7bd8-4fca-be4f-a69e9930dc8e
+ref table LocalDateTable_3c3ca27e-c224-44bb-9890-046b454f3278
+ref table 'main vista_obj1_distribucion_regional'
+ref table 'main vista_obj2_causas_region'
+ref table 'main vista_obj3_megaincendios'
+ref table 'main vista_obj4_administracion_terreno'
+ref table 'main vista_obj5_estacionalidad'
+ref table 'main dim_administracion'
+ref table 'main dim_causa'
+ref table 'main dim_fecha'
+ref table LocalDateTable_62fd4946-99e7-457d-8615-81e877120f12
+ref table 'main dim_region'
+ref table 'main dim_tamano'
+ref table 'main dim_ubicacion'
+ref table 'main fact_incendio'
+ref table 'main tabla_causa_incendio'
+ref table 'main tabla_clase_tamano'
+ref table 'main tabla_condado'
+ref table 'main tabla_estado'
+ref table 'main tabla_geographic_area'
+ref table 'main tabla_incendios'
+ref table LocalDateTable_62c4d493-df57-4c38-8264-7f9375f8761d
+ref table LocalDateTable_5fa5fc68-513d-4e59-983e-6db1ca322892
+ref table 'main tabla_propietario'
+
+ref cultureInfo es-ES
+

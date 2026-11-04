@@ -1,0 +1,48 @@
+table 'main dim_tamano'
+	lineageTag: 827faf9e-6f77-4cc5-9f09-219f15f520f2
+
+	column clase
+		dataType: string
+		lineageTag: c191a833-9459-4de2-a088-2b5dd8179a6f
+		summarizeBy: none
+		sourceColumn: clase
+
+		annotation SummarizationSetBy = Automatic
+
+	column rango
+		dataType: string
+		lineageTag: b688d746-8da4-4806-8249-bf9499c7418e
+		summarizeBy: none
+		sourceColumn: rango
+
+		annotation SummarizationSetBy = Automatic
+
+	column orden
+		dataType: int64
+		formatString: 0
+		lineageTag: 245c3771-f34d-4a4f-be87-9beae9cf283e
+		summarizeBy: sum
+		sourceColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_megaincendio
+		dataType: int64
+		formatString: 0
+		lineageTag: f751a1c6-d318-4b64-86a3-57f64e382a9b
+		summarizeBy: sum
+		sourceColumn: es_megaincendio
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main dim_tamano' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_dim_tamano = Origen{[Schema="main",Item="dim_tamano"]}[Data]
+				in
+				    main_dim_tamano
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,82 @@
+table 'main dim_fecha'
+	lineageTag: 6886bd06-ecd6-480e-bf98-72416c54a1e4
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d2c733f-e13e-4202-a882-7f61f7bcf590
+		summarizeBy: sum
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cf793f63-d2c1-4866-870a-bdfe4cbc32b7
+		summarizeBy: none
+		sourceColumn: fecha
+
+		variation Variation
+			isDefault
+			relationship: 91239185-7dfc-4816-be62-4a57d71f1eec
+			defaultHierarchy: LocalDateTable_62fd4946-99e7-457d-8615-81e877120f12.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: 727e27ff-ea86-404c-8d82-30094613e458
+		summarizeBy: sum
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: a78fb6f0-7d79-4b65-9a94-bf7aec7060af
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 0616a947-6127-4c26-8457-c991aa0b929f
+		summarizeBy: sum
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre_mes
+		dataType: string
+		lineageTag: e8d033ad-6d85-458a-8900-d0db41a9ebf7
+		summarizeBy: none
+		sourceColumn: nombre_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column estacion
+		dataType: string
+		lineageTag: c4dbeca0-c53f-4864-beaa-6c845d645d60
+		summarizeBy: none
+		sourceColumn: estacion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main dim_fecha' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_dim_fecha = Origen{[Schema="main",Item="dim_fecha"]}[Data]
+				in
+				    main_dim_fecha
+
+	annotation PBI_ResultType = Table
+
