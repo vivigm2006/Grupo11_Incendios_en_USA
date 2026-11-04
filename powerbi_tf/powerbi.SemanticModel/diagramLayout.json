@@ -1,0 +1,282 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1427.6376719224563,
+            "y": 266.40293148750345
+          },
+          "nodeIndex": "main dim_administracion",
+          "nodeLineageTag": "a80443c0-043d-41ad-beb3-bf1ce7682fce",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1711.6376719224563,
+            "y": 266.40293148750345
+          },
+          "nodeIndex": "main dim_causa",
+          "nodeLineageTag": "8c9492e0-0257-4eea-8c26-1006444650ee",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1995.6376719224563,
+            "y": 218.40293148750345
+          },
+          "nodeIndex": "main dim_fecha",
+          "nodeLineageTag": "6886bd06-ecd6-480e-bf98-72416c54a1e4",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2279.6376719224563,
+            "y": 266.40293148750345
+          },
+          "nodeIndex": "main dim_region",
+          "nodeLineageTag": "5fd8479a-49a7-48f8-957c-ed7d9fd671b8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2563.6376719224563,
+            "y": 254.40293148750345
+          },
+          "nodeIndex": "main dim_tamano",
+          "nodeLineageTag": "827faf9e-6f77-4cc5-9f09-219f15f520f2",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2847.6376719224563,
+            "y": 194.40293148750345
+          },
+          "nodeIndex": "main dim_ubicacion",
+          "nodeLineageTag": "76fabc30-45e9-45d5-9a69-efdb5cf9b971",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3131.6376719224563,
+            "y": 192.40293148750345
+          },
+          "nodeIndex": "main fact_incendio",
+          "nodeLineageTag": "ac2e303e-421a-464c-bb4b-8e838efd4b8f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 625.63767192245632,
+            "y": 310.695855146025
+          },
+          "nodeIndex": "main tabla_causa_incendio",
+          "nodeLineageTag": "9d38a8b1-c635-45fe-97b0-0a8bf90866c9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 338.52866337692979,
+            "y": 482.8058629750069
+          },
+          "nodeIndex": "main tabla_clase_tamano",
+          "nodeLineageTag": "e2471d37-f68f-401d-932b-e69b91919b0f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1193.6376719224563,
+            "y": 204.40293148750345
+          },
+          "nodeIndex": "main tabla_condado",
+          "nodeLineageTag": "b6152e71-bb98-489e-924e-d0b9f746012e",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 909.63767192245621,
+            "y": 216.40293148750345
+          },
+          "nodeIndex": "main tabla_estado",
+          "nodeLineageTag": "f6312118-ef95-4721-9b29-ee2ef2ef36b9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 129.95423551426973
+          },
+          "nodeIndex": "main tabla_geographic_area",
+          "nodeLineageTag": "c4078a44-66c9-4c5f-a250-c1f58b3f710c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 338.5860177861814,
+            "y": 130.48961814828067
+          },
+          "nodeIndex": "main tabla_incendios",
+          "nodeLineageTag": "98e7f431-ab5d-446b-b03c-fb00f7348798",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 311.56299498219414,
+            "y": -50
+          },
+          "nodeIndex": "main tabla_propietario",
+          "nodeLineageTag": "a05bf1c8-7866-4dee-a192-6f0f546eb8e9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3415.6376719224563,
+            "y": 192.40293148750345
+          },
+          "nodeIndex": "main vista_general_detallada",
+          "nodeLineageTag": "f290c580-b6c9-473f-a900-39ee219e7198",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3699.6376719224563,
+            "y": 254.40293148750345
+          },
+          "nodeIndex": "main vista_obj1_distribucion_regional",
+          "nodeLineageTag": "9e8a896d-8b4f-4748-819a-fd0f5610f072",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3983.6376719224563,
+            "y": 266.40293148750345
+          },
+          "nodeIndex": "main vista_obj2_causas_region",
+          "nodeLineageTag": "1b6bc8ca-c0c8-4b9c-b8e9-56d7d4bcfa99",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4267.6376719224563,
+            "y": 266.40293148750345
+          },
+          "nodeIndex": "main vista_obj3_megaincendios",
+          "nodeLineageTag": "be6ed9df-84be-4dad-9008-b449579a07ee",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4551.6376719224563,
+            "y": 242.40293148750345
+          },
+          "nodeIndex": "main vista_obj4_administracion_terreno",
+          "nodeLineageTag": "c8c081af-4c5a-417a-9b09-a43194370f3b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4835.6376719224563,
+            "y": 242.40293148750345
+          },
+          "nodeIndex": "main vista_obj5_estacionalidad",
+          "nodeLineageTag": "8d67e4c7-8c39-4c6d-86c1-7fafcce1f167",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

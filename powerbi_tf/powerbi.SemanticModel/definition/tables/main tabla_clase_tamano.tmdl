@@ -1,0 +1,42 @@
+table 'main tabla_clase_tamano'
+	lineageTag: e2471d37-f68f-401d-932b-e69b91919b0f
+
+	column fire_size_class
+		dataType: string
+		lineageTag: f1ac1e11-93b0-483a-99c3-c06af6544e83
+		summarizeBy: none
+		sourceColumn: fire_size_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_acres
+		dataType: double
+		lineageTag: 5e0b8060-698f-466d-83b1-9aaaf55191a9
+		summarizeBy: none
+		sourceColumn: min_acres
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_acres
+		dataType: double
+		lineageTag: 7097b2a3-ec47-455b-9499-11a9fb74bad4
+		summarizeBy: none
+		sourceColumn: max_acres
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'main tabla_clase_tamano' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_clase_tamano = Origen{[Schema="main",Item="tabla_clase_tamano"]}[Data]
+				in
+				    main_tabla_clase_tamano
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,31 @@
+table 'main tabla_causa_incendio'
+	lineageTag: 9d38a8b1-c635-45fe-97b0-0a8bf90866c9
+
+	column cause_code
+		dataType: int64
+		formatString: 0
+		lineageTag: fa99b7f8-4adf-4b16-9fa1-79ca1fcbede8
+		summarizeBy: none
+		sourceColumn: cause_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column cause_descr
+		dataType: string
+		lineageTag: ed289af4-7a12-401f-a1d0-8ca1d72406a6
+		summarizeBy: none
+		sourceColumn: cause_descr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main tabla_causa_incendio' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_causa_incendio = Origen{[Schema="main",Item="tabla_causa_incendio"]}[Data]
+				in
+				    main_tabla_causa_incendio
+
+	annotation PBI_ResultType = Table
+

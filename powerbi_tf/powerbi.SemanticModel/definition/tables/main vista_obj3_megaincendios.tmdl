@@ -1,0 +1,39 @@
+table 'main vista_obj3_megaincendios'
+	lineageTag: be6ed9df-84be-4dad-9008-b449579a07ee
+
+	column region_name
+		dataType: string
+		lineageTag: e2dd93a6-ed10-4e4f-a4a3-2e2363c14e64
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_megaincendios
+		dataType: int64
+		formatString: 0
+		lineageTag: b42059ed-5deb-48d7-b179-96abfb0af6fc
+		summarizeBy: sum
+		sourceColumn: total_megaincendios
+
+		annotation SummarizationSetBy = Automatic
+
+	column acres_totales_mega
+		dataType: double
+		lineageTag: e44aa3b2-9ec2-442c-bdab-07a59cb81ab2
+		summarizeBy: sum
+		sourceColumn: acres_totales_mega
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'main vista_obj3_megaincendios' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_vista_obj3_megaincendios = Origen{[Schema="main",Item="vista_obj3_megaincendios"]}[Data]
+				in
+				    main_vista_obj3_megaincendios
+

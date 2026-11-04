@@ -1,0 +1,50 @@
+relationship 08cb11fe-8857-4bb5-bbc2-6607c23fd9c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main vista_general_detallada'.fecha
+	toColumn: LocalDateTable_3c3ca27e-c224-44bb-9890-046b454f3278.Date
+
+relationship 91239185-7dfc-4816-be62-4a57d71f1eec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main dim_fecha'.fecha
+	toColumn: LocalDateTable_62fd4946-99e7-457d-8615-81e877120f12.Date
+
+relationship 6e096629-e583-43c3-a4e4-bfa4b6c52fd8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main tabla_incendios'.discovery_date
+	toColumn: LocalDateTable_62c4d493-df57-4c38-8264-7f9375f8761d.Date
+
+relationship 043e8389-ab9f-4b5b-ad52-8678cfedd16a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main tabla_incendios'.cont_date
+	toColumn: LocalDateTable_5fa5fc68-513d-4e59-983e-6db1ca322892.Date
+
+relationship 5cfc7b6e-0b05-465a-b1b3-4c8ecb5d4665
+	fromColumn: 'main tabla_condado'.state_code
+	toColumn: 'main tabla_estado'.state_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 21baa127-ac08-4b8d-81af-cd2543dfff5b
+	fromColumn: 'main tabla_incendios'.cause_code
+	toColumn: 'main tabla_causa_incendio'.cause_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3f73c71e-792d-40b3-b7ae-6199fa50e548
+	fromColumn: 'main tabla_incendios'.fire_size_class
+	toColumn: 'main tabla_clase_tamano'.fire_size_class
+
+	annotation PBI_IsFromSource = FS
+
+relationship 5a841621-a790-4936-8f0e-e6951189dbc5
+	fromColumn: 'main tabla_incendios'.geographic_area_code
+	toColumn: 'main tabla_geographic_area'.geographic_area_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 96917ba1-5e26-4286-953b-86200f5bf675
+	fromColumn: 'main tabla_incendios'.owner_code
+	toColumn: 'main tabla_propietario'.owner_code
+
+	annotation PBI_IsFromSource = FS
+

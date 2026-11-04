@@ -1,0 +1,37 @@
+table 'main vista_obj2_causas_region'
+	lineageTag: 1b6bc8ca-c0c8-4b9c-b8e9-56d7d4bcfa99
+
+	column region_name
+		dataType: string
+		lineageTag: 3422345e-602b-4e55-b74b-e28de21c0be2
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column origen_causa
+		dataType: string
+		lineageTag: e241536f-df9b-4fad-951a-9d402eaa7819
+		summarizeBy: none
+		sourceColumn: origen_causa
+
+		annotation SummarizationSetBy = Automatic
+
+	column frecuencia
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f04acf7-6a67-446b-9c3f-65fabe0c6bcf
+		summarizeBy: sum
+		sourceColumn: frecuencia
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main vista_obj2_causas_region' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_vista_obj2_causas_region = Origen{[Schema="main",Item="vista_obj2_causas_region"]}[Data]
+				in
+				    main_vista_obj2_causas_region
+

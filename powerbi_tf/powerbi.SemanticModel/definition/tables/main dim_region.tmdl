@@ -1,0 +1,39 @@
+table 'main dim_region'
+	lineageTag: 5fd8479a-49a7-48f8-957c-ed7d9fd671b8
+
+	column region_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 72bb3dea-d88e-43d0-8254-853b39f32127
+		summarizeBy: sum
+		sourceColumn: region_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_name
+		dataType: string
+		lineageTag: 0444f374-03b0-4fa6-b7b1-31c4132b6597
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_code
+		dataType: string
+		lineageTag: 3713f9b5-fb11-4116-9eb1-835eb1098058
+		summarizeBy: none
+		sourceColumn: region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main dim_region' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_dim_region = Origen{[Schema="main",Item="dim_region"]}[Data]
+				in
+				    main_dim_region
+
+	annotation PBI_ResultType = Table
+
