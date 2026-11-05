@@ -7,5 +7,6 @@
             "attached": true
         }
     ],
-    "duckdb.defaultDatabase": "Incendios_TFCompu"
+    "duckdb.defaultDatabase": "Incendios_TFCompu",
+    "python.terminal.useEnvFile": true
 }
