@@ -84,7 +84,7 @@ st.markdown("---")
 
 st.header("5. Stack Tecnológico")
 st.markdown("""
-Para el procesamiento eficiente del universo censal de registros históricos, se implementó una arquitectura analítica basada en **DuckDB** y almacenamiento intermedio en formato **`.parquet`**, omitiendo la geometría espacial pesada tipo *Shape*, optimizando la memoria RAM y ejecutando consultas SQL ultrarrápidas.
+Para el procesamiento eficiente del universo censal de registros históricos, se implementó una arquitectura analítica basada en **DuckDB** y almacenamiento intermedio en formato **`.parquet`**, optimizando la memoria RAM y ejecutando consultas SQL ultrarrápidas.
 """)
 
 tech_data = {
@@ -107,22 +107,98 @@ st.dataframe(pd.DataFrame(tech_data), use_container_width=True, hide_index=True)
 
 st.markdown("---")
 
-st.header("6. Fases de Análisis")
-st.markdown("""
-El procesamiento de la información se desarrolló en las siguientes fases estratégicas:
-1. **Análisis descriptivo e inferencial:** Cálculo de frecuencias, promedios de área quemada y tiempos de respuesta por región, junto con evaluación estadística general.
-2. **Análisis espacial y de distribución de severidad:** Identificación de patrones de concentración regional de incendios de mayor severidad y mapeo de fuentes de ignición predominantes.
-3. **Síntesis e interpretación de resultados:** Evaluación integrada de las hipótesis planteadas para contrastar las diferencias eco-climáticas y de gestión territorial.
-""")
+st.header("6. Procedimiento y Fases de Análisis")
+
+tab1, tab2, tab3, tab4 = st.tabs([
+    "🔄 Fases de Análisis", 
+    "🧹 Limpieza y Normalización", 
+    "⚡ Denormalización", 
+    "📐 Modelo Dimensional"
+])
+
+with tab1:
+    st.markdown("""
+    El procesamiento de la información se desarrolló en cuatro fases consecutivas:
+    1. **Depuración y normalización de datos:** Filtrado de inconsistencias, estandarización de registros históricos y asignación espacial de coordenadas a las 10 regiones operativas del NIFC.
+    2. **Análisis descriptivo e inferencial:** Cálculo de frecuencias, promedios de área quemada y tiempos de contención por región, junto con pruebas estadísticas de comparación de grupos.
+    3. **Análisis espacial y de distribución de severidad:** Identificación de patrones de concentración regional de incendios de mayor severidad y mapeo de fuentes de ignición predominantes.
+    4. **Síntesis e interpretación de resultados:** Evaluación integrada de las hipótesis planteadas para contrastar las diferencias eco-climáticas y de gestión territorial.
+    """)
+
+with tab2:
+    st.markdown("""
+    * **Paso 1 (Completación de condados y estados):** El 36% de los registros tenían este campo vacío. Se usaron longitud y latitud cruzándolas con un archivo *ShapeFile* del censo de EE. UU. para ubicar el punto exacto de cada incendio de forma automatizada y asignar los códigos FIPS y estados.
+    * **Paso 2 (Asignación de Región NIFC):** Se cruzó la base de datos con el archivo CSV que contiene el campo de Área Geográfica utilizando el Código de Estado + Código FIPS.
+    * **Paso 3 (Estandarización temporal):** Se cambió el formato de los campos de fecha de Juliano a formato nativo `DATE`.
+    """)
+
+with tab3:
+    st.markdown("""
+    ### Estrategia de Denormalización
+    Para garantizar un rendimiento óptimo en la interfaz interactiva y analítica, se aplicaron tácticas clave de denormalización sobre el esquema:
+    * **Reducción de operaciones JOIN:** Se consolidaron atributos descriptivos clave dentro de estructuras optimizadas para evitar cruces relacionales excesivos en tiempo de ejecución.
+    * **Duplicación controlada:** Se precomputaron y replicaron ciertos campos categóricos para agilizar el filtrado dinámico en los componentes de Streamlit.
+    * **Enfoque OLAP:** La transición desde esquemas altamente normalizados hacia un entorno analítico denormalizado permite procesar millones de registros sin latencia perceptible.
+    """)
+
+with tab4:
+    st.markdown("""
+    ### Transición del Modelo Relacional al Dimensional (Estrella)
+    Se construyó una capa analítica optimizada en **Modelo Estrella** aplicando conceptos de denormalización para garantizar consultas de alta velocidad en Streamlit sin ralentizaciones por cruces masivos en tiempo real.
+    """)
+
+    dim_data = {
+        "Tabla / Dimensión": [
+            "fact_incendio",
+            "dim_fecha",
+            "dim_region",
+            "dim_causa",
+            "dim_administracion",
+            "dim_ubicacion",
+            "dim_tamano",
+        ],
+        "Tipo": [
+            "Tabla de Hechos",
+            "Dimensión",
+            "Dimensión",
+            "Dimensión",
+            "Dimensión",
+            "Dimensión",
+            "Dimensión",
+        ],
+        "Descripción Detallada": [
+            "Granularidad de un registro por incendio detectado. Almacena superficie en acres, tiempo de contención en días y claves foráneas.",
+            "Para el análisis temporal y la clasificación de las cuatro estaciones del año.",
+            "Para la comparación entre las 10 áreas geográficas operativas del NIFC/NICC.",
+            "Aplica regla de negocio para agrupar causas en 'Humana' o 'Natural'.",
+            "Clasifica la titularidad del suelo en Federal, Estatal/Local o Privada.",
+            "Conserva información del estado, condado y extensión en millas cuadradas para análisis espacial.",
+            "Tabla estática basada en escala A-G que incorpora el indicador booleano `es_megaincendio` (Clase G >= 5,000 acres).",
+        ],
+    }
+    st.table(pd.DataFrame(dim_data))
 
 st.markdown("---")
 
-st.header("7. Vistas Analíticas")
-st.markdown("""
-Se estructuraron vistas analíticas dedicadas para facilitar la exploración interactiva y evitar cálculos complejos en tiempo real:
-* **Vista Obj 1:** Agrupa incendios y superficie quemada por región.
-* **Vista Obj 2:** Frecuencia de causas humanas vs. naturales por región.
-* **Vista Obj 3:** Magnitud de los mega-incendios por región.
-* **Vistas Obj 4 y 5:** Tiempos promedio de respuesta y superficie por tipo de terreno y estación.
-* **Vista General Detallada:** Mantiene el detalle individual para gráficos de dispersión y mapas.
-""")
+st.header("7. Optimización, Manejo de Nulos y Vistas Analíticas")
+
+col_op1, col_op2 = st.columns(2)
+
+with col_op1:
+    with st.expander("🛠️ Tratamiento de Valores Faltantes (Contención)", expanded=True):
+        st.markdown("""
+        * Para maximizar el rendimiento se usaron claves subrogadas con `DENSE_RANK()` para compactar la tabla de hechos.
+        * Atendiendo a que el **47.31% de los registros carecen de fecha de contención**, se incorporó una variable dicotómica denominada **`tiene_contencion`** (1 si posee fecha de control, 0 si no).
+        * Esto permite calcular promedios de tiempo de respuesta filtrando exclusivamente los registros válidos, evitando sesgos o divisiones por nulos.
+        """)
+
+with col_op2:
+    with st.expander("📊 Vistas Analíticas Materializadas", expanded=True):
+        st.markdown("""
+        Se materializaron cinco vistas analíticas para evitar cálculos complejos en tiempo real:
+        * **Vista Obj 1:** Agrupa incendios y superficie quemada por región.
+        * **Vista Obj 2:** Frecuencia de causas humanas vs. naturales por región.
+        * **Vista Obj 3:** Magnitud de los mega-incendios por región.
+        * **Vistas Obj 4 y 5:** Tiempos promedio de contención y superficie por tipo de terreno y estación.
+        * **Vista General Detallada:** Mantiene el detalle individual para gráficos de dispersión y mapas.
+        """)
