@@ -29,13 +29,13 @@ La presente investigación se enmarca en un **enfoque cuantitativo** de nivel **
 
 st.markdown("---")
 
-st.header("2. Población y Fuentes de Información")
+st.header("2. Población y Fuente de Información")
 col1, col2 = st.columns([1.5, 1])
 
 with col1:
     st.markdown("""
 * **Población:** Comprende la **totalidad de los eventos de incendios forestales** registrados a nivel nacional en Estados Unidos dentro de la base de datos espacial. Al tratarse de un análisis que abarca el registro histórico completo y exhaustivo de todos los eventos verificados, clasificados y georreferenciados por las agencias interagenciales (federales, estatales y locales), **no se emplea una muestra**, sino el universo total de los datos disponibles.
-* **Fuentes Primarias:** Se emplean las bases de datos abiertas del NIFC y del Servicio Forestal de los Estados Unidos (USFS), permitiendo evaluar la tendencia histórica global con una cobertura censal completa.
+* **Fuente:** Se emplean las bases de datos abiertas del NIFC y del Servicio Forestal de los Estados Unidos (USFS), permitiendo evaluar la tendencia histórica global con una cobertura censal completa.
 """)
 
 with col2:
@@ -52,7 +52,7 @@ with col2:
 
 st.markdown("---")
 
-st.header("3. Técnicas e Instrumentos")
+st.header("3. Enfoque de fuentes y herramientas analíticas")
 st.markdown("""
 La técnica principal utilizada es la **observación indirecta y el análisis documental** de registros cuantitativos secundarios. Para ello, se estructuró una ficha de extracción que captura las siguientes variables clave de cada incendio:
 
@@ -131,6 +131,11 @@ with tab2:
     * **Paso 2 (Asignación de Región NIFC):** Se cruzó la base de datos con el archivo CSV que contiene el campo de Área Geográfica utilizando el Código de Estado + Código FIPS.
     * **Paso 3 (Estandarización temporal):** Se cambió el formato de los campos de fecha de Juliano a formato nativo `DATE`.
     """)
+    st.image(
+        "pages/assets/normalizacion.jpeg",
+        caption="Diagrama de Normalizacion",
+        width="stretch"
+        )
 
 with tab3:
     st.markdown("""
@@ -140,6 +145,11 @@ with tab3:
     * **Duplicación controlada:** Se precomputaron y replicaron ciertos campos categóricos para agilizar el filtrado dinámico en los componentes de Streamlit.
     * **Enfoque OLAP:** La transición desde esquemas altamente normalizados hacia un entorno analítico denormalizado permite procesar millones de registros sin latencia perceptible.
     """)
+    st.image(
+    "pages/assets/denormalizacion.jpeg",
+    caption="Diagrama de Denormalizacion",
+    width="stretch"
+    )
 
 with tab4:
     st.markdown("""
