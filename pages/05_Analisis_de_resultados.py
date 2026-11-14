@@ -12,6 +12,7 @@ import pandas as pd
 import streamlit as st
 import geopandas as gpd
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.set_page_config(
     page_title="Análisis de Resultados",
@@ -104,7 +105,7 @@ def tarjeta_metrica(titulo, valor, subtitulo=""):
     )
 
 
-tab1, tab2, tab3 = st.tabs(["🗺️ Objetivo 1","📊 Objetivo 2" , "📈 Objetivo 3"])
+tab1, tab2, tab3 = st.tabs(["🗺️ Impacto Territorial","📊 Causas y severidad" , "📈 Gestión y estacionalidad"])
 
 with tab1:
     st.header("Distribución Regional de Superficie Afectada y Severidad del Fuego")
@@ -195,6 +196,37 @@ with tab2:
                 valor=val_causas,
                 subtitulo=f"Sobre {len(df_filtered):,} incendios"
             )
+
+    st.subheader("Proporción de Fuentes de Ignición por Región NIFC")
+
+    if not df_filtered.empty and 'region_nifc' in df_filtered.columns and 'origen_causa' in df_filtered.columns:
+        df_chart = df_filtered.groupby(['region_nifc', 'origen_causa'])['objectid'].count().reset_index()
+        
+        df_chart.rename(columns={'objectid': 'cantidad'}, inplace=True)
+        
+        # grafico
+        fig = px.bar(
+        df_chart,
+        x='region_nifc',
+        y='cantidad',
+        color='origen_causa',
+        title="Cantidad total de incendios por Región y su origen",
+        labels={'region_nifc': 'Región NIFC', 'cantidad': 'Número de Incendios', 'origen_causa': 'Origen de la Causa'},
+        barmode='stack', 
+        color_discrete_map={'Humana': "#c7b422", 'Natural': "#d42d1b"}
+        )
+    
+        fig.update_layout(
+            xaxis_title="Región",
+            yaxis_title="Cantidad de Incendios",
+            legend_title="Origen",
+            yaxis=dict(tickformat=","), 
+            margin=dict(l=20, r=20, t=40, b=20)
+        )
+        
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("No hay suficientes datos filtrados para mostrar el gráfico de proporciones de causa.")
 
     st.header("Concentración Territorial de Incendios de Alta Severidad y Mega-Incendios")
     st.markdown("""Cuantificación de eventos críticos a nivel nacional e identificación de las 
