@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "121601d57c77a1457bea",
+  "position": {
+    "x": 92.857142857142861,
+    "y": 164.28571428571428,
+    "z": 0,
+    "height": 585.71428571428578,
+    "width": 797.61904761904759,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main vista_obj3_megaincendios"
+                    }
+                  },
+                  "Property": "region_name"
+                }
+              },
+              "queryRef": "main vista_obj3_megaincendios.region_name",
+              "nativeQueryRef": "region_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main vista_obj3_megaincendios"
+                        }
+                      },
+                      "Property": "total_megaincendios"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(main vista_obj3_megaincendios.total_megaincendios)",
+              "nativeQueryRef": "Suma de total_megaincendios"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "main vista_obj3_megaincendios"
+                      }
+                    },
+                    "Property": "total_megaincendios"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

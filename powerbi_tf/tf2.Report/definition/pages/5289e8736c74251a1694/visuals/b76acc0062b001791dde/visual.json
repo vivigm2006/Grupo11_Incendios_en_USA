@@ -1,0 +1,107 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "b76acc0062b001791dde",
+  "position": {
+    "x": 1128,
+    "y": 396,
+    "z": 1000,
+    "height": 568.10126582278485,
+    "width": 720,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main dim_region"
+                    }
+                  },
+                  "Property": "region_name"
+                }
+              },
+              "queryRef": "main dim_region.region_name",
+              "nativeQueryRef": "region_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main vista_obj1_distribucion_regional"
+                    }
+                  },
+                  "Property": "Total Incendios por Región"
+                }
+              },
+              "queryRef": "main vista_obj1_distribucion_regional.Total Incendios por Región",
+              "nativeQueryRef": "Total Incendios por Región"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main vista_obj1_distribucion_regional"
+                  }
+                },
+                "Property": "Total Incendios por Región"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fbdd40b4284013a6092c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "main dim_region"
+              }
+            },
+            "Property": "region_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c02891542876836eec83",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "main vista_obj1_distribucion_regional"
+              }
+            },
+            "Property": "Total Incendios por Región"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+relationship 08cb11fe-8857-4bb5-bbc2-6607c23fd9c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main vista_general_detallada'.fecha
+	toColumn: LocalDateTable_3c3ca27e-c224-44bb-9890-046b454f3278.Date
+
+relationship 91239185-7dfc-4816-be62-4a57d71f1eec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main dim_fecha'.fecha
+	toColumn: LocalDateTable_62fd4946-99e7-457d-8615-81e877120f12.Date
+
+relationship 6e096629-e583-43c3-a4e4-bfa4b6c52fd8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main tabla_incendios'.discovery_date
+	toColumn: LocalDateTable_62c4d493-df57-4c38-8264-7f9375f8761d.Date
+
+relationship 043e8389-ab9f-4b5b-ad52-8678cfedd16a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'main tabla_incendios'.cont_date
+	toColumn: LocalDateTable_5fa5fc68-513d-4e59-983e-6db1ca322892.Date
+
+relationship 5cfc7b6e-0b05-465a-b1b3-4c8ecb5d4665
+	fromColumn: 'main tabla_condado'.state_code
+	toColumn: 'main tabla_estado'.state_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 5a841621-a790-4936-8f0e-e6951189dbc5
+	fromColumn: 'main tabla_incendios'.geographic_area_code
+	toColumn: 'main tabla_geographic_area'.geographic_area_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship 96917ba1-5e26-4286-953b-86200f5bf675
+	fromColumn: 'main tabla_incendios'.owner_code
+	toColumn: 'main tabla_propietario'.owner_code
+
+	annotation PBI_IsFromSource = FS
+
+relationship a3bd8d04-1f99-bc75-9914-215752ef4f78
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'main vista_general_detallada'.objectid
+	toColumn: 'main tabla_incendios'.objectid
+
+relationship 109d0d1f-ffa9-5e5b-65a8-d3eaa3feddb1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'main fact_incendio'.objectid
+	toColumn: 'main tabla_incendios'.objectid
+
+relationship 21b4a2cc-0690-4cdf-10c2-7375854ef6b6
+	fromColumn: 'main vista_general_detallada'.causa_especifica
+	toColumn: 'main dim_causa'.causa_especifica
+
+relationship ec013457-f41c-0a04-0e9c-f41a3e0dd469
+	isActive: false
+	fromColumn: 'main vista_general_detallada'.clase
+	toColumn: 'main dim_tamano'.clase
+
+relationship d76c7b49-f4d6-8ad8-0aed-6a7e8f6a1466
+	isActive: false
+	fromColumn: 'main fact_incendio'.clase
+	toColumn: 'main dim_tamano'.clase
+
+relationship 40ccc913-3b81-2a6d-e85d-008a9e032544
+	isActive: false
+	fromColumn: 'main vista_obj2_causas_region'.region_name
+	toColumn: 'main vista_obj1_distribucion_regional'.region_name
+
+relationship 619e9b76-5f50-599a-a65b-1bfe3879fe1b
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'main vista_obj3_megaincendios'.region_name
+	toColumn: 'main vista_obj1_distribucion_regional'.region_name
+
+relationship 4333cb24-ddaa-27b2-6d5b-2ad4f25fadde
+	isActive: false
+	fromColumn: 'main vista_obj4_administracion_terreno'.region_name
+	toColumn: 'main vista_obj1_distribucion_regional'.region_name
+
+relationship 390672f3-8c1a-1035-f9b3-685b46f9b3e8
+	isActive: false
+	fromColumn: 'main vista_obj5_estacionalidad'.region_name
+	toColumn: 'main vista_obj1_distribucion_regional'.region_name
+
+relationship bad5272b-bf9d-7c7e-02db-5258a39d8a8a
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'main dim_region'.region_name
+	toColumn: 'main vista_obj1_distribucion_regional'.region_name
+
+relationship b78708e2-66d2-871e-9936-a8f7753a2647
+	isActive: false
+	fromColumn: 'main fact_incendio'.administracion_key
+	toColumn: 'main dim_administracion'.administracion_key
+
+relationship b8400fd4-f3ef-25d9-d53f-baacf0ac1e24
+	isActive: false
+	fromColumn: 'main fact_incendio'.causa_key
+	toColumn: 'main dim_causa'.causa_key
+
+relationship a18bbfb0-04ad-dc5a-a064-9af474cde704
+	fromColumn: 'main fact_incendio'.fecha_key
+	toColumn: 'main dim_fecha'.fecha_key
+
+relationship 78cf4ca2-3e2b-5bc9-7af4-7c4268b26cf9
+	fromColumn: 'main fact_incendio'.region_key
+	toColumn: 'main dim_region'.region_key
+
+relationship b0fbfb7c-e617-c92e-1de7-3519e4626fcb
+	fromColumn: 'main fact_incendio'.ubicacion_key
+	toColumn: 'main dim_ubicacion'.ubicacion_key
+
+relationship c451f4f0-4153-07f3-ff36-302ba4d0743d
+	isActive: false
+	fromColumn: 'main dim_ubicacion'.state_code
+	toColumn: 'main tabla_estado'.state_code
+
+relationship 36a57edd-2800-e13d-bcb5-d8df5080e044
+	isActive: false
+	fromColumn: 'main tabla_incendios'.state_code
+	toColumn: 'main tabla_estado'.state_code
+

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "ba933145a4184b032b0d",
+  "position": {
+    "x": 1166,
+    "y": 490,
+    "z": 3000,
+    "height": 590,
+    "width": 662,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main vista_obj2_causas_region"
+                    }
+                  },
+                  "Property": "region_name"
+                }
+              },
+              "queryRef": "main vista_obj2_causas_region.region_name",
+              "nativeQueryRef": "region_name",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main vista_obj2_causas_region"
+                    }
+                  },
+                  "Property": "origen_causa"
+                }
+              },
+              "queryRef": "main vista_obj2_causas_region.origen_causa",
+              "nativeQueryRef": "origen_causa"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main vista_obj2_causas_region"
+                        }
+                      },
+                      "Property": "frecuencia"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(main vista_obj2_causas_region.frecuencia)",
+              "nativeQueryRef": "Suma de frecuencia"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "main vista_obj2_causas_region"
+                      }
+                    },
+                    "Property": "frecuencia"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

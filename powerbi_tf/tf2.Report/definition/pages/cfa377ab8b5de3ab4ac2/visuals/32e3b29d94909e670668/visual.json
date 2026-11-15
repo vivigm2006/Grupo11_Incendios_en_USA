@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "32e3b29d94909e670668",
+  "position": {
+    "x": 476.1904761904762,
+    "y": 57.142857142857146,
+    "z": 4000,
+    "height": 552.38095238095241,
+    "width": 654.76190476190482,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "clase"
+                }
+              },
+              "queryRef": "main fact_incendio.clase",
+              "nativeQueryRef": "clase",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "Incendios por Clase Real"
+                }
+              },
+              "queryRef": "main fact_incendio.Incendios Clase",
+              "nativeQueryRef": "Incendios por Clase Real"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main fact_incendio"
+                  }
+                },
+                "Property": "Incendios por Clase Real"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
