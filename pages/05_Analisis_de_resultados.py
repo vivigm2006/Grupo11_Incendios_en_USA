@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide",
 )
 
-MOTHERDUCK_TOKEN = st.secrets.get ["Base"]["token"]
+MOTHERDUCK_TOKEN = st.secrets["token"]
 
 os.environ["motherduck_token"] = MOTHERDUCK_TOKEN
 pd.set_option("display.max_columns", 50)
