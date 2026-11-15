@@ -6,7 +6,7 @@
 
 ## Análisis y Visualización Interactiva de Incendios Forestales
 
-### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa.onrender.com/)**
+### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa-2.onrender.com/)**
 
 
 # Incendios forestales y segmentació territorial(1992-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
