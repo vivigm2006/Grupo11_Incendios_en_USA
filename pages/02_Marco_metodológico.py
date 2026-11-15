@@ -67,13 +67,13 @@ st.markdown("---")
 
 st.header("4. Justificaciones Metodológicas")
 
-with st.expander("⚠️ Limitación de la fecha de contención", expanded=True):
+with st.expander("Justificación de la fecha de contención", expanded=True):
     st.markdown("""
     Una limitación importante de la base de datos FPA FOD (Short, 2017) radica en la presencia de valores faltantes en la variable de fecha de contención. En el conjunto de datos analizado, **891 531 registros (correspondientes al 47,31 % del total)** no presentan la fecha de contención del incendio. 
     Por consiguiente, los análisis descriptivos vinculados al tiempo de respuesta y duración del evento se restringen únicamente al subconjunto de datos que dispone de dicha información de forma completa. No obstante, para los objetivos restantes se emplea la totalidad del registro histórico, garantizando la representatividad general del estudio.
     """)
 
-with st.expander("🗺️ Justificación de la Agrupación Territorial", expanded=True):
+with st.expander("Justificación de la Agrupación Territorial", expanded=True):
     st.markdown("""
     Analizar individualmente los 50 estados genera una dispersión espacial excesiva de los datos y dificulta la extracción de patrones claros. En lugar de emplear divisiones político-administrativas tradicionales, la delimitación territorial de este estudio adopta la clasificación oficial de **Áreas Geográficas de Coordinación Interagencial (NIFC / NICC)**. 
 
@@ -110,10 +110,10 @@ st.markdown("---")
 st.header("6. Procedimiento y Fases de Análisis")
 
 tab1, tab2, tab3, tab4 = st.tabs([
-    "🔄 Fases de Análisis", 
-    "🧹 Limpieza y Normalización", 
-    "⚡ Denormalización", 
-    "📐 Modelo Dimensional"
+    "Fases de Análisis", 
+    "Limpieza y Normalización", 
+    "Denormalización", 
+    "Modelo Dimensional"
 ])
 
 with tab1:
@@ -195,7 +195,7 @@ st.header("7. Optimización, Manejo de Nulos y Vistas Analíticas")
 col_op1, col_op2 = st.columns(2)
 
 with col_op1:
-    with st.expander("🛠️ Tratamiento de Valores Faltantes (Contención)", expanded=True):
+    with st.expander("Tratamiento de Valores Faltantes (Contención)", expanded=True):
         st.markdown("""
         * Para maximizar el rendimiento se usaron claves subrogadas con `DENSE_RANK()` para compactar la tabla de hechos.
         * Atendiendo a que el **47.31% de los registros carecen de fecha de contención**, se incorporó una variable dicotómica denominada **`tiene_contencion`** (1 si posee fecha de control, 0 si no).
@@ -203,7 +203,7 @@ with col_op1:
         """)
 
 with col_op2:
-    with st.expander("📊 Vistas Analíticas Materializadas", expanded=True):
+    with st.expander("Vistas Analíticas Materializadas", expanded=True):
         st.markdown("""
         Se materializaron cinco vistas analíticas para evitar cálculos complejos en tiempo real:
         * **Vista Obj 1:** Agrupa incendios y superficie quemada por región.
@@ -212,3 +212,47 @@ with col_op2:
         * **Vistas Obj 4 y 5:** Tiempos promedio de contención y superficie por tipo de terreno y estación.
         * **Vista General Detallada:** Mantiene el detalle individual para gráficos de dispersión y mapas.
         """)
+    
+#diciconario de datos
+def mostrar_diccionario_datos():
+    st.title("Diccionario de Datos")
+    
+    st.markdown("### Normalización")
+    st.markdown(
+        "El objetivo de esta capa es estructurar la información en un modelo relacional "
+        "para eliminar la redundancia de datos, garantizar la integridad referencial y optimizar "
+        "el almacenamiento de la información de incendios forestales en EE. UU."
+    )
+    
+    #tabla de estados
+    st.subheader("1. Tabla de Estados (`tabla_estado`)")
+    st.markdown("Almacena la información oficial de los estados de EE. UU.")
+    df_estado = pd.DataFrame([
+        {"Campo": "state_code", "Tipo": "VARCHAR(2)", "Descripción": "Llave Primaria. Código único de dos caracteres del estado (ISO/ANSI)."},
+        {"Campo": "state_name", "Tipo": "VARCHAR", "Descripción": "Nombre completo oficial del estado."},
+        {"Campo": "state_abbr", "Tipo": "VARCHAR(2)", "Descripción": "Abreviatura o sigla estándar del estado."}
+    ])
+    st.dataframe(df_estado, use_container_width=True, hide_index=True)
+    
+    #tabla de Condados
+    st.subheader("2. Tabla de Condados (`tabla_condado`)")
+    st.markdown("Contiene la segmentación territorial a nivel de condados y su relación con cada estado.")
+    df_condado = pd.DataFrame([
+        {"Campo": "state_code", "Tipo": "VARCHAR(2)", "Descripción": "Llave Foránea (hacia `tabla_estado`). Código del estado al que pertenece el condado."},
+        {"Campo": "fips_code", "Tipo": "VARCHAR(3)", "Descripción": "Llave Primaria compuesta (junto a `state_code`). Código FIPS de 3 dígitos del condado."},
+        {"Campo": "fips_name", "Tipo": "VARCHAR", "Descripción": "Nombre oficial del condado."},
+        {"Campo": "land_sq_mi", "Tipo": "DOUBLE", "Descripción": "Superficie territorial del condado medida en millas cuadradas."}
+    ])
+    st.dataframe(df_condado, use_container_width=True, hide_index=True)
+    
+    #tabla de Causa de Incendio
+    st.subheader("3. Tabla de Causa de Incendio (`tabla_causa_incendio`)")
+    st.markdown("Catálogo de los motivos o causas principales que originaron los incendios.")
+    df_causa = pd.DataFrame([
+        {"Campo": "cause_code", "Tipo": "SMALLINT", "Descripción": "Llave Primaria. Identificador numérico único de la causa."},
+        {"Campo": "cause_descr", "Tipo": "VARCHAR", "Descripción": "Descripción detallada del origen del fuego (ej. Rayos, Humano, etc.)."}
+    ])
+    st.dataframe(df_causa, use_container_width=True, hide_index=True)
+    
+mostrar_diccionario_datos()
+    
