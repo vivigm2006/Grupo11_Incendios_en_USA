@@ -8,11 +8,11 @@
 Data/*.sqlite
 Data/*.duckdb
 *.wal
+.streamlit/secrets.toml
 
 # Archivos del sistema
 .venv/
 venv/
 __pycache__/
 .DS_Store
-
 .env
