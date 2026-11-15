@@ -10,7 +10,6 @@ import os
 import duckdb
 import pandas as pd
 import streamlit as st
-import geopandas as gpd
 import matplotlib.pyplot as plt
 
 st.set_page_config(
