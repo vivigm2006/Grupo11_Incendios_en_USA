@@ -8,7 +8,6 @@ Analsis estadistico de la superficie, fuentes y tiempos de incendios en EE.UU.
 
 import streamlit as st
 
-
 st.set_page_config(page_title="Marco Metodológico", page_icon="🚒", layout="wide")
 
 st.image("assets/imagen.jpg", width="stretch")
@@ -127,29 +126,30 @@ with tab1:
 
 with tab2:
     st.markdown("""
+    ### Estrategia de Normalización
     * **Paso 1 (Completación de condados y estados):** El 36% de los registros tenían este campo vacío. Se usaron longitud y latitud cruzándolas con un archivo *ShapeFile* del censo de EE. UU. para ubicar el punto exacto de cada incendio de forma automatizada y asignar los códigos FIPS y estados.
     * **Paso 2 (Asignación de Región NIFC):** Se cruzó la base de datos con el archivo CSV que contiene el campo de Área Geográfica utilizando el Código de Estado + Código FIPS.
     * **Paso 3 (Estandarización temporal):** Se cambió el formato de los campos de fecha de Juliano a formato nativo `DATE`.
     """)
     st.image(
-        "pages/assets/normalizacion.jpeg",
+        "assets/Diagrama_Normalizacion.png",
         caption="Diagrama de Normalizacion",
         width="stretch"
         )
 
 with tab3:
     st.markdown("""
-    ### Estrategia de Denormalización
+    ### Estrategia de Denormalizacion
     Para garantizar un rendimiento óptimo en la interfaz interactiva y analítica, se aplicaron tácticas clave de denormalización sobre el esquema:
     * **Reducción de operaciones JOIN:** Se consolidaron atributos descriptivos clave dentro de estructuras optimizadas para evitar cruces relacionales excesivos en tiempo de ejecución.
     * **Duplicación controlada:** Se precomputaron y replicaron ciertos campos categóricos para agilizar el filtrado dinámico en los componentes de Streamlit.
     * **Enfoque OLAP:** La transición desde esquemas altamente normalizados hacia un entorno analítico denormalizado permite procesar millones de registros sin latencia perceptible.
     """)
     st.image(
-    "pages/assets/denormalizacion.jpeg",
-    caption="Diagrama de Denormalizacion",
-    width="stretch"
-    )
+        "assets/Diagrama_Denormalizacion.png",
+        caption="Diagrama de Denormalizacion",
+        width="stretch"
+        )
 
 with tab4:
     st.markdown("""
@@ -254,5 +254,52 @@ def mostrar_diccionario_datos():
     ])
     st.dataframe(df_causa, use_container_width=True, hide_index=True)
     
+#tabla de Propietario del Terreno
+    st.subheader("4. Tabla de Propietario del Terreno (`tabla_propietario`)")
+    st.markdown("Catálogo que clasifica la entidad o tipo de administración del terreno afectado.")
+    df_propietario = pd.DataFrame([
+        {"Campo": "owner_code", "Tipo": "SMALLINT", "Descripción": "Llave Primaria. Identificador numérico del tipo de propietario."},
+        {"Campo": "owner_descr", "Tipo": "VARCHAR", "Descripción": "Descripción de la entidad administradora (ej. Federal, Estatal, Privada)."}
+    ])
+    st.dataframe(df_propietario, use_container_width=True, hide_index=True)
+    
+#tabla de Clase de Tamaño
+    st.subheader("5. Tabla de Clase de Tamaño (`tabla_clase_tamano`)")
+    st.markdown("Rangos oficiales de clasificación según la superficie quemada.")
+    df_tamano = pd.DataFrame([
+        {"Campo": "fire_size_class", "Tipo": "VARCHAR(1)", "Descripción": "Llave Primaria. Letra distintiva de la clase de tamaño (rango de A a G)."},
+        {"Campo": "min_acres", "Tipo": "DOUBLE", "Descripción": "Límite inferior de superficie afectada en acres."},
+        {"Campo": "max_acres", "Tipo": "DOUBLE", "Descripción": "Límite superior de superficie afectada en acres."}
+    ])
+    st.dataframe(df_tamano, use_container_width=True, hide_index=True)
+    
+#tabla de Área Geográfica
+    st.subheader("6. Tabla de Área Geográfica (`tabla_geographic_area`)")
+    st.markdown("Clasificación por áreas geográficas de gestión operativa de incendios en EE. UU.")
+    df_area = pd.DataFrame([
+        {"Campo": "geographic_area_code", "Tipo": "VARCHAR(2)", "Descripción": "Llave Primaria. Código identificador del área geográfica operativa."},
+        {"Campo": "geographic_area_name", "Tipo": "VARCHAR", "Descripción": "Nombre oficial del área geográfica de respuesta."}
+    ])
+    st.dataframe(df_area, use_container_width=True, hide_index=True)
+    
+#tabla de Incendios
+    st.subheader("7. Tabla Principal de Incendios (`tabla_incendios`)")
+    st.markdown("Registro central y transaccional de cada evento de incendio forestal detectado.")
+    df_incendios = pd.DataFrame([
+        {"Campo": "objectid", "Tipo": "INTEGER", "Descripción": "Llave Primaria. Identificador único y correlativo del evento de incendio."},
+        {"Campo": "discovery_date", "Tipo": "DATE", "Descripción": "Fecha en la que se descubrió o reportó el inicio del incendio."},
+        {"Campo": "cont_date", "Tipo": "DATE", "Descripción": "Fecha en la que el incendio fue contenido o controlado."},
+        {"Campo": "fire_size_class", "Tipo": "VARCHAR(1)", "Descripción": "Llave Foránea hacia `tabla_clase_tamano`. Rango de tamaño del incendio."},
+        {"Campo": "fire_size", "Tipo": "DOUBLE", "Descripción": "Superficie total quemada medida en acres."},
+        {"Campo": "latitude", "Tipo": "DOUBLE", "Descripción": "Coordenada geográfica de latitud del punto de origen."},
+        {"Campo": "longitude", "Tipo": "DOUBLE", "Descripción": "Coordenada geográfica de longitud del punto de origen."},
+        {"Campo": "cause_code", "Tipo": "SMALLINT", "Descripción": "Llave Foránea hacia `tabla_causa_incendio`. Motivo del origen del fuego."},
+        {"Campo": "owner_code", "Tipo": "SMALLINT", "Descripción": "Llave Foránea hacia `tabla_propietario`. Tipo de propiedad del suelo afectado."},
+        {"Campo": "state_code", "Tipo": "VARCHAR(2)", "Descripción": "Llave Foránea hacia `tabla_condado` (y `tabla_estado`). Estado donde ocurrió el incendio."},
+        {"Campo": "fips_code", "Tipo": "VARCHAR(3)", "Descripción": "Llave Foránea hacia `tabla_condado`. Condado específico de ocurrencia."},
+        {"Campo": "geographic_area_code", "Tipo": "VARCHAR(2)", "Descripción": "Llave Foránea hacia `tabla_geographic_area`. Área operativa asignada."}
+    ])
+    st.dataframe(df_incendios, use_container_width=True, hide_index=True)
+
 mostrar_diccionario_datos()
     
