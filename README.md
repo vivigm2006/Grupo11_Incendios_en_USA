@@ -7,7 +7,7 @@
 ## Análisis y Visualización Interactiva de Incendios Forestales
 
 ### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa-2.onrender.com/)**
-
+### Power BI: **[https://app.powerbi.com/links/iEECozyB4N?ctid=55104b0f-70b4-4ad5-9ab5-4bd9ea5cd265&pbi_source=linkShare&bookmarkGuid=83a08238-6484-45ce-90e2-6bb15cd935f7)**
 
 # Incendios forestales y segmentació territorial(1992-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
 
