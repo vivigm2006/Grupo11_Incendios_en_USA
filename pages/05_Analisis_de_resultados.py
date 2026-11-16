@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide",
 )
 
-MOTHERDUCK_TOKEN = st.secrets["token"]
+MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
 
 os.environ["motherduck_token"] = MOTHERDUCK_TOKEN
 pd.set_option("display.max_columns", 50)
@@ -28,7 +28,7 @@ print("DuckDB versión:", duckdb.__version__)
 @st.cache_data
 def cargar_datos():
     print("Conectando a MotherDuck y cargando datos...")
-    con = duckdb.connect("md:")
+    con = duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
     
     BASE = "incendios_usa"     
     ESQUEMA = "main"    
