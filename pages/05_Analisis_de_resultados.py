@@ -346,6 +346,70 @@ with tab3:
             subtitulo="Mayor duración registrada"
         )
 
+    ORDEN_ESTACIONES = ['Primavera', 'Verano', 'Otoño', 'Invierno']
+    COLORES_ADMIN = {
+        'Federal': '#2ECC71',
+        'Estatal/Local': '#E74C3C',
+        'Privada': '#6C7BFF',
+    }
+    REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
+    COLORES_REGION = dict(zip(REGIONES_TODAS, px.colors.qualitative.Plotly))
+
+    TICKS_DIAS = [0, 1, 5, 10, 30, 100, 365]
+    TICKS_DIAS_POS = [d + 1 for d in TICKS_DIAS]
+    TICKS_ACRES = [0.01, 0.1, 1, 10, 100, 1000, 10000, 100000]
+    TEXTO_ACRES = ['0.01', '0.1', '1', '10', '100', '1,000', '10,000', '100,000']
+
+
+    def muestreo_por_grupo(df, cols, max_por_grupo=2000, seed=42):
+        return df.sample(frac=1, random_state=seed).groupby(cols).head(max_por_grupo)
+    
+    with st.expander("Gráfico de dispersión"):
+        st.markdown("## Relación entre Superficie Afectada y Tiempo de Contención")
+        st.markdown("Gráfico de dispersión para evaluar la severidad y el tiempo de respuesta según el tipo de administración del suelo.")
+
+        if 'tiene_contencion' in df_filtered.columns:
+            df_obj4_scatter = df_filtered[df_filtered['tiene_contencion'] == 1]
+        else:
+            df_obj4_scatter = df_filtered.copy()
+
+        df_obj4_scatter = df_obj4_scatter[df_obj4_scatter['superficie_acres'] > 0].copy()
+
+        if not df_obj4_scatter.empty:
+            df_chart_scatter = (
+                df_obj4_scatter.sample(n=10000, random_state=42)
+                if len(df_obj4_scatter) > 10000 else df_obj4_scatter
+            ).copy()
+
+            df_chart_scatter['dias_mas1'] = df_chart_scatter['dias_contencion'] + 1
+
+            fig_scatter = px.scatter(
+                df_chart_scatter,
+                x='dias_mas1',
+                y='superficie_acres',
+                color='tipo_administracion',
+                log_x=True,
+                log_y=True,
+                opacity=0.35,
+                color_discrete_map=COLORES_ADMIN,
+                hover_data={'region_nifc': True, 'dias_contencion': True, 'dias_mas1': False},
+                title='Relación Tiempo de Contención vs. Superficie Afectada por Tipo de Administración',
+                labels={
+                    'dias_mas1': 'Días de contención (escala log)',
+                    'superficie_acres': 'Superficie (Acres)',
+                    'tipo_administracion': 'Tipo de Administración',
+                    'region_nifc': 'Región NIFC',
+                    'dias_contencion': 'Días de contención',
+                },
+                template='plotly_dark',
+            )
+            fig_scatter.update_traces(marker=dict(size=5))
+            fig_scatter.update_xaxes(tickvals=TICKS_DIAS_POS, ticktext=TICKS_DIAS)
+            fig_scatter.update_layout(height=600)
+            st.plotly_chart(fig_scatter, use_container_width=True)
+        else:
+            st.warning("No hay registros suficientes para mostrar el gráfico de dispersión con los filtros seleccionados.")
+    
     st.header("Dinámica Estacional de la Severidad y Respuesta Operativa")
     st.markdown("""Evaluación del comportamiento del tiempo de contención y la superficie afectada
       a lo largo de las estaciones del año por región.""")
@@ -398,3 +462,103 @@ with tab3:
             valor=f"{promedio_anual:,.2f}",
             subtitulo="acres/año"
         )
+        
+    with st.expander("diagramas de caja estacionales"):
+        st.markdown("## Variación Estacional de la Severidad y Respuesta Operativa")
+        st.markdown("Análisis de la distribución del tiempo de contención y la superficie afectada a lo largo de las estaciones del año por región NIFC.")
+
+        mostrar_leyenda = df_filtered['region_nifc'].nunique() > 1
+
+        if 'tiene_contencion' in df_filtered.columns:
+            df_obj5_box = df_filtered[df_filtered['tiene_contencion'] == 1].copy()
+        else:
+            df_obj5_box = df_filtered.copy()
+
+        if not df_obj5_box.empty:
+            df_obj5_box['dias_mas1'] = df_obj5_box['dias_contencion'] + 1
+
+            n_cont = df_obj5_box['estacion'].value_counts()
+            etiquetas_cont = {e: f"{e}<br>n={n_cont.get(e, 0):,}" for e in ORDEN_ESTACIONES}
+
+            df_chart_box_5 = muestreo_por_grupo(df_obj5_box, ['region_nifc', 'estacion'])
+            df_chart_box_5['estacion_label'] = df_chart_box_5['estacion'].map(etiquetas_cont)
+
+            fig_box_estacion_cont = px.box(
+                df_chart_box_5,
+                x='estacion_label',
+                y='dias_mas1',
+                color='region_nifc',
+                points=False,
+                log_y=True,
+                color_discrete_map=COLORES_REGION,
+                category_orders={'estacion_label': [etiquetas_cont[e] for e in ORDEN_ESTACIONES]},
+                title='Distribución del Tiempo de Contención (Días) por Estación del Año',
+                labels={
+                    'estacion_label': 'Estación',
+                    'dias_mas1': 'Días de contención (escala log)',
+                    'region_nifc': 'Región NIFC',
+                },
+                template='plotly_dark',
+            )
+            fig_box_estacion_cont.update_yaxes(tickvals=TICKS_DIAS_POS, ticktext=TICKS_DIAS)
+            fig_box_estacion_cont.update_layout(height=550, showlegend=mostrar_leyenda)
+            st.plotly_chart(fig_box_estacion_cont, use_container_width=True)
+
+            resumen = (
+                df_obj5_box.groupby(['region_nifc', 'estacion'])['dias_contencion']
+                .agg(pct_mismo_dia=lambda s: (s == 0).mean() * 100,
+                    p90=lambda s: s.quantile(0.9),
+                    n='size')
+                .reset_index()
+            )
+            fig_p90 = px.bar(
+                resumen,
+                x='estacion',
+                y='p90',
+                color='region_nifc',
+                barmode='group',
+                color_discrete_map=COLORES_REGION,
+                category_orders={'estacion': ORDEN_ESTACIONES},
+                hover_data={'n': True, 'pct_mismo_dia': ':.1f'},
+                title='Percentil 90 del Tiempo de Contención por Estación',
+                labels={
+                    'estacion': 'Estación',
+                    'p90': 'Días (P90)',
+                    'region_nifc': 'Región NIFC',
+                    'pct_mismo_dia': '% contenido el mismo día',
+                },
+                template='plotly_dark',
+            )
+            fig_p90.update_layout(showlegend=mostrar_leyenda)
+            st.plotly_chart(fig_p90, use_container_width=True)
+
+        df_sup = df_filtered[df_filtered['superficie_acres'] > 0].copy()
+        if not df_sup.empty:
+            n_sup = df_sup['estacion'].value_counts()
+            etiquetas_sup = {e: f"{e}<br>n={n_sup.get(e, 0):,}" for e in ORDEN_ESTACIONES}
+
+            df_chart_box_sup5 = muestreo_por_grupo(df_sup, ['region_nifc', 'estacion'])
+            df_chart_box_sup5['estacion_label'] = df_chart_box_sup5['estacion'].map(etiquetas_sup)
+
+            fig_box_estacion_sup = px.box(
+                df_chart_box_sup5,
+                x='estacion_label',
+                y='superficie_acres',
+                color='region_nifc',
+                points=False,
+                log_y=True,
+                color_discrete_map=COLORES_REGION,
+                category_orders={'estacion_label': [etiquetas_sup[e] for e in ORDEN_ESTACIONES]},
+                title='Distribución de la Superficie Afectada (Acres) por Estación (Escala Logarítmica)',
+                labels={
+                    'estacion_label': 'Estación',
+                    'superficie_acres': 'Superficie (Acres)',
+                    'region_nifc': 'Región NIFC',
+                },
+                template='plotly_dark',
+            )
+            fig_box_estacion_sup.update_yaxes(tickvals=TICKS_ACRES, ticktext=TEXTO_ACRES)
+            fig_box_estacion_sup.update_layout(height=550, showlegend=mostrar_leyenda)
+            st.plotly_chart(fig_box_estacion_sup, use_container_width=True)
+        else:
+            st.warning("No hay registros suficientes para mostrar los diagramas de caja estacionales con los filtros seleccionados.")
