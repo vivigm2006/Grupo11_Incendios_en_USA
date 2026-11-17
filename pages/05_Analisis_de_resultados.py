@@ -279,6 +279,70 @@ with tab2:
                 subtitulo="Estado y Región"
             )             
 
+    #grafico objetivo 3
+    with st.expander("Ver megaincendios por región NIFC"):
+        st.markdown("## Mega-Incendios por Región NIFC")
+        st.markdown("Comparación entre el número de eventos y la superficie total quemada en cada región.")
+
+        REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
+        COLORES_REGION = dict(zip(REGIONES_TODAS, px.colors.qualitative.Plotly))
+        
+        df_mega = df_filtered[df_filtered['es_megaincendio'] == 1]
+
+        if not df_mega.empty:
+            por_region = (
+                df_mega.groupby('region_nifc')
+                .agg(n_megaincendios=('superficie_acres', 'size'),
+                     acres_totales=('superficie_acres', 'sum'))
+                .reset_index()
+                .sort_values('n_megaincendios', ascending=True)
+            )
+            orden_regiones = por_region['region_nifc'].tolist()
+
+            df_largo = por_region.melt(
+                id_vars='region_nifc',
+                value_vars=['n_megaincendios', 'acres_totales'],
+                var_name='metrica',
+                value_name='valor',
+            )
+            df_largo['metrica'] = df_largo['metrica'].map({
+                'n_megaincendios': 'Número de mega-incendios',
+                'acres_totales': 'Superficie quemada (acres)',
+            })
+
+            fig_regiones = px.bar(
+                df_largo,
+                    x='valor',
+                    y='region_nifc',
+                    color='region_nifc',
+                    facet_col='metrica',
+                    orientation='h',
+                    text_auto='.3~s',
+                    color_discrete_map=COLORES_REGION,
+                    category_orders={
+                'region_nifc': orden_regiones,
+                'metrica': ['Número de mega-incendios', 'Superficie quemada (acres)'],
+            },
+            title='Mega-Incendios por Región NIFC: Eventos vs. Superficie Quemada',
+            labels={'valor': '', 'region_nifc': 'Región NIFC'},
+            template='plotly_dark',
+        )
+            fig_regiones.update_xaxes(matches=None, showticklabels=True)
+            fig_regiones.update_xaxes(range=[0, por_region['n_megaincendios'].max() * 1.2], col=1)
+            fig_regiones.update_xaxes(range=[0, por_region['acres_totales'].max() * 1.2], col=2)
+            fig_regiones.update_traces(
+                textposition='outside',
+                cliponaxis=False,
+                hovertemplate='%{y}<br>%{x:,.0f}<extra></extra>',
+            )
+            fig_regiones.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+            fig_regiones.update_layout(
+                showlegend=False,
+                height=max(400, 55 * len(por_region) + 150),
+            )
+            st.plotly_chart(fig_regiones, use_container_width=True)
+        else:
+            st.warning("No hay mega-incendios para mostrar con los filtros seleccionados.")
 
 with tab3:
     st.header("Impacto y Tiempo de Contención según el propietario del Suelo")
