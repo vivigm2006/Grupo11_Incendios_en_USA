@@ -145,6 +145,49 @@ with tab1:
             subtitulo="acres"
         )
         
+    #Grafico objetivo 1
+    ORDEN_CLASES = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    COLORES_CLASE = dict(zip(ORDEN_CLASES, px.colors.sequential.YlOrRd[1:8]))
+    COLORES_CLASE['(?)'] = '#333333'
+
+    st.subheader("Evaluación comparativa de la magnitud del impacto territorial para la identificación de zonas de alta susceptibilidad y destrucción.")
+
+    if not df_filtered.empty:
+        resumen = (
+            df_filtered.groupby(['region_nifc', 'clase'])
+            .agg(incendios=('superficie_acres', 'size'),
+                 acres=('superficie_acres', 'sum'))
+            .reset_index()
+        )
+        resumen['% de incendios'] = (
+            resumen['incendios'] / resumen.groupby('region_nifc')['incendios'].transform('sum') * 100
+        )
+        resumen['% de superficie'] = (
+            resumen['acres'] / resumen.groupby('region_nifc')['acres'].transform('sum') * 100
+        )
+        orden_regiones = (
+            resumen.groupby('region_nifc')['acres'].sum()
+            .sort_values(ascending=False).index.tolist()
+        )  
+    
+    if not df_filtered.empty:
+        fig_treemap = px.treemap(
+            resumen,
+            path=[px.Constant('Total'), 'region_nifc', 'clase'],
+            values='acres',
+            color='clase',
+            color_discrete_map=COLORES_CLASE,
+            title='Superficie Quemada por Región y Clase de Incendio (Acres)',
+            template='plotly_dark',
+        )
+        fig_treemap.update_traces(
+            hovertemplate='%{label}<br>%{value:,.0f} acres<br>%{percentParent:.1%} de su grupo<extra></extra>'
+        )
+        fig_treemap.update_layout(height=600)
+        st.plotly_chart(fig_treemap, use_container_width=True)
+    else:
+        st.warning("No hay registros para mostrar con los filtros seleccionados.")
+        
 #objetivo 2
 with tab2:
     st.header("Patrones de Ignición y Fuentes de Causa por Región")
