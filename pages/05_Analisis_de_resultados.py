@@ -330,7 +330,11 @@ with tab2:
     st.markdown("Comparación entre el número de eventos y la superficie total quemada en cada región.")
 
     REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
-    COLORES_REGION = dict(zip(REGIONES_TODAS, px.colors.qualitative.Plotly))
+    
+    colores_gradiente = px.colors.sample_colorscale(
+    "YlOrBr", [i / (len(orden_regiones) - 1) for i in range(len(orden_regiones))]
+    )
+    COLORES_REGION = dict(zip(orden_regiones, colores_gradiente))
         
     df_mega = df_filtered[df_filtered['es_megaincendio'] == 1]
 
@@ -623,10 +627,10 @@ with tab3: #objetivo 4
     MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
     ORDEN_ESTACIONES = ['Primavera', 'Verano', 'Otoño', 'Invierno']
     COLORES_ESTACION = {
-        'Primavera': '#7FD36B',
-        'Verano': '#F5B63D',
-        'Otoño': '#D2691E',
-        'Invierno': '#4FA3E0',
+        'Invierno': '#FFF9E6',  
+        'Primavera': '#FFD966',  
+        'Verano': '#FF9933',  
+        'Otoño': '#D94E00',  
     }
 
     if not df_filtered.empty:
