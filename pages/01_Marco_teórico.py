@@ -105,7 +105,7 @@ en la respuesta operativa y comparar el comportamiento del fuego según la titul
 
 # PREGUNTAS DE INVESTIGACION
 
-st.subheader("Preguntas de investigación")
+st.header("2 Preguntas de investigación")
 
 tab_one, tab_two, tab_three, tab_four, tab_five = st.tabs(["1", "2", "3","4","5"])
 
@@ -154,10 +154,12 @@ with tab_five:
       lo largo de las cuatro estaciones del año en cada región? "
     </div>
     """, unsafe_allow_html=True)
+    
+st.markdown("---")
 
 # JUATIFICACION Y LIMITACIONES
 
-st.subheader("Justificación y Limitación")
+st.header("3. Justificación y Limitación")
 
 col1, col2 = st.columns(2)
 
@@ -196,11 +198,12 @@ with col2:
         </div>
         """, unsafe_allow_html=True)
 
-
+st.markdown("---")
 
 # OBJETIVOS DE INVESTIGACION
+st.header("4. Objetivos de investigación")
 
-st.header("Objetivo General")
+st.subheader("Objetivo General")
     
 st.markdown("""
 <div class="OJ">
@@ -237,9 +240,9 @@ operativa y la severidad.<br><br>
 </div>
 """, unsafe_allow_html=True)
 
-st.subheader("")
+st.markdown("---")
 
-st.header("2. Antecedentes de la investigación")
+st.header("5. Antecedentes de la investigación")
 st.subheader("Fuente de Datos  FPA FOD ")
 
 st.markdown("""
@@ -268,7 +271,9 @@ estableciendo metodologías clave para comprender la concentración espacial del
 la importancia de procesar y visualizar grandes volúmenes de datos históricos para identificar tendencias regionales y temporales de riesgo.
 """)
 
-st.header("Regionalización Operativa Oficial de Estados Unidos del NIFC y NICC")
+st.markdown("---")
+
+st.header("6. Regionalización Operativa Oficial de Estados Unidos del NIFC y NICC")
 st.markdown("""Para la gestión integral, el monitoreo y el combate de incendios forestales en los Estados Unidos, el National Interagency Fire Center (NIFC)
 y su centro operativo principal, el National Interagency Coordination Center (NICC), estructuran y dividen el territorio nacional en 10 Áreas Geográficas 
 (conocidas formalmente como Geographic Area Coordination Centers o GACCs). Esta regionalización no responde únicamente a límites políticos o estatales, 
@@ -308,3 +313,56 @@ gacc_data = {
 df_gacc = pd.DataFrame(gacc_data)
 
 st.dataframe(df_gacc, use_container_width=True, hide_index=True)
+
+st.markdown("---")
+
+st.header("7.Bases Teóricas")
+
+col_izq, col_der = st.columns(2)
+
+with col_izq:
+    st.subheader("Severidad y Magnitud de los Incendios ")
+    st.markdown("""
+    <div class="justificado">
+    La severidad y magnitud de un evento se cuantifican principalmente a través de la superficie final afectada (medida en acres).
+    Conforme a los estándares del National Wildfire Coordinating Group (NWCG) integrados en la base de datos, los incendios se estructuran en clases de 
+    tamaño (de la A a la G), donde las categorías de mayor rango (Clases F y G, que superan los 1,000 y 5,000 acres respectivamente) representan los 
+    eventos de extrema severidad o mega-incendios. 
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.subheader("Estacionalidad")
+    st.markdown("""
+    <div class="justificado">
+     La estacionalidad en la dinámica de incendios forestales se define como el comportamiento cíclico y temporal en la concentración de eventos a lo largo del año.
+    Según los reportes operativos del National Interagency Coordination Center (NICC), este fenómeno está condicionado por la interacción entre 
+    las condiciones meteorológicas estacionales y la desecación de los combustibles vegetales. La identificación de los meses o estaciones de mayor
+    riesgo permite caracterizar los períodos críticos de respuesta operativa para cada Área Geográfica .
+     </div>
+     """, unsafe_allow_html=True)
+    
+    
+
+    
+with col_der:
+    
+    st.subheader("Causas de Ignición")
+    st.markdown("""
+    <div class="justificado">
+    La base de datos FPA FOD clasifica las causas de ignición en dos categorías principales: humanas y naturales. 
+    Las causas humanas incluyen actividades como quema controlada, negligencia, maquinaria y vandalismo, mientras que
+    las causas naturales se atribuyen principalmente a rayos. Esta distinción es crucial para comprender los patrones de riesgo de cada región.
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.subheader("Administración del Suelo")
+    st.markdown("""
+    <div class="justificado">
+     Bajo los marcos interagenciales del NIFC y NWCG, la administración del territorio se divide en tres categorías principales: terrenos bajo administración federal, estatal y privado. 
+     En los registros del FPA FOD se encuentran, terrenos bajo administración federal ,gestionados por agencias como el USDA Forest Service, el Bureau of Land Management (BLM) o el National
+     Park Service (NPS), terrenos estatales o locales, se identifican bajo etiquetas como: State/Local , y terrenos de propiedad privada. Esta distinción es clave para el análisis, ya que los diferentes tipos
+     de propiedad operan bajo distintas políticas de manejo de combustibles, presupuestos de supresión y protocolos de respuesta, lo que puede influir
+     en los tiempos de contención y en la severidad final del impacto.   
+    </div>
+    """, unsafe_allow_html=True)
+    
