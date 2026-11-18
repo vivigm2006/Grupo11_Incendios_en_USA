@@ -6,8 +6,8 @@
 
 ## Análisis y Visualización Interactiva de Incendios Forestales
 
-### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa.onrender.com/)**
-
+### Aplicación: **[Incendios forestales y segmentació territorial(1992-2015).app](https://grupo11-incendios-en-usa-2.onrender.com/)**
+### Power BI: **[https://app.powerbi.com/groups/me/reports/a5daa727-5aef-41cf-a8bc-798dac3e4552/5289e8736c74251a1694?experience=power-bi)**
 
 # Incendios forestales y segmentació territorial(1992-2015): Análisis estadístico de la superficie, fuentes y tiempos de los incendios en EE.UU
 
@@ -35,7 +35,7 @@ El objetivo principal es construir un pipeline integral de datos que abarca desd
 
 ## Objetivo General
 
-Analizar la relación de la ubicación geográfica y las características  de los incendios forestales en Estados Unidos durante el período 2000–2015.
+Analizar la relación de la ubicación geográfica y las características  de los incendios forestales en Estados Unidos durante el período 1992–2015.
 
 ## Objetivos específicos
 
