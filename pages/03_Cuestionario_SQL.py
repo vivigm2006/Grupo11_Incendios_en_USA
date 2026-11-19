@@ -16,8 +16,16 @@ st.set_page_config(
     layout="wide",
 )
 
-MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
-os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
+MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
+if not MOTHERDUCK_TOKEN:
+    try:
+        MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
+    except Exception:
+        MOTHERDUCK_TOKEN = None
+
+if not MOTHERDUCK_TOKEN:
+    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en secrets.toml.")
+    st.stop()
 
 # Ajusta aquí la base si tu tabla Fires está en otra en MotherDuck (p. ej. "Consultasbbdd")
 BASE_DATOS = "incendios_usa"
