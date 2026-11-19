@@ -150,30 +150,20 @@ with tab1:
     COLORES_CLASE = dict(zip(ORDEN_CLASES, px.colors.sequential.YlOrRd[1:8]))
     COLORES_CLASE['(?)'] = '#333333'
 
-    st.subheader("Evaluación comparativa de la magnitud del impacto territorial para la identificación de zonas de alta susceptibilidad y destrucción.")
-
     if not df_filtered.empty:
         resumen = (
-            df_filtered.groupby(['region_nifc', 'clase'])
-            .agg(incendios=('superficie_acres', 'size'),
-                 acres=('superficie_acres', 'sum'))
-            .reset_index()
+            df_filtered.groupby(['region_nifc', 'clase'])['superficie_acres']
+            .sum()
+            .reset_index(name='acres')
         )
-        resumen['% de incendios'] = (
-            resumen['incendios'] / resumen.groupby('region_nifc')['incendios'].transform('sum') * 100
+        acres_region = resumen.groupby('region_nifc')['acres'].sum()
+        resumen['region_label'] = resumen['region_nifc'].map(
+            lambda r: f"{r} ({acres_region[r] / 1e6:.1f}M ac)"
         )
-        resumen['% de superficie'] = (
-            resumen['acres'] / resumen.groupby('region_nifc')['acres'].transform('sum') * 100
-        )
-        orden_regiones = (
-            resumen.groupby('region_nifc')['acres'].sum()
-            .sort_values(ascending=False).index.tolist()
-        )  
-    
-    if not df_filtered.empty:
+
         fig_treemap = px.treemap(
             resumen,
-            path=[px.Constant('Total'), 'region_nifc', 'clase'],
+            path=[px.Constant('Total'), 'region_label', 'clase'],
             values='acres',
             color='clase',
             color_discrete_map=COLORES_CLASE,
@@ -181,10 +171,19 @@ with tab1:
             template='plotly_dark',
         )
         fig_treemap.update_traces(
-            hovertemplate='%{label}<br>%{value:,.0f} acres<br>%{percentParent:.1%} de su grupo<extra></extra>'
+            textinfo='label+percent parent',
+            hovertemplate='%{label}<br>%{value:,.0f} acres<br>%{percentParent:.1%} de su grupo<extra></extra>',
         )
-        fig_treemap.update_layout(height=600)
+        fig_treemap.update_layout(
+            height=600,
+            uniformtext=dict(minsize=10, mode='hide'),
+            margin=dict(t=60, l=10, r=10, b=10),
+        )
         st.plotly_chart(fig_treemap, use_container_width=True)
+        st.caption(
+            "Clases por tamaño final: A ≤ 0.25 acres · B 0.26–9.9 · C 10–99.9 · "
+            "D 100–299 · E 300–999 · F 1,000–4,999 · G ≥ 5,000."
+        )
     else:
         st.warning("No hay registros para mostrar con los filtros seleccionados.")
         
@@ -326,16 +325,17 @@ with tab2:
             )             
 
     #grafico objetivo 3
-    st.header("Mega-Incendios por Región NIFC")
+    st.subheader("Mega-Incendios por Región NIFC")
     st.markdown("Comparación entre el número de eventos y la superficie total quemada en cada región.")
 
     REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
-    
+
     colores_gradiente = px.colors.sample_colorscale(
-    "YlOrBr", [i / (len(orden_regiones) - 1) for i in range(len(orden_regiones))]
+        "YlOrBr",
+        [i / max(len(REGIONES_TODAS) - 1, 1) for i in range(len(REGIONES_TODAS))],
     )
-    COLORES_REGION = dict(zip(orden_regiones, colores_gradiente))
-        
+    COLORES_REGION = dict(zip(REGIONES_TODAS, colores_gradiente))
+
     df_mega = df_filtered[df_filtered['es_megaincendio'] == 1]
 
     if not df_mega.empty:
@@ -361,21 +361,21 @@ with tab2:
 
         fig_regiones = px.bar(
             df_largo,
-                x='valor',
-                y='region_nifc',
-                color='region_nifc',
-                facet_col='metrica',
-                orientation='h',
-                text_auto='.3~s',
-                color_discrete_map=COLORES_REGION,
-                category_orders={
-            'region_nifc': orden_regiones,
-            'metrica': ['Número de mega-incendios', 'Superficie quemada (acres)'],
-        },
-        title='Mega-Incendios por Región NIFC: Eventos vs. Superficie Quemada',
-        labels={'valor': '', 'region_nifc': 'Región NIFC'},
-        template='plotly_dark',
-    )
+            x='valor',
+            y='region_nifc',
+            color='region_nifc',
+            facet_col='metrica',
+            orientation='h',
+            text_auto='.3~s',
+            color_discrete_map=COLORES_REGION,
+            category_orders={
+                'region_nifc': orden_regiones,
+                'metrica': ['Número de mega-incendios', 'Superficie quemada (acres)'],
+            },
+            title='Mega-Incendios por Región NIFC: Eventos vs. Superficie Quemada',
+            labels={'valor': '', 'region_nifc': 'Región NIFC'},
+            template='plotly_dark',
+        )
         fig_regiones.update_xaxes(matches=None, showticklabels=True)
         fig_regiones.update_xaxes(range=[0, por_region['n_megaincendios'].max() * 1.2], col=1)
         fig_regiones.update_xaxes(range=[0, por_region['acres_totales'].max() * 1.2], col=2)
@@ -464,62 +464,60 @@ with tab3: #objetivo 4
     st.subheader("Severidad y Rapidez de Contención por Tipo de Administración")
     ORDEN_ADMIN = ['Federal', 'Estatal/Local', 'Privada']
     ORDEN_CLASES = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-    COLORES_ADMIN = {
-        'Federal': '#2ECC71',
-        'Estatal/Local': '#E74C3C',
-        'Privada': '#6C7BFF',
-    }
-    CORTES_DIAS = [0, 1, 2, 3, 5, 7, 14, 30, 60, 90, 180, 365]
+    RANGOS_CONTENCION = ['Mismo día', '1 día', '2-7 días', '8-30 días', 'Más de 30 días']
 
-    if not df_filtered.empty:
-        sev = (
-            df_filtered.groupby(['tipo_administracion', 'clase'])
-            .agg(incendios=('superficie_acres', 'size'),
-                acres=('superficie_acres', 'sum'))
-            .reset_index()
-        )
 
-        def acumulado(valor, nombre):
-            t = (
-                sev.pivot(index='tipo_administracion', columns='clase', values=valor)
-                .reindex(columns=ORDEN_CLASES)
-                .fillna(0)
+    def heatmap_porcentajes(df, columna, orden_columnas, titulo, etiqueta_x, pesos=None):
+        if pesos:
+            tabla = df.pivot_table(
+                index='tipo_administracion', columns=columna,
+                values=pesos, aggfunc='sum', fill_value=0, observed=False,
             )
-            t = t.cumsum(axis=1).div(t.sum(axis=1), axis=0) * 100
-            t = t.reset_index().melt(id_vars='tipo_administracion', var_name='clase', value_name='porcentaje')
-            t['metrica'] = nombre
-            return t
+        else:
+            tabla = pd.crosstab(df['tipo_administracion'], df[columna])
 
-        sev_acum = pd.concat([
-            acumulado('incendios', '% acumulado de incendios'),
-            acumulado('acres', '% acumulado de superficie'),
-        ])
+        tabla = tabla.reindex(
+            index=[a for a in ORDEN_ADMIN if a in tabla.index],
+            columns=orden_columnas,
+            fill_value=0,
+        )
+        pct = tabla.div(tabla.sum(axis=1), axis=0) * 100
 
-        fig_sev = px.line(
-            sev_acum,
-            x='clase',
-            y='porcentaje',
-            color='tipo_administracion',
-            facet_col='metrica',
-            markers=True,
-            color_discrete_map=COLORES_ADMIN,
-            category_orders={
-                'clase': ORDEN_CLASES,
-                'tipo_administracion': ORDEN_ADMIN,
-                'metrica': ['% acumulado de incendios', '% acumulado de superficie'],
-            },
-            title='Severidad por Tipo de Administración: Distribución Acumulada por Clase',
-            labels={'clase': 'Clase de incendio', 'porcentaje': '% acumulado', 'tipo_administracion': 'Tipo de administración'},
+        n_admin = df['tipo_administracion'].value_counts()
+        pct.index = [f"{a}<br>n={n_admin.get(a, 0):,}" for a in pct.index]
+
+        fig = px.imshow(
+            pct,
+            text_auto='.1f',
+            aspect='auto',
+            color_continuous_scale='YlOrRd',
+            title=titulo,
+            labels={'x': etiqueta_x, 'y': 'Tipo de administración', 'color': '%'},
             template='plotly_dark',
         )
-        fig_sev.update_yaxes(range=[0, 102])
-        fig_sev.update_traces(hovertemplate='Clase %{x}<br>%{y:.1f}%<extra>%{fullData.name}</extra>')
-        fig_sev.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
-        fig_sev.update_layout(height=450)
-        st.plotly_chart(fig_sev, use_container_width=True)
+        fig.update_layout(height=320)
+        return fig
+
+
+    if not df_filtered.empty:
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_filtered, 'clase', ORDEN_CLASES,
+                '% de Incendios por Clase y Tipo de Administración', 'Clase de incendio',
+            ),
+            use_container_width=True,
+        )
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_filtered, 'clase', ORDEN_CLASES,
+                '% de Superficie Quemada por Clase y Tipo de Administración', 'Clase de incendio',
+                pesos='superficie_acres',
+            ),
+            use_container_width=True,
+        )
         st.caption(
             "Clases por tamaño final: A ≤ 0.25 acres · B 0.26–9.9 · C 10–99.9 · "
-            "D 100–299 · E 300–999 · F 1,000–4,999 · G ≥ 5,000."
+            "D 100–299 · E 300–999 · F 1,000–4,999 · G ≥ 5,000. Cada fila suma 100 %."
         )
 
     if 'tiene_contencion' in df_filtered.columns:
@@ -527,45 +525,24 @@ with tab3: #objetivo 4
     else:
         df_resp = df_filtered
     n_antes = len(df_resp)
-    df_resp = df_resp[df_resp['dias_contencion'] <= 365]
+    df_resp = df_resp[df_resp['dias_contencion'] <= 365].copy()
 
     if not df_resp.empty:
-        filas = []
-        for corte in CORTES_DIAS:
-            pct = (df_resp['dias_contencion'] <= corte).groupby(df_resp['tipo_administracion']).mean() * 100
-            for admin, valor in pct.items():
-                filas.append({'tipo_administracion': admin, 'dias': str(corte), 'porcentaje': valor})
-        cont_acum = pd.DataFrame(filas)
-
-        fig_resp = px.line(
-            cont_acum,
-            x='dias',
-            y='porcentaje',
-            color='tipo_administracion',
-            markers=True,
-            color_discrete_map=COLORES_ADMIN,
-            category_orders={
-                'dias': [str(c) for c in CORTES_DIAS],
-                'tipo_administracion': ORDEN_ADMIN,
-            },
-            title='Rapidez de Contención por Tipo de Administración',
-            labels={
-                'dias': 'Días de contención (o menos)',
-                'porcentaje': '% de incendios contenidos',
-                'tipo_administracion': 'Tipo de administración',
-            },
-            template='plotly_dark',
+        df_resp['rango'] = pd.cut(
+            df_resp['dias_contencion'],
+            bins=[-1, 0, 1, 7, 30, 365],
+            labels=RANGOS_CONTENCION,
         )
-        fig_resp.update_yaxes(range=[0, 102])
-        fig_resp.update_traces(hovertemplate='≤ %{x} días<br>%{y:.1f}% contenido<extra>%{fullData.name}</extra>')
-        fig_resp.update_layout(height=450)
-        st.plotly_chart(fig_resp, use_container_width=True)
-
-        n_resp = df_resp['tipo_administracion'].value_counts()
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_resp, 'rango', RANGOS_CONTENCION,
+                '% de Incendios por Tiempo de Contención y Tipo de Administración', 'Tiempo de contención',
+            ),
+            use_container_width=True,
+        )
         st.caption(
-            "Incendios con contención registrada: "
-            + " · ".join(f"{a}: n={n_resp.get(a, 0):,}" for a in ORDEN_ADMIN)
-            + f". Se excluyeron {n_antes - len(df_resp):,} con más de 365 días (posibles errores de fecha)."
+            f"Solo incendios con contención registrada; se excluyeron {n_antes - len(df_resp):,} "
+            "con más de 365 días (posibles errores de fecha)."
         )
     else:
         st.warning("No hay registros suficientes para mostrar el tiempo de contención con los filtros seleccionados.")
