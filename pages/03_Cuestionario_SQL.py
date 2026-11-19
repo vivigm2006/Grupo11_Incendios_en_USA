@@ -205,15 +205,146 @@ ORDER BY puesto_global ASC;""",
         "id": "q6",
         "titulo": "Pregunta 6: Rachas de Años de Aumento",
         "enunciado": (
-            "Se quiere encontrar los estados cuya superficie quemada creció"
-            " durante más años seguidos."
+            """Se quiere encontrar los estados cuya superficie quemada creció durante más años 
+            seguidos.
+
+Calcula la superficie quemada por estado y año (FIRE_YEAR). Un año es de aumento si su superficie supera 
+estrictamente la del año anterior del mismo estado; esa comparación debe hacerse cruzando la serie 
+consigo misma. Una racha es una secuencia de años de aumento consecutivos. Para cada estado toma su 
+racha más larga y, si hay empate, la más antigua.
+
+Considera solo los estados con datos en los 24 años. Muestra los diez estados con rachas más 
+largas, con su puesto (los empates comparten puesto), el primer y el último año de aumento, la 
+cantidad de años, la superficie del año anterior al inicio de la racha, la superficie del último 
+año de la racha y el cociente entre ambas. Ordena por puesto y, en caso de empate, por estado.
+"""
         ),
-        "sql": """
+        "sql": """WITH SuperficieAnualEstado AS (
+    
+    SELECT 
+        STATE AS estado,
+        FIRE_YEAR AS anio,
+        SUM(FIRE_SIZE) AS superficie_total
+    FROM Fires
+    WHERE STATE IS NOT NULL 
+      AND FIRE_YEAR BETWEEN 1992 AND 2015
+    GROUP BY STATE, FIRE_YEAR
+),
+Estados24Anios AS (
+    
+    SELECT estado
+    FROM SuperficieAnualEstado
+    GROUP BY estado
+    HAVING COUNT(DISTINCT anio) = 24
+),
+ComparacionAnual AS (
+    
+    SELECT 
+        curr.estado,
+        curr.anio,
+        curr.superficie_total AS sup_actual,
+        prev.superficie_total AS sup_anterior,
+        CASE WHEN curr.superficie_total > prev.superficie_total THEN 1 ELSE 0 END AS es_aumento
+    FROM SuperficieAnualEstado curr
+    JOIN SuperficieAnualEstado prev ON curr.estado = prev.estado AND curr.anio = prev.anio + 1
+    WHERE curr.estado IN (SELECT estado FROM Estados24Anios)
+),
+AumentosPuros AS (
+    
+    SELECT 
+        estado,
+        anio,
+        sup_actual,
+        sup_anterior,
+        -- Técnica de secuencia (Gaps and Islands): resta una fila de numeración para agrupar rachas consecutivas
+        anio - ROW_NUMBER() OVER (PARTITION BY estado ORDER BY anio) AS grupo_racha
+    FROM ComparacionAnual
+    WHERE es_aumento = 1
+),
+RachasCalculadas AS (
+    
+    SELECT 
+        estado,
+        grupo_racha,
+        MIN(anio) - 1 AS anio_previo_inicio, -- El año anterior al inicio de la racha es anio_inicio - 1
+        MIN(anio) AS primer_anio_aumento,
+        MAX(anio) AS ultimo_anio_aumento,
+        COUNT(*) AS cantidad_anios
+    FROM AumentosPuros
+    GROUP BY estado, grupo_racha
+),
+RachasConSuperficies AS (
+   
+    SELECT 
+        r.estado,
+        r.primer_anio_aumento,
+        r.ultimo_anio_aumento,
+        r.cantidad_anios,
+        s_ant.superficie_total AS superficie_anio_anterior_inicio,
+        s_fin.superficie_total AS superficie_ultimo_anio
+    FROM RachasCalculadas r
+    JOIN SuperficieAnualEstado s_ant ON r.estado = s_ant.estado AND s_ant.anio = r.anio_previo_inicio
+    JOIN SuperficieAnualEstado s_fin ON r.estado = s_fin.estado AND s_fin.anio = r.ultimo_anio_aumento
+),
+MejorRachaPorEstado AS (
+   
+    SELECT 
+        estado,
+        primer_anio_aumento,
+        ultimo_anio_aumento,
+        cantidad_anios,
+        superficie_anio_anterior_inicio,
+        superficie_ultimo_anio,
+        ROUND(CAST(superficie_ultimo_anio AS REAL) / superficie_anio_anterior_inicio, 2) AS cociente_superficie,
+        ROW_NUMBER() OVER (PARTITION BY estado ORDER BY cantidad_anios DESC, primer_anio_aumento ASC) AS rn_mejor
+    FROM RachasConSuperficies
+),
+FiltradoMejores AS (
+    SELECT 
+        estado,
+        primer_anio_aumento,
+        ultimo_anio_aumento,
+        cantidad_anios,
+        superficie_anio_anterior_inicio,
+        superficie_ultimo_anio,
+        cociente_superficie
+    FROM MejorRachaPorEstado
+    WHERE rn_mejor = 1
+),
+RankingGlobalRachas AS (
+
+    SELECT 
+        estado,
+        primer_anio_aumento,
+        ultimo_anio_aumento,
+        cantidad_anios,
+        superficie_anio_anterior_inicio,
+        superficie_ultimo_anio,
+        cociente_superficie,
+        DENSE_RANK() OVER (ORDER BY cantidad_anios DESC) AS puesto
+    FROM FiltradoMejores
+)
+
+SELECT 
+    puesto AS "Puesto",
+    estado AS "Estado",
+    primer_anio_aumento AS "Primer Año de Aumento",
+    ultimo_anio_aumento AS "Último Año de Aumento",
+    cantidad_anios AS "Cantidad de Años en Racha",
+    superficie_anio_anterior_inicio AS "Superficie Año Anterior al Inicio",
+    superficie_ultimo_anio AS "Superficie Último Año de la Racha",
+    cociente_superficie AS "Cociente de Superficie",
+    puesto AS "Puesto Compartido"
+FROM RankingGlobalRachas
+WHERE puesto <= 10
+ORDER BY puesto ASC, estado ASC;
         """,
         "interpretacion": (
-            "**Interpretación:** Aquí puedes comentar los estados con rachas"
-            " más largas de crecimiento anual en superficie quemada y el"
-            " multiplicador acumulado."
+            """### Interpretación de resultados
+* **Liderazgo en continuidad:** **AR** encabeza el ranking (**Puesto 1**) con **8 años consecutivos** de incremento en superficie quemada (**1993–2000**), pasando de **1,478.5** a **29,052.5** (cociente de **19.65**), seguido por **LA** (**Puesto 2**, **6 años**, **1995–2000**, cociente **36.16**) y **KY** (**Puesto 3**, **5 años**, **1997–2001**, cociente **156.72**).
+* **Empates en duraciones intermedias:** Los puestos siguientes concentran múltiples estados con igual cantidad de años en racha (`DENSE_RANK()`): **4 años** en el **Puesto 4** (**AL**, **FL**, **ND**, **NE**, **OK**, **TN**, **VA**), **3 años** en el **Puesto 5** y **2 años** en el **Puesto 6**.
+* **Crecimiento relativo vs. duración:** Una racha más larga no implica necesariamente el mayor cociente de superficie: **KS** (**2 años**, **1993–1994**, **Puesto 6**) registra el cociente más alto visible (**335.69**), y **TN** (**156.98**) destaca dentro del **Puesto 4** frente a estados con igual duración y menor multiplicador relativo.
+"""
         ),
     },
 ]
