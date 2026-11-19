@@ -4,4 +4,3 @@ plotly
 numpy
 duckdb
 matplotlib
-time
