@@ -7,6 +7,7 @@ Analsis estadistico de la superficie, fuentes y tiempos de incendios en EE.UU.
 """
 
 import os
+import time
 import duckdb
 import pandas as pd
 import streamlit as st
@@ -21,25 +22,41 @@ st.set_page_config(
 
 MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
 
-os.environ["motherduck_token"] = MOTHERDUCK_TOKEN
+os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
 pd.set_option("display.max_columns", 50)
 print("DuckDB versión:", duckdb.__version__)
 
-@st.cache_data
-def cargar_datos():
-    print("Conectando a MotherDuck y cargando datos...")
-    con = duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
-    
-    BASE = "incendios_usa"     
-    ESQUEMA = "main"    
-    TABLA = "vista_general_detallada"       
+@st.cache_resource
+def get_connection():
+  return duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
 
-    REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
-    query = f"SELECT * FROM {REF}"
-    df = con.sql(query).df()
-    
-    con.close()
-    return df
+
+@st.cache_data(ttl=3600)
+def cargar_datos():
+  print("Conectando a MotherDuck y cargando datos...")
+  con = get_connection()
+
+  BASE = "incendios_usa"
+  ESQUEMA = "main"
+  TABLA = "vista_general_detallada"
+
+  REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
+  query = f"""
+        SELECT
+            objectid, estado, region_nifc, tipo_administracion,
+            origen_causa, anio, nombre_mes, estacion, clase,
+            superficie_acres, dias_contencion, tiene_contencion
+        FROM {REF}
+    """
+  for intento in range(3):
+    try:
+      return con.sql(query).df()
+    except duckdb.Error as e:
+      if "DEADLINE_EXCEEDED" in str(e) and intento < 2:
+        time.sleep(2 * (intento + 1))
+      else:
+        raise
+
 
 df = cargar_datos()
 print("Datos listos en memoria ✅")
