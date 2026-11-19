@@ -333,19 +333,18 @@ with tab2:
 
     REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
 
-    colores_gradiente = px.colors.sample_colorscale(
-        "YlOrBr",
-        [i / max(len(REGIONES_TODAS) - 1, 1) for i in range(len(REGIONES_TODAS))],
-    )
-    COLORES_REGION = dict(zip(REGIONES_TODAS, colores_gradiente))
+    COLOR_NARANJA = "#FF7F0E"  # También puedes usar "#F97316" o "orange"
+    COLORE_REGION = {region: COLOR_NARANJA for region in REGIONES_TODAS}
 
     df_mega = df_filtered[df_filtered['es_megaincendio'] == 1]
 
     if not df_mega.empty:
         por_region = (
             df_mega.groupby('region_nifc')
-            .agg(n_megaincendios=('superficie_acres', 'size'),
-                acres_totales=('superficie_acres', 'sum'))
+            .agg(
+                n_megaincendios=('superficie_acres', 'size'),
+                acres_totales=('superficie_acres', 'sum'),
+            )
             .reset_index()
             .sort_values('n_megaincendios', ascending=True)
         )
@@ -366,11 +365,9 @@ with tab2:
             df_largo,
             x='valor',
             y='region_nifc',
-            color='region_nifc',
             facet_col='metrica',
             orientation='h',
             text_auto='.3~s',
-            color_discrete_map=COLORES_REGION,
             category_orders={
                 'region_nifc': orden_regiones,
                 'metrica': ['Número de mega-incendios', 'Superficie quemada (acres)'],
@@ -383,6 +380,7 @@ with tab2:
         fig_regiones.update_xaxes(range=[0, por_region['n_megaincendios'].max() * 1.2], col=1)
         fig_regiones.update_xaxes(range=[0, por_region['acres_totales'].max() * 1.2], col=2)
         fig_regiones.update_traces(
+            marker_color='#FF7F0E',
             textposition='outside',
             cliponaxis=False,
             hovertemplate='%{y}<br>%{x:,.0f}<extra></extra>',
@@ -395,7 +393,6 @@ with tab2:
         st.plotly_chart(fig_regiones, use_container_width=True)
     else:
         st.warning("No hay mega-incendios para mostrar con los filtros seleccionados.")
-
 
 with tab3: #objetivo 4
     st.header("Impacto y Tiempo de Contención según el propietario del Suelo")
