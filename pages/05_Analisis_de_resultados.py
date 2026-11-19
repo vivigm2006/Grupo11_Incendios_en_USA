@@ -20,9 +20,17 @@ st.set_page_config(
     layout="wide",
 )
 
-MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
 
-os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
+MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
+if not MOTHERDUCK_TOKEN:
+    try:
+        MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
+    except Exception:
+        MOTHERDUCK_TOKEN = None
+
+if not MOTHERDUCK_TOKEN:
+    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en secrets.toml.")
+    st.stop()
 pd.set_option("display.max_columns", 50)
 print("DuckDB versión:", duckdb.__version__)
 
@@ -44,8 +52,8 @@ def cargar_datos():
   query = f"""
         SELECT
             objectid, estado, region_nifc, tipo_administracion,
-            origen_causa, anio, nombre_mes, estacion, clase,
-            superficie_acres, dias_contencion, tiene_contencion
+            origen_causa, anio, nombre_mes, mes, estacion, clase,
+            superficie_acres, dias_contencion, tiene_contencion, es_megaincendio
         FROM {REF}
     """
   for intento in range(3):
