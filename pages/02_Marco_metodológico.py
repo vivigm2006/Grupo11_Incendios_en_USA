@@ -18,7 +18,7 @@ import pandas as pd
 
 st.markdown("---")
 
-st.header("1. Tipo y Diseño de la Investigación")
+st.header("Tipo y Diseño de la Investigación")
 st.markdown("""
 La presente investigación se enmarca en un **enfoque cuantitativo** de nivel **descriptivo-comparativo** y de **corte longitudinal**:
 * **Descriptiva:** Busca caracterizar las variables fundamentales de los incendios forestales (frecuencia, severidad o superficie quemada, causas de origen, propiedad del terreno y estacionalidad) en el territorio estadounidense.
@@ -28,7 +28,7 @@ La presente investigación se enmarca en un **enfoque cuantitativo** de nivel **
 
 st.markdown("---")
 
-st.header("2. Población y Fuente de Información")
+st.header("Población y Fuente de Información")
 col1, col2 = st.columns([1.5, 1])
 
 with col1:
@@ -51,7 +51,7 @@ with col2:
 
 st.markdown("---")
 
-st.header("3. Enfoque de fuentes y herramientas analíticas")
+st.header("Enfoque de fuentes y herramientas analíticas")
 st.markdown("""
 La técnica principal utilizada es la **observación indirecta y el análisis documental** de registros cuantitativos secundarios. Para ello, se estructuró una ficha de extracción que captura las siguientes variables clave de cada incendio:
 
@@ -64,7 +64,7 @@ La técnica principal utilizada es la **observación indirecta y el análisis do
 
 st.markdown("---")
 
-st.header("4. Justificaciones Metodológicas")
+st.header("Justificaciones Metodológicas")
 
 with st.expander("Justificación de la fecha de contención", expanded=True):
     st.markdown("""
@@ -81,7 +81,7 @@ with st.expander("Justificación de la Agrupación Territorial", expanded=True):
 
 st.markdown("---")
 
-st.header("5. Stack Tecnológico")
+st.header("Stack Tecnológico")
 st.markdown("""
 Para el procesamiento eficiente del universo censal de registros históricos, se implementó una arquitectura analítica basada en **DuckDB** y almacenamiento intermedio en formato **`.parquet`**, optimizando la memoria RAM y ejecutando consultas SQL ultrarrápidas.
 """)
@@ -106,7 +106,7 @@ st.dataframe(pd.DataFrame(tech_data), use_container_width=True, hide_index=True)
 
 st.markdown("---")
 
-st.header("6. Procedimiento y Fases de Análisis")
+st.header("Procedimiento y Fases de Análisis")
 
 tab1, tab2, tab3, tab4 = st.tabs([
     "Fases de Análisis", 
@@ -190,7 +190,7 @@ with tab4:
 
 st.markdown("---")
 
-st.header("7. Optimización, Manejo de Nulos y Vistas Analíticas")
+st.header("Optimización, Manejo de Nulos y Vistas Analíticas")
 
 col_op1, col_op2 = st.columns(2)
 
@@ -212,6 +212,8 @@ with col_op2:
         * **Vistas Obj 4 y 5:** Tiempos promedio de contención y superficie por tipo de terreno y estación.
         * **Vista General Detallada:** Mantiene el detalle individual para gráficos de dispersión y mapas.
         """)
+
+st.markdown("---")
     
 #diciconario de datos
 def mostrar_diccionario_datos():

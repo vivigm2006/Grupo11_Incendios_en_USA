@@ -121,6 +121,7 @@ def tarjeta_metrica(titulo, valor, subtitulo=""):
 
 tab1, tab2, tab3 = st.tabs(["🗺️ Impacto Territorial","📊 Causas y severidad" , "📈 Gestión y estacionalidad"])
 
+#objetivo 1
 with tab1:
     st.header("Distribución Regional de Superficie Afectada y Severidad del Fuego")
     st.markdown("""Evaluación comparativa de la magnitud del impacto territorial para la
@@ -157,7 +158,50 @@ with tab1:
             valor=f"{media_acres:,.2f}",
             subtitulo="acres"
         )
+        
+    #Grafico objetivo 1
+    ORDEN_CLASES = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    COLORES_CLASE = dict(zip(ORDEN_CLASES, px.colors.sequential.YlOrRd[1:8]))
+    COLORES_CLASE['(?)'] = '#333333'
 
+    if not df_filtered.empty:
+        resumen = (
+            df_filtered.groupby(['region_nifc', 'clase'])['superficie_acres']
+            .sum()
+            .reset_index(name='acres')
+        )
+        acres_region = resumen.groupby('region_nifc')['acres'].sum()
+        resumen['region_label'] = resumen['region_nifc'].map(
+            lambda r: f"{r} ({acres_region[r] / 1e6:.1f}M ac)"
+        )
+
+        fig_treemap = px.treemap(
+            resumen,
+            path=[px.Constant('Total'), 'region_label', 'clase'],
+            values='acres',
+            color='clase',
+            color_discrete_map=COLORES_CLASE,
+            title='Superficie Quemada por Región y Clase de Incendio (Acres)',
+            template='plotly_dark',
+        )
+        fig_treemap.update_traces(
+            textinfo='label+percent parent',
+            hovertemplate='%{label}<br>%{value:,.0f} acres<br>%{percentParent:.1%} de su grupo<extra></extra>',
+        )
+        fig_treemap.update_layout(
+            height=600,
+            uniformtext=dict(minsize=10, mode='hide'),
+            margin=dict(t=60, l=10, r=10, b=10),
+        )
+        st.plotly_chart(fig_treemap, use_container_width=True)
+        st.caption(
+            "Clases por tamaño final: A ≤ 0.25 acres · B 0.26–9.9 · C 10–99.9 · "
+            "D 100–299 · E 300–999 · F 1,000–4,999 · G ≥ 5,000."
+        )
+    else:
+        st.warning("No hay registros para mostrar con los filtros seleccionados.")
+        
+#objetivo 2
 with tab2:
     st.header("Patrones de Ignición y Fuentes de Causa por Región")
     st.markdown("""Análisis de la relación entre el origen del fuego (humano vs. natural) y la ubicación
@@ -211,6 +255,7 @@ with tab2:
                 subtitulo=f"Sobre {len(df_filtered):,} incendios"
             )
 
+    #Grafico objetivo 2
     st.subheader("Proporción de Fuentes de Ignición por Región NIFC")
 
     if not df_filtered.empty and 'region_nifc' in df_filtered.columns and 'origen_causa' in df_filtered.columns:
@@ -242,6 +287,9 @@ with tab2:
     else:
         st.info("No hay suficientes datos filtrados para mostrar el gráfico de proporciones de causa.")
 
+    st.markdown("---")
+    
+    #objetivo 3
     st.header("Concentración Territorial de Incendios de Alta Severidad y Mega-Incendios")
     st.markdown("""Cuantificación de eventos críticos a nivel nacional e identificación de las 
     regiones con mayor vulnerabilidad a eventos de gran magnitud.""")
@@ -293,8 +341,77 @@ with tab2:
                 subtitulo="Estado y Región"
             )             
 
+    #grafico objetivo 3
+    st.subheader("Mega-Incendios por Región NIFC")
+    st.markdown("Comparación entre el número de eventos y la superficie total quemada en cada región.")
 
-with tab3:
+    REGIONES_TODAS = sorted(df['region_nifc'].dropna().unique())
+
+    colores_gradiente = px.colors.sample_colorscale(
+        "YlOrBr",
+        [i / max(len(REGIONES_TODAS) - 1, 1) for i in range(len(REGIONES_TODAS))],
+    )
+    COLORES_REGION = dict(zip(REGIONES_TODAS, colores_gradiente))
+
+    df_mega = df_filtered[df_filtered['es_megaincendio'] == 1]
+
+    if not df_mega.empty:
+        por_region = (
+            df_mega.groupby('region_nifc')
+            .agg(n_megaincendios=('superficie_acres', 'size'),
+                acres_totales=('superficie_acres', 'sum'))
+            .reset_index()
+            .sort_values('n_megaincendios', ascending=True)
+        )
+        orden_regiones = por_region['region_nifc'].tolist()
+
+        df_largo = por_region.melt(
+            id_vars='region_nifc',
+            value_vars=['n_megaincendios', 'acres_totales'],
+            var_name='metrica',
+            value_name='valor',
+        )
+        df_largo['metrica'] = df_largo['metrica'].map({
+            'n_megaincendios': 'Número de mega-incendios',
+            'acres_totales': 'Superficie quemada (acres)',
+        })
+
+        fig_regiones = px.bar(
+            df_largo,
+            x='valor',
+            y='region_nifc',
+            color='region_nifc',
+            facet_col='metrica',
+            orientation='h',
+            text_auto='.3~s',
+            color_discrete_map=COLORES_REGION,
+            category_orders={
+                'region_nifc': orden_regiones,
+                'metrica': ['Número de mega-incendios', 'Superficie quemada (acres)'],
+            },
+            title='Mega-Incendios por Región NIFC: Eventos vs. Superficie Quemada',
+            labels={'valor': '', 'region_nifc': 'Región NIFC'},
+            template='plotly_dark',
+        )
+        fig_regiones.update_xaxes(matches=None, showticklabels=True)
+        fig_regiones.update_xaxes(range=[0, por_region['n_megaincendios'].max() * 1.2], col=1)
+        fig_regiones.update_xaxes(range=[0, por_region['acres_totales'].max() * 1.2], col=2)
+        fig_regiones.update_traces(
+            textposition='outside',
+            cliponaxis=False,
+            hovertemplate='%{y}<br>%{x:,.0f}<extra></extra>',
+        )
+        fig_regiones.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+        fig_regiones.update_layout(
+            showlegend=False,
+            height=max(400, 55 * len(por_region) + 150),
+        )
+        st.plotly_chart(fig_regiones, use_container_width=True)
+    else:
+        st.warning("No hay mega-incendios para mostrar con los filtros seleccionados.")
+
+
+with tab3: #objetivo 4
     st.header("Impacto y Tiempo de Contención según el propietario del Suelo")
     st.markdown("""Análisis comparativo de la severidad y respuesta operativa entre 
     terrenos bajo administración federal y tierras estatales o privadas.""")
@@ -338,7 +455,7 @@ with tab3:
             prom_dias = 0
             
         tarjeta_metrica(
-            titulo="Tiempo promedio de incendio",
+            titulo="Tiempo promedio de contencion",
             valor=f"{prom_dias:.1f} días",
             subtitulo="Duración media por evento"
         )
@@ -360,6 +477,97 @@ with tab3:
             subtitulo="Mayor duración registrada"
         )
 
+    #grafico objetivo 4
+    st.subheader("Severidad y Rapidez de Contención por Tipo de Administración")
+    ORDEN_ADMIN = ['Federal', 'Estatal/Local', 'Privada']
+    ORDEN_CLASES = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+    RANGOS_CONTENCION = ['Mismo día', '1 día', '2-7 días', '8-30 días', 'Más de 30 días']
+
+
+    def heatmap_porcentajes(df, columna, orden_columnas, titulo, etiqueta_x, pesos=None):
+        if pesos:
+            tabla = df.pivot_table(
+                index='tipo_administracion', columns=columna,
+                values=pesos, aggfunc='sum', fill_value=0, observed=False,
+            )
+        else:
+            tabla = pd.crosstab(df['tipo_administracion'], df[columna])
+
+        tabla = tabla.reindex(
+            index=[a for a in ORDEN_ADMIN if a in tabla.index],
+            columns=orden_columnas,
+            fill_value=0,
+        )
+        pct = tabla.div(tabla.sum(axis=1), axis=0) * 100
+
+        n_admin = df['tipo_administracion'].value_counts()
+        pct.index = [f"{a}<br>n={n_admin.get(a, 0):,}" for a in pct.index]
+
+        fig = px.imshow(
+            pct,
+            text_auto='.1f',
+            aspect='auto',
+            color_continuous_scale='YlOrRd',
+            title=titulo,
+            labels={'x': etiqueta_x, 'y': 'Tipo de administración', 'color': '%'},
+            template='plotly_dark',
+        )
+        fig.update_layout(height=320)
+        return fig
+
+
+    if not df_filtered.empty:
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_filtered, 'clase', ORDEN_CLASES,
+                '% de Incendios por Clase y Tipo de Administración', 'Clase de incendio',
+            ),
+            use_container_width=True,
+        )
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_filtered, 'clase', ORDEN_CLASES,
+                '% de Superficie Quemada por Clase y Tipo de Administración', 'Clase de incendio',
+                pesos='superficie_acres',
+            ),
+            use_container_width=True,
+        )
+        st.caption(
+            "Clases por tamaño final: A ≤ 0.25 acres · B 0.26–9.9 · C 10–99.9 · "
+            "D 100–299 · E 300–999 · F 1,000–4,999 · G ≥ 5,000. Cada fila suma 100 %."
+        )
+
+    if 'tiene_contencion' in df_filtered.columns:
+        df_resp = df_filtered[df_filtered['tiene_contencion'] == 1]
+    else:
+        df_resp = df_filtered
+    n_antes = len(df_resp)
+    df_resp = df_resp[df_resp['dias_contencion'] <= 365].copy()
+
+    if not df_resp.empty:
+        df_resp['rango'] = pd.cut(
+            df_resp['dias_contencion'],
+            bins=[-1, 0, 1, 7, 30, 365],
+            labels=RANGOS_CONTENCION,
+        )
+        st.plotly_chart(
+            heatmap_porcentajes(
+                df_resp, 'rango', RANGOS_CONTENCION,
+                '% de Incendios por Tiempo de Contención y Tipo de Administración', 'Tiempo de contención',
+            ),
+            use_container_width=True,
+        )
+        st.caption(
+            f"Solo incendios con contención registrada; se excluyeron {n_antes - len(df_resp):,} "
+            "con más de 365 días (posibles errores de fecha)."
+        )
+    else:
+        st.warning("No hay registros suficientes para mostrar el tiempo de contención con los filtros seleccionados.")
+
+
+    st.markdown("---")
+
+#objetivo 5   
     st.header("Dinámica Estacional de la Severidad y Respuesta Operativa")
     st.markdown("""Evaluación del comportamiento del tiempo de contención y la superficie afectada
       a lo largo de las estaciones del año por región.""")
@@ -412,3 +620,79 @@ with tab3:
             valor=f"{promedio_anual:,.2f}",
             subtitulo="acres/año"
         )
+
+    MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
+    ORDEN_ESTACIONES = ['Primavera', 'Verano', 'Otoño', 'Invierno']
+    COLORES_ESTACION = {
+        'Invierno': '#FFF9E6',  
+        'Primavera': '#FFD966',  
+        'Verano': '#FF9933',  
+        'Otoño': '#D94E00',  
+    }
+
+    if not df_filtered.empty:
+        por_mes = (
+            df_filtered.groupby(['mes', 'estacion'])
+            .agg(incendios=('superficie_acres', 'size'),
+                acres=('superficie_acres', 'sum'))
+            .reset_index()
+        )
+        por_mes['mes_nombre'] = por_mes['mes'].map(lambda m: MESES_ES[int(m) - 1])
+
+        largo_mes = por_mes.melt(
+            id_vars=['mes', 'mes_nombre', 'estacion'],
+            value_vars=['incendios', 'acres'],
+            var_name='metrica',
+            value_name='valor',
+        )
+        largo_mes['metrica'] = largo_mes['metrica'].map({
+            'incendios': 'Número de incendios',
+            'acres': 'Superficie quemada (acres)',
+        })
+
+        fig_meses = px.bar(
+            largo_mes,
+            x='mes_nombre',
+            y='valor',
+            color='estacion',
+            facet_row='metrica',
+            color_discrete_map=COLORES_ESTACION,
+            category_orders={
+                'mes_nombre': MESES_ES,
+                'estacion': ORDEN_ESTACIONES,
+                'metrica': ['Número de incendios', 'Superficie quemada (acres)'],
+            },
+            title='Incendios y Superficie Quemada por Mes',
+            labels={'mes_nombre': 'Mes', 'valor': '', 'estacion': 'Estación'},
+            template='plotly_dark',
+        )
+        fig_meses.update_yaxes(matches=None, showticklabels=True)
+        fig_meses.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+        fig_meses.update_layout(height=600)
+        st.plotly_chart(fig_meses, use_container_width=True)
+
+        acres_region_mes = (
+            df_filtered.pivot_table(
+                index='region_nifc', columns='mes',
+                values='superficie_acres', aggfunc='sum', fill_value=0,
+            )
+            .reindex(columns=range(1, 13), fill_value=0)
+        )
+        acres_region_mes = acres_region_mes.loc[
+            acres_region_mes.sum(axis=1).sort_values(ascending=False).index
+        ]
+        perfil_mensual = acres_region_mes.div(acres_region_mes.sum(axis=1), axis=0) * 100
+
+        fig_calor_mes = px.imshow(
+            perfil_mensual,
+            x=MESES_ES,
+            y=perfil_mensual.index,
+            text_auto='.0f',
+            aspect='auto',
+            color_continuous_scale='YlOrRd',
+            title='¿Cuándo se Quema Cada Región? % de su Superficie Anual por Mes',
+            labels={'x': 'Mes', 'y': 'Región NIFC', 'color': '% anual'},
+            template='plotly_dark',
+        )
+        fig_calor_mes.update_layout(height=max(400, 50 * len(perfil_mensual) + 150))
+        st.plotly_chart(fig_calor_mes, use_container_width=True)
