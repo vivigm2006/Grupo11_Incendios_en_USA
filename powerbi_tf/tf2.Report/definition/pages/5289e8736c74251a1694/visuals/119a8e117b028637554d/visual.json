@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "119a8e117b028637554d",
+  "position": {
+    "x": 895.58900211497792,
+    "y": 552.72324552970588,
+    "z": 8000,
+    "height": 511.34289559700062,
+    "width": 650.26264179965392,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "region_name"
+                }
+              },
+              "queryRef": "main fact_incendio.region_name",
+              "nativeQueryRef": "region_name",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "Estados por Region"
+                }
+              },
+              "queryRef": "main fact_incendio.Estados por Region",
+              "nativeQueryRef": "Estados por Region"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main fact_incendio"
+                  }
+                },
+                "Property": "Estados por Region"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

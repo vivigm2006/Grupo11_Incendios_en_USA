@@ -1,0 +1,30 @@
+table 'main tabla_geographic_area'
+	lineageTag: c4078a44-66c9-4c5f-a250-c1f58b3f710c
+
+	column geographic_area_code
+		dataType: string
+		lineageTag: ea1e4d7a-69df-4a72-bd94-bb75d6e82951
+		summarizeBy: none
+		sourceColumn: geographic_area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column geographic_area_name
+		dataType: string
+		lineageTag: 803a21fa-09c6-411b-87b5-77b3c598f13a
+		summarizeBy: none
+		sourceColumn: geographic_area_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main tabla_geographic_area' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_geographic_area = Origen{[Schema="main",Item="tabla_geographic_area"]}[Data]
+				in
+				    main_tabla_geographic_area
+
+	annotation PBI_ResultType = Table
+

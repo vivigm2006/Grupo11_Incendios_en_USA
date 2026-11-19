@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "37e71c3c9c91dbc0b19c",
+  "position": {
+    "x": 47.291828494520288,
+    "y": 192.12305325898865,
+    "z": 1000,
+    "height": 307.39688521438188,
+    "width": 546.81176696789078,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "clase"
+                }
+              },
+              "queryRef": "main fact_incendio.clase",
+              "nativeQueryRef": "clase",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main fact_incendio"
+                    }
+                  },
+                  "Property": "Incendios por Clase Real"
+                }
+              },
+              "queryRef": "main fact_incendio.Incendios Clase",
+              "nativeQueryRef": "Incendios por Clase Real"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main fact_incendio"
+                  }
+                },
+                "Property": "Incendios por Clase Real"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tipos de incendios'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

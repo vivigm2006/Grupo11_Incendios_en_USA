@@ -1,0 +1,177 @@
+table 'main fact_incendio'
+	lineageTag: ac2e303e-421a-464c-bb4b-8e838efd4b8f
+
+	measure 'Incendios por Clase Real' =
+			
+			CALCULATE(
+			    COUNTROWS('main fact_incendio'),
+			    VALUES('main fact_incendio'[clase])
+			)
+		formatString: 0
+		lineageTag: a797f02d-c889-46cd-bca7-75cf65b1d3b7
+
+	measure 'Promedio Dias Contencion Real' =
+			
+			CALCULATE(
+			    AVERAGE('main fact_incendio'[dias_contencion]),
+			    'main fact_incendio'[dias_contencion] > 0
+			)
+		lineageTag: 960ebbf8-e4fb-4e64-9352-b0c86480623d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Estados por Region' =
+			
+			DISTINCTCOUNT ( 'main fact_incendio'[state_name] )
+		formatString: 0
+		lineageTag: 0730767d-95b8-4530-aaa6-73fbd5c2cfd6
+
+	column objectid
+		dataType: int64
+		formatString: 0
+		lineageTag: b5db451e-507f-45b6-90b5-732dfe8550e7
+		summarizeBy: none
+		sourceColumn: objectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_key
+		dataType: int64
+		formatString: 0
+		lineageTag: eb57d534-fc71-4619-9656-8c32eb5cafa4
+		summarizeBy: none
+		sourceColumn: fecha_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1253ffbe-28a6-4640-8b39-521b99969788
+		summarizeBy: none
+		sourceColumn: region_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column causa_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 51dbe47f-1a32-4961-b792-86bd3dab3f4a
+		summarizeBy: sum
+		sourceColumn: causa_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column administracion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d50bf41-708a-4005-90a9-723929a1621d
+		summarizeBy: sum
+		sourceColumn: administracion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column clase
+		dataType: string
+		lineageTag: 684dd98e-880f-454f-9d47-dc6035992fb7
+		summarizeBy: none
+		sourceColumn: clase
+
+		annotation SummarizationSetBy = Automatic
+
+	column ubicacion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f1c509d-a86d-4627-9a76-ca89adfba489
+		summarizeBy: none
+		sourceColumn: ubicacion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column incendios
+		dataType: int64
+		formatString: 0
+		lineageTag: 06d0b7eb-a6d0-4e25-b3cd-445d7b01d03a
+		summarizeBy: sum
+		sourceColumn: incendios
+
+		annotation SummarizationSetBy = Automatic
+
+	column acres
+		dataType: double
+		lineageTag: ffb1f336-ac39-452e-beed-c876b457070c
+		summarizeBy: sum
+		sourceColumn: acres
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tiene_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: ee15b7c2-b61e-459b-a8e6-2526125ab7b3
+		summarizeBy: sum
+		sourceColumn: tiene_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	column dias_contencion
+		dataType: int64
+		formatString: 0
+		lineageTag: dbafe467-4986-454a-8e09-67813c94e8f4
+		summarizeBy: sum
+		sourceColumn: dias_contencion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rango Dias Contencion' =
+			
+			SWITCH(
+			    TRUE(),
+			    'main fact_incendio'[dias_contencion] >= 1 && 'main fact_incendio'[dias_contencion] <= 50, "1. De 1 a 50 días",
+			    'main fact_incendio'[dias_contencion] > 50 && 'main fact_incendio'[dias_contencion] <= 150, "2. De 51 a 150 días",
+			    'main fact_incendio'[dias_contencion] > 150 && 'main fact_incendio'[dias_contencion] <= 500, "3. De 151 a 500 días",
+			    'main fact_incendio'[dias_contencion] > 500, "4. Más de 500 días",
+			    "Sin días / Mismo día"
+			)
+		lineageTag: 88b0773a-60c6-4c0e-8ea7-60a02c1982f2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_name = RELATED ( 'main dim_region'[region_name] )
+		lineageTag: cf6e0d45-bab5-470d-8fe0-a7d38844bd3b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name = RELATED ( 'main dim_ubicacion'[state_name] )
+		lineageTag: 733cc8b5-329b-480d-9013-7fddf547491d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'region_key Jerarquía'
+		lineageTag: 988e660a-29cd-446a-907d-794b22842e22
+
+		level region_key
+			lineageTag: ae42974e-47d9-438d-9312-c61c715cdf89
+			column: region_key
+
+	partition 'main fact_incendio' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_fact_incendio = Origen{[Schema="main",Item="fact_incendio"]}[Data],
+				    #"Filas ordenadas" = Table.Sort(main_fact_incendio,{{"dias_contencion", Order.Ascending}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Filas ordenadas",{{"dias_contencion", Int64.Type}}),
+				    #"Filas ordenadas1" = Table.Sort(#"Tipo cambiado",{{"dias_contencion", Order.Descending}})
+				in
+				    #"Filas ordenadas1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

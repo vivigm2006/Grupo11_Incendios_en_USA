@@ -1,0 +1,39 @@
+table 'main dim_administracion'
+	lineageTag: a80443c0-043d-41ad-beb3-bf1ce7682fce
+
+	column administracion_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a9460a9-9f7a-4933-b609-81b3a783ee86
+		summarizeBy: sum
+		sourceColumn: administracion_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column propietario
+		dataType: string
+		lineageTag: 5f04a67e-897d-4813-9134-c2e0f629478f
+		summarizeBy: none
+		sourceColumn: propietario
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo_administracion
+		dataType: string
+		lineageTag: 4950f736-bfe6-40c1-8ae5-3363a028fdd6
+		summarizeBy: none
+		sourceColumn: tipo_administracion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main dim_administracion' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_dim_administracion = Origen{[Schema="main",Item="dim_administracion"]}[Data]
+				in
+				    main_dim_administracion
+
+	annotation PBI_ResultType = Table
+

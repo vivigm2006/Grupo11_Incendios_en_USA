@@ -1,0 +1,48 @@
+table 'main tabla_condado'
+	lineageTag: b6152e71-bb98-489e-924e-d0b9f746012e
+
+	column state_code
+		dataType: string
+		lineageTag: ab58fa0e-d300-4caa-b741-07c3fbeb55f6
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fips_code
+		dataType: string
+		lineageTag: a74408e3-0fea-4a26-91a5-f572ace28e85
+		summarizeBy: none
+		sourceColumn: fips_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column fips_name
+		dataType: string
+		lineageTag: 6eee5bcb-7c66-4fd5-a59e-3d5fc75e7bdb
+		summarizeBy: none
+		sourceColumn: fips_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column land_sq_mi
+		dataType: double
+		lineageTag: a3a82437-0263-451f-a6bf-7bc8cade4d98
+		summarizeBy: sum
+		sourceColumn: land_sq_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'main tabla_condado' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_condado = Origen{[Schema="main",Item="tabla_condado"]}[Data]
+				in
+				    main_tabla_condado
+
+	annotation PBI_ResultType = Table
+

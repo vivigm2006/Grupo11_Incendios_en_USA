@@ -1,0 +1,38 @@
+table 'main tabla_estado'
+	lineageTag: f6312118-ef95-4721-9b29-ee2ef2ef36b9
+
+	column state_code
+		dataType: string
+		lineageTag: 3a6bf278-5ef1-483d-809b-b6103419973c
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		lineageTag: 6ca56421-46a4-4dd6-b36d-d20e8bb87783
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_abbr
+		dataType: string
+		lineageTag: d7287e59-0092-4cd3-96cb-bd03caccc7ab
+		summarizeBy: none
+		sourceColumn: state_abbr
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'main tabla_estado' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("pg.us-east-1-aws.motherduck.com", "incendios_usa"),
+				    main_tabla_estado = Origen{[Schema="main",Item="tabla_estado"]}[Data]
+				in
+				    main_tabla_estado
+
+	annotation PBI_ResultType = Table
+
