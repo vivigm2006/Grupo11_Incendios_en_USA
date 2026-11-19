@@ -273,6 +273,9 @@ with tab2:
     else:
         st.info("No hay suficientes datos filtrados para mostrar el gráfico de proporciones de causa.")
 
+    st.markdown("---")
+    
+    #objetivo 3
     st.header("Concentración Territorial de Incendios de Alta Severidad y Mega-Incendios")
     st.markdown("""Cuantificación de eventos críticos a nivel nacional e identificación de las 
     regiones con mayor vulnerabilidad a eventos de gran magnitud.""")
@@ -438,7 +441,7 @@ with tab3: #objetivo 4
             prom_dias = 0
             
         tarjeta_metrica(
-            titulo="Tiempo promedio de incendio",
+            titulo="Tiempo promedio de contencion",
             valor=f"{prom_dias:.1f} días",
             subtitulo="Duración media por evento"
         )
@@ -546,6 +549,9 @@ with tab3: #objetivo 4
         )
     else:
         st.warning("No hay registros suficientes para mostrar el tiempo de contención con los filtros seleccionados.")
+
+
+    st.markdown("---")
 
 #objetivo 5   
     st.header("Dinámica Estacional de la Severidad y Respuesta Operativa")
