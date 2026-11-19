@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "37e71c3c9c91dbc0b19c",
   "position": {
-    "x": 47.291828494520288,
-    "y": 192.12305325898865,
+    "x": 1399.6553829455261,
+    "y": 28.133776541618616,
     "z": 1000,
-    "height": 307.39688521438188,
-    "width": 546.81176696789078,
+    "height": 445.45146190896139,
+    "width": 501.71901499219865,
     "tabOrder": 1000
   },
   "visual": {
@@ -99,5 +99,24 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "105e80111337d5121129",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "main fact_incendio"
+              }
+            },
+            "Property": "clase"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
   }
 }

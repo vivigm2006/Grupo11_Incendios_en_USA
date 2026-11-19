@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "14aca030772cad54acdc",
   "position": {
-    "x": 20.690174966352625,
-    "y": 47.291828494520288,
+    "x": 23.444813784682179,
+    "y": 46.889627569364357,
     "z": 4000,
-    "height": 133.00826764083831,
-    "width": 301.48540665256684,
+    "height": 164.11369649277526,
+    "width": 215.69228681907606,
     "tabOrder": 4000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "main vista_obj1_distribucion_regional.Total Incendios por Región",
-              "nativeQueryRef": "Total Incendios"
+              "nativeQueryRef": "Total Incendios",
+              "format": "0.00"
             }
           ]
         }
@@ -120,6 +121,19 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "calloutSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "70D"
+                }
+              }
+            }
           }
         }
       ]

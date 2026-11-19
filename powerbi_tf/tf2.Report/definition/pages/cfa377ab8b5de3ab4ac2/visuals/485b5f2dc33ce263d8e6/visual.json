@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
-  "name": "72b53a14ae467b31a006",
+  "name": "485b5f2dc33ce263d8e6",
   "position": {
-    "x": 1575.409036723707,
-    "y": 611.83803114785621,
-    "z": 9000,
-    "height": 425.62645645068255,
-    "width": 552.72324552970588,
-    "tabOrder": 9000
+    "x": 45.238095238095241,
+    "y": 745.2380952380953,
+    "z": 3000,
+    "height": 335.71428571428572,
+    "width": 450,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "treemap",
@@ -234,42 +234,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5b84bde00767a9381d03",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "main vista_obj2_causas_region"
-              }
-            },
-            "Property": "origen_causa"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c9f87e02290a3c05e877",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "main vista_obj2_causas_region"
-                  }
-                },
-                "Property": "frecuencia"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

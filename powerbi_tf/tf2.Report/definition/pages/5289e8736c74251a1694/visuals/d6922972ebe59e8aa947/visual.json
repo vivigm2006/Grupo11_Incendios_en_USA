@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "d6922972ebe59e8aa947",
   "position": {
-    "x": 617.7495097096712,
-    "y": 192.12305325898865,
+    "x": 1530.9463401397463,
+    "y": 494.685570856794,
     "z": 7000,
-    "height": 292.61818880984424,
-    "width": 363.55593155162472,
+    "height": 356.36116952716912,
+    "width": 370.42805779797845,
     "tabOrder": 7000
   },
   "visual": {
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Sum(main fact_incendio.incendios)",
-              "nativeQueryRef": "Suma de incendios"
+              "nativeQueryRef": "Suma de incendios",
+              "format": "#,0"
             }
           ]
         }

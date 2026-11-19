@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "f2bd991c05501aa5725b",
   "position": {
-    "x": 533.95270140357616,
-    "y": 387.4701019034801,
+    "x": 533.33333333333337,
+    "y": 590.47619047619048,
     "z": 0,
-    "height": 578.84253028263788,
-    "width": 609.55662372620645,
+    "height": 457.14285714285717,
+    "width": 759.52380952380952,
     "tabOrder": 0
   },
   "visual": {
@@ -41,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "main vista_obj1_distribucion_regional"
+                          "Entity": "main fact_incendio"
                         }
                       },
-                      "Property": "total_acres_quemados"
+                      "Property": "dias_contencion"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(main vista_obj1_distribucion_regional.total_acres_quemados)",
-              "nativeQueryRef": "Suma de total_acres_quemados"
+              "queryRef": "Sum(main fact_incendio.dias_contencion)",
+              "nativeQueryRef": "Suma de dias_contencion"
             }
           ]
         }
@@ -65,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "main vista_obj1_distribucion_regional"
+                        "Entity": "main fact_incendio"
                       }
                     },
-                    "Property": "total_acres_quemados"
+                    "Property": "dias_contencion"
                   }
                 },
                 "Function": 0

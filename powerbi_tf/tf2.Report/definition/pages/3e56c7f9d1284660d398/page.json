@@ -38,7 +38,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'White and Orange Minimalist Modern Forest Nature Presentation (1).png'"
+                    "Value": "'White and Orange Minimalist Modern Forest Nature Presentation (5).png'"
                   }
                 }
               },
@@ -47,7 +47,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "White_and_Orange_Minimalist_Mo37158144121207537.png"
+                    "ItemName": "White_and_Orange_Minimalist_Mo19505424002452265.png"
                   }
                 }
               },
@@ -57,6 +57,13 @@
                     "Value": "'Normal'"
                   }
                 }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
               }
             }
           }

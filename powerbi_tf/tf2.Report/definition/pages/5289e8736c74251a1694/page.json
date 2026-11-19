@@ -4,7 +4,7 @@
   "displayName": "Página 2",
   "displayOption": "FitToPage",
   "height": 1080,
-  "width": 2402,
+  "width": 1920,
   "filterConfig": {
     "filters": [
       {
@@ -68,7 +68,7 @@
         }
       },
       {
-        "name": "81dd6f239b128c399cec",
+        "name": "012912b03c68caccb82c",
         "field": {
           "Column": {
             "Expression": {
@@ -76,26 +76,11 @@
                 "Entity": "main fact_incendio"
               }
             },
-            "Property": "Rango Dias Contencion"
+            "Property": "clase"
           }
         },
         "type": "Categorical",
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        "howCreated": "User"
       }
     ]
   },
@@ -150,12 +135,17 @@
   "type": "Tooltip",
   "visualInteractions": [
     {
-      "source": "4623fc92b5075dadc93d",
-      "target": "37e71c3c9c91dbc0b19c",
+      "source": "d1a2b463ecbb508d422e",
+      "target": "119a8e117b028637554d",
       "type": "DataFilter"
     },
     {
-      "source": "4623fc92b5075dadc93d",
+      "source": "1cc705c1164dc596c958",
+      "target": "119a8e117b028637554d",
+      "type": "DataFilter"
+    },
+    {
+      "source": "119a8e117b028637554d",
       "target": "1cc705c1164dc596c958",
       "type": "DataFilter"
     }

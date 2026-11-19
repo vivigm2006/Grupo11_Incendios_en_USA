@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "893b98811a31d0a62769",
+  "position": {
+    "x": 1138.0952380952381,
+    "y": 38.095238095238095,
+    "z": 2000,
+    "height": 433.33333333333337,
+    "width": 752.38095238095241,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "main vista_obj4_administracion_terreno"
+                    }
+                  },
+                  "Property": "tipo_administracion"
+                }
+              },
+              "queryRef": "main vista_obj4_administracion_terreno.tipo_administracion",
+              "nativeQueryRef": "tipo_administracion",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main vista_obj1_distribucion_regional"
+                        }
+                      },
+                      "Property": "total_acres_quemados"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(main vista_obj1_distribucion_regional.total_acres_quemados)",
+              "nativeQueryRef": "Suma de total_acres_quemados"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "main vista_obj1_distribucion_regional"
+                      }
+                    },
+                    "Property": "total_acres_quemados"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
-  "name": "4623fc92b5075dadc93d",
+  "name": "36f457f466dd36266ad6",
   "position": {
-    "x": 1678.8599115554703,
-    "y": 23.645914247260144,
-    "z": 2000,
+    "x": 45.238095238095241,
+    "y": 178.57142857142858,
+    "z": 4000,
     "height": 549.76750624879833,
     "width": 449.27237069794273,
-    "tabOrder": 2000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "main dim_causa.Totales por Región",
-              "nativeQueryRef": "Totales por Región"
+              "nativeQueryRef": "Totales por Región",
+              "format": "#,0"
             }
           ]
         }

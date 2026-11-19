@@ -40,7 +40,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -70,8 +70,8 @@
           "type": "CustomTheme"
         },
         {
-          "name": "White_and_Orange_Minimalist_Mo37158144121207537.png",
-          "path": "White_and_Orange_Minimalist_Mo37158144121207537.png",
+          "name": "White_and_Orange_Minimalist_Mo19505424002452265.png",
+          "path": "White_and_Orange_Minimalist_Mo19505424002452265.png",
           "type": "Image"
         },
         {

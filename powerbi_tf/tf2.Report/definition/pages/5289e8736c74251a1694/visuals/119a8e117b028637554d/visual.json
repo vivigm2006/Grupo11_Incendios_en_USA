@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "119a8e117b028637554d",
   "position": {
-    "x": 895.58900211497792,
-    "y": 552.72324552970588,
+    "x": 844.0132962485585,
+    "y": 28.133776541618616,
     "z": 8000,
-    "height": 511.34289559700062,
-    "width": 650.26264179965392,
+    "height": 445.45146190896139,
+    "width": 522.81934739841256,
     "tabOrder": 8000
   },
   "visual": {
@@ -78,6 +78,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Estados por Region '"
                 }
               }
             }
