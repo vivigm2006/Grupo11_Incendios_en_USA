@@ -340,10 +340,14 @@ WHERE puesto <= 10
 ORDER BY puesto ASC, estado ASC;
         """,
         "interpretacion": (
-            """### Interpretación de resultados
-* **Liderazgo en continuidad:** **AR** encabeza el ranking (**Puesto 1**) con **8 años consecutivos** de incremento en superficie quemada (**1993–2000**), pasando de **1,478.5** a **29,052.5** (cociente de **19.65**), seguido por **LA** (**Puesto 2**, **6 años**, **1995–2000**, cociente **36.16**) y **KY** (**Puesto 3**, **5 años**, **1997–2001**, cociente **156.72**).
-* **Empates en duraciones intermedias:** Los puestos siguientes concentran múltiples estados con igual cantidad de años en racha (`DENSE_RANK()`): **4 años** en el **Puesto 4** (**AL**, **FL**, **ND**, **NE**, **OK**, **TN**, **VA**), **3 años** en el **Puesto 5** y **2 años** en el **Puesto 6**.
-* **Crecimiento relativo vs. duración:** Una racha más larga no implica necesariamente el mayor cociente de superficie: **KS** (**2 años**, **1993–1994**, **Puesto 6**) registra el cociente más alto visible (**335.69**), y **TN** (**156.98**) destaca dentro del **Puesto 4** frente a estados con igual duración y menor multiplicador relativo.
+            """Interpretación de resultados
+La consulta busca qué estados con datos completos de 1992 a 2015 tuvieron más años seguidos 
+aumentando su superficie quemada y calcula cuánto creció al final de su mejor racha. En los 
+resultados lidera AR con 8 años seguidos, seguido por LA con 6 y KY con 5, mientras que en los 
+puestos siguientes se acumulan empates y casos como KS muestran cambios proporcionales enormes en 
+rachas cortas. Esto sugiere que ir subiendo año tras año refleja condiciones que se van acumulando 
+con el tiempo, mientras que los saltos bruscos en pocos años apuntan a momentos puntuales muy fuertes 
+más que a una tendencia larga.
 """
         ),
     },
