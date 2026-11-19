@@ -183,15 +183,125 @@ ORDER BY puesto_global ASC;""",
         "id": "q4",
         "titulo": "Pregunta 4: Cambio de Causa Dominante",
         "enunciado": (
-            "Se comparan dos periodos de doce años según el año del incendio"
-            " (FIRE_YEAR): de 1992 a 2003 y de 2004 a 2015."
+            """Se comparan dos periodos de doce años según el año del incendio (FIRE_YEAR): de 1992 a 2003 y de 2004 a 2015.
+            Interesa saber en qué estados cambió la causa que más incendios provoca.
+
+Excluye las causas Miscellaneous y Missing/Undefined, que no identifican un origen real. La causa dominante de un estado
+en un periodo es la que tiene más incendios; en caso de empate, la primera en orden alfabético. Los porcentajes se calculan 
+sobre los incendios del estado en ese periodo, ya sin las dos causas excluidas.
+
+Lista los estados cuya causa dominante es distinta en los dos periodos. Muestra la causa dominante de cada periodo con su 
+porcentaje, el porcentaje que conserva en el segundo periodo la causa que dominaba en el primero, y la suma de los incendios 
+de ambas causas dominantes (cada una contada en su propio periodo). Ordena por estado.
+"""
         ),
-        "sql": """
+        "sql": """WITH BaseFires AS (
+    -- Filtra los años y excluye las causas indicadas
+    SELECT 
+        STATE AS estado,
+        STAT_CAUSE_DESCR AS causa,
+        CASE 
+            WHEN FIRE_YEAR BETWEEN 1992 AND 2003 THEN '1992-2003'
+            WHEN FIRE_YEAR BETWEEN 2004 AND 2015 THEN '2004-2015'
+        END AS periodo
+    FROM Fires
+    WHERE FIRE_YEAR BETWEEN 1992 AND 2015
+      AND STAT_CAUSE_DESCR NOT IN ('Miscellaneous', 'Missing/Undefined')
+      AND STATE IS NOT NULL
+),
+TotalEstadoPeriodo AS (
+    -- Total de incendios válidos por estado y periodo (para calcular porcentajes reales)
+    SELECT 
+        estado,
+        periodo,
+        COUNT(*) AS total_estado
+    FROM BaseFires
+    GROUP BY estado, periodo
+),
+ConteoCausas AS (
+    -- Conteo de incendios por causa, estado y periodo
+    SELECT 
+        bf.estado,
+        bf.periodo,
+        bf.causa,
+        COUNT(*) AS cant_causa,
+        tep.total_estado
+    FROM BaseFires bf
+    JOIN TotalEstadoPeriodo tep ON bf.estado = tep.estado AND bf.periodo = tep.periodo
+    GROUP BY bf.estado, bf.periodo, bf.causa, tep.total_estado
+),
+CausasRankeadas AS (
+    -- Función de ventana: Asigna un ranking ordenando por cantidad descendente y por orden alfabético en caso de empate
+    SELECT 
+        estado,
+        periodo,
+        causa,
+        cant_causa,
+        ROUND(CAST(cant_causa AS REAL) * 100.0 / total_estado, 2) AS porcentaje_causa,
+        ROW_NUMBER() OVER (PARTITION BY estado, periodo ORDER BY cant_causa DESC, causa ASC) as rnk
+    FROM ConteoCausas
+),
+Dominantes AS (
+    -- Filtra únicamente la causa dominante (puesto 1) de cada estado y periodo
+    SELECT 
+        estado,
+        periodo,
+        causa,
+        cant_causa,
+        porcentaje_causa
+    FROM CausasRankeadas
+    WHERE rnk = 1
+),
+PorcentajesPeriodo2 AS (
+    -- CTE auxiliar con los porcentajes de todas las causas en el periodo 2
+    SELECT estado, causa, porcentaje_causa
+    FROM CausasRankeadas
+    WHERE periodo = '2004-2015'
+),
+PivoteEstados AS (
+    -- SELF JOIN: Cruza la tabla de dominantes del periodo 1 con la del periodo 2 para el mismo estado
+    SELECT 
+        d1.estado,
+        d1.causa AS causa_p1,
+        d1.porcentaje_causa AS porc_p1,
+        d1.cant_causa AS cant_p1,
+        d2.causa AS causa_p2,
+        d2.porcentaje_causa AS porc_p2,
+        d2.cant_causa AS cant_p2,
+        -- Subconsulta para obtener el porcentaje exacto que conserva en el periodo 2 la causa que dominaba en el periodo 1
+        (SELECT COALESCE(p.porcentaje_causa, 0.0) 
+         FROM PorcentajesPeriodo2 p 
+         WHERE p.estado = d1.estado AND p.causa = d1.causa) AS porc_p1_en_p2
+    FROM Dominantes d1
+    JOIN Dominantes d2 ON d1.estado = d2.estado
+    WHERE d1.periodo = '1992-2003' 
+      AND d2.periodo = '2004-2015'
+      AND d1.causa <> d2.causa -- Filtra solo los estados donde cambió la causa dominante
+)
+-- Consulta final con alias descriptivos en español ordenados por estado
+SELECT 
+    estado AS "Estado",
+    causa_p1 AS "Causa Dominante Periodo 1 (1992-2003)",
+    porc_p1 AS "Porcentaje Periodo 1 (%)",
+    causa_p2 AS "Causa Dominante Periodo 2 (2004-2015)",
+    porc_p2 AS "Porcentaje Periodo 2 (%)",
+    porc_p1_en_p2 AS "Porcentaje de Causa 1 en Periodo 2 (%)",
+    (cant_p1 + cant_p2) AS "Suma de Incendios de Ambas Causas Dominantes"
+FROM PivoteEstados
+ORDER BY estado ASC;
 """,
         "interpretacion": (
-            "**Interpretación:** Aquí puedes resumir en qué estados cambió la"
-            " causa dominante y cuánto peso conservó la causa anterior en"
-            " 2004–2015."
+            """ **Cambio dominante de Arson a Debris Burning:** De los 18 estados donde cambió la causa principal, 
+            en la mayoría fueron en 10 estados (AR, CT, IL, KY, MA, MD, MS, OH, TN, WV) Arson lideraba entre 1992–2003, 
+            pero entre 2004–2015 fue desplazado por Debris Burning, llegando a superar el 65% de los incendios en estados 
+            como OH (70.69%) y KY (66.36%). 
+            
+            **Caídas drásticas vs. relevos reñidos:** En estados como FL Railroad pasó de 32.54% en 1992-2003 a 0.84% en 
+            2004-2015 o DE Arson bajó de 43.18% en 1992-2003 a 3.51% en 1992-2003. Prácticamente la causa original no solo 
+            perdió el liderazgo, sino que dejó de ser relevante. En cambio, en AL, MN o SD, ambas causas quedaron casi 
+            empatadas en el segundo periodo. 
+
+"""
         ),
     },
     {
