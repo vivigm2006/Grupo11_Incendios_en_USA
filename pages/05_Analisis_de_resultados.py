@@ -41,8 +41,8 @@ def cargar_datos():
    query = f"""
         SELECT
             objectid, estado, region_nifc, tipo_administracion,
-            origen_causa, anio, nombre_mes, estacion, clase,
-            superficie_acres, dias_contencion, tiene_contencion
+            origen_causa, anio, nombre_mes, mes, estacion, clase,
+            superficie_acres, dias_contencion, tiene_contencion, es_megaincendio
         FROM {REF}
     """
    for intento in range(3):

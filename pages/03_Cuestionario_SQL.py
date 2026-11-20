@@ -28,7 +28,7 @@ if not MOTHERDUCK_TOKEN:
     st.stop()
 
 # Ajusta aquí la base si tu tabla Fires está en otra en MotherDuck (p. ej. "Consultasbbdd")
-BASE_DATOS = "incendios_usa"
+BASE_DATOS = "consultasbbdd"
 
 
 @st.cache_resource
