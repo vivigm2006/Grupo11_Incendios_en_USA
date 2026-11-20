@@ -19,10 +19,16 @@ st.set_page_config(
     layout="wide",
 )
 
-MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
+MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
+if not MOTHERDUCK_TOKEN:
+    try:
+        MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
+    except Exception:
+        MOTHERDUCK_TOKEN = None
 
-os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
-
+if not MOTHERDUCK_TOKEN:
+    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en secrets.toml.")
+    st.stop()
 @st.cache_resource
 def get_connection():
   return duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
