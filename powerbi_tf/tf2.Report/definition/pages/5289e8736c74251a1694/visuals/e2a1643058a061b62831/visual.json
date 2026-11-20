@@ -1,146 +1,142 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
-  "name": "36f457f466dd36266ad6",
+  "name": "e2a1643058a061b62831",
   "position": {
-    "x": 45.238095238095241,
-    "y": 178.57142857142858,
-    "z": 4000,
-    "height": 549.76750624879833,
-    "width": 449.27237069794273,
-    "tabOrder": 4000
+    "x": 23.444813784682179,
+    "y": 175.83610338511636,
+    "z": 8003,
+    "height": 168.8026592497117,
+    "width": 717.41130181127471,
+    "tabOrder": 8003
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "treemap",
     "query": {
       "queryState": {
-        "Values": {
+        "Group": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "main dim_causa"
+                      "Entity": "main vista_obj2_causas_region"
                     }
                   },
-                  "Property": "causa_especifica"
+                  "Property": "origen_causa"
                 }
               },
-              "queryRef": "main dim_causa.causa_especifica",
-              "nativeQueryRef": "causa_especifica"
-            },
+              "queryRef": "main vista_obj2_causas_region.origen_causa",
+              "nativeQueryRef": "origen_causa",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "main dim_causa"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main vista_obj2_causas_region"
+                        }
+                      },
+                      "Property": "frecuencia"
                     }
                   },
-                  "Property": "Totales por Región"
+                  "Function": 0
                 }
               },
-              "queryRef": "main dim_causa.Totales por Región",
-              "nativeQueryRef": "Totales por Región",
-              "format": "#,0"
+              "queryRef": "Sum(main vista_obj2_causas_region.frecuencia)",
+              "nativeQueryRef": "Suma de frecuencia"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "main dim_causa"
-                  }
-                },
-                "Property": "Totales por Región"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
+        "isDefaultSort": true
       }
     },
     "objects": {
-      "columnHeaders": [
+      "legend": [
         {
           "properties": {
-            "columnAdjustment": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'growToFit'"
+                  "Value": "16D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "grid": [
-        {
-          "properties": {
-            "gridHorizontal": {
+            },
+            "showTitle": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "gridHorizontalColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#E53030'"
-                    }
-                  }
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Causas'"
                 }
               }
             },
-            "gridVertical": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "values": [
+      "labels": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "fontSize": {
               "expr": {
                 "Literal": {
                   "Value": "12D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
+            },
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "210.22131199542656D"
+                  "Value": "1000D"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "main dim_causa.causa_especifica"
           }
         }
       ]
     },
     "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "border": [
         {
           "properties": {
@@ -155,49 +151,24 @@
                 }
               }
             },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "18D"
-                }
-              }
-            },
             "width": {
               "expr": {
                 "Literal": {
                   "Value": "3D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "background": [
-        {
-          "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
             },
-            "transparency": {
+            "radius": {
               "expr": {
                 "Literal": {
-                  "Value": "81D"
+                  "Value": "11D"
                 }
               }
             }
           }
         }
       ],
-      "title": [
+      "dropShadow": [
         {
           "properties": {
             "show": {
@@ -207,10 +178,21 @@
                 }
               }
             },
-            "text": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#892525'"
+                    }
+                  }
+                }
+              }
+            },
+            "shadowSpread": {
               "expr": {
                 "Literal": {
-                  "Value": "'Causas de Incendios'"
+                  "Value": "2D"
                 }
               }
             }
@@ -220,10 +202,30 @@
       "subTitle": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Proporción causas'"
                 }
               }
             }

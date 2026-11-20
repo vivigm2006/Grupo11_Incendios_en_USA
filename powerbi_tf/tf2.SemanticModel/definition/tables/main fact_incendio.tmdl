@@ -120,10 +120,10 @@ table 'main fact_incendio'
 		dataType: int64
 		formatString: 0
 		lineageTag: dbafe467-4986-454a-8e09-67813c94e8f4
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: dias_contencion
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Rango Dias Contencion' =
 			
