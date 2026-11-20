@@ -191,3 +191,7 @@ table 'main vista_general_detallada'
 				in
 				    main_vista_general_detallada
 
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

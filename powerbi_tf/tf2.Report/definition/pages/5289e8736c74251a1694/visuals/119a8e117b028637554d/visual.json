@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "119a8e117b028637554d",
   "position": {
-    "x": 844.0132962485585,
-    "y": 28.133776541618616,
+    "x": 785.40126178685307,
+    "y": 11.722406892341089,
     "z": 8000,
-    "height": 445.45146190896139,
-    "width": 522.81934739841256,
+    "height": 436.07353639508852,
+    "width": 696.31096940506075,
     "tabOrder": 8000
   },
   "visual": {
@@ -36,17 +36,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "main fact_incendio"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main fact_incendio"
+                        }
+                      },
+                      "Property": "incendios"
                     }
                   },
-                  "Property": "Estados por Region"
+                  "Function": 0
                 }
               },
-              "queryRef": "main fact_incendio.Estados por Region",
-              "nativeQueryRef": "Estados por Region"
+              "queryRef": "Sum(main fact_incendio.incendios)",
+              "nativeQueryRef": "Suma de incendios"
             }
           ]
         }
@@ -55,13 +60,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "main fact_incendio"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "main fact_incendio"
+                      }
+                    },
+                    "Property": "incendios"
                   }
                 },
-                "Property": "Estados por Region"
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -90,7 +100,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Estados por Region '"
+                  "Value": "'Total de Incendios por Region'"
                 }
               }
             }

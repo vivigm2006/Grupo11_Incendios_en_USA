@@ -3,10 +3,10 @@
   "name": "d1a2b463ecbb508d422e",
   "position": {
     "x": 23.444813784682179,
-    "y": 269.61535852384509,
+    "y": 361.05013228410559,
     "z": 3000,
-    "height": 792.43470592225765,
-    "width": 787.74574316532119,
+    "height": 700.99993216199721,
+    "width": 747.88955973136149,
     "tabOrder": 3000
   },
   "visual": {
@@ -167,7 +167,7 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "2.43D"
+                  "Value": "2.34D"
                 }
               }
             },
@@ -455,5 +455,75 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7484e8f6405e01056d00",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "main dim_ubicacion"
+              }
+            },
+            "Property": "state_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb7cb262b7e3b07a1d66",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "main vista_obj1_distribucion_regional"
+              }
+            },
+            "Property": "Total Acres Quemados"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2f0c2fb0e13ae241b872",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main dim_ubicacion"
+                  }
+                },
+                "Property": "longitude"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aa159152bb848ee6e963",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "main dim_ubicacion"
+                  }
+                },
+                "Property": "latitude"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

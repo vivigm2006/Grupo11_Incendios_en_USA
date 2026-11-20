@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "a5588dfdd7c0a06203c3",
   "position": {
-    "x": 518.13038464147621,
-    "y": 46.889627569364357,
+    "x": 464.20731293670718,
+    "y": 25.7892951631504,
     "z": 6000,
-    "height": 164.11369649277526,
+    "height": 131.2909571942202,
     "width": 276.64880265924972,
     "tabOrder": 6000
   },
@@ -17,17 +17,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "main fact_incendio"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "main fact_incendio"
+                        }
+                      },
+                      "Property": "dias_contencion"
                     }
                   },
-                  "Property": "Promedio Dias Contencion Real"
+                  "Function": 1
                 }
               },
-              "queryRef": "main fact_incendio.Promedio Dias Contencion Real",
-              "nativeQueryRef": "Promedio Dias Contencion Real"
+              "queryRef": "CountNonNull(main fact_incendio.dias_contencion)",
+              "nativeQueryRef": "Promedio de dias_contencion"
             }
           ]
         }
@@ -36,13 +41,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "main fact_incendio"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "main fact_incendio"
+                      }
+                    },
+                    "Property": "dias_contencion"
                   }
                 },
-                "Property": "Promedio Dias Contencion Real"
+                "Function": 1
               }
             },
             "direction": "Descending"
