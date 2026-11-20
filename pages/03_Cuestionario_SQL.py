@@ -56,14 +56,91 @@ PREGUNTAS = [
         "id": "q1",
         "titulo": "Pregunta 1: Peso de Cada Causa en Dos Periodos",
         "enunciado": (
-            "Se comparan dos periodos de doce años según el año del incendio"
-            " (FIRE_YEAR): de 1992 a 2003 y de 2004 a 2015."
+           '''Se comparan dos periodos de doce años según el año del incendio (FIRE_YEAR):
+           de 1992 a 2003 y de 2004 a 2015.
+
+Para cada causa y periodo calcula la cantidad de incendios y el porcentaje que representa sobre 
+todos los incendios de ese periodo, contando todas las causas. Obtén los dos periodos en una misma 
+fila cruzando ese resultado consigo mismo.
+
+Muestra solo las causas cuyos incendios, sumando ambos periodos, alcancen al menos el 1 % de todos 
+los incendios de la base. Para cada una indica los incendios y el porcentaje de cada periodo, el cambio 
+en puntos porcentuales y su puesto según ese cambio, de mayor a menor. Ordena por puesto.
+'''
         ),
-        "sql": """
+        "sql": """WITH TotalesPeriodo AS (
+    SELECT 
+        CASE 
+            WHEN FIRE_YEAR BETWEEN 1992 AND 2003 THEN '1992-2003'
+            WHEN FIRE_YEAR BETWEEN 2004 AND 2015 THEN '2004-2015'
+        END AS periodo,
+        COUNT(*) AS total_periodo
+    FROM Fires
+    WHERE FIRE_YEAR BETWEEN 1992 AND 2015
+    GROUP BY periodo
+),
+CausaPeriodo AS (
+    SELECT 
+        STAT_CAUSE_DESCR AS causa,
+        CASE 
+            WHEN FIRE_YEAR BETWEEN 1992 AND 2003 THEN '1992-2003'
+            WHEN FIRE_YEAR BETWEEN 2004 AND 2015 THEN '2004-2015'
+        END AS periodo,
+        COUNT(*) AS cant_incendios
+    FROM Fires
+    WHERE FIRE_YEAR BETWEEN 1992 AND 2015
+    GROUP BY STAT_CAUSE_DESCR, periodo
+),
+CausasValidas AS (
+    SELECT STAT_CAUSE_DESCR AS causa
+    FROM Fires
+    WHERE FIRE_YEAR BETWEEN 1992 AND 2015
+    GROUP BY STAT_CAUSE_DESCR
+    HAVING COUNT(*) >= 0.01 * (SELECT COUNT(*) FROM Fires)
+),
+CausasConPorcentaje AS (
+    SELECT 
+        cp.causa,
+        cp.periodo,
+        cp.cant_incendios,
+        ROUND(CAST(cp.cant_incendios AS REAL) * 100.0 / tp.total_periodo, 2) AS porcentaje
+    FROM CausaPeriodo cp
+    JOIN TotalesPeriodo tp ON cp.periodo = tp.periodo
+    WHERE cp.causa IN (SELECT causa FROM CausasValidas)
+),
+PivotePeriodos AS (
+    SELECT 
+        p1.causa AS causa,
+        p1.cant_incendios AS incendios_p1,
+        p1.porcentaje AS porcentaje_p1,
+        p2.cant_incendios AS incendios_p2,
+        p2.porcentaje AS porcentaje_p2,
+        (p2.porcentaje - p1.porcentaje) AS cambio_pp
+    FROM CausasConPorcentaje p1
+    JOIN CausasConPorcentaje p2 ON p1.causa = p2.causa
+    WHERE p1.periodo = '1992-2003' AND p2.periodo = '2004-2015'
+)
+SELECT 
+    causa AS "Causa del Incendio",
+    incendios_p1 AS "Incendios Periodo 1992-2003",
+    porcentaje_p1 AS "Porcentaje Periodo 1 (%)",
+    incendios_p2 AS "Incendios Periodo 2004-2015",
+    porcentaje_p2 AS "Porcentaje Periodo 2 (%)",
+    cambio_pp AS "Cambio en Puntos Porcentuales",
+    RANK() OVER (ORDER BY cambio_pp DESC) AS "Puesto"
+FROM PivotePeriodos
+ORDER BY "Puesto" ASC;
         """,
         "interpretacion": (
-            "**Interpretación:** Aquí puedes redactar el análisis del cambio en"
-            " puntos porcentuales de cada causa entre 1992–2003 y 2004–2015."
+            '''-Más incendios sin causa clara. Miscellaneous y Missing/Undefined pasaron juntas de ~20.8 % a ~30.9 % del total, 
+            casi una de cada tres ocurrencias. Probablemente refleja cambios en cómo se registra la causa y no un cambio real 
+            en el comportamiento de los incendios, así que conviene decirlo con cautela en las conclusiones.
+
+-Las causas específicas pierden peso. Arson, Lightning, Railroad, Children y Smoking cayeron. 
+Parte de esa caída puede deberse a que más casos se clasifican como “Miscellaneous” o “Missing”.
+
+-Cambio de ranking. En el periodo 1 el orden era Debris Burning, Arson, Lightning, Miscellaneous. 
+En el periodo 2 es Debris Burning, Miscellaneous, Lightning, Arson.'''
         ),
     },
     {
@@ -196,7 +273,6 @@ de ambas causas dominantes (cada una contada en su propio periodo). Ordena por e
 """
         ),
         "sql": """WITH BaseFires AS (
-    -- Filtra los años y excluye las causas indicadas
     SELECT 
         STATE AS estado,
         STAT_CAUSE_DESCR AS causa,
@@ -210,7 +286,6 @@ de ambas causas dominantes (cada una contada en su propio periodo). Ordena por e
       AND STATE IS NOT NULL
 ),
 TotalEstadoPeriodo AS (
-    -- Total de incendios válidos por estado y periodo (para calcular porcentajes reales)
     SELECT 
         estado,
         periodo,
@@ -219,7 +294,6 @@ TotalEstadoPeriodo AS (
     GROUP BY estado, periodo
 ),
 ConteoCausas AS (
-    -- Conteo de incendios por causa, estado y periodo
     SELECT 
         bf.estado,
         bf.periodo,
@@ -231,7 +305,6 @@ ConteoCausas AS (
     GROUP BY bf.estado, bf.periodo, bf.causa, tep.total_estado
 ),
 CausasRankeadas AS (
-    -- Función de ventana: Asigna un ranking ordenando por cantidad descendente y por orden alfabético en caso de empate
     SELECT 
         estado,
         periodo,
@@ -242,7 +315,6 @@ CausasRankeadas AS (
     FROM ConteoCausas
 ),
 Dominantes AS (
-    -- Filtra únicamente la causa dominante (puesto 1) de cada estado y periodo
     SELECT 
         estado,
         periodo,
@@ -253,13 +325,11 @@ Dominantes AS (
     WHERE rnk = 1
 ),
 PorcentajesPeriodo2 AS (
-    -- CTE auxiliar con los porcentajes de todas las causas en el periodo 2
     SELECT estado, causa, porcentaje_causa
     FROM CausasRankeadas
     WHERE periodo = '2004-2015'
 ),
 PivoteEstados AS (
-    -- SELF JOIN: Cruza la tabla de dominantes del periodo 1 con la del periodo 2 para el mismo estado
     SELECT 
         d1.estado,
         d1.causa AS causa_p1,
@@ -268,7 +338,6 @@ PivoteEstados AS (
         d2.causa AS causa_p2,
         d2.porcentaje_causa AS porc_p2,
         d2.cant_causa AS cant_p2,
-        -- Subconsulta para obtener el porcentaje exacto que conserva en el periodo 2 la causa que dominaba en el periodo 1
         (SELECT COALESCE(p.porcentaje_causa, 0.0) 
          FROM PorcentajesPeriodo2 p 
          WHERE p.estado = d1.estado AND p.causa = d1.causa) AS porc_p1_en_p2
@@ -278,7 +347,6 @@ PivoteEstados AS (
       AND d2.periodo = '2004-2015'
       AND d1.causa <> d2.causa -- Filtra solo los estados donde cambió la causa dominante
 )
--- Consulta final con alias descriptivos en español ordenados por estado
 SELECT 
     estado AS "Estado",
     causa_p1 AS "Causa Dominante Periodo 1 (1992-2003)",
