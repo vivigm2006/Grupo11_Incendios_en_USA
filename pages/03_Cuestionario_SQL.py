@@ -242,20 +242,93 @@ ORDER BY puesto_global ASC;""",
         ),
     },
     {
-        "id": "q3",
+          "id": "q3",
         "titulo": "Pregunta 3: Control en el Mismo Día por Estado",
         "enunciado": (
-            "Un incendio se controla en el mismo día cuando su fecha de control"
-            " (CONT_DATE) coincide con la de descubrimiento."
+            """Un incendio se controla en el mismo día cuando su fecha de control (CONT_DATE) coincide con la de descubrimiento.
+              Se quiere saber si esa proporción mejoró con el tiempo.
+Trabaja solo con los incendios que tienen fecha de control y compara dos periodos según FIRE_YEAR: de 1992 a 2003 y de 2004 a 2015. 
+Calcula por estado y periodo el porcentaje controlado en el mismo día y obtén ambos periodos en una misma fila cruzando ese resultado consigo mismo.
+Muestra los estados con al menos 5.000 incendios con fecha de control en cada periodo. 
+Para cada uno indica esos incendios y el porcentaje de cada periodo, el cambio en puntos porcentuales, la diferencia entre su porcentaje del segundo periodo y 
+el de todo el país en ese periodo (calculado con todos los estados) y su puesto según el cambio, de mayor a menor. Ordena por puesto.
+"""
         ),
-        "sql": """
+        "sql": """ WITH IncendiosConControl AS (
+    SELECT 
+        STATE AS estado,
+        FIRE_YEAR AS anio,
+        CASE 
+            WHEN FIRE_YEAR BETWEEN 1992 AND 2003 THEN '1992-2003'
+            WHEN FIRE_YEAR BETWEEN 2004 AND 2015 THEN '2004-2015'
+        END AS periodo,
+        -- En SQLite, CONT_DATE y DISCOVERY_DATE son días julianos; la igualdad numérica indica el mismo día
+        CASE WHEN CONT_DATE = DISCOVERY_DATE THEN 1 ELSE 0 END AS mismo_dia
+    FROM Fires
+    WHERE CONT_DATE IS NOT NULL 
+      AND DISCOVERY_DATE IS NOT NULL 
+      AND FIRE_YEAR BETWEEN 1992 AND 2015
+),
+NacionalPeriodo AS (
+    SELECT 
+        periodo,
+        ROUND(CAST(SUM(mismo_dia) AS REAL) * 100.0 / COUNT(*), 2) AS porcentaje_nacional
+    FROM IncendiosConControl
+    GROUP BY periodo
+),
+EstadisticasEstadoPeriodo AS (
+    -- Calcula totales y porcentajes por estado y periodo
+    SELECT 
+        estado,
+        periodo,
+        COUNT(*) AS total_incendios,
+        ROUND(CAST(SUM(mismo_dia) AS REAL) * 100.0 / COUNT(*), 2) AS porcentaje_mismo_dia
+    FROM IncendiosConControl
+    GROUP BY estado, periodo
+),
+EstadosValidos AS (
+    SELECT estado
+    FROM EstadisticasEstadoPeriodo
+    WHERE total_incendios >= 5000
+    GROUP BY estado
+    HAVING COUNT(DISTINCT periodo) = 2
+),
+PivotePeriodos AS (
+    SELECT 
+        e1.estado,
+        e1.total_incendios AS incendios_p1,
+        e1.porcentaje_mismo_dia AS porcentaje_p1,
+        e2.total_incendios AS incendios_p2,
+        e2.porcentaje_mismo_dia AS porcentaje_p2,
+        (e2.porcentaje_mismo_dia - e1.porcentaje_mismo_dia) AS cambio_pp,
+        e2.porcentaje_mismo_dia - (SELECT porcentaje_nacional FROM NacionalPeriodo np WHERE np.periodo = '2004-2015') AS dif_nacional_p2
+    FROM EstadisticasEstadoPeriodo e1
+    JOIN EstadisticasEstadoPeriodo e2 ON e1.estado = e2.estado
+    WHERE e1.periodo = '1992-2003' 
+      AND e2.periodo = '2004-2015'
+      AND e1.estado IN (SELECT estado FROM EstadosValidos)
+)
+SELECT 
+    estado AS "Estado",
+    incendios_p1 AS "Incendios en Periodo 1992-2003",
+    porcentaje_p1 AS "Porcentaje Mismo Día Periodo 1 (%)",
+    incendios_p2 AS "Incendios en Periodo 2004-2015",
+    porcentaje_p2 AS "Porcentaje Mismo Día Periodo 2 (%)",
+    cambio_pp AS "Cambio en Puntos Porcentuales",
+    dif_nacional_p2 AS "Diferencia con la Media Nacional Periodo 2 (pp)",
+    RANK() OVER (ORDER BY cambio_pp DESC) AS "Puesto"
+FROM PivotePeriodos
+ORDER BY "Puesto" ASC;
         """,
         "interpretacion": (
-            "**Interpretación:** Aquí puedes sintetizar qué estados mejoraron"
-            " más su contención en el mismo día y su brecha frente a la media"
-            " nacional del segundo periodo."
+"""Se puede observar que la proporción de incendios controlados en un mismo dia, disminuyo desde el primer periodo de estudio (1992 - 2003) al segundo periodo (2004 - 2015)
+
+De los 20 estados que cumplen con las condiciones, solo 4 lograron aumentar la proporción de incendios controlados en un mismo dia.
+
+Se observan estados que tienen un alto porcentaje de incendios controlados el mismo dia y otros como Idaho que tienen un porcentaje muy bajo"""
         ),
     },
+
     {
         "id": "q4",
         "titulo": "Pregunta 4: Cambio de Causa Dominante",
