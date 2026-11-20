@@ -28,7 +28,7 @@ if not MOTHERDUCK_TOKEN:
     st.stop()
 
 # Ajusta aquí la base si tu tabla Fires está en otra en MotherDuck (p. ej. "Consultasbbdd")
-BASE_DATOS = "incendios_usa"
+BASE_DATOS = "consultasbbdd"
 
 
 @st.cache_resource
@@ -159,7 +159,7 @@ Muestra los diez meses con mayor aumento porcentual, con su puesto, el año, el 
         ),
         "sql": """
         WITH IncendiosMensuales AS (
-    -- Cuenta los incendios por año y mes a partir de la fecha de descubrimiento (día juliano en SQLite)
+
     SELECT 
         CAST(strftime('%Y', DISCOVERY_DATE) AS INTEGER) AS anio,
         CAST(strftime('%m', DISCOVERY_DATE) AS INTEGER) AS mes,
@@ -169,12 +169,12 @@ Muestra los diez meses con mayor aumento porcentual, con su puesto, el año, el 
     GROUP BY anio, mes
 ),
 MediaMensualGlobal AS (
-    -- Subconsulta / cálculo de la media mensual de toda la serie para filtrar
+
     SELECT AVG(total_incendios) AS media_general 
     FROM IncendiosMensuales
 ),
 MesesFiltrados AS (
-    -- Considera solo los meses cuya cantidad de incendios sea mayor o igual que la media mensual de toda la serie
+  
     SELECT 
         im.anio,
         im.mes,
@@ -183,7 +183,7 @@ MesesFiltrados AS (
     WHERE im.total_incendios >= (SELECT media_general FROM MediaMensualGlobal)
 ),
 ComparacionInteranual AS (
-    -- SELF JOIN: Cruza la serie consigo misma para comparar cada mes con el mismo mes del año anterior (anio - 1)
+
     SELECT 
         curr.anio AS anio_actual,
         curr.mes AS mes_actual,
@@ -194,7 +194,7 @@ ComparacionInteranual AS (
     JOIN MesesFiltrados prev ON curr.mes = prev.mes AND curr.anio = prev.anio + 1
 ),
 RankingPorMesCalendario AS (
-    -- Función de ventana para calcular el puesto que ocupa ese mes por cantidad de incendios entre los meses del mismo mes calendario
+
     SELECT 
         anio_actual,
         mes_actual,
@@ -205,7 +205,7 @@ RankingPorMesCalendario AS (
     FROM ComparacionInteranual
 ),
 RankingGlobalAumento AS (
-    -- Función de ventana para ordenar los 10 mayores aumentos porcentuales generales
+
     SELECT 
         anio_actual,
         mes_actual,
@@ -216,7 +216,7 @@ RankingGlobalAumento AS (
         RANK() OVER (ORDER BY variacion_porcentual DESC) AS puesto_global
     FROM RankingPorMesCalendario
 )
--- Consulta final que muestra los diez meses con mayor aumento porcentual
+
 SELECT 
     puesto_global AS "Puesto General",
     anio_actual AS "Año",
@@ -432,15 +432,15 @@ FROM PivoteEstados
 ORDER BY estado ASC;
 """,
         "interpretacion": (
-            """ **Cambio dominante de Arson a Debris Burning:** De los 18 estados donde cambió la causa principal, 
+            """Cambio dominante de Arson a Debris Burning: De los 18 estados donde cambió la causa principal, 
             en la mayoría fueron en 10 estados (AR, CT, IL, KY, MA, MD, MS, OH, TN, WV) Arson lideraba entre 1992–2003, 
             pero entre 2004–2015 fue desplazado por Debris Burning, llegando a superar el 65% de los incendios en estados 
             como OH (70.69%) y KY (66.36%). 
             
-            **Caídas drásticas vs. relevos reñidos:** En estados como FL Railroad pasó de 32.54% en 1992-2003 a 0.84% en 
-            2004-2015 o DE Arson bajó de 43.18% en 1992-2003 a 3.51% en 1992-2003. Prácticamente la causa original no solo 
-            perdió el liderazgo, sino que dejó de ser relevante. En cambio, en AL, MN o SD, ambas causas quedaron casi 
-            empatadas en el segundo periodo. 
+Caídas drásticas vs. relevos reñidos: En estados como FL Railroad pasó de 32.54% en 1992-2003 a 0.84% en 
+2004-2015 o DE Arson bajó de 43.18% en 1992-2003 a 3.51% en 1992-2003. Prácticamente la causa original no solo 
+perdió el liderazgo, sino que dejó de ser relevante. En cambio, en AL, MN o SD, ambas causas quedaron casi 
+empatadas en el segundo periodo. 
 
 """
         ),
@@ -452,18 +452,18 @@ ORDER BY estado ASC;
                     """ La hora en que se descubre un incendio (DISCOVERY_TIME, texto con formato HHMM) 
                     revela patrones distintos según su causa.
          
-        Usa solo los incendios con hora informada y excluye las causas Miscellaneous y Missing/Undefined. 
-        Agrupa por causa y hora del día (de 0 a 23). Considera el día como circular: una franja de seis 
-        horas consecutivas puede empezar a las 22 y terminar a las 3. Para cada causa determina la hora 
-        con más descubrimientos (si hay empate, la menor) y la franja de seis horas consecutivas que 
-        concentra más descubrimientos (si hay empate, la de menor hora de inicio).
-         
-        Incluye solo las causas con descubrimientos en las 24 horas. Muestra la cantidad de incendios con 
-        hora, el porcentaje que representan sobre todos los incendios de la causa, la hora pico y el 
-        porcentaje que concentra, la hora de inicio y la de fin de la franja, el porcentaje que concentra 
-        la franja (estos dos porcentajes, sobre los incendios con hora) y si la franja cruza la medianoche
-         ('si' o 'no'). Agrega el puesto de la causa según la concentración de su franja, de mayor a 
-         menor, y ordena por ese puesto.
+Usa solo los incendios con hora informada y excluye las causas Miscellaneous y Missing/Undefined. 
+Agrupa por causa y hora del día (de 0 a 23). Considera el día como circular: una franja de seis 
+horas consecutivas puede empezar a las 22 y terminar a las 3. Para cada causa determina la hora 
+con más descubrimientos (si hay empate, la menor) y la franja de seis horas consecutivas que 
+concentra más descubrimientos (si hay empate, la de menor hora de inicio).
+                    
+Incluye solo las causas con descubrimientos en las 24 horas. Muestra la cantidad de incendios con 
+hora, el porcentaje que representan sobre todos los incendios de la causa, la hora pico y el 
+porcentaje que concentra, la hora de inicio y la de fin de la franja, el porcentaje que concentra 
+la franja (estos dos porcentajes, sobre los incendios con hora) y si la franja cruza la medianoche
+('si' o 'no'). Agrega el puesto de la causa según la concentración de su franja, de mayor a 
+menor, y ordena por ese puesto.
         """
                 ),
                 "sql": """ WITH FiresValidos AS (
@@ -768,7 +768,7 @@ más que a una tendencia larga.
 if "nonces_sql" not in st.session_state:
   st.session_state["nonces_sql"] = {item["id"]: 0 for item in PREGUNTAS}
 
-st.title("🦆 Consultas SQL en MotherDuck")
+st.title("🪓 Consultas SQL en MotherDuck")
 st.caption(f"Base activa: `{BASE_DATOS}`")
 
 for item in PREGUNTAS:
@@ -777,7 +777,7 @@ for item in PREGUNTAS:
     st.subheader(item["titulo"])
     st.markdown(item["enunciado"])
 
-    with st.expander("📄 Ver código SQL", expanded=False):
+    with st.expander("Ver código SQL", expanded=False):
       st.code(item["sql"], language="sql")
 
     col_btn, col_info = st.columns([1.2, 4.8])

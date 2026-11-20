@@ -19,61 +19,39 @@ st.set_page_config(
     layout="wide",
 )
 
-
-def obtener_motherduck_token() -> str | None:
-    # 1. Prioriza la variable de entorno (Render / Docker / producción)
-    token = os.getenv("MOTHERDUCK_TOKEN")
-
-    # 2. Si no existe en el entorno, intenta leer secrets.toml (desarrollo local)
-    if not token:
-        try:
-            token = st.secrets["MOTHERDUCK_TOKEN"]
-        except Exception:
-            token = None
-
-    if not token:
-        return None
-
-    # Limpia espacios o comillas accidentales
-    token = str(token).strip().strip('"').strip("'").strip()
-    return token or None
-
-
-MOTHERDUCK_TOKEN = obtener_motherduck_token()
+MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
+if not MOTHERDUCK_TOKEN:
+    try:
+        MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
+    except Exception:
+        MOTHERDUCK_TOKEN = None
 
 if not MOTHERDUCK_TOKEN:
-    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en .streamlit/secrets.toml.")
+    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en secrets.toml.")
     st.stop()
-
-# Asegura que DuckDB/MotherDuck también pueda leerlo desde el entorno
-os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
-
-pd.set_option("display.max_columns", 50)
-
-
 @st.cache_resource
 def get_connection():
-    return duckdb.connect("md:")
+  return duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
 
 
 @st.cache_data(ttl=3600)
 def cargar_datos():
-  print("Conectando a MotherDuck y cargando datos...")
-  con = get_connection()
+   print("Conectando a MotherDuck y cargando datos...")
+   con = get_connection()
 
-  BASE = "incendios_usa"
-  ESQUEMA = "main"
-  TABLA = "vista_general_detallada"
+   BASE = "incendios_usa"
+   ESQUEMA = "main"
+   TABLA = "vista_general_detallada"
 
-  REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
-  query = f"""
+   REF = f'"{BASE}"."{ESQUEMA}"."{TABLA}"'
+   query = f"""
         SELECT
             objectid, estado, region_nifc, tipo_administracion,
             origen_causa, anio, nombre_mes, mes, estacion, clase,
             superficie_acres, dias_contencion, tiene_contencion, es_megaincendio
         FROM {REF}
     """
-  for intento in range(3):
+   for intento in range(3):
     try:
       return con.sql(query).df()
     except duckdb.Error as e:
