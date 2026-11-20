@@ -447,18 +447,155 @@ ORDER BY estado ASC;
     },
     {
         "id": "q5",
-        "titulo": "Pregunta 5: Franja Horaria de Descubrimiento según la Causa",
-        "enunciado": (
-            "La hora en que se descubre un incendio (DISCOVERY_TIME, texto con"
-            " formato HHMM) revela patrones distintos según su causa."
+                "titulo": "Pregunta 5: Franja Horaria de Descubrimiento según la Causa",
+                "enunciado": (
+                    """ La hora en que se descubre un incendio (DISCOVERY_TIME, texto con formato HHMM) 
+                    revela patrones distintos según su causa.
+         
+        Usa solo los incendios con hora informada y excluye las causas Miscellaneous y Missing/Undefined. 
+        Agrupa por causa y hora del día (de 0 a 23). Considera el día como circular: una franja de seis 
+        horas consecutivas puede empezar a las 22 y terminar a las 3. Para cada causa determina la hora 
+        con más descubrimientos (si hay empate, la menor) y la franja de seis horas consecutivas que 
+        concentra más descubrimientos (si hay empate, la de menor hora de inicio).
+         
+        Incluye solo las causas con descubrimientos en las 24 horas. Muestra la cantidad de incendios con 
+        hora, el porcentaje que representan sobre todos los incendios de la causa, la hora pico y el 
+        porcentaje que concentra, la hora de inicio y la de fin de la franja, el porcentaje que concentra 
+        la franja (estos dos porcentajes, sobre los incendios con hora) y si la franja cruza la medianoche
+         ('si' o 'no'). Agrega el puesto de la causa según la concentración de su franja, de mayor a 
+         menor, y ordena por ese puesto.
+        """
+                ),
+                "sql": """ WITH FiresValidos AS (
+            
+            SELECT 
+                STAT_CAUSE_DESCR AS causa,
+                CAST(DISCOVERY_TIME AS INTEGER) / 100 AS hora
+            FROM Fires
+            WHERE DISCOVERY_TIME IS NOT NULL 
+              AND STAT_CAUSE_DESCR NOT IN ('Miscellaneous', 'Missing/Undefined')
+              AND STAT_CAUSE_DESCR IS NOT NULL
         ),
-        "sql": """
-""",
-        "interpretacion": (
-            "**Interpretación:** Aquí puedes destacar las horas pico y las"
-            " franjas de 6 horas con mayor concentración según el origen del"
-            " incendio."
+        ConteoCausaHora AS (
+           
+            SELECT 
+                causa,
+                hora,
+                COUNT(*) AS incendios_hora
+            FROM FiresValidos
+            WHERE hora BETWEEN 0 AND 23
+            GROUP BY causa, hora
         ),
+        Causas24H AS (
+            
+            SELECT causa
+            FROM ConteoCausaHora
+            GROUP BY causa
+            HAVING COUNT(DISTINCT hora) = 24
+        ),
+        TotalCausaHora AS (
+            
+            SELECT 
+                causa,
+                SUM(incendios_hora) AS total_incendios_con_hora
+            FROM ConteoCausaHora
+            WHERE causa IN (SELECT causa FROM Causas24H)
+            GROUP BY causa
+        ),
+        HoraPicoCausa AS (
+            
+            SELECT 
+                c.causa,
+                c.hora AS hora_pico,
+                c.incendios_hora AS incendios_pico,
+                ROW_NUMBER() OVER (PARTITION BY c.causa ORDER BY c.incendios_hora DESC, c.hora ASC) AS rn_pico
+            FROM ConteoCausaHora c
+            WHERE c.causa IN (SELECT causa FROM Causas24H)
+        ),
+        PicoFiltrado AS (
+            SELECT causa, hora_pico, incendios_pico
+            FROM HoraPicoCausa
+            WHERE rn_pico = 1
+        ),
+        Ventanas6Horas AS (
+            
+            SELECT 
+                t0.causa,
+                t0.hora AS hora_inicio,
+                ((t0.hora + 5) % 24) AS hora_fin,
+                (t0.incendios_hora + t1.incendios_hora + t2.incendios_hora + t3.incendios_hora + t4.incendios_hora + t5.incendios_hora) AS incendios_ventana,
+                CASE WHEN t0.hora > (t0.hora + 5) % 24 THEN 'si' ELSE 'no' END AS cruza_medianoche
+            FROM ConteoCausaHora t0
+            JOIN ConteoCausaHora t1 ON t0.causa = t1.causa AND t1.hora = (t0.hora + 1) % 24
+            JOIN ConteoCausaHora t2 ON t0.causa = t2.causa AND t2.hora = (t0.hora + 2) % 24
+            JOIN ConteoCausaHora t3 ON t0.causa = t3.causa AND t3.hora = (t0.hora + 3) % 24
+            JOIN ConteoCausaHora t4 ON t0.causa = t4.causa AND t4.hora = (t0.hora + 4) % 24
+            JOIN ConteoCausaHora t5 ON t0.causa = t5.causa AND t5.hora = (t0.hora + 5) % 24
+            WHERE t0.causa IN (SELECT causa FROM Causas24H)
+        ),
+        MejorVentanaRank AS (
+            
+            SELECT 
+                causa,
+                hora_inicio,
+                hora_fin,
+                incendios_ventana,
+                cruza_medianoche,
+                ROW_NUMBER() OVER (PARTITION BY causa ORDER BY incendios_ventana DESC, hora_inicio ASC) AS rn_ventana
+            FROM Ventanas6Horas
+        ),
+        MejorVentana AS (
+            SELECT causa, hora_inicio, hora_fin, incendios_ventana, cruza_medianoche
+            FROM MejorVentanaRank
+            WHERE rn_ventana = 1
+        ),
+        ConsolidadoCausa AS (
+            
+            SELECT 
+                tc.causa,
+                tc.total_incendios_con_hora,
+                pf.hora_pico,
+                ROUND(CAST(pf.incendios_pico AS REAL) * 100.0 / tc.total_incendios_con_hora, 2) AS porcentaje_pico,
+                mv.hora_inicio,
+                mv.hora_fin,
+                ROUND(CAST(mv.incendios_ventana AS REAL) * 100.0 / tc.total_incendios_con_hora, 2) AS porcentaje_ventana,
+                mv.cruza_medianoche
+            FROM TotalCausaHora tc
+            JOIN PicoFiltrado pf ON tc.causa = pf.causa
+            JOIN MejorVentana mv ON tc.causa = mv.causa
+        ),
+        RankingFinal AS (
+            
+            SELECT 
+                causa,
+                total_incendios_con_hora,
+                hora_pico,
+                porcentaje_pico,
+                hora_inicio,
+                hora_fin,
+                porcentaje_ventana,
+                cruza_medianoche,
+                RANK() OVER (ORDER BY porcentaje_ventana DESC) AS puesto_causa
+            FROM ConsolidadoCausa
+        )
+        
+        SELECT 
+            puesto_causa AS "Puesto",
+            causa AS "Causa del Incendio",
+            total_incendios_con_hora AS "Incendios con Hora",
+            hora_pico AS "Hora Pico",
+            porcentaje_pico AS "Porcentaje Hora Pico (%)",
+            hora_inicio AS "Hora de Inicio Franja",
+            hora_fin AS "Hora de Fin Franja",
+            porcentaje_ventana AS "Porcentaje Franja 6 Horas (%)",
+            cruza_medianoche AS "Cruza Medianoche"
+        FROM RankingFinal
+        ORDER BY puesto_causa ASC;
+        """,
+                "interpretacion": (
+                    """ Interpretación 
+        """
+                ),
     },
     {
         "id": "q6",
