@@ -5,7 +5,6 @@ Investigacion: Incendios forestales y segmentacion territorial (1992-20015):
 Analsis estadistico de la superficie, fuentes y tiempos de incendios en EE.UU.
  
 """
-
 import os
 import time
 import duckdb
@@ -21,22 +20,40 @@ st.set_page_config(
 )
 
 
-MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
-if not MOTHERDUCK_TOKEN:
-    try:
-        MOTHERDUCK_TOKEN = st.secrets["MOTHERDUCK_TOKEN"]
-    except Exception:
-        MOTHERDUCK_TOKEN = None
+def obtener_motherduck_token() -> str | None:
+    # 1. Prioriza la variable de entorno (Render / Docker / producción)
+    token = os.getenv("MOTHERDUCK_TOKEN")
+
+    # 2. Si no existe en el entorno, intenta leer secrets.toml (desarrollo local)
+    if not token:
+        try:
+            token = st.secrets["MOTHERDUCK_TOKEN"]
+        except Exception:
+            token = None
+
+    if not token:
+        return None
+
+    # Limpia espacios o comillas accidentales
+    token = str(token).strip().strip('"').strip("'").strip()
+    return token or None
+
+
+MOTHERDUCK_TOKEN = obtener_motherduck_token()
 
 if not MOTHERDUCK_TOKEN:
-    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en secrets.toml.")
+    st.error("No se encontró MOTHERDUCK_TOKEN en las variables de entorno ni en .streamlit/secrets.toml.")
     st.stop()
+
+# Asegura que DuckDB/MotherDuck también pueda leerlo desde el entorno
+os.environ["MOTHERDUCK_TOKEN"] = MOTHERDUCK_TOKEN
+
 pd.set_option("display.max_columns", 50)
-print("DuckDB versión:", duckdb.__version__)
+
 
 @st.cache_resource
 def get_connection():
-  return duckdb.connect(f"md:?motherduck_token={MOTHERDUCK_TOKEN}")
+    return duckdb.connect("md:")
 
 
 @st.cache_data(ttl=3600)
